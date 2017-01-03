@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Panel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/upload.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <form enctype="multipart/form-data" method="post">
+        <input type="file" />
+        <!-- <input type="hidden" class="uniqueId" value="" /> -->
+        <input type="button" value="click" />
+    </form>
+    <div class="iframeContainer"></div>
+    <script>
+    window.onload = function () {
+        require(['scripts/FileUpload', 'scripts/EventBus'],
+        function(FileUpload, EventBus) {
+            var fileUpload = new FileUpload(
+                document.querySelector('.iframeContainer'), document, window,
+                EventBus, {
+                    uploadUri: '/fileUpload.php',
+                    statusUri: '/uploadStatus.php?id='
+                }
+            ),
+            form = document.querySelector('form'),
+            btn = document.querySelector('input[type="button"]'),
+            status,
+            sc = function(repsonse) {
+                alert('Upload Success' + repsonse);
+            },
+            fc = function(status, statusText, response) {
+                alert('Upload Failure' + response);
+            },
+            tc = function() {
+                alert('Upload Timed Out');
+            },
+            opts= {};
+
+            btn.addEventListener('click', function() {
+                fileUpload.upload(form, sc, fc, tc, opts);
+            }, false);
+
+        });
+    };
+    </script>
+  </body>
+</html>

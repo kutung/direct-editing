@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Custom Select Box</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/selectbox.css" />
+    <style>
+    body {
+        margin: 20px;
+    }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <div style="width:500px" class="form"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/SelectBox', 'scripts/EventBus'
+        ], function(SelectBox, EventBus) {
+            var options = [
+                {
+                    "id": 3,
+                    "text": "As per style, genus name should be expanded in the first occurrence, both in abstract and text, and abbreviated in subsequent occurrences. Hence we are ignoring the corrections related to this in lines XXX. Please check and approve."
+                },
+                {
+                    "id": 4,
+                    "text": "As per style, professional titles or qualifications are not allowed in the affiliation. Hence we are ignoring the author corrections in line XXX. Please check and approve."
+                },
+                {
+                    "id": 5,
+                    "text": "As per style, Research highlights should be of 3 to 5 bullet points, with maximum of XXX characters per bullet point, not exceeding XXX characters. Please check and provide Research highlights as per the requirement."
+                },
+                {
+                    "id": 6,
+                    "text": "Please note that as per APA style, for references with less than 6 authors, all the author names need to be listed in the first citation in the text and the subsequent citations will be with first author et al. Hence we are ignoring the corrections regard"
+                }
+            ],
+            select = new SelectBox(
+                document.querySelector('.form'), document, window, EventBus, 'test'
+            );
+            select.render();
+            options.forEach(function (option) {
+                select.addOption(option.text, option.id);
+            });
+        });
+    };
+    </script>
+</body>
+</html>

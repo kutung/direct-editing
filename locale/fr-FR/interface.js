@@ -1,0 +1,43 @@
+define([], function interfaceLocaleLoader() {
+    var locale = {
+        'toggleimage.printlabel.text': 'Print view',
+        'toggleimage.weblabel.text': 'Online view',
+        'toggleimage.printlabel.title': 'This is the view of the image as it will appear in print',
+        'toggleimage.weblabel.title': 'This is the web view of the image',
+        'session.expired.message': 'session already expired',
+        'toggleimage.print.label.text': 'Print view',
+        'toggleimage.web.label.text': 'Online view',
+        'toggleimage.print.label.title': 'This is the view of the image as it will appear in print',
+        'toggleimage.web.label.title': 'This is the web view of the image',
+        'author.supplementary.text': 'Author, please note that supplementary material is not edited during the production of your article. If a correction is needed to your supplemental files (shown as links below) you will need to upload a completely new version of the file, which incorporates these corrections. Please use the attachment option of instruct window.',
+        'alert.prevent.message': 'Prevent this page from creating this additional dialog',
+        'correction.save.success': 'Correction updated',
+        'insert.save.success': 'Insert updated',
+        'instruct.save.success': 'Instruction updated',
+        'query.save.success': 'Received response for {{queryName}}',
+        'query.create.success': 'Query created',
+        'instruct.panel.placeholder': 'Commit Instruct location and leave instructions here for us to act on. To provide your instruction as an attachment click ‘Attach’ below. Note: Please use this window only when you are unable to make a particular edit the way you would like to.',
+        'insert.panel.placeholder': 'Commit Insert location and enter content here. The content updates when you hit return key or when you exit this window. You can Undo/Edit the inserted content later.',
+        'attachment.panel.placeholder': 'Additional files',
+        'session.report.text': 'Online Proofing - Consolidated Corrections',
+        'connection.alive': 'Your internet connection has been re-established and we have reloaded your proof.',
+        'connection.not.alive': 'Unable to connect to the internet, please check your connection!',
+        'editor.readonly.apply': 'Article opened in Readonly Mode',
+        'connection.alive.with.changes': 'Please check the last corrections you made, as they may not have been auto-saved.',
+        'general.author.help': 'General Author Help',
+        'online.proofing.help': 'Online Proofing Help',
+        'imageviewer.expand.title': 'Click to view the high resolution image',
+        'carousel.expand.title': 'Click to Close',
+        'carousel.expand.header.text': 'High Resolution Image',
+        'quicklink.heading.text': 'Quick Links',
+        'quicklink.section.heading.text': 'Section',
+        'quicklink.empty.data': 'No data available',
+        'quicklink.figure.table.heading.text': 'Figures & Tables',
+        'quicklink.figure.section.title': 'Figures',
+        'quicklink.table.section.title': 'Tables',
+        'imageviewer.replaceBtn.title': 'Click to replace the image',
+        'replace.panel.placeholder': 'Replace Image'
+    };
+
+    return locale;
+});

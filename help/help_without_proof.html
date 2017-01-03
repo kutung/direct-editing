@@ -1,0 +1,356 @@
+<div class="container">
+  <section class="clearfix help-header">
+      <section class="help-header-title">
+          <h2>{{help.header.title}}</h2>
+      </section>
+      <section class="localization">{{#def.locale || ""}}</section>
+  </section>
+  <div class="clearfix">
+    <div class="left-panel">
+      <ul class="menu">
+        <li><a href="#quick_start">{{help.left.panel.quick.start}}</a></li>
+        <li><a href="#interface">{{help.left.panel.interface}}</a></li>
+        <li><a href="#queries">{{help.left.panel.queries}}</a></li>
+        <li><a href="#floating_contexual_menu">{{help.left.panel.float.contexual.menu}}</a></li>
+        <li><a href="#insert">{{help.left.panel.insert}}</a></li>
+        <li><a href="#instruct">{{help.left.panel.instruct}}</a></li>
+        <li><a href="#math_editing">{{help.left.panel.math.editing}}</a></li>
+        <li><a href="#edit_log">{{help.left.panel.edit.log}}</a></li>
+        <li><a href="#save_n_submit">{{help.left.panel.save.submit}}</a></li>
+      </ul>
+    </div>
+    <!--div class="right-panel">
+      <div class="help-container" id="quick_start">
+        <h3>{{help.left.panel.quick.start}}</h3>
+        <div class="help-content">
+          <p>{{help.right.panel.quick.start.heading}}</p>
+          <ul>
+            <li>{{help.right.panel.check.surname}}</li>
+            <li>{{help.right.panel.check.copyeditor.changes}}</li>
+            <li>{{help.right.panel.answer.queries}}</li>
+            <li>{{help.right.panel.annotate.graphics}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="interface">
+        <h3>{{help.left.panel.interface}}</h3>
+        <div class="help-content">
+          <ul>
+            <li>{{help.right.panel.interface.help.content.point1}} <img src="/images/help/proceed_button.png" alt="[Image: Proceed]" title="Proceed"> {{help.right.panel.interface.help.content.point2}}</li>
+            <li class="bullet-free resize-img"><img src="/images/help/interface-without-proof.png" alt="[Image: Interface]" title="Interface"></li>
+          </ul>
+          <h4>{{help.right.panel.interface.left.pane}}</h4>
+          <ul>
+            <li>{{help.right.panel.interface.left.pane.para.pane.house}} (<a href="#floating_menu">{{help.right.panel.interface.left.pane.para.see.details}}</a>).</li>
+            <li>{{help.right.panel.interface.left.pane.para.supplementary}}</li>
+          </ul>
+          <h4>{{help.right.panel.interface.right.pane}}</h4>
+          <ul>
+            <li>{{help.right.panel.interface.right.pane.para.4.controls}}</li>
+            <li>{{help.right.panel.interface.right.pane.para.3.controls}}</li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="queries">
+        <h3>{{help.left.panel.queries}}</h3>
+        <div class="help-content">
+          <ul>
+            <li class="bullet-free resize-img"><img src="/images/help/queries.png" alt="[Image: Queries]" title="Queries"></li>
+            <li>{{help.right.panel.queries.para.dialog}}</li>
+            <li class="bullet-free"><img src="/images/help/special_characters_pane.png" alt="[Image: Special Characters]" title="Special Characters"></li>
+            <li>{{help.right.panel.queries.para.special.char}}</li>
+            <li class="bullet-free"><img src="/images/help/attachments.png" alt="[Image: Attachments]" title="Attachments"></li>
+            <li id="respond_query">{{help.right.panel.queries.para.attachment}}
+              <p>* <span class="note">{{help.right.panel.queries.para.attachment.note}}</span></p>
+            </li>
+            <li class="bullet-free"><img src="/images/help/query_response.png" alt="[Image: Response]" title="Response"></li>
+            <li>{{help.right.panel.queries.para.save.1}} <img src="/images/help/respond_btn.png" alt="[Image: Respond]" title="Respond"> {{help.right.panel.queries.para.save.2}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="floating_contexual_menu">
+        <h3>{{help.left.panel.float.contexual.menu}}</h3>
+        <div class="help-content">
+          <ul>
+            <li class="bullet-free"><img src="/images/help/floating_menu.png" alt="[Image: Contexual Menu]" title="Contexual Menu"></li>
+            <li>{{help.right.panel.floating.menu.formatting}}</li>
+            <li>{{help.right.panel.floating.menu.editing.controls}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="insert">
+        <h3>{{help.left.panel.insert}}</h3>
+        <div class="help-content">
+          <ul>
+            <li class="bullet-free"><img src="/images/help/insert_menu.png" alt="[Image: Insert]" title="Insert"></li>
+            <li>{{help.right.panel.insert.controls.before.text}} <img src="/images/help/insert_control.png" alt="[Image: Insert Control]" title="Insert Control"> {{help.right.panel.insert.controls.after.text}} <img src="/images/help/insert_proceed.png" alt="[Image: Proceed]" title="Proceed">. {{help.right.panel.insert.proceed.after.text}}</li>
+            <li class="bullet-free"><img src="/images/help/after_insert_text.png" alt="[Image: Insert]" title="Insert"></li>
+            <li>{{help.right.panel.insert.save.inserted.text.1}} <img src="/images/help/insert_proceed.png" alt="[Image: Proceed]" title="Proceed"> {{help.right.panel.insert.save.inserted.text.2}}</li>
+            <li class="bullet-free"><img src="/images/help/clear_insert_text.png" alt="[Image: Clear Insert]" title="Clear Insert"></li>
+            <li id="floating_menu">{{help.right.panel.insert.clear.before.text}} <img src="/images/help/clear_button.png" alt="[Image: Clear]" title="Clear"> {{help.right.panel.insert.clear.after.text}} <img src="/images/help/undo.png" alt="[Image: Undo Control]" title="Undo Control"> {{help.right.panel.insert.undo.clear.after.text}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="instruct">
+        <h3>{{help.left.panel.instruct}}</h3>
+        <div class="help-content">
+          <ul>
+            <li>{{help.right.panel.instruct.pass.publisher}}</li>
+            <li class="bullet-free"><img src="/images/help/instruct_menu.png" alt="[Image: Instruct Menu]" title="Instruct Menu"></li>
+            <li>{{help.right.panel.instruct.controls.before.text}} <img src="/images/help/instruct_control.png" alt="[Image: Instruct Control]" title="Instruct Control"> {{help.right.panel.instruct.controls.after.text}} <img src="/images/help/insert_proceed.png" alt="[Image: Proceed]" title="Proceed"> {{help.right.panel.instruct.proceed.after.text}} (<a href="#respond_query">{{help.right.panel.interface.left.pane.para.see.details}}</a>).</li>
+            <li class="bullet-free"><img src="/images/help/instruct_pane.png" alt="[Image: Instruct Panel]" title="Instruct Panel"></li>
+            <li>{{help.right.panel.instruct.edit.undo}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="math_editing">
+        <h3>{{help.left.panel.math.editing}}</h3>
+        <div class="help-content resize-img">
+          <ul>
+            <li class="bullet-free"><img src="/images/help/math_editor.png" alt="[Image: Math Editor]" title="Math Editor"></li>
+            <li class="bullet-free"><img src="/images/help/latex_editor.png" alt="[Image: Latex Editor]" title="Latex Editor"></li>
+            <li class="bullet-free"><img src="/images/help/math_annotation.png" alt="[Image: Math Annotation]" title="Math Annotation"></li>
+            <li>{{help.right.panel.math.editing.option}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="edit_log">
+        <h3>{{help.left.panel.edit.log}}</h3>
+        <div class="help-content">
+          <ul>
+            <li>{{help.right.panel.edit.log.edit.list}}</li>
+            <li class="bullet-free"><img src="/images/help/edit_list.png" alt="[Image: Edit Log]" title="Edit Log"></li>
+            <li>{{help.right.panel.edit.log.edit.location}}</li>
+            <li class="bullet-free"><img src="/images/help/edit_flash.png" alt="[Image: Edit]" title="Edit"></li>
+            <li>{{help.right.panel.edit.log.floating.menu}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-container" id="save_n_submit">
+        <h3>{{help.left.panel.save.submit}}</h3>
+        <div class="help-content">
+          <ul>
+            <li>{{help.right.panel.save.submit.save.button.before.text}} <img src="/images/help/save_button.png" alt="[Image: Save]" title="Save"> {{help.right.panel.save.submit.save.button.after.text}}</li>
+          </ul>
+          <ul>
+            <li>{{help.right.panel.save.submit.session.report.before.text}} <img src="/images/help/download_edit.png" alt="[Image: Session Report]" title="Session Report"> {{help.right.panel.save.submit.session.report.after.text}}</li>
+          </ul>
+          <ul>
+            <li>{{help.right.panel.save.submit.submit.button.before.text}}<img src="/images/help/submit_button.png" alt="[Image: Submit]" title="Submit">{{help.right.panel.save.submit.submit.button.after.text}}</li>
+          </ul>
+        </div>
+      </div>
+    </div-->
+
+
+<div class="right-panel">
+   <div class="help-container" id="quick_start">
+      <h3>Quick Start</h3>
+      <div class="help-content">
+         <p>There are two options to submit your proof to the Royal Society of Chemistry.</p>
+         <p>1. Online proofing within Proof Central. This guide provides detailed instructions on how to use the online tools within Proof Central to apply your proof corrections.</p>
+         <p>2. Annotate PDF. If you would prefer not to use the HTML proofing tool, you can upload an annotated proof PDF of your article to Proof Central.</p>
+         <ul>
+            <li>You check the author's names (last names are highlighted teal) are correct - please leave instructions if any changes are required.</li>
+            <li>You review your whole article and make any changes that are required.</li>
+            <li>You answer all the queries. You cannot submit your article without answering all the queries.</li>
+            <li>You provide replacement graphics if needed, or annotate the graphics with instructions for how they should be changed. Only minor changes to the figures (e.g. spelling errors, resizing) should be indicated using annotations. If extensive revisions are required, please attach a new version of the figure.</li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="interface">
+      <h3>Interface</h3>
+      <div class="help-content">
+         <ul>
+            <li>When you click <img src="images/help/proceed_button.png" alt="[Image: Proceed]" title="Proceed"> from the landing page of Proof Central, you are taken to your article, which has been styled to the Royal Society of Chemistry format, presented in a two-pane layout.</li>
+            <li>You can download a typeset PDF proof for your article by clicking the 'PDF' button at the top of the screen. This PDF can be used to check the layout of the article while making your corrections in the HTML interface</li>
+            <li class="bullet-free resize-img"><img src="images/help/interface-without-proof.png" alt="[Image: Interface]" title="Interface"></li>
+         </ul>
+         <h4>(1) Left Pane</h4>
+         <ul>
+            <li>The
+               left larger pane houses the body of your article, under the Article tab
+               as a default in the edit view. When you select any content on the left 
+               pane a floating contextual menu comes up with handles for styling, 
+               editing and communication (<a href="#floating_menu">see details</a>).
+            </li>
+            <li>The
+               left pane supports a ‘Researcher infomation &amp; TOC’ tab under which Proof Central 
+               lists the ORCID, ResearcherID and funding details, as well as the contents entry 
+               submitted by you.
+            </li>
+         </ul>
+         <h4>(2) Right Pane</h4>
+         <ul>
+            <li>The right 
+               pane has four controls. The topmost lets you address copyeditor queries.
+               The second control lets you insert content into the body of the 
+               article.
+            </li>
+            <li>The third control lets you leave instructions for 
+               your publisher to work on after you submit the proof. This is the best way to ask for changes to the layout of your article or to request a second version of the proof before final publication. The last control 
+               tracks and lists all changes during the proof correction process.
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="queries">
+      <h3>Queries</h3>
+      <div class="help-content">
+         <ul>
+            <li class="bullet-free resize-img"><img src="images/help/queries.png" alt="[Image: Queries]" title="Queries"></li>
+            <li>The
+               Queries dialog at the top of the right pane is activated by default 
+               while loading the article, also activated by clicking on the control. 
+               The queries are stacked Q1, Q2, Q3…, click on (query label or query
+               text) any one query to view and act on it using the dialog 
+               below the query text. This response dialog has rich text formatting options for you to 
+               set your text in bold/italic/superscript/subscript.
+            </li>
+            <li class="bullet-free"><img src="images/help/special_characters_pane.png" alt="[Image: Special Characters]" title="Special Characters"></li>
+            <li>The
+               queries/insert/instruct dialog box also lets you access special 
+               characters that you may wish to insert. A palette of special characters 
+               to select from will be presented. Please note you have the option to 
+               select special characters not available in the palette through a link to
+               an extensive Unicode table.
+            </li>
+            <li class="bullet-free"><img src="images/help/attachments.png" alt="[Image: Attachments]" title="Attachments"></li>
+            <li id="respond_query">
+               You can respond to a query with an attachment* and provide remarks on how the attachment should be used by the publisher. 
+               <p>* <span class="note">Supports
+                  all formats other than: sh, asp, cgi, php, php3, ph3, php4, ph4, php5, 
+                  ph5, phtm, phtml, js, cgi, pl. File size not exceeding 20mb per file.</span>
+               </p>
+            </li>
+            <li class="bullet-free"><img src="images/help/query_response.png" alt="[Image: Response]" title="Response"></li>
+            <li>Once you have written your response to a query, click <img src="images/help/respond_btn.png" alt="[Image: Respond]" title="Respond">
+               for our servers to register your response. Please note that you must respond to every query before you are able to submit your final corrections. As you respond, the number
+               of pending queries will count down till zero is reached and the query 
+               tabs turn green.
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="floating_contexual_menu">
+      <h3>Floating Contexual Menu</h3>
+      <div class="help-content">
+         <ul>
+            <li class="bullet-free"><img src="images/help/floating_menu.png" alt="[Image: Contexual Menu]" title="Contexual Menu"></li>
+            <li>The
+               floating contextual menu comes up when you select/click content in the 
+               left pane. It has controls for in situ styling (bold, italic, 
+               superscript, subscript).
+            </li>
+            <li>The floating menu provides editing 
+               controls - Delete, which operates directly in the text, and shortcuts to the Insert and Instruct controls in the right pane..
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="insert">
+      <h3>Insert</h3>
+      <div class="help-content">
+         <ul>
+            <li class="bullet-free"><img src="images/help/insert_menu.png" alt="[Image: Insert]" title="Insert"></li>
+            <li>To insert new content into your article, open the Insert input box by clicking the Input control <img src="images/help/insert_control.png" alt="[Image: Insert Control]" title="Insert Control">
+               available in the floating contexual menu. Key in the necessary content,
+               style it as rich text using the formatting options and click <img src="images/help/insert_proceed.png" alt="[Image: Proceed]" title="Proceed">. You must point your cursor to a specific location within the article where the new content should be inserted.
+            </li>
+            <li class="bullet-free"><img src="images/help/after_insert_text.png" alt="[Image: Insert]" title="Insert"></li>
+            <li>Once you do so and click <img src="images/help/insert_proceed.png" alt="[Image: Proceed]" title="Proceed">
+               again, the inserted content appears in the chosen place and in green 
+               with a yellow background, so you can keep an easy eye on the new content
+               that you introduce.
+            </li>
+            <li class="bullet-free"><img src="images/help/clear_insert_text.png" alt="[Image: Clear Insert]" title="Clear Insert"></li>
+            <li id="floating_menu">In case you want to undo your insert, click anywhere on the inserted content to bring up the Insert input box, which has a control <img src="images/help/clear_button.png" alt="[Image: Clear]" title="Clear">
+               for clearing the Inserted text.You can also undo any copyediting 
+               changes shown in the article in green or red using the Undo control <img src="images/help/undo.png" alt="[Image: Undo Control]" title="Undo Control"> in the floating contextual menu. Please note the available controls in the floating menu vary according to the change type.
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="instruct">
+      <h3>Instruct</h3>
+      <div class="help-content">
+         <ul>
+            <li>Proof Central lets you pass on an instruction to the Royal Society of Chemistry with changes that you are unable to make yourself.</li>
+            <li class="bullet-free"><img src="images/help/instruct_menu.png" alt="[Image: Instruct Menu]" title="Instruct Menu"></li>
+            <li>Click on the Instruct control <img src="images/help/instruct_control.png" alt="[Image: Instruct Control]" title="Instruct Control">
+               through the floating contextual menu and launch the instruct dialog in 
+               the right pane to key in your instruction. You should then click <img src="images/help/insert_proceed.png" alt="[Image: Proceed]" title="Proceed">
+               for our servers to register the information. Similar to the queries 
+               dialog, the Instruct dialog permits attachment of files (<a href="#respond_query">see details</a>).
+            </li>
+            <li class="bullet-free"><img src="images/help/instruct_pane.png" alt="[Image: Instruct Panel]" title="Instruct Panel"></li>
+            <li>Proof
+               Central allows you to place an instruction on top of an edit. In such 
+               cases, please note that when you undo the edit, the instruction that is 
+               tethered to the edit will also be undone.
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="generic_attachment">
+      <h3>Generic Attachment</h3>
+      <div class="help-content resize-img">
+         <ul>
+            <li class="bullet-free"><img src="images/help/GA.png" style="width: 50%" alt="[Image: Generic Attachment]" title="Generic Attachment"></li>
+            <li>Proof Central allows you to attach additional files using Attach additional files button. This will invoke Instruct dialog in the right pane, where you submit one or more attachments. Refer to section <a href="#respond_query">Queries</a> to find other ways to add attachments.</li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="math_editing">
+      <h3>Math Annotation</h3>
+      <div class="help-content resize-img">
+         <ul>
+         <li class="bullet-free"><img src="images/help/math_annotation.png" style="width: 60%" alt="[Image: Math Annotation]" title="Math Annotation"></li>
+         <ul>
+            <li>Proof Central facilitates modifying scientific and technical equations through annotated image instructions for publisher to correct offline.</li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="edit_log">
+      <h3>Edit Log</h3>
+      <div class="help-content">
+         <ul>
+            <li>The
+               bottom control on the right panel provides a list of all edits made by the authors.
+            </li>
+            <li class="bullet-free"><img src="images/help/edit_list.png" alt="[Image: Edit Log]" title="Edit Log"></li>
+            <li>You can click on each list item in the Edit Log to get to the edit location in the left pane.</li>
+            <li class="bullet-free"><img src="images/help/edit_flash.png" alt="[Image: Edit]" title="Edit"></li>
+            <li>The
+               edit location flashes as you approach it. You may then choose to modify
+               the edit as desired, using the available actions in the floating menu, 
+               or the Queries, Insert or Instruct control on the right pane.
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="help-container" id="save_n_submit">
+      <h3>Save &amp; Submit</h3>
+      <div class="help-content">
+         <ul>
+            <li>When you make a change to the article, the Save button <img src="images/help/save_button.png" alt="[Image: Save]" title="Save"> is activated for you to save the changes. Your changes are autosaved too.</li>
+         </ul>
+         <ul>
+            <li>ProofCentral creates a record of your actions while correcting your proof. You can 
+               generate and download this ‘Session Report’ by clicking on this <img src="images/help/download_edit.png" alt="[Image: Session Report]" title="Session Report"> icon.
+            </li>
+         </ul>
+         <ul>
+            <li>Clicking on Submit <img src="images/help/submit_button.png" alt="[Image: Submit]" title="Submit">
+               sends your corrections to the Royal Society of Chemistry. You will not be able to make any further changes to your article after clicking submit. A 
+               consolidated Session Report is auto-generated and mailed to you after submission of your corrections.
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+
+
+  </div>
+</div>

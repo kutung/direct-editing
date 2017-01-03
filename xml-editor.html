@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>XML Editor</title>
+    <link rel="stylesheet" type="text/css" href="/styles/normalize.3.0.2.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/panel.css"/>
+    <link rel="stylesheet" type="text/css" href="/scripts/libs/codemirror-5.1.0/lib/codemirror.css"/>
+    <link rel="stylesheet" type="text/css" href="/scripts/libs/codemirror-5.1.0/addon/dialog/dialog.css"/>
+    <link rel="stylesheet" type="text/css" href="/scripts/libs/codemirror-5.1.0/addon/fold/foldgutter.css"/>
+    <link rel="stylesheet" type="text/css" href="/scripts/libs/codemirror-5.1.0/addon/hint/show-hint.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/xml-editor.css"/>
+    <style>
+    .xml-editor-container {
+        width: 800px;
+        border: 1px solid #474747;
+    }
+    </style>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+    <script src="/scripts/libs/require-2.1.16.js"></script>
+    <script>
+    CKEDITOR_BASEPATH = '/scripts/libs/ckeditor-4.5.9/';
+    require.config({
+        baseUrl: "/",
+        // urlArgs: "v5",
+        // For developement
+        urlArgs: "bust=" +  (new Date()).getTime(),
+        map: {
+            '*': {
+                'css': '/scripts/libs/css.js',
+                'ckeditor': '/scripts/libs/ckeditor-4.5.9/ckeditor',
+                'he': '/scripts/libs/he-0.5.0',
+                'sax': '/scripts/libs/sax-0.6.1.js',
+                'rangy': '/scripts/libs/rangy-1.3.0',
+                'jquery': '/scripts/libs/jquery/jquery-1.10.1.min',
+                'jquery-hyphenation': '/scripts/libs/jquery/hyphenation-plugin',
+                'jquery-en-us': '/scripts/libs/jquery/en-us'
+            }
+        }
+    });
+    </script>
+</head>
+<body>
+    <div class="xml-editor-container"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/XmlEditorPanel', 'scripts/EventBus', 'scripts/Request'
+        ],
+        function(XmlEditorPanel, EventBus, Request) {
+            var schemaRequest = new Request(
+                    '/data/xml-schema.json', null, true, {
+                        method: 'GET'
+                    }
+                ), xmlEditorPanel1,
+                token = '1234ebc1d2235443e8e1624d00534abcd',
+                timeStart,
+                fetchXmlFromS3 = function fetchXmlFromS3(xml_uri) {
+                    var request = new Request(
+                        xml_uri, null, true, {'method': 'GET'}
+                    );
+                    request.setTimeout(5000);
+                    request.setSuccessCallback(function (data) {
+                        var response = JSON.parse(data);
+                        if (response.success === false) {
+                            alert('Fetching Xml from S3 failed.');
+                            console.log(response);
+                            return;
+                        }
+                        xmlEditorPanel1.load(response.data);
+                    });
+                    request.setFailureCallback(function (error) {
+                        alert('Fetching Xml from S3 failed. ' + error);
+                    });
+                    request.setTimeoutCallback(function () {
+                        alert('Fetching Xml from S3 timed out.');
+                    });
+                    request.send();
+                },
+                pollForCompletion = function pollForCompletion(statusUri) {
+                    var request = new Request(
+                        statusUri, null, true, {'method': 'GET'}
+                    );
+                    request.setTimeout(5000);
+                    request.setSuccessCallback(function (data) {
+                        var response = JSON.parse(data), uri;
+                        if (response.complete === true) {
+                            uri = 'http://api.pagecentral.com/app/web/index.php/getXmlContent?uri=';
+                            uri += encodeURIComponent(response.xml_uri);
+                            fetchXmlFromS3(uri);
+                        }
+                        else {
+                            setTimeout(function() {
+                                pollForCompletion(statusUri);
+                            }, 10000);
+                        }
+                    });
+                    request.setFailureCallback(function (error) {
+                        alert('Polling for Xml failed. ' + error);
+                    });
+                    request.setTimeoutCallback(function () {
+                        alert('Polling for Xml timed out.');
+                    });
+                    request.send();
+                },
+                getXml = function getXml(token) {
+                    var request = new Request(
+                        'http://api.pagecentral.com/app/web/index.php/getXml/' + token,
+                        null, true, {'method': 'GET'}
+                    );
+                    request.setTimeout(10000);
+                    request.setSuccessCallback(function (data) {
+                        var response = JSON.parse(data);
+                        pollForCompletion(response.data.statusUri);
+                    });
+                    request.setFailureCallback(function (error) {
+                        alert('Getting Xml from server failed. ' + error);
+                    });
+                    request.setTimeoutCallback(function () {
+                        alert('Getting Xml from server timed out.');
+                    });
+                    request.send();
+                };
+            schemaRequest.setTimeout(10000);
+            schemaRequest.setSuccessCallback(function (schema) {
+                var xmlSchema = JSON.parse(schema);
+                xmlEditorPanel1 = new XmlEditorPanel(
+                    document.querySelector('.xml-editor-container'),
+                    xmlSchema, document, window, EventBus
+                );
+                window.xmlEditorPanel1 = xmlEditorPanel1;
+                xmlEditorPanel1.render();
+                xmlEditorPanel1.setTitle('XML Editor');
+                xmlEditorPanel1.setSize('100%', '540');
+                timeStart = (new Date()).getTime();
+                getXml(token);
+            });
+            schemaRequest.setFailureCallback(function (error) {
+                alert('Getting Schema from server failed. ' + error);
+            });
+            schemaRequest.setTimeoutCallback(function () {
+                alert('Getting Schema from server Timed out.');
+            });
+            schemaRequest.send();
+        });
+    };
+    </script>
+</body>
+</html>

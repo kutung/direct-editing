@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Table Plugins</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+    <style type="text/css">
+    .table-container, .buttons-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .table-container table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        margin: 22px 0;
+        width: 100%;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .table-container table caption {
+        background: #ebebeb;
+        padding: 4px 8px;
+    }
+    .table-container table th {
+        padding: 5px;
+        border: 1px solid #000;
+        text-align: left;
+        color: #481f00;
+    }
+    .table-container table td {
+        padding: 5px;
+        border: 1px solid #000;
+    }
+    </style>
+</head>
+<body>
+    <div class="buttons-container">
+        <button class="col-before">Insert Column Before</button>
+        <button class="col-after">Insert Column After</button>
+    </div>
+    <div class="table-container" contenteditable="true">
+        <table>
+            <caption>Life Expectancy By Current Age</caption>
+            <tr>
+                <td>82</td>
+                <td>85</td>
+                <td>78</td>
+                <td>82</td>
+                <td>77</td>
+                <td>81</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>85</td>
+                <td colspan="3">78</td>
+                <td>81</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td colspan="3">85</td>
+                <td>78</td>
+                <td>81</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>85</td>
+                <td>78</td>
+                <td>82</td>
+                <td>77</td>
+                <td>81</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+    window.onload = function onLoad() {
+        var beforeBtn = document.querySelector('.col-before'),
+            afterBtn = document.querySelector('.col-after'),
+            updateCellIndexAndSpan = function updateCellIndexAndSpan(table) {
+                var cellIndex = 0, rowIndex = 0, colspan, td, currIndex = 0,
+                    rowLen = table.rows.length, cellLen, indexes = [], indexStr;
+
+                for (rowIndex = 0; rowIndex < rowLen; rowIndex += 1) {
+                    cellLen = table.rows[rowIndex].cells.length;
+                    currIndex = 0;
+                    for (cellIndex = 0; cellIndex < cellLen; cellIndex += 1) {
+                        td = table.rows[rowIndex].cells[cellIndex];
+                        colspan = Number(td.getAttribute('colspan'));
+                        indexes = [];
+                        indexStr = '';
+                        if (colspan > 1) {
+                            while (colspan >= 1) {
+                                indexes.push(currIndex);
+                                currIndex += 1;
+                                colspan -= 1;
+                            }
+                            indexStr = indexes.join(',');
+                            td.dataset.index = indexStr;
+                        }
+                        else {
+                            indexStr = currIndex;
+                            td.dataset.index = indexStr;
+                            currIndex += 1;
+                        }
+                    }
+                }
+            },
+            insertColumn = function insertColumn(table, colIndex, where) {
+                var rowIndex = 0, rowLen, cIndex = 0, colLen, row, td, cell,
+                    colspan = 1, cellIndex = 0, indexes = [];
+
+                rowLen = table.rows.length;
+                for (rowIndex = 0; rowIndex < rowLen; rowIndex += 1) {
+                    row = table.rows[rowIndex];
+                    colLen = row.cells.length;
+                    for (cIndex = 0; cIndex < colLen; cIndex += 1) {
+                        cell = row.cells[cIndex];
+                        cellIndex = cell.dataset.index;
+                        indexes = [];
+                        cellIndex.split(',').forEach(function eachIndex(index) {
+                            indexes.push(Number(index));
+                        });
+                        // Has no colspan
+                        td = document.createElement('td');
+                        if (indexes.length === 1) {
+                            if (indexes[0] === colIndex) {
+                                if (where === 'before') {
+                                    cell.parentNode.insertBefore(td, cell);
+                                    break;
+                                }
+                                else {
+                                    cell.parentNode.insertBefore(td, cell.nextElementSibling);
+                                    break;
+                                }
+                            }
+                        }
+                        else { // has colspan
+                            // if colspan starts at cIndex
+                            if (colIndex === indexes[0]) {
+                                if (where === 'before') {
+                                    cell.parentNode.insertBefore(td, cell);
+                                    break;
+                                }
+                                else {
+                                    colspan = Number(cell.getAttribute('colspan'));
+                                    cell.setAttribute('colspan', (colspan + 1));
+                                    break;
+                                }
+                            }
+                            // if colspan ends at cIndex
+                            else if (colIndex === indexes[indexes.length - 1]) {
+                                if (where === 'before') {
+                                    colspan = Number(cell.getAttribute('colspan'));
+                                    cell.setAttribute('colspan', (colspan + 1));
+                                    break;
+                                }
+                                else {
+                                    cell.parentNode.insertBefore(td, cell.nextElementSibling);
+                                    break;
+                                }
+                            }
+                            // cIndex not in colspan
+                            else if (indexes.indexOf(colIndex) === -1) {
+                                continue;
+                            }
+                            // if cIndex falls between colspan cells
+                            else {
+                                colspan = Number(cell.getAttribute('colspan'));
+                                cell.setAttribute('colspan', (colspan + 1));
+                                break;
+                            }
+                        }
+                    }
+                }
+            },
+            findTdFromCursor = function findTdFromCursor() {
+                var selection = window.getSelection(), range = selection.getRangeAt(0), node;
+
+                node = range.startContainer;
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    if (node.matches('td') === false) {
+                        node = node.closest('td');
+                    }
+                }
+                else {
+                    node = node.parentNode;
+                    if (node.matches('td') === false) {
+                        node = node.closest('td');
+                    }
+                }
+
+                return node;
+            };
+
+        updateCellIndexAndSpan(document.querySelector('table'));
+
+        beforeBtn.addEventListener('click', function beforeOnClick() {
+            var table, node, indexes;
+
+            node = findTdFromCursor();
+            table = node.closest('table');
+            indexes = node.dataset.index.split(',');
+            insertColumn(table, Number(indexes[0]), 'before');
+            updateCellIndexAndSpan(table);
+        }, false);
+        afterBtn.addEventListener('click', function afterOnClick() {
+            var table, node, indexes;
+
+            node = findTdFromCursor();
+            table = node.closest('table');
+            indexes = node.dataset.index.split(',');
+            if (indexes.length === 1) {
+                insertColumn(table, Number(indexes[0]), 'after');
+            }
+            else {
+                insertColumn(table, Number(indexes.pop()), 'after');
+            }
+            updateCellIndexAndSpan(table);
+        }, false);
+    };
+    </script>
+</body>
+</html>

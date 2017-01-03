@@ -1,0 +1,642 @@
+body {
+    font-family: "Roboto Regular", Arial, sans-serif;
+    color: #454545;
+    background: #fff;
+}
+
+* {
+  outline: none;
+}
+
+body * {
+  box-sizing: -webkit-border-box;
+  box-sizing: -moz-border-box;
+  box-sizing: border-box;
+}
+
+/* Clearing floats */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.btn {
+  padding: 3px 20px;
+  font-family: "Roboto Regular", Arial, sans-serif;
+  line-height: 22px;
+  background: #4aaf2d;
+  color: #fff;
+  border: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+}
+
+.btn:hover {
+  background: #569626;
+}
+
+.offline-page {
+    background: #eee;
+}
+
+.offline-page .container {
+  padding: 0 0;
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+}
+
+.offline-page .article-details {
+    flex: none;
+    border-radius: 2px;
+    background: #fff;
+    float: left;
+    width: 224px;
+    line-height: 18px;
+    color: #313131;
+    padding: 20px;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: 15px;
+}
+
+.offline-page .article-details dt {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.offline-page .article-details dd {
+    padding: 1px 0 6px;
+    font-size: 14px;
+}
+
+.offline-page .article-cover-img {
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.offline-page .right-content {
+    width: 720px;
+    float: left;
+    margin: 0 0 0 35px;
+    /* line-height: 28px !important; */
+    color: #414141;
+    border-right: 2px solid #fff;
+    padding: 0 25px 0 0;
+    box-sizing: border-box;
+    flex: none;
+}
+
+.offline-page .content-list {
+  font: normal 14px/20px "Roboto Light", arial, sans-serif;
+}
+
+.offline-page .content-list h2 {
+    font-size: 16px;
+    /* line-height: 28px; */
+}
+
+.offline-page .content-list .info {
+    font-size: 14px;
+    margin: 8px 0 8px 0;
+    line-height: 24px;
+}
+
+.offline-page .content-list .submit-title {
+    font-size: 16px;
+    color: #DC7B03;
+}
+
+.offline-page .welcome-content {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.offline-page .welcome-content p {
+    font-size: 21px;
+    line-height: 37px;
+}
+
+.offline-page .screen-list li p {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 0 0 20px;
+    width: 580px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.offline-page .screen-list li .img-list {
+  border: 2px solid #7e7e7e;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 65px;
+  height: 60px;
+  display: inline-block;
+  vertical-align: middle;
+  background: white;
+}
+
+.offline-page .screen-list li {
+  overflow: hidden;
+  padding: 7px 0 7px;
+}
+
+.offline-page .right-content footer {
+  font: normal 14px/20px "Roboto Light", arial, sans-serif;
+  margin: 8px 0;
+  bottom: 0;
+  padding: 0 0 10px;
+  color: #414141;
+  font-size: 14px;
+  clear: both;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.offline-page .right-content .author-help {
+    display: inline-block;
+    width: 580px;
+}
+
+.offline-page .right-content .author-help a {
+  text-decoration: underline;
+  color: #1c50d5;
+}
+
+nav a {
+    line-height: 25px;
+}
+
+.top-menu {
+    width: 980px;
+    margin: 0 auto;
+    text-align: right;
+    padding-top: 5px;
+}
+
+.help {
+    padding: 3px 10px 0 6px;
+    display: inline-block;
+}
+
+
+
+.article-details.article-cover-img {
+  display: none;
+}
+
+.related-link.hide, .submission-link.hide, .referee-link.hide {
+    display: none;
+}
+
+.unsupport-browser .proceed {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url('/images/ajax-loader.gif') no-repeat center center #aaaaaa;
+    opacity: 0.6;
+}
+
+.overlay-image {
+    top: 0;
+    left: 0;
+    width: 132px;
+    height: 178px;
+    z-index: 999;
+    background: url('/images/ajax-loader.gif') no-repeat center center #aaaaaa;
+}
+
+.offline-page .container.EditorC .screen-list li p {
+    padding: 0;
+}
+.offline-page .flash-message-container.hide {
+    display: none;
+}
+.offline-page .flash-message-container.show {
+    display: block;
+}
+.offline-page .flash-message-container {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    background-color: #d9edf7;
+    color: #31708f;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 3px #31708f;
+    -moz-box-shadow: 0 0 3px #31708f;
+    box-shadow: 0 0 3px #31708f;
+    font: 16px/2.5 "Roboto Regular", Arial, sans-serif;
+    width: 100%;
+    padding: 2px 0px;
+  }
+
+.proceed[disabled] {
+    opacity: 0.3;
+    cursor: default;
+}
+.proceed[disabled]:hover {
+    background: #4aaf2d;
+}
+.error-message-container {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    background-color: #F7D9D9;
+    color: #8F3131;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 3px #8F3131;
+    -moz-box-shadow: 0 0 3px #8F3131;
+    box-shadow: 0 0 3px #8F3131;
+    font: 16px/2.5 "Roboto Regular", Arial, sans-serif;
+    width: 100%;
+    padding: 2px 0px;
+}
+.error-message-container.hide{
+  display: none;
+}
+.error-message-container.show{
+  display: block;
+}
+.wrapper.hide{
+  display: none;
+}
+.wrapper.show{
+  display: block;
+}
+.edit-content {
+  margin: 20px 0 0 0;
+}
+.edit-content .screen-list li:first-child {
+  border-top: 1px solid #ccc;
+}
+.edit-content .screen-list li {
+  padding: 22px;
+  border-bottom: 1px solid #ccc;
+}
+.edit-content .content {
+  font-size: 19px;
+  float: left;
+}
+.edit-content .count {
+  font-size: 19px;
+  float: right;
+  color: green;
+}
+.edit-content .count.red {
+  color: red;
+}
+.content-list .instruction {
+  margin: 20px 0 0 0;
+  font-size: 16px;
+  font-style: italic;
+  padding: 20px;
+}
+.content-list .instruction .red {
+  color: red;
+}
+
+.localization {
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 3px;
+}
+
+.localization .locale-link {
+    padding-right: 3px;
+    opacity: 0.4
+}
+.localization .locale-link.active {
+    opacity: 1
+}
+.top-menu .help .help-link {
+  text-decoration: underline;
+  color: #1c50d5;
+  font-size: 14px;
+}
+
+
+.offline-page .content-list h2 {
+    color: #fb971b;
+    font-family: "Roboto Regular", Arial, sans-serif;
+    line-height: 28px;
+    font-weight: normal;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 6px;
+}
+
+.offline-page .steps-annotate-title {
+    margin: 8px 0 0;
+    font-size: 15px;
+    color: #fb971b;
+}
+
+.offline-page ol.off-line-content-list {
+  margin: 8px 0 0;
+}
+
+.offline-page ol.off-line-content-list > li {
+  padding: 0 0 8px;
+}
+
+.offline-page .steps-annotate ul {
+  list-style: disc;
+  padding: 0 0 0 18px;
+  margin: 5px 0 0 16px;
+}
+
+.offline-page .steps-annotate ul li {
+  padding: 0 0 5px;
+}
+
+.offline-page .download-list {
+    margin: 10px 0 0 15px;
+}
+
+.offline-page .download-list ul {
+    border: 1px solid #bebebe;
+    display: inline-block;
+    width: 50%;
+}
+
+.offline-page .download-list ul li {
+  display: flex;
+  border-bottom: 1px solid #fff;
+}
+
+.offline-page .download-list ul .head {
+  font-weight: bold;
+  background: #b4ddf0;
+  border-bottom: 1px solid #bebebe;
+}
+
+.offline-page .download-list ul .title {
+  background: #dbdbdb;
+  border-top: 1px solid #e9e9e9;
+}
+
+.offline-page .download-list ul span,
+.offline-page .download-list ul a,
+.offline-page .download-list ul h3  {
+  flex: 1;
+  padding: 3px 5px;
+}
+
+.offline-page .download-list ul .title .size {
+  flex: 2;
+}
+
+.offline-page .upload-corrections {
+  position: relative;
+  background: #ceefd1;
+  border: 1px solid #bbe5bf;
+  padding: 8px 10px;
+  margin: 6px 15px;
+  width: 75%;
+}
+
+.offline-page .upload-corrections h3 {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 0 8px;
+}
+
+.offline-page .upload-corrections p {
+  padding: 4px 0;
+}
+
+.offline-page section.upload-corrections input[type="button"] {
+  float: right;
+  margin: 0;
+}
+
+.offline-page .upload-corrections p span {
+  font-size: 12px;
+}
+
+.offline-page .upload-corrections button,
+.offline-page .upload-corrections a {
+  background: none;
+  border: 0;
+  font-family: "Roboto Light", Arial, sans-serif;
+  font-size: 13px;
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.offline-page ul.uploaded-file-list li {
+  display: flex;
+  border: 1px solid #bae1be;
+  padding: 2px 0;
+  background: #eefef0;
+}
+
+.offline-page ul.uploaded-file-list span {
+  flex: 1;
+  border-left: 1px solid #bae1be;
+  padding: 2px 5px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.offline-page ul.uploaded-file-list span:first-child,
+.offline-page ul.uploaded-file-list .size {
+  border-left: 0;
+}
+
+.offline-page ul.uploaded-file-list .file-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+  width: 228px;
+  text-align: left;
+}
+.offline-page ul.uploaded-file-list .attachments-name {
+    flex: none;
+    width: 320px;
+}
+
+.offline-page ul.uploaded-file-list .size {
+  text-align: right;
+}
+
+.offline-page footer {
+  border-top: 1px solid #ccc;
+}
+.offline-page footer .buttons {
+  margin-top: 8px;
+}
+
+.offline-page .attachment-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url('/images/ajax-loader.gif');
+    background-color: #aaa;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+.offline-page i {
+  font-style: italic;
+}
+
+.offline-page u {
+  text-decoration: underline;
+}
+
+.offline-page b,
+.offline-page strong {
+  font-weight: bold;
+}
+
+.offline-page sub {
+  vertical-align: sub;
+}
+
+.offline-page sup {
+  vertical-align: super;
+}
+
+.dialog-wrapper .footer .button[role="button"] {
+    font-size: 1.0em;
+    margin-right: 10px;
+    padding: 3px 12px;
+    border-radius: 2px;
+}
+
+.offline-page .upload-corrections p span.limit {
+  text-align: right;
+  margin-left: 10px;
+}
+
+.offline-page .attach-file {
+  background-color: #ffffff;
+  width: 72%;
+}
+dialog + .backdrop {
+    background: rgba(78, 78, 78, 0.44)
+}
+
+dialog.alert header, dialog.alert footer,
+dialog.confirmation header, dialog.confirmation footer,
+dialog.connectivity header, dialog.connectivity footer,
+dialog.connectivityOn header, dialog.connectivityOn footer {
+    padding: 0.5em 0.6em 0.5em 1.3em
+}
+
+dialog.alert header, dialog.confirmation header, dialog.connectivity header,
+dialog.connectivityOn header  {
+    background-color: #525252;
+    color: #fff;
+}
+
+dialog.alert .dialog-wrapper .content,
+dialog.confirmation .dialog-wrapper .content,
+dialog.connectivity .dialog-wrapper .content,
+dialog.connectivityOn .dialog-wrapper .content {
+    color: #505050;
+    font-size: 1em;
+    line-height: 1.2em;
+    text-align: left;
+}
+dialog.alert .dialog-wrapper .prevent-checkbox,
+dialog.connectivity .dialog-wrapper .prevent-checkbox,
+dialog.connectivityOn .dialog-wrapper .prevent-checkbox {
+    font-size: 1.1em;
+    padding: 0.6em 0 0.6em 0;
+}
+
+dialog.alert .dialog-wrapper .prevent-checkbox input,
+dialog.connectivity .dialog-wrapper .prevent-checkbox input,
+dialog.connectivityOn .dialog-wrapper .prevent-checkbox input {
+    vertical-align: middle;
+}
+
+dialog.alert .dialog-wrapper .close[role="button"],
+dialog.confirmation .dialog-wrapper .close[role="button"],
+dialog.connectivity .dialog-wrapper .close[role="button"],
+dialog.connectivityOn .dialog-wrapper .close[role="button"]  {
+    background: none;
+}
+
+dialog.alert .dialog-wrapper footer .ok.button[role="button"],
+dialog.alert .dialog-wrapper footer .yes.button[role="button"],
+dialog.connectivity .dialog-wrapper footer .ok.button[role="button"],
+dialog.connectivity .dialog-wrapper footer .yes.button[role="button"],
+dialog.connectivityOn .dialog-wrapper footer .ok.button[role="button"],
+dialog.connectivityOn .dialog-wrapper footer .yes.button[role="button"] {
+    background-color: #525252;
+    border: 1px solid #525252;
+}
+
+dialog.alert .dialog-wrapper h2,
+dialog.confirmation .dialog-wrapper h2,
+dialog.connectivity .dialog-wrapper h2,
+dialog.connectivityOn .dialog-wrapper h2 {
+    font-size: 1.1em;
+}
+
+dialog.alert .dialog-wrapper footer .button[role="button"],
+dialog.connectivity .dialog-wrapper footer .button[role="button"],
+dialog.connectivityOn .dialog-wrapper footer .button[role="button"]  {
+    font-size: 0.9em;
+    padding: 0.3em 0.6em;
+    margin: 0;
+    cursor: pointer;
+}
+
+.upload-corrections.readonly ul > li > span:nth-child(2),
+.upload-corrections.readonly p, footer .buttons.readonly {
+    display: none;
+}
+dialog.connectivity header,dialog.connectivityOn header {
+    display: none;
+}
+dialog.connectivity .dialog-wrapper section, dialog.connectivityOn .dialog-wrapper section {
+    padding: 2.5em 1.3em;
+}

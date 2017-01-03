@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Superscript Plugin</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/superscript.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/dataset.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+  </head>
+  <body>
+    <div>Test Superscript</div>
+    <div data-request-id="onSuperscript" class="onSuperscript">Hello <span class='optbold'>World</span>!!</div>
+    <div class="superscript-button"></div><br />
+    <div>Test Undo</div>
+    <div data-request-id="onUndo" class="onUndo"><span class='optsup'>Hello </span><span class='optbold optsup'>World</span><span class='optsup'>!!</span></div>
+    <div class="undo-button"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/EventBus', 'scripts/SuperscriptMenuItem'
+        ],
+        function(EventBus, SuperscriptMenuItem) {
+            var win = window,
+                superscriptMenuItem,
+                superscriptMenuContainer,
+                contextualMenu;
+            EventBus.subscribe('Superscript:onRequest', function (data) {
+                console.log('Superscript:onRequest', data);
+            });
+            EventBus.subscribe('Superscript:onComplete', function (fragment) {
+                var requestId = fragment.firstChild.dataset.requestId,
+                    elementToBeReplaced = win.document.querySelector('[data-request-id="' + requestId + '"]');
+                console.log('Superscript:onComplete', fragment.cloneNode(true));
+                elementToBeReplaced.parentNode.replaceChild(fragment, elementToBeReplaced);
+            });
+            superscriptMenuItem = new SuperscriptMenuItem(EventBus, win);
+            superscriptMenuContainer = superscriptMenuItem.render();
+            win.document.querySelector('.superscript-button').appendChild(superscriptMenuContainer);
+            domFragment = win.document.createDocumentFragment();
+            domFragment.appendChild(document.querySelector('.onSuperscript').cloneNode(true));
+            contextualMenu = {
+                domFragment: domFragment,
+                context: []
+            };
+            superscriptMenuItem.setContextualMenu(contextualMenu);
+            superscriptMenuItemForUndo = new SuperscriptMenuItem(EventBus, win);
+            superscriptMenuContainer = superscriptMenuItemForUndo.render();
+            domFragmentForUndo = win.document.createDocumentFragment();
+            domFragmentForUndo.appendChild(document.querySelector('.onUndo').cloneNode(true));
+            contextualMenu = {
+                domFragment: domFragmentForUndo,
+                context: ['onSuperscript']
+            };
+            win.document.querySelector('.undo-button').appendChild(superscriptMenuContainer);
+            superscriptMenuItemForUndo.setContextualMenu(contextualMenu);
+        });
+    };
+    </script>
+  </body>
+</html>

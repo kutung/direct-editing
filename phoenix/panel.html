@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Panel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+</head>
+<body>
+  <div class="panelContainer1"></div>
+  <div class="panelContainer2"></div>
+
+    <script>
+    window.onload = function onLoad() {
+        require([
+            'scripts/Panel', 'scripts/EventBus'
+        ],
+        function onDepsLoad(Panel, EventBus) {
+            var panel = new Panel(
+                    document.querySelector('.panelContainer1'), document, window, EventBus
+                ),
+                content1 = document.createElement('div'),
+                content2 = document.createElement('div');
+
+            panel.renderComponentStyle();
+            panel.render();
+            panel.setTitle('Queries');
+            content1.innerHTML = 'test';
+            panel.add(content1);
+
+            panel = new Panel(
+                document.querySelector('.panelContainer2'), document, window, EventBus
+            );
+            panel.renderComponentStyle();
+            panel.render();
+            content2.innerHTML = 'test';
+            panel.setTitle('Insert');
+            panel.add(content2);
+        });
+    };
+    </script>
+  </body>
+</html>

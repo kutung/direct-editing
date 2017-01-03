@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Notifier</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/notifier.css" />
+
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script src="scripts/polyfills/classList.js"></script>
+    <script src="scripts/polyfills/polyfills.js"></script>
+    <script src="scripts/polyfills/assign.js"></script>
+    <script>
+        CKEDITOR_BASEPATH = '/scripts/libs/ckeditor-4.5.9/';
+        require.config({
+            baseUrl: "/",
+            urlArgs: "v5",
+            'paths': {
+                'customer': 'scripts/customer/elsevier'
+            },
+            // For developement
+            // urlArgs: "bust=" +  (new Date()).getTime()
+            'map': {
+                '*': {
+                    'css': 'scripts/libs/css.js',
+                    'ckeditor': 'scripts/libs/ckeditor-4.5.9/ckeditor',
+                    'he': 'scripts/libs/he-0.5.0',
+                    'sax': 'scripts/libs/sax-0.6.1',
+                    'rangy': 'scripts/libs/rangy-core',
+                    'rangyselection': 'scripts/libs/rangy-selectionsaverestore',
+                    'uri': 'scripts/libs/uri/uri-1.17.0',
+                    'jquery': 'scripts/libs/jquery/jquery-1.10.1.min',
+                    'jquery-en-us': 'scripts/libs/jquery/en-us',
+                    'pagebreaker': 'pagination/Layout_3g/scripts/PageBreaker',
+                    'scripts/polyfills/classList': 'scripts/polyfills/classList',
+                    'scripts/polyfills/dataset': 'scripts/polyfills/dataset',
+                    'scripts/polyfills/polyfills': 'scripts/polyfills/polyfills',
+                    'scripts/polyfills/assign': 'scripts/polyfills/assign',
+                    'scripts/polyfills/beacon': 'scripts/polyfills/beacon',
+                    'scripts/polyfills/dialog': 'scripts/polyfills/dialog',
+                    'scripts/radio': 'scripts/radio',
+                    'scripts/Helper': 'scripts/Helper',
+                    'scripts/Request': 'scripts/Request',
+                    'scripts/RequestBuilder': 'scripts/RequestBuilder',
+                    'scripts/Panel': 'scripts/Panel',
+                    'scripts/TabPanel': 'scripts/TabPanel',
+                    'scripts/TableCharAlign': 'scripts/TableCharAlign',
+                    'scripts/Logger': 'scripts/Logger',
+                    'scripts/ServerLogger': 'scripts/ServerLogger',
+                    'scripts/AbstractMenuItem': 'scripts/AbstractMenuItem',
+                    'scripts/Annotate': 'scripts/Annotate',
+                    'scripts/EventBus': 'scripts/EventBus',
+                    'scripts/ContextualMenu': 'scripts/ContextualMenu',
+                    'scripts/SelectBox': 'scripts/SelectBox',
+                    'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                    'scripts/ConfigReader': 'scripts/ConfigReader'
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="insert-container"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/Notifier', 'scripts/EventBus'
+        ],
+        function(Notifier, EventBus) {
+            var notifier;
+
+            notifier = new Notifier(window, document, EventBus);
+            notifier.error('Sample-1', {'autoclose': false});
+            notifier.info('2', {'autoclose': false});
+            notifier.success('3', {'autoclose': false});
+            notifier.warning('4', {'callback': function(){console.log('close');}});
+            setTimeout(function() {
+                notifier.success('5', {'dismiss': true});
+            }, 2000);
+            setTimeout(function() {
+                notifier.success('6', {'forceDismiss': true});
+            }, 4000);
+            EventBus.publish('notifier:success', 'new');
+        });
+    };
+    </script>
+
+
+</body>
+</html>
+

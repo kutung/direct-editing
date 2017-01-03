@@ -1,0 +1,43 @@
+define([], function landingPageLocaleLoader() {
+    var locale = {
+        'landing.page.header.slogan': 'The fastest, easiest way to correct and submit your proof',
+        'landing.page.article': 'Article',
+        'landing.page.corresponding.author': 'Corresponding author',
+        'landing.page.journal': 'Journal',
+        'landing.page.our.reference': 'Our reference',
+        'landing.page.date.article.posted': 'Date article posted',
+        'landing.page.article.number': 'Article number',
+        'landing.page.author.submission.date': 'Date author corrections submitted',
+        'landing.page.top.menu.help': 'Help',
+        'landing.page.welcome': 'Welcome',
+        'landing.page.footer.popup.blocker.text': 'You need to switch off pop up blockers',
+        'landing.page.footer.general': 'For General',
+        'landing.page.footer.author': 'Author',
+        'landing.page.footer.help': 'help',
+        'landing.page.footer.click.here': 'click here',
+        'landing.page.proceed': 'Proceed',
+        'landing.page.below.welcome.instruction.editor': 'Your article is just one step away from its final publication. And this is your opportunity to view and correct it one last time. Please mark all of your corrections clearly.',
+        'landing.page.editor.instruction.author.name': 'Check the author corrections highlighted in yellow. You can modify or delete them as needed.',
+        'landing.page.editor.instruction.edit.log': 'Check copyeditor edits, highlighted in the text in green (inserted) or red (deleted). Click on \'Edit Log\', and choose \'Copy Editor\' tab to see the list of changes. To reject a change, select the change and Undo. To accept a change, no action is needed.',
+        'landing.page.editor.instruction.queries': 'Verify author response to copyeditor queries and modify as needed.',
+        'landing.page.editor.instruction.graphics': 'If required, annotate the graphics, and we will edit and replace them as instructed.',
+        'landing.page.editor.instruction.proof': 'To view your article as a print proof, click on Proof to generate it. The print proof contains inline changes you made in the Edit view. Toggle between the two views to see your changes.',
+        'landing.page.below.welcome.instruction.validator': 'This article has been proof-checked by the author. Please ensure that you check and clear the items listed before passing onto pagination.',
+        'landing.page.validator.instruction': 'Instructions',
+        'landing.page.validator.attachments.to.queries': 'Attachments to queries',
+        'landing.page.validator.total.attachments': 'Total Attachments',
+        'landing.page.validator.query.response': 'Query responses',
+        'landing.page.validator.reject': 'Rejected CE changes by author',
+        'landing.page.validator.edits': 'Edits',
+        'landing.page.validator.instrcution.graphics': 'Instructions on Graphics',
+        'landing.page.validator.edit.instrcution.equations': 'Edits/Instructions on equations',
+        'landing.page.red': 'Red',
+        'landing.page.attention': 'indicates action required by',
+        'landing.page.replier.query.from.mc': 'Queries from ProofReader',
+        'landing.page.replier.attachments.to.queries': 'Attachments to queries',
+        'landing.page.replier.total.attachments': 'Total Attachments',
+        'landing.page.below.welcome.instruction.validator.offline': 'This article has come back from author as annotated PDF.'
+    };
+
+    return locale;
+});

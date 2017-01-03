@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Session Report</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <input type="button" value="Session Report" class="sessionBtn"/>
+    <script>
+        window.onload = function () {
+            require([
+                'scripts/SessionReport', 'scripts/EventBus'
+                ],
+                function(SessionReport, EventBus) {
+                    EndPoints  = {
+                        generateReportEndPoint: 'http://localhost:8001/index.php/generateSessionReport',
+                        getReportEndPoint: 'http://localhost:8001/index.php/getSessionReport'
+                    };
+                    var sessionReport = new SessionReport(
+                        window, document, '1234567', EndPoints
+                    );
+                    document.querySelector('.sessionBtn').addEventListener('click', function(){
+                        sessionReport.generateReport();
+                    });
+                });
+        };
+    </script>
+</body>
+</html>

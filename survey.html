@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Survey</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/dialog.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <div class="dialog-container"></div>
+    <script>
+        window.onload = function () {
+            require([
+                'scripts/SurveyHandler',  'scripts/DialogPopupPanel',
+                'scripts/EventBus'
+                ],
+                function(SurveyHandler, DialogPopupPanel, EventBus) {
+                    var dialogPopupPanel = new DialogPopupPanel(
+                        document.querySelector('.dialog-container'), document, window, EventBus
+                    ),
+                    surveyHandler = new SurveyHandler(
+                        window, document, '1234567', dialogPopupPanel
+                    );
+                    EventBus.subscribe('Survey:Close', function() {
+                        console.log('close');
+                    });
+                    EventBus.subscribe('Survey:Trigger', function() {
+                        console.log('trigger');
+                    });
+                    surveyHandler.render('http://google.com');
+                });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* Edit Log */
+.edit-log-panel {
+    position: fixed;
+    right: -400px;
+    top: 0px;
+    z-index: 1;
+    width: 350px;
+    background: #FFFCFC;
+    min-height: 100px;
+    font-size: 14px;
+    margin: 40px 0 0 0;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    -webkit-transition: right 0.5s ease;
+    -moz-transition: right 0.5s ease;
+    -o-transition: right 0.5s ease;
+    transition: right 0.5s ease;
+}
+
+.show-log {
+    right: 0;
+}
+
+.edit-log-panel ol{
+    list-style-position: outside;
+    margin: 0 15px;
+    padding: 6px;
+}
+
+
+/* overwrite Phoenix panel.css  */
+
+.edit-log-panel .panel.open .panel-header {
+    height: auto;
+    background: #656666;
+}
+
+.edit-log-panel .panel .panel-header {
+    border-bottom: 0 none;
+}
+
+.edit-log-panel .panel.open .panel-header .icon {
+    background-color: #656666;
+    border-right: 1px solid #CEC9C9;
+}
+
+.edit-log-panel .panel .panel-header .icon {
+    background: url('../images/edit-list.png') center no-repeat;
+    width: 35px;
+    height: 35px;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+}
+
+.edit-log-panel .panel .panel-header .text {
+    height: auto;
+    padding: 6px 12px;
+}

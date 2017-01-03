@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>QueryPanel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/tabpanel.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <input type="file" id="fileElem" accept="image/*">
+<script>
+    require([
+            'scripts/RequestBuilder', 'scripts/RequestQueue'
+        ],
+        function(RequestBuilder, RequestQueue) {
+            var file = document.querySelector('input[type="file"]'),
+                uploadFile = function () {
+                    var fd = new FormData(), request,
+                        rb = new RequestBuilder(), queue = new RequestQueue();
+
+                    fd.append('file', file.files[0]);
+                    fd.append('submit', 'true');
+
+                    rb.setUrl('/upload.php');
+                    rb.setMethod('POST');
+                    rb.setData(fd);
+                    rb.setSuccessCallback(function (responseText) {
+                        alert(responseText);
+                        file.value = '';
+                    });
+                    rb.setFailureCallback(function (responseText) {
+                        alert('Upload Failed: ' + responseText);
+                    });
+                    rb.setTimeoutCallback(function (response) {
+                        alert('Upload Timed Out');
+                    });
+                    request = rb.build();
+                    queue.send(request);
+                };
+
+            file.addEventListener('change', uploadFile, false);
+        }
+    );
+</script>
+</body>
+</html>

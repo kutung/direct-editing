@@ -1,0 +1,46 @@
+.pagination-container .page {
+    height: 262mm;
+    width: 192mm;
+}
+.pagination-container .landscapepage {
+    height: 192mm;
+    width: 262mm;
+}
+.pagination-container .page .page-margin {
+    height: 100%;
+    width: 152mm;
+    margin: 0 25mm 0 15mm;
+}
+.pagination-container .landscapepage .page-margin {
+    height: 100%;
+    width: 232mm;
+    margin: 0 15mm 0 15mm;
+}
+.pagination-container .page img {
+    max-height: 213.17mm;
+}
+.pagination-container .firstpage img {
+    max-height: 188.03mm;
+}
+.pagination-container .landscapepage img {
+    max-height: 165.4mm;
+}
+.pagination-container .firstpage .page-margin > .staticitem:first-child {
+    min-height: 47.4mm;
+}
+.pagination-container .otherpage .page-margin > .staticitem:first-child {
+    min-height: 22.26mm;
+}
+.pagination-container .page .page-margin > .staticitem:last-child {
+    min-height: 26.57mm;
+}
+.pagination-container .landscapepage .page-margin > .staticitem:first-child,
+.pagination-container .landscapepage .page-margin > .staticitem:last-child {
+    min-height: 13.3mm;
+}
+.pagination-container .column-one {
+    width: 35mm;
+}
+.pagination-container .column-two {
+    width: 117mm;
+}

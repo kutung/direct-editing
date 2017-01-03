@@ -1,0 +1,72 @@
+.pagination-container .page {
+	height: 262mm;
+	width: 192mm;
+}
+.pagination-container .landscapepage {
+	height: 192mm;
+	width: 262mm;
+}
+.pagination-container .page .page-margin {
+	height: 100%;
+	width: 164mm;
+	margin: 0mm 14mm;
+}
+.pagination-container .landscapepage .page-margin {
+	height: 100%;
+	width: 234mm;
+	margin: 0mm 14mm;
+}
+.pagination-container .page img {
+    max-height: 224mm;
+}
+.pagination-container .firstpage img {
+    max-height: 182mm;
+}
+.pagination-container .landscapepage img {
+    max-height: 164mm;
+}
+.pagination-container .firstpage .page-margin > .staticitem:first-child {
+    min-height: 48mm;
+}
+.pagination-container .versopage .page-margin > .staticitem:first-child,
+.pagination-container .rectopage .page-margin > .staticitem:first-child {
+    min-height: 19mm;
+}
+.pagination-container .page .page-margin > .staticitem:last-child {
+    min-height: 19mm;
+}
+.pagination-container .firstpage .page-margin > .staticitem:last-child {
+    min-height: 32mm;
+}
+.pagination-container .landscapepage .page-margin > .staticitem:first-child,
+.pagination-container .landscapepage .page-margin > .staticitem:last-child {
+    min-height: 14mm;
+}
+
+@media print {
+  @page {
+    margin: 0px;
+    size: 192mm 262mm;
+  }
+
+  @page landscape {
+    size: 192mm 262mm landscape;
+  }
+
+  .page {
+    height: 262mm !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    page-break-inside: avoid;
+  }
+
+  .landscapepage {
+    height: 192mm !important;
+    page: landscape;
+  }
+
+  .pager .destination-container {
+    page-break-inside: always;
+  }
+}

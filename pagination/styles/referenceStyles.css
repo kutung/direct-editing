@@ -1,0 +1,22 @@
+.pager .pagination-container .typeCommonRef .ce_label,
+.pager .pagination-container .typeOneRef .ce_label,
+.pager .pagination-container .typeCommonRef .sb_volume-nr {
+	font-weight: normal;
+}
+
+.pager .pagination-container .typeCommonRef .sb_title,
+.pager .pagination-container .typeCommonRef .ce_italic {
+	font-style: normal;
+}
+
+.pager .pagination-container .typeCommonRef .ce_note .newline_simplepara {
+	display: inline;
+}
+
+.pager .pagination-container .typeOneRef .sb_issue .sb_date:before {
+	content: "(";
+}
+
+.pager .pagination-container .typeOneRef .sb_issue .sb_date:after {
+	content: ")";
+}

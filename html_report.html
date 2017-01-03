@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Session Report</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/dialog.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <div class='reportContainer'>
+        This is a sample content
+    </div>
+    <div class="dialog-container"></div>
+    <input type="button" value="Get Report" class="htmlReportBtn"/>
+    <script>
+        window.onload = function () {
+            require([
+                'scripts/HtmlReport', 'scripts/EventBus', 'scripts/DialogPopupPanel'
+                ],
+                function(HtmlReport, EventBus, DialogPopupPanel) {
+                    EndPoints  = {
+                        generateHtmlReportEndPoint: 'http://api.pagecentral.com/app/web/index.php/getHtmlReport'
+                    };
+                    var dialogPopupPanel = new DialogPopupPanel(
+                        document.querySelector('.dialog-container'),
+                        document, window, EventBus
+                    ),
+                    htmlReport = new HtmlReport(
+                        window, document, '1234567', EndPoints, dialogPopupPanel
+                    );
+                    EventBus.subscribe('Survey:Close', function() {
+                        console.log('close');
+                    });
+                    EventBus.subscribe('auProofing:Trigger', function() {
+                        console.log('auProofing trigger');
+                    });
+                    EventBus.subscribe('mcProofing:Trigger', function() {
+                        console.log('mcProofing trigger');
+                    });
+                    EventBus.subscribe('edProofing:Trigger', function() {
+                        console.log('edProofing trigger');
+                    });
+                    EventBus.subscribe('jmProofing:Trigger', function() {
+                        console.log('jmProofing trigger');
+                    });
+                    document.querySelector('.htmlReportBtn').addEventListener('click', function() {
+                        htmlReport.render();
+                    });
+                });
+        };
+    </script>
+</body>
+</html>

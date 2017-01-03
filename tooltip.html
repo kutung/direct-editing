@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>ToolTip</title>
+    <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="styles/tooltip.css"/>
+    <style>
+        .container {
+            margin: 20px;
+        }
+        .comntText {
+            display: none;
+        }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+<div id="tooltip">
+    <div class="container">
+        <span class="optdel">sample</span>
+    </div>
+    <div class="container">
+        <span class="optsup optbold optitalic optcomment">sample<span class="comntText">This is a comment</span></span>
+    </div>
+    <div class="container">
+        ew ewqd adas dsad as dsa sdsad asd <span class="optsub">sample</span>
+        <span class="op">sdsadas d</span>
+    </div>
+    <div class="container">
+        <span class="optitalic">sample</span>
+    </div>
+</div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/ToolTip', 'scripts/EventBus'
+        ],
+        function(ToolTip, EventBus) {
+            var dom = document.querySelector('#tooltip'),
+            tooltipBody;
+
+            var tt = new ToolTip(window, document, EventBus);
+            tt.render(dom);
+        });
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>InstructionPanel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="phoenix/styles/panel.css" />
+    <link rel="stylesheet" type="text/css" href="styles/tabpanel.css" />
+    <link rel="stylesheet" type="text/css" href="styles/instructpanel.css" />
+    <style>
+    .instruction-container {
+        width: 300px;
+        border: 1px solid #474747;
+    }
+    </style>
+    <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="phoenix/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+    <script src="scripts/config/Configuration.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <div class="instruction-container"></div>
+    <script>
+    window.onload = function () {
+        require([
+             'scripts/ConfigReader','scripts/InstructPanel', 'scripts/EventBus', 'scripts/RequestQueue'
+        ],
+        function(Config, InstructPanel, EventBus, RequestQueue) {
+            var configReader = new Config(window);
+
+            configReader.load();
+            EventBus.subscribe('Configuration:Loaded', function configureLoad() {
+var queue = new RequestQueue(),
+                instructPanel1 = new InstructPanel(
+                    document.querySelector('.instruction-container'),
+                    document, window, EventBus, queue, {
+                        uri: '/upload.php',
+                        deleteUri: '/delete.php'
+                    }
+                );
+            instructPanel1.render();
+            instructPanel1.setUploadLimit(15*1024*1024);
+            instructPanel1.setTitle('Instruction');
+            instructPanel1.setInstruction('Some instruction');
+            instructPanel1.focusOnInstruction();
+            instructPanel1.addUploadedFile(
+                'Dog.jpg', 'some-url', 'file-1234', 104354
+            );
+            instructPanel1.addUploadedFile(
+                'Script.doc', 'some-url', 'file-1244', 342342
+            );
+            instructPanel1.addUploadedFile(
+                'Data.xlsx', 'some-url', 'file-1264', 3453453
+            );
+            instructPanel1.addUploadedFile(
+                'Comm.txt', 'some-url', 'file-1284', 4353453
+            );
+            window.instructPanel1 = instructPanel1;
+                });
+
+        });
+    };
+    </script>
+    <script>
+            CKEDITOR_BASEPATH = '/scripts/libs/ckeditor-4.4.7/';
+            require.config({
+                baseUrl: "/",
+                urlArgs: "v5",
+                'paths': {
+                    'customer': 'scripts/customer/elsevier'
+                },
+                // For developement
+                // urlArgs: "bust=" +  (new Date()).getTime()
+                'map': {
+                    '*': {
+                        'ckeditor': 'scripts/libs/ckeditor-4.4.7/ckeditor',
+                        'he': 'phoenix/scripts/libs/he-0.5.0',
+                        'sax': 'phoenix/scripts/libs/sax-0.6.1',
+                        'rangy': 'scripts/libs/rangy-core',
+                        'pagebreaker': 'pagination/Layout_3g/scripts/PageBreaker',
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                        'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog',
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/Panel': 'phoenix/scripts/Panel',
+                        'scripts/TabPanel': 'phoenix/scripts/TabPanel',
+                        'scripts/TableCharAlign': 'phoenix/scripts/TableCharAlign',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/AbstractMenuItem': 'phoenix/scripts/AbstractMenuItem',
+                        'scripts/Annotate': 'phoenix/scripts/Annotate',
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/ContextualMenu': 'phoenix/scripts/ContextualMenu',
+                        'scripts/SelectBox': 'phoenix/scripts/SelectBox',
+                        'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+                    }
+                }
+            });
+
+        </script>
+</body>
+</html>

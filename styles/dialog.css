@@ -1,0 +1,212 @@
+.dialog html, .dialog body {
+  height: 100%;
+}
+.dialog body, .dialog h2, .dialog p {
+  margin: 0;
+}
+.dialog body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  background-color: #FFF;
+  position: relative;
+}
+.dialog a {
+  text-decoration: none;
+}
+.dialog {
+  border: 2px solid #a1a1a1;
+  background: #fff;
+  position: fixed;
+  top: 12%;
+  z-index: 1000;
+  box-shadow: 0 0 6px #c5c5c5;
+  border-radius: 3px;
+  width: 864px;
+  left: 50%;
+  margin: 0px 0 0 -432px;
+}
+.dialog .title {
+  padding: 7px 12px;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+.dialog .title h2 {
+  font-size: 16px;
+  line-height: 22px;
+  text-shadow: 1px 1px 0px #eee;
+  float: left;
+}
+.dialog .title a {
+  float: right;
+  font-size: 12px;
+  line-height: 18px;
+  color: #333;
+  cursor: pointer;
+}
+.dialog .title a span {
+  display: inline-block;
+  padding: 1px 6px 3px;
+  background: #DA4143;
+  font-weight: bold;
+  color: #FFF;
+  font-size: 13px;
+  line-height: 15px;
+  border-radius: 2px;
+  margin: 0 0 0 5px;
+}
+.dialog .content {
+  padding: 15px;
+  background: #f7f7f7;
+  height: 360px;
+}
+.dialog .content p {
+  font-size: 12px;
+}
+.dialog .content p strong {
+  color: #DA4143;
+}
+.dialog-popup-container .hide {
+  display: none;
+}
+.dialog-popup-container .show {
+  display: block;
+}
+
+/* Smaller Modal */
+.dialog.small {
+  width: 369px;
+  margin: 0px 0 0 -211px;
+  top: 30%;
+}
+.dialog.small .content {
+  height: 100px;
+}
+.dialog.small a {
+  text-decoration: underline;
+}
+.dialog.small .footer {
+  padding: 10px;
+  float: right;
+}
+.dialog.small .close-button {
+ display: none;
+}
+
+/** **/
+
+.proof-equ-dialog.dialog {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	margin:0;
+	border:none;
+}
+.proof-equ-dialog .content .equation {
+	width:850px;
+	margin:0 auto;
+	background:#FFFFFF;
+	height:400px;
+	height: auto;
+}
+.proof-equ-dialog .content {
+	padding:0;
+	background:#FFFFFF;
+}
+.proof-equ-dialog .math-btn {
+	background:#f4f6fb;
+	padding:15px;
+	border-bottom:1px solid #e8e9ea;
+}
+.proof-equ-dialog .matheditor .matheditor-options {
+    padding: 0 0 3px;
+	width:850px;
+	margin:0 auto;
+}
+.proof-equ-dialog .dialog .content {
+	background:#FFFFFF;
+}
+.proof-equ-dialog.dialog .title {
+	display:none;
+}
+.proof-equ-dialog.dialog a.close-button {
+	position:relative;
+	right: 20px;
+	float: right;
+    top: 10px;
+}
+.proof-equ-dialog.dialog a.close-button:before {
+	color: #ff0a0a;
+    content: "\6a";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 18px;
+    width: 20px;
+    cursor: pointer;
+}
+.proof-equ-dialog.dialog .matheditor .math-btn .save, .proof-equ-dialog.dialog .cancel {
+	background:#474747;
+	width:100px;
+	height:30px;
+	border:none;
+	float:left;
+	display:block;
+	padding:10px;
+	box-sizing:border-box;
+	text-transform:capitalize;
+	line-height: 10px;
+    text-align: center;
+    font-weight: normal;
+	cursor:pointer;
+	color:#FFFFFF;
+}
+.proof-equ-dialog.dialog .cancel {
+	background:#989e9e;
+	margin-right:10px;
+}
+.proof-equ-dialog.dialog .math-btn.save-cancel-btn-group {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+	background:#FFFFFF;
+	border-bottom: none;
+	font-size: 12px;
+}
+.proof-equ-dialog.dialog .content p strong {
+	color:#231f20;
+	font-family: 'OpenSans-Bold';
+	font-weight:normal;
+}
+.proof-equ-dialog.dialog .content p{
+	 font-family: 'OpenSans-Regular';
+	 color:#231f20;
+	 font-size:12px;
+	 width: 850px;
+    margin: 20px auto 0;
+}
+.proof-equ-dialog.dialog .matheditor .info a {
+	text-decoration:none;
+	color:#c85a28;
+}
+.proof-dialog-cnt {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 460px;
+}
+
+
+
+
+

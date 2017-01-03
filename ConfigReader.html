@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Config Reader!</title>
+    <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+    <script src="scripts/config/Configuration.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/",
+            map: {
+                '*': {
+                    'scripts/EventBus': 'phoenix/scripts/EventBus',
+                    'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                    'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                    'scripts/Helper': 'phoenix/scripts/Helper',
+                    'scripts/Request': 'phoenix/scripts/Request',
+                    'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                    'scripts/ConfigReader': 'phoenix/scripts/ConfigReader',
+                    'scripts/radio': 'phoenix/scripts/radio'
+                }
+            }
+        });
+    </script>
+  </head>
+  <body class="editor">
+    <div>Config Reader!</div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/ConfigReader', 'scripts/EventBus',
+            'scripts/polyfills/assign'
+        ],
+        function(Config, EventBus) {
+            var configReader = new Config(window);
+            configReader.load();
+            EventBus.subscribe('Configuration:Loaded', function() {
+                console.log(Config.getRoute('loadEndPoint'));
+                console.log(Config.getRoute('saveAsPdfEndPoint'));
+                console.log(Config.getAll());
+            });
+        });
+    };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+.edit-summary-tab .tab-panel .header .text {
+    font-size: 11px;
+    font-weight: normal;
+    padding: 4px 10px;
+}
+
+.edit-summary-tab .tab-panel .header .icon {
+    background-image: url("/images/edit-summary-header.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    flex: none;
+    width: 30px;
+    height: 34px;
+    background-color: #b5b5b5;
+}
+
+/*.edit-summary-tab .tab-panel.open .header .icon {
+    background-image: url("/images/edit-summary-header-open.png");
+}*/
+
+.edit-summary {
+    border-bottom: 1px solid #e9e9e9;
+    min-height: 0px;
+}
+
+.edit-summary-author.empty .edit-summary,
+.edit-summary-copy-editor.empty .edit-summary
+{
+    display: none;
+}
+
+.edit-summary-author li,
+.edit-summary-copy-editor li {
+    cursor: pointer;
+}
+
+.edit-summary-author.empty span,
+.edit-summary-copy-editor.empty span
+ {
+    color: #aaa;
+    cursor: default;
+    min-height: 50px;
+    display: inline-block;
+    margin: 30px 0px 0px 25px;
+	 font-size: 11px;
+}
+
+.edit-summary-author ol.file-list {
+    list-style-position: inside;
+    padding-left: 19px;
+}
+
+.edit-summary-author ol.file-list li {
+    width: 19em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.edit-summary-author .optsmallcaps {
+    font-variant: small-caps;
+    background-color: #FF9;
+    color: black;
+}
+
+.edit-summary-author .optmono {
+    font-family: monospace;
+    background-color: #FF9;
+    color: black;
+}
+
+.edit-summary-author .optbold {
+    font-weight: bold;
+    background-color: #FF9;
+    color: black;
+}
+.edit-summary-author .optitalic {
+    font-style: italic;
+    background-color: #FF9;
+    color: black;
+}
+.edit-summary-author .optsup {
+    vertical-align: super;
+    font-size: 10px;
+    background-color: #FF9;
+    color: black;
+    line-height: 0 !important;
+}
+.edit-summary-author .optsub {
+    vertical-align: sub;
+    font-size: 10px;
+    background-color: #FF9;
+    color: black;
+    line-height: 0 !important;
+}
+.edit-summary-author .optcomment {
+    color: black;
+}
+.edit-summary-author .optinsert {
+    text-decoration: underline;
+    color: green;
+    background-color: #FFFF99;
+}
+
+.edit-summary-author .optbold .cpedel,
+.edit-summary-author .optitalic .cpedel,
+.edit-summary-author .optsup .cpedel,
+.edit-summary-author .optsub .cpedel,
+.edit-summary-author .optdel .cpedel,
+.edit-summary-author .optsmallcaps .cpedel,
+.edit-summary-author .optmono .cpedel,
+.edit-summary-author .optdelreferene {
+    text-decoration: line-through;
+    color: red;
+    background-color: #D3D3D3;
+}
+
+.edit-summary-author .line-through {
+    border-top: 1px solid #FF0000;
+    width: 100%;
+    left: 0px;
+    z-index: 1;
+}
+
+.edit-summary-author .line-through > img {
+    opacity: 0.6;
+}
+
+.edit-summary-author .optdel,  .edit-summary-author .optdelreference {
+    color: red;
+    background-color: #FF9;
+    text-decoration: line-through;
+}
+
+.edit-summary-author .comntText {
+    padding-left: 6px;
+}
+
+.edit-summary-author .comntText:before {
+    content:"-";
+    padding-right: 5px;
+}
+.edit-summary-copy-editor .comntText {
+    display: none;
+}
+.edit-summary-copy-editor .cpeins div {
+    background-color: inherit;
+}
+.edit-summary-copy-editor .cpedel {
+    text-decoration: line-through;
+    color: red;
+    cursor: pointer;
+    background-color: #D3D3D3;;
+}
+.edit-summary-copy-editor .cpeins {
+    text-decoration: underline;
+    color: green;
+    cursor: pointer;
+    background-color: #D3D3D3;
+    display: inline;
+}
+
+.edit-summary-author .optreject {
+    border: none;
+    display: inline-block;
+}
+.edit-summary-author .optreject .cpeins {
+    background-color: #B3F0B3;
+    color: red;
+    text-decoration: line-through
+}
+.edit-summary-author .optreject .cpedel {
+    background-color: #B3F0B3;
+    color: green;
+    text-decoration: none;
+}
+.edit-summary-tab .tab-content-container {
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.edit-summary-tab .error {
+    color: red;
+    font-weight: bold;
+}
+.edit-summary-tab .error:after {
+    content: ' - ';
+    color: black;
+}
+.edit-summary .attachment {
+    background: url('/images/attachment.png') no-repeat 0px 3px;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+}
+
+.edit-summary .instruct-icon {
+    background-color: #FF9;
+    background-image: url("/images/hand.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 16px;
+    width: 15px;
+    display: inline-block;
+}
+
+.edit-summary .sa_affiliation {
+    display: none;
+}
+
+.edit-summary-author .pc_cpereplace.optbold .cpedel,
+.edit-summary-author .pc_cpereplace.optitalic .cpedel,
+.edit-summary-author .pc_cpereplace.optsup .cpedel,
+.edit-summary-author .pc_cpereplace.optdel .cpedel,
+.edit-summary-author .pc_cpereplace.optsub .cpedel,
+.edit-summary-author .pc_cpereplace.optsmallcaps .cpedel,
+.edit-summary-author .pc_cpereplace.optmono .cpedel {
+    display: none;
+}
+
+.edit-summary-author .pc_cpereplace.optreject.optbold .cpedel,
+.edit-summary-author .pc_cpereplace.optreject.optitalic .cpedel,
+.edit-summary-author .pc_cpereplace.optreject.optsup .cpedel,
+.edit-summary-author .pc_cpereplace.optreject.optdel .cpedel,
+.edit-summary-author .pc_cpereplace.optreject.optsub .cpedel,
+.edit-summary-author .pc_cpereplace.optreject.optsmallcaps .cpedel,
+.edit-summary-author .pc_cpereplace.optreject.optmono .cpedel {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.edit-summary-author .pc_cpereplace.optreject.optbold .cpeins,
+.edit-summary-author .pc_cpereplace.optreject.optitalic .cpeins,
+.edit-summary-author .pc_cpereplace.optreject.optsup .cpeins,
+.edit-summary-author .pc_cpereplace.optreject.optdel .cpeins,
+.edit-summary-author .pc_cpereplace.optreject.optsub .cpeins,
+.edit-summary-author .pc_cpereplace.optreject.optsmallcaps .cpeins,
+.edit-summary-author .pc_cpereplace.optreject.optmono .cpeins {
+    display: none;
+}
+
+.edit-summary-author.empty .select-box-container {
+    display: none;
+}
+
+.edit-summary-author ol.edits li.instruction,
+.edit-summary-author ol.edits li.equation,
+.edit-summary-author ol.edits li.figure,
+.edit-summary-author ol.instruction li.edits,
+.edit-summary-author ol.instruction li.equation,
+.edit-summary-author ol.instruction li.figure,
+.edit-summary-author ol.equation li.edits,
+.edit-summary-author ol.equation li.instruction,
+.edit-summary-author ol.equation li.figure,
+.edit-summary-author ol.figure li.edits,
+.edit-summary-author ol.figure li.instruction,
+.edit-summary-author ol.figure li.equation {
+    display: none;
+}
+
+.edit-summary-tab .select-box[role="combobox"] [role="listbox"] [role="option"].highlight,
+.edit-summary-tab .select-box[role="combobox"] [role="listbox"] [role="option"]:hover {
+    background-color: #cdcdcd;
+    color: #000;
+}
+
+.edit-summary-tab .select-box-container{
+    position: absolute;
+    width: 95%;
+    top: 33px;
+    left: 0;
+    padding: 5px 8px;
+    background: #fff;
+}
+
+.edit-summary-tab .select-box[role="combobox"]:focus .wrapper {
+    box-shadow: 0 0 5px #cdcdcd;
+    border: 1px solid #cdcdcd;
+}
+
+.edit-summary-tab .select-box[role="combobox"] [role="listbox"] [role="option"].highlight {
+    background-color: #cdcdcd;
+    color: #000;
+
+}
+.edit-summary-tab .select-box[role="combobox"] [role="listbox"] [role="option"]:hover {
+    background-color: #e6e6e6;
+    color: #000;
+}
+.edit-summary-tab .select-box[role="combobox"] [role="listbox"] [role="option"] {
+    border-bottom: none;
+}
+
+.edit-summary-tab .tab-header-container .tab-header-wrapper {
+    border-bottom: 1px solid #999;
+}
+
+.edit-summary-author .optdelreference .optcomment {
+    display: none;
+}

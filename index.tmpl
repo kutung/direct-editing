@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="##LOCALE##">
+    <head>
+        <meta charset='utf-8'/>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+        <meta name="google" value="notranslate"/>
+        <link rel='stylesheet' href='pcui.css?ver=##VERSION##'/>
+    </head>
+    <body data-version="##VERSION##">
+    <div class="progress-overlay">
+        <div class="progress-container">
+            <label>Proof Central is Loading...</label>
+            <progress value="0" max="100"></progress>
+        </div>
+    </div>
+    <div class="overlay"></div>
+	<div class="xml-conversion-progress hide">
+            <progress max="100" value="0" class="progress"></progress>
+            <span class="info"></span>
+        </div>
+        <div class='flash-message-container hide'>
+            <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="content">
+                <!-- flash message content -->
+            </div>
+        </div>
+        <div class='proof-dialog-popup-container'></div>
+        <section class="container">
+            <div class="mode-buttons">
+                <span class="label">Mode</span>
+                <!--
+                    These buttons must not have space between them.
+                    It will show up as a single space in UI .
+                -->
+                <input type="button" value="Edit" class="editorBtn" disabled/><input type="button" value="Proof" class="proofBtn"/><input type="button" value="Xml Editor" class="xmlEditorBtn"/>
+            </div>
+	        <div class="xml-editor-container hide"></div>
+            <div class="xml-editor-action-buttons hide">
+                <div class="left">
+                    <input type="button" title="Toggle Full Screen" class="fullscreenBtn" data-fullscreen="off"/>
+                </div>
+                <div class="right">
+                    <input type="button" value="Run Vtool" class="vtoolBtn"/>
+                    <input type="button" value="Save" class="saveBtn"/>
+                    <input type="button" value="Submit" class="submitBtn"/>
+                </div>
+            </div>
+            <aside class="xml-editor-accordian-container hide">
+                <div class="edit-summary-container"></div>
+                <div class="vtool-error-container"></div>
+                <div class="asset-upload-container"></div>
+                <div class="asset-list-container"></div>
+                <div class="xml-editor-readonly-message-container">
+                    Corrections were submitted via Proof Central (Online method) for this article. No further modification can be made via this interface.
+                </div>
+            </aside>
+            <article class="editor-container">
+                <div class='editor-parent-container'></div>
+                <div class='editor'></div>
+                <div class='supplementary'></div>
+                <div class='about'></div>
+                <div class='math-container'></div>
+                <div class='dialog-popup-container'></div>
+                <div class='bootstrap-dialog-container'></div>
+            </article>
+            <aside class="right-panels">
+                <div class="action-buttons">
+                    <div class="left">
+                        <span class="pageProofBtn hide" title="View Page Proof">PDF</span>
+                        <span title="Session report" class="sessionBtn hide">Session Report</span>
+                        <span title="Get report" class="htmlReportBtn hide">Get report</span>
+                        <a class="help-link" target="_blank" title="Help">Help</a>
+                    </div>
+                    <div class="right">
+                        <input type="button" value="Save" class="saveBtn"/>
+                        <input type="button" value="Submit" class="submitBtn"/>
+                    </div>
+                </div>
+                <div class='quicklinks-tab bot-space'></div>
+                <div class='quicklinks'></div>
+                <div class='quicklinks-figure-and-table'></div>
+                <div class="query-container bot-space"></div>
+                <div class='edit-summary-tab bot-space'></div>
+                <div class="insert-container bot-space"></div>
+                <div class="instruction-container bot-space"></div>
+                <div class="attachment-container bot-space"></div>
+                <div class="replaceImage-container bot-space"></div>
+                <div class='edit-summary-author'></div>
+                <div class='edit-summary-copy-editor'></div>
+                <div class="readonly-message-container">
+                    Corrections were submitted via Proof Central (Online method) for this article. No further modification can be made via this interface.
+                </div>
+                <div class="references-container"></div>
+            </aside>
+        </section>
+        <section class="proofview clearfix">
+            <div class="mode-buttons">
+                <span class="label">Mode</span>
+                <!--
+                    These buttons must not have space between them.
+                    It will show up as a single space in UI .
+                --><input type="button" value="Edit" class="editorBtn"/><input type="button" value="Proof" class="proofBtn" disabled/><input type="button" value="Xml Editor" class="xmlEditorBtn"/><input type="button" title="Download PDF" class="downloadBtn"/><input type="button" title="PDF generation is in progress" class="pdfProgressBtn hide"/></div>
+            <div class="pager"></div>
+        </section>
+        <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+        <script src="config/Configuration.js?ver=##VERSION##"></script>
+        <script src='libs/jquery/hyphenation-plugin.js'></script>
+        <script>
+            CKEDITOR_BASEPATH = 'libs/ckeditor-4.5.9/';
+            require.config({
+                'baseUrl': '/',
+                'urlArgs': 'ver=##VERSION##',
+                 'paths': {
+                    'customer': 'scripts/customer/##CUSTOMER##/',
+                    'templates':'scripts/templates/##CUSTOMER##',
+                    'codemirror-module': 'xml-editor/scripts/libs/codemirror-5.1.0',
+                    'xmleditor-addon': 'xml-editor/scripts/xmleditor-addon'
+                },
+                'map': {
+                    '*': {
+                        'css': 'libs/css.js',
+                        'ckeditor': 'libs/ckeditor-4.5.9/ckeditor',
+                        'he': 'phoenix/scripts/libs/he-0.5.0',
+                        'sax': 'phoenix/scripts/libs/sax-0.6.1',
+                        'rangy': 'libs/rangy-core',
+                        'rangyselection': 'libs/rangy-selectionsaverestore',
+                        'uri': 'libs/uri/uri-1.17.0',
+                        'jquery': 'libs/jquery/jquery-1.10.1.min',
+                        'jquery-en-us': 'libs/jquery/en-us',
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                        'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/Panel': 'phoenix/scripts/Panel',
+                        'scripts/TabPanel': 'phoenix/scripts/TabPanel',
+                        'scripts/TableCharAlign': 'phoenix/scripts/TableCharAlign',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/AbstractMenuItem': 'phoenix/scripts/AbstractMenuItem',
+                        'scripts/Annotate': 'phoenix/scripts/Annotate',
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/ContextualMenu': 'phoenix/scripts/ContextualMenu',
+                        'scripts/SelectBox': 'phoenix/scripts/SelectBox',
+                        'scripts/Dialog': 'phoenix/scripts/Dialog',
+                        'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader',
+                        'scripts/TreeModel': 'phoenix/scripts/TreeModel',
+                        'scripts/TreePanel': 'phoenix/scripts/TreePanel',
+                        'scripts/ListPanel': 'phoenix/scripts/ListPanel'
+                    }
+                }
+            });
+        </script>
+        <script src='pcui.js?ver=##VERSION##'></script>
+    </body>
+</html>

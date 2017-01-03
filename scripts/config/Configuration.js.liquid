@@ -1,0 +1,28 @@
+var Configuration = {};
+
+Configuration = {
+    'Environment': 'prod',
+    'codeVersion': '##TAGID##',
+    'Log': {
+        'Level': 'info',
+        'PersistOnServer': true
+    },
+    'currentLocale': '##LOCALE##',
+    'Plugins': {
+        'Interface': {
+            'Routes': '/config/routes.json',
+            'Config': '/config/interface.json',
+            'Locale': '/locale/##LOCALE##.json'
+        },
+        'Paginate': {
+            'enable': true,
+            'Routes': '/config/proof_routes.json',
+            'Config': '/config/proof.json'
+        },
+        'XmlEditor': {
+            'enable': true,
+            'Config': '/config/config.json',
+            'Routes': '/config/xmleditor_routes.json'
+        }
+    }
+};

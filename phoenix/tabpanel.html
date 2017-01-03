@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Tabpanel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <style>
+    body {
+        font-size: 16px;
+    }
+    .queries0 {
+        width: 500px;
+    }
+    .queries0 .tab-panel .tab-content-container {
+        height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .queries1 {
+        width: 600px;
+    }
+    .queries2 {
+        width: 400px;
+    }
+    .tab-panel .tab-content-container {
+        height: 500px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '/'
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+</head>
+<body>
+    <div class="queries0"></div>
+    <div class="queries1"></div>
+    <div class="queries2"></div>
+    <script>
+    var tabPanel0, tabPanel1, tabPanel2;
+
+    window.onload = function onLoad() {
+        require([
+            'scripts/TabPanel', 'scripts/EventBus', 'locale/en-US/TabPanelLocale'
+        ],
+        function onDepsLoad(TabPanel, EventBus, tabPanelLocale) {
+            var content, counter = 1, i;
+
+            tabPanel0 = new TabPanel(
+                document.querySelector('.queries0'), document, window, EventBus, tabPanelLocale
+            );
+            tabPanel0.renderComponentStyle();
+            tabPanel0.render();
+            tabPanel0.setTitle('Queries');
+            tabPanel0.addTool('add', 'Create', function onAdd() {
+                alert('Created');
+            }, {
+                'svg': '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15" height="17" viewBox="0 0 200 200"><g><rect x="80" class="fill" width="40" height="200"/></g><g><rect y="80" class="fill" width="200" height="40"/></g></svg>'
+            });
+            tabPanel0.addTool('del', 'Delete', function onDel() {
+                alert('Deleted');
+            }, {
+                'svg': '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15" height="17" viewBox="0 0 200 200"><g><rect y="80" class="fill" width="200" height="40"/></g></svg>'
+            });
+            tabPanel0.enableTool('del', false);
+            tabPanel0.setEmptyTabpanelContent('Use the "+" button to add a new Query');
+
+            tabPanel1 = new TabPanel(
+                document.querySelector('.queries1'), document, window, EventBus, tabPanelLocale
+            );
+            tabPanel1.renderComponentStyle();
+            tabPanel1.render();
+            tabPanel1.activateOnAdd(true);
+            tabPanel1.showTabScroller();
+            tabPanel1.addTool('add', 'Create', function onAdd() {
+                var addedContent = document.createElement('div');
+
+                addedContent.innerHTML = '<p>New Query</p>';
+                tabPanel1.add('M1', addedContent);
+            }, {
+                'svg': '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18" height="18" viewBox="0 0 200 200"><g><rect x="80" class="fill" width="40" height="200"/></g><g><rect y="80" class="fill" width="200" height="40"/></g></svg>'
+            });
+            tabPanel1.addTool('del', 'Delete', function onDel() {
+                var lastTab = document.querySelector('.queries1 li:last-child');
+
+                tabPanel1.remove(lastTab.dataset.id);
+            }, {
+                'svg': '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18" height="18" viewBox="0 0 200 200"><g><rect y="80" class="fill" width="200" height="40"/></g></svg>'
+            });
+            tabPanel1.enableTool('del', true);
+            tabPanel1.setTitle('Queries');
+            for (i = 1; i < 8; i += 1) {
+                content = document.createElement('div');
+                content.innerHTML = "<p> it's not the size mate, it's how you use it. you wouldn't hit a man with no trousers on, would you? my lord! you're a tripod. you wouldn't hit a man with no trousers on, would you? your were only supposed to blow the bloody doors off. i took a viagra, got stuck in me throat, i've had a stiff neck for hours. it's not the size mate, it's how you use it. pull my finger! you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. i took a viagra, got stuck in me throat, i've had a stiff neck for hours. you're only supposed to blow the bloody doors off! your were only supposed to blow the bloody doors off. ,</p><p> at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! it's not the size mate, it's how you use it. when i get back, remind to tell you about the time i took 100 nuns to nairobi! at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! when i get back, remind to tell you about the time i took 100 nuns to nairobi! i want to shoot the pigeons... off my roof. at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! you wouldn't hit a man with no trousers on, would you? my lord! you're a tripod. you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. pull my finger! my lord! you're a tripod. ,</p><p> your were only supposed to blow the bloody doors off. i took a viagra, got stuck in me throat, i've had a stiff neck for hours. i want to shoot the pigeons... off my roof. you're only supposed to blow the bloody doors off! you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. pull my finger! you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. jasper: your baby is the miracle the whole world has been waiting for. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. when i get back, remind to tell you about the time i took 100 nuns to nairobi! yes, i used a machine gun. ,</p><p> jasper: your baby is the miracle the whole world has been waiting for. i want to shoot the pigeons... off my roof. you're only supposed to blow the bloody doors off! yes, i used a machine gun. yes, i used a machine gun. jasper: your baby is the miracle the whole world has been waiting for. </p>";
+                tabPanel1.add('Q' + counter, content, 'Query ' + counter);
+                counter += 1;
+                content = document.createElement('div');
+                content.innerHTML = "<p> look ma i'm road kill look ma i'm road kill look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. here she comes to wreck the day. it's because i'm green isn't it! i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. we're going for a ride on the information super highway. excuse me, i'd like to ass you a few questions. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. look ma i'm road kill alrighty then here she comes to wreck the day. ,</p><p> good morning, oh in case i don't see you, good afternoon, good evening and goodnight. we got no food we got no money and our pets heads are falling off! haaaaaaarry. brain freeze. we got no food we got no money and our pets heads are falling off! haaaaaaarry. your entrance was good, his was better. we got no food we got no money and our pets heads are falling off! haaaaaaarry. your entrance was good, his was better. hey, maybe i will give you a call sometime. your number still 911? brain freeze. excuse me, i'd like to ass you a few questions. hey, maybe i will give you a call sometime. your number still 911? alrighty then ,</p><p> your entrance was good, his was better. brain freeze. alrighty then i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. kinda hot in these rhinos. it's because i'm green isn't it! kinda hot in these rhinos. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! here she comes to wreck the day. we're going for a ride on the information super highway. kinda hot in these rhinos. ,</p><p> look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. excuse me, i'd like to ass you a few questions. hey, maybe i will give you a call sometime. your number still 911? look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. we're going for a ride on the information super highway. </p>";
+                tabPanel1.add('Q' + counter, content, 'Query ' + counter);
+                counter += 1;
+            }
+
+            counter = 1;
+            tabPanel2 = new TabPanel(
+                document.querySelector('.queries2'), document, window, EventBus, tabPanelLocale
+            );
+            tabPanel2.renderComponentStyle();
+            tabPanel2.render();
+            tabPanel2.setTitle('Queries');
+            for (i = 1; i < 6; i += 1) {
+                content = document.createElement('div');
+                content.innerHTML = "<p> it's not the size mate, it's how you use it. you wouldn't hit a man with no trousers on, would you? my lord! you're a tripod. you wouldn't hit a man with no trousers on, would you? your were only supposed to blow the bloody doors off. i took a viagra, got stuck in me throat, i've had a stiff neck for hours. it's not the size mate, it's how you use it. pull my finger! you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. i took a viagra, got stuck in me throat, i've had a stiff neck for hours. you're only supposed to blow the bloody doors off! your were only supposed to blow the bloody doors off. ,</p><p> at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! it's not the size mate, it's how you use it. when i get back, remind to tell you about the time i took 100 nuns to nairobi! at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! when i get back, remind to tell you about the time i took 100 nuns to nairobi! i want to shoot the pigeons... off my roof. at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! you wouldn't hit a man with no trousers on, would you? my lord! you're a tripod. you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. pull my finger! my lord! you're a tripod. ,</p><p> your were only supposed to blow the bloody doors off. i took a viagra, got stuck in me throat, i've had a stiff neck for hours. i want to shoot the pigeons... off my roof. you're only supposed to blow the bloody doors off! you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. pull my finger! you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. jasper: your baby is the miracle the whole world has been waiting for. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. when i get back, remind to tell you about the time i took 100 nuns to nairobi! yes, i used a machine gun. ,</p><p> jasper: your baby is the miracle the whole world has been waiting for. i want to shoot the pigeons... off my roof. you're only supposed to blow the bloody doors off! yes, i used a machine gun. yes, i used a machine gun. jasper: your baby is the miracle the whole world has been waiting for. </p>";
+                tabPanel2.add('Q' + counter, content, 'Query ' + counter);
+                counter += 1;
+                content = document.createElement('div');
+                content.innerHTML = "<p> look ma i'm road kill look ma i'm road kill look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. here she comes to wreck the day. it's because i'm green isn't it! i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. we're going for a ride on the information super highway. excuse me, i'd like to ass you a few questions. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. look ma i'm road kill alrighty then here she comes to wreck the day. ,</p><p> good morning, oh in case i don't see you, good afternoon, good evening and goodnight. we got no food we got no money and our pets heads are falling off! haaaaaaarry. brain freeze. we got no food we got no money and our pets heads are falling off! haaaaaaarry. your entrance was good, his was better. we got no food we got no money and our pets heads are falling off! haaaaaaarry. your entrance was good, his was better. hey, maybe i will give you a call sometime. your number still 911? brain freeze. excuse me, i'd like to ass you a few questions. hey, maybe i will give you a call sometime. your number still 911? alrighty then ,</p><p> your entrance was good, his was better. brain freeze. alrighty then i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. kinda hot in these rhinos. it's because i'm green isn't it! kinda hot in these rhinos. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! here she comes to wreck the day. we're going for a ride on the information super highway. kinda hot in these rhinos. ,</p><p> look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. excuse me, i'd like to ass you a few questions. hey, maybe i will give you a call sometime. your number still 911? look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. we're going for a ride on the information super highway. </p>";
+                tabPanel2.add('Q' + counter, content, 'Query ' + counter);
+                counter += 1;
+            }
+        });
+    };
+    </script>
+  </body>
+</html>

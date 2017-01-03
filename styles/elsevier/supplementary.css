@@ -1,0 +1,747 @@
+@keyframes highlight {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@-webkit-keyframes highlight {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.supplementary {
+    position: relative;
+    margin: auto;
+    overflow-y : scroll;
+    overflow-x  :hidden;
+    line-height: 180% !important;
+    font-size: 14px;
+    padding: 52px 54px !important;
+}
+
+.supplementary .instructhand{
+  background: url("/images/hand.svg") no-repeat center center;
+  display: inline-block;
+  background-color: yellow;
+  width: 15px;
+  margin: 0px 1px 0px 1px;
+}
+
+.supplementary ul.file_tabs {
+    display:none;
+}
+
+.supplementary, #paginate-cnt {
+  color: #222;
+  font-family: Times New Roman, Times;
+}
+
+.supplementary div , .supplementary span {
+  font-family: Times New Roman, Times;
+}
+
+.supplementary span.kw_label {
+  border: 2px solid #a1a1a1;
+  padding: 2px 5px;
+  background: #ddd;
+  width: 300px;
+  margin-right: 10px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.supplementary div.ce_section > div.sectionline_opt,
+.supplementary div.ce_glossary > span.ce_section-title,
+.supplementary div.ce_section > span.ce_section-title,
+.supplementary div.ce_acknowledgment > span.ce_section-title,
+.supplementary div.ce_bibliography > span.ce_section-title,
+.supplementary div.ce_further-reading > span.ce_section-title,
+.supplementary div.ce_appendices > div.ce_section > span.ce_label{
+    margin-top: 32pt;
+    margin-bottom: 21pt;
+    font-weight: 700;
+  font-size: 140%;
+}
+.supplementary div.ce_section > div.ce_section > div.sectionline_opt {
+    margin-top: 21pt;
+    margin-bottom: 21pt;
+}
+.supplementary div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt,
+.supplementary div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt {
+    margin-top: 21pt;
+    margin-bottom: 0pt;
+}
+.supplementary .ce_display {
+    margin-top: 15.75pt;
+    margin-bottom: 15.75pt;
+}
+.supplementary div.ce_acknowledgment {
+    margin-bottom: 21pt;
+}
+.supplementary div.ce_bibliography {
+    margin-bottom: 18pt;
+}
+
+.supplementary .ce_e-component img {
+     height: 38px;
+     width: auto;
+}
+
+.supplementary .displayfigtab .ce_table-footnote,
+.supplementary .displayfigtab .tablecaption,
+.supplementary .displayfigtab .ce_legend {
+  text-align:left !important
+}
+
+.supplementary .ce_inline-figure,
+.supplementary .inline-formula div,
+.supplementary .ce_inline-figure div {
+    display: inline;
+}
+
+
+.supplementary div.sa_affiliation {
+  display: none;
+}
+
+.supplementary span.content_modified {
+  background-image: url("/Link/rightarrow.png");
+  padding: 2px;
+  width: 30px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 10px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.supplementary div.ce_collaboration div.ce_author-group {
+  border: 1px dashed #909090;
+  background: #F0F0F0;
+}
+
+.supplementary div.ce_collaboration div.ce_author-group .ce_initials,
+.supplementary div.ce_collaboration div.ce_author-group .ce_surname {
+  background: #00B3B3;
+}
+
+.supplementary div.ce_source {
+  font-style: italic;
+}
+
+.supplementary div.ce_displayed-quote div.ce_source {
+  text-align: right;
+}
+
+.supplementary span.ce_inf , .supplementary span.ce_sup {
+  font-size: 12px;
+}
+
+.supplementary span.ce_inf , .supplementary span.ce_sup , .supplementary span.unicode-char {
+  line-height: 16px;
+}
+
+.supplementary thead td span.ce_inf {
+  line-height: 14px;
+}
+
+.supplementary #FileContainer div {
+  line-height: 25px;
+}
+
+.supplementary #FileContainer img {
+  vertical-align: middle;
+}
+
+.supplementary span.ce_inf {
+  vertical-align: sub;
+}
+
+.supplementary span.ce_sup , .supplementary div.ce_foonote span.ce_label {
+  vertical-align: super;
+}
+
+.supplementary span.ce_italic , .supplementary div.ce_salutation {
+  font-style: italic;
+}
+
+.supplementary span.ce_bold {
+  font-weight: 700;
+}
+
+.supplementary span.ce_underline {
+  text-decoration: underline;
+}
+
+.supplementary div.ce_textbox {
+  background-color: #E8E8E8;
+  border: solid;
+  width: 80%;
+  padding: 8px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.supplementary span.vol {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.supplementary span.sitl , .supplementary span.sbtl , .supplementary span.sebtl , .supplementary span.ebtl {
+  font-style: italic;
+}
+
+.supplementary span.ce_small-caps {
+  font-variant: small-caps;
+}
+
+/* Sections */
+
+.supplementary div.ce_list > span.ce_section-title {
+  margin-left: -100px;
+  font-style: normal;
+}
+
+/* for avoiding margin-left: -100px; alignment in table. */
+
+.supplementary td .ce_list span.ce_section-title {
+  margin-left: 0;
+}
+
+.supplementary div.ce_section > div.sectionline_opt , .supplementary div.ce_glossary > span.ce_section-title , .supplementary div.ce_section > span.ce_section-title , .supplementary div.ce_acknowledgment > span.ce_section-title , .supplementary div.ce_bibliography > span.ce_section-title , .supplementary div.ce_further-reading > span.ce_section-title , .supplementary div.ce_appendices > div.ce_section > span.ce_label , .supplementary span#fnhead {
+  font-weight: 700;
+  font-size: 140%;
+  margin-top: 10px;
+}
+
+.supplementary .ce_glossary-sec {
+  margin-top: 10px;
+}
+
+.supplementary div.ce_section > div.ce_section > div.sectionline_opt {
+  font-weight: 700;
+  font-size: 120%;
+  margin-top: 10px;
+}
+
+.supplementary div.ce_displayed-quote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: justify;
+  text-indent: 0;
+}
+
+.supplementary div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt {
+  font-weight: 700;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+.supplementary div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt , .supplementary div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt
+.supplementary div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt {
+  font-style: italic!important;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+.supplementary div.ce_bib-reference {
+  margin-left: 40px;
+  margin-right: 0;
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  text-indent: -40px;
+  text-align: left;
+  line-height: 25px;
+}
+
+.supplementary div.ce_keywords span.ce_section-title , .supplementary div.ce_nomenclature > span.ce_section-title {
+  font-weight: 700;
+}
+
+.supplementary div.ce_title {
+  font-size: 16pt;
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.supplementary div.ce_author {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+}
+
+.supplementary div.ce_affiliation {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+}
+
+.supplementary div.ce_keywords {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+  line-height: 25px;
+}
+
+.supplementary div.ce_correspondence {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+}
+
+.supplementary div.ce_abstract {
+  border-top: thin solid #F20C36;
+  border-bottom: thin solid #F20C36;
+  padding: 1pc 1pc 6pt;
+  margin-top: 15pt;
+  margin-right: .2in;
+  margin-bottom: 15pt;
+  margin-left: .2in;
+}
+
+.supplementary div.ce_abstract-sec {
+  text-align: justify;
+  font-size: 100%;
+  display: block;
+}
+
+.supplementary div.ce_abstract span.ce_section-title {
+  font-weight: 700;
+}
+
+.supplementary div.ce_author span.ce_e-address {
+  display: none;
+}
+
+.supplementary div.ce_keywords span.ce_section-title {
+  font-weight: 700;
+}
+
+.supplementary div.ce_affiliation span.ce_label , .supplementary .ce_footnote span.ce_label , .supplementary .ce_correspondence span.ce_label , .supplementary .ce_article-footnote span.ce_label {
+  font-size: 70%;
+  vertical-align: super;
+}
+
+.supplementary div.ce_table-footnote span.ce_label , .supplementary div.ce_legend span.ce_label {
+  font-size: 70%;
+  vertical-align: super;
+  padding-right: 3px;
+}
+
+.supplementary p .ce_label {
+  font-weight: 700;
+}
+
+.supplementary .tablecaption .ce_label , .supplementary .ce_e-component .ce_label {
+  font-weight: 700;
+}
+
+.supplementary div.figure {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.supplementary .ce_para , .supplementary .ce_simple-para {
+  line-height: 25px;
+  margin-bottom: 6pt;
+}
+
+.supplementary .ce_para {
+  text-indent: 50px;
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-left: 0;
+  text-align: justify;
+}
+
+.supplementary div#qarea > div.ce_para , .supplementary td#qareamin > div.ce_para {
+  text-indent: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 12pt;
+}
+
+.supplementary .ce_def-term {
+  text-indent: 0;
+}
+
+.supplementary .ce_def-description > .ce_para {
+  text-indent: 0;
+}
+
+.supplementary .ce_display {
+  position: relative;
+  margin-top: 5px;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  text-indent: 0;
+}
+
+.supplementary .ce_display_formula {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  text-indent: 0;
+  overflow: auto;
+  display: inline-block;
+  width: 100%;
+}
+
+.supplementary div.ce_list {
+  margin-left: 50pt;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.supplementary div.ce_list-item {
+  text-indent: -15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.supplementary div.ce_list-item div.ce_para {
+  padding-left: 6px;
+  display: inline;
+}
+
+.supplementary div.ce_list-item > div.ce_para > .ce_list > div.ce_list-item {
+  margin-left: -34pt;
+  text-indent: -27px;
+}
+
+.supplementary div.table {
+  background-color: #F9F9F9;
+  margin-top: 15px;
+  overflow: auto;
+  padding: 5px;
+}
+
+.supplementary div.table table , .supplementary div.ce_display table {
+  border: 1px;
+  border-collapse: collapse;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  text-indent: 0;
+  width: 100%;
+}
+
+.supplementary thead tr {
+  background-color: #E1E1E1;
+}
+
+.supplementary .item-info {
+  display: none;
+}
+
+.supplementary a[title] {
+  color: blue!important;
+}
+
+.supplementary div.ce_keywords > span.ce_section-title , .supplementary span.ce_label {
+  font-weight: 700;
+}
+
+.supplementary .inline-math-img * {
+  display: inline;
+}
+
+.supplementary div.INS , .supplementary div.DEL {
+  display: inline;
+}
+
+.supplementary div.ce_author > span.ce_surname {
+  background-color: #00B3B3;
+}
+
+.supplementary .ce_author > .ce_initials {
+  background-color: #00B3B3;
+}
+
+.supplementary div.ce_enunciation {
+  margin: 10px;
+}
+
+.supplementary div.ce_enunciation span.ce_label {
+  font-weight: 700;
+}
+
+.supplementary div.article td.td {
+  text-align: left;
+  padding: .5em;
+  border: 1px solid #D9D9D9;
+}
+
+.supplementary div.article td.td[align=right] {
+  text-align: right;
+}
+
+.supplementary div.article td.td[align=center] {
+  text-align: center;
+}
+
+.supplementary div.article thead td.td {
+  text-align: center;
+}
+
+.supplementary div.ce_title > span.x {
+  font-weight: 400;
+  vertical-align: super;
+  font-size: 12px;
+}
+
+.supplementary div.ce_def-description , .supplementary .ce_glossary-def {
+/*margin-left:18px;*/
+  text-indent: 18px;
+}
+
+.supplementary span#sbref {
+  display: block;
+  margin-left: 22px;
+}
+
+.supplementary .ce_abstract-sec .ce_simple-para {
+  text-indent: 35px;
+  display: block;
+}
+
+.supplementary span.nomenclature_secttitle {
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 6pt;
+}
+
+.supplementary span.deflist_secttitle {
+  font-style: italic;
+  font-size: 120%;
+  font-weight: 700;
+  margin-left: -50px;
+  margin-bottom: 6pt;
+}
+
+.supplementary div#authorgp {
+  text-align: right;
+}
+
+.supplementary div.ce_bib-reference span.ce_label1 {
+  display: none;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.supplementary div.ce_section > div.ce_section > span.ce_section-title {
+  font-size: 120%;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.supplementary div.ce_section > div.ce_section > div.ce_section > div.section-title {
+  font-weight: 700;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+.supplementary div#graph_abstsec1 .ce_section-title , .supplementary div#graph_abstsec .ce_section-title , .supplementary div#highlite > .ce_section-title , .supplementary #graph_sectitle , .supplementary div#highlite2 > span.ce_section-title , .supplementary #graph_sectitle2 {
+  font-weight: 700;
+}
+
+.supplementary div#etab1 , .supplementary div#etab2 {
+  background-color: #D3D3D3;
+  font-size: 100%;
+  margin-bottom: 6pt;
+  font-weight: 700;
+  height: 24px;
+  width: 100%;
+  font-size: 100%;
+  border-radius: 3px;
+  line-height: 1.6em;
+  text-decoration: none;
+}
+
+.supplementary div#etab1 span , .supplementary div#etab2 span {
+  margin-left: 10px;
+}
+
+.supplementary .img1 , .supplementary .img2 {
+  padding-left: 5px;
+}
+
+.supplementary .unselectable , .supplementary .mmclink {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.supplementary .ce_e-component {
+  text-align: justify;
+}
+
+.supplementary span.ce_sans-serif {
+  font-size: inherit;
+}
+
+/* This class is introduced for SPI journals. There is some author given names are coming on below class.*/
+
+.supplementary .ce_indexed-name {
+  display: none;
+}
+
+.supplementary span.ce_cross-out {
+  text-decoration: line-through;
+}
+
+.supplementary div#graph_abstsec1 , .supplementary div#highlite {
+  border-bottom: thin solid #F20C36;
+  margin-top: 15pt;
+  margin-right: .2in;
+  margin-bottom: 15pt;
+  margin-left: .2in;
+  padding: 0 0 6pt;
+}
+
+.supplementary div#graph_abstsec {
+  margin-top: 15pt;
+  margin-right: .2in;
+  margin-bottom: 15pt;
+  padding: 0 0 6pt;
+}
+
+.supplementary .x,
+.supplementary .ce_alt-text {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: normal;
+  font-style: initial;
+  vertical-align: initial;
+  font-size: 14px;
+  background-color: inherit;
+  cursor: auto;
+  color: black;
+}
+
+.supplementary .cke_iframe_shim {
+  display: none;
+}
+
+.supplementary div.item-info > div.ce_title , div.augroup > div.ce_author {
+  display: inline;
+  font-size: 16px;
+  font-weight: 100;
+  background-color: none;
+}
+
+.supplementary div.augroup > div.ce_author > span.ce_surname , .supplementary div.augroup > div.ce_author > span.ce_givenname {
+  background-color: transparent;
+  display: inline;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.supplementary div.augroup > div.ce_author > a.ce_cross-ref , .supplementary div.augroup > div.ce_author > span.ce_roles , .supplementary div.augroup > div.ce_author > span.ce_degrees , .supplementary div.augroup > div.ce_author div.ce_e-address , .supplementary div.augroup > div.ce_author > span.x {
+  display: none;
+}
+
+.supplementary span#note {
+  font-weight: 700;
+  font-size: 140%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.supplementary div.jid {
+  margin-top: 15px;
+}
+
+.supplementary .ce_inter-refs-text {
+  display: none;
+}
+
+.proofValidator .ce_inter-refs-text {
+  display: inline-block;
+  text-indent: 0;
+  margin-right: 4px;
+}
+
+.supplementary span.caption_simple_para {
+  display: block;
+}
+
+.supplementary .cpeins div {
+    background-color: inherit;
+}
+.supplementary .cpedel {
+    text-decoration: line-through;
+    color: red;
+    cursor: pointer;
+    background-color: #D3D3D3;
+}
+.supplementary .cpeins {
+    text-decoration: underline;
+    color: green;
+    cursor: pointer;
+    background-color: #D3D3D3;
+    display: inline;
+}
+
+.supplementary div.div-toggle-images {
+   font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+   margin-top: 10px;
+}
+
+.supplementary button.web-btn, button.print-btn {
+    font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+    background-color: #FDFDF0;
+    border: 2px outset #8B8378;
+    color: black;
+    line-height: 25px;
+    padding: 2px 10px 2px 5px;
+    width: 115px;
+    margin-right: 5px;
+}
+
+.supplementary button span.rbweb, button span.rbprint {
+    border: 1px solid black;
+    margin: 0 3px;
+    padding: 0 5px;
+}
+
+.supplementary button span.selected {
+    background-color: black;
+    border: 1px solid;
+}
+
+.supplementary .toggleoverlay {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background: url("/images/loading.gif") no-repeat center center #ffffff;
+    opacity: 0.6;
+}

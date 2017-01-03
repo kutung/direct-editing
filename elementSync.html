@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ElementSync Plugin</title>
+    <style type="text/css">
+    .actual {
+        width: 300px;
+        float: left;
+    }
+    .authgrp {
+        margin-left: 5px;
+    }
+    .elementSync {
+        width: 300px;
+        float: left;
+    }
+    .editor {
+        overflow: hidden;
+    }
+    </style>
+    <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+    <script>
+            CKEDITOR_BASEPATH = 'scripts/libs/ckeditor-4.5.9/';
+            require.config({
+                'baseUrl': '/',
+                'urlArgs': 'bust=' + (new Date()).getTime(),
+                'paths': {
+                    'customer': 'scripts/customer/rsc',
+                    'codemirror-module': 'xml-editor/scripts/libs/codemirror-5.1.0',
+                    'xmleditor-addon': 'xml-editor/scripts/xmleditor-addon'
+                },
+                'map': {
+                    '*': {
+                        'css': 'scripts/libs/css.js',
+                        'ckeditor': 'scripts/libs/ckeditor-4.5.9/ckeditor',
+                        'he': 'phoenix/scripts/libs/he-0.5.0',
+                        'sax': 'phoenix/scripts/libs/sax-0.6.1',
+                        'rangy': 'scripts/libs/rangy-core',
+                        'rangyselection': 'scripts/libs/rangy-selectionsaverestore',
+                        'uri': 'scripts/libs/uri/uri-1.17.0',
+                        'jquery': 'scripts/libs/jquery/jquery-1.10.1.min',
+                        'jquery-en-us': 'scripts/libs/jquery/en-us',
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                        'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog',
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/Panel': 'phoenix/scripts/Panel',
+                        'scripts/TabPanel': 'phoenix/scripts/TabPanel',
+                        'scripts/TableCharAlign': 'phoenix/scripts/TableCharAlign',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/AbstractMenuItem': 'phoenix/scripts/AbstractMenuItem',
+                        'scripts/Annotate': 'phoenix/scripts/Annotate',
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/ContextualMenu': 'phoenix/scripts/ContextualMenu',
+                        'scripts/SelectBox': 'phoenix/scripts/SelectBox',
+                        'scripts/Dialog': 'phoenix/scripts/Dialog',
+                        'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+                    }
+                }
+            });
+        </script>
+    <script src="/scripts/polyfills.js"></script>
+  </head>
+  <body class="editor">
+
+    <div class="actual">
+        <h1>Actual</h1>
+        <div class="authgrp">
+            <div class="author" name="OPT_ID_65" id="OPT_ID_65">
+                <span class="person" name="OPT_ID_66">
+                    <span class="persname" name="OPT_ID_67">
+                        <span class="fname" name="OPT_ID_68" title="fname">K.
+                            <span class="x">&nbsp;</span>
+                        </span>
+                        <span class="surname" name="OPT_ID_69" title="surname">Gracie</span>
+                    </span>
+                </span>
+                <span class="x">,</span>
+                <a title="affa" class="author" name="optname" id="optname">
+                    <span class="x">
+                        <sup>a</sup>
+                    </span>
+                </a>
+            </div>
+            <div class="author" name="OPT_ID_70" id="OPT_ID_70">
+                <span class="person" name="OPT_ID_71">
+                    <span class="persname" name="OPT_ID_72">
+                        <span class="fname" name="OPT_ID_73" title="fname">W. E.
+                            <span class="x">&nbsp;</span>
+                        </span>
+                        <span class="surname" name="OPT_ID_74" title="surname">Smith</span>
+                    </span>
+                </span>
+                <span class="x">,</span>
+                <a title="affa" class="author" name="optname" id="optname">
+                    <span class="x">
+                        <sup>a</sup>
+                    </span>
+                </a>
+            </div>
+            <div class="author" name="OPT_ID_75" id="OPT_ID_75">
+                <span class="person" name="OPT_ID_76">
+                    <span class="persname" name="OPT_ID_77">
+                        <span class="fname" name="OPT_ID_78" title="fname">P.
+                            <span class="x">&nbsp;</span>
+                        </span>
+                        <span class="surname" name="OPT_ID_79" title="surname">Yip</span>
+                    </span>
+                </span>
+                <span class="x">,</span>
+                <a title="affb" class="author" name="optname" id="optname">
+                    <span class="x">
+                        <sup>b</sup>
+                    </span>
+                </a>
+            </div>
+            <div class="author" name="OPT_ID_80" id="OPT_ID_80">
+                <span class="person" name="OPT_ID_81">
+                    <span class="persname" name="OPT_ID_82">
+                        <span class="fname" name="OPT_ID_83" title="fname">J. U.
+                            <span class="x">&nbsp;</span>
+                        </span>
+                        <span class="surname" name="OPT_ID_84" title="surname">Sutter</span>
+                    </span>
+                </span>
+                <span class="x">,</span>
+                <a title="affb" class="author" name="optname" id="optname">
+                    <span class="x">
+                        <sup>b</sup>
+                    </span>
+                </a>
+            </div>
+            <div class="author" name="OPT_ID_85" id="OPT_ID_85">
+                <span class="person" name="OPT_ID_86">
+                    <span class="persname" name="OPT_ID_87">
+                        <span class="fname" name="OPT_ID_88" title="fname">D. J. S.
+                            <span class="x">&nbsp;</span>
+                        </span>
+                        <span class="surname" name="OPT_ID_89" title="surname">Birch</span>
+                    </span>
+                </span>
+                <span class="x">,</span>
+                <a title="affb" class="author" name="optname" id="optname">
+                    <span class="x">
+                        <sup>b</sup>
+                    </span>
+                </a>
+            </div>
+            <div class="author" name="OPT_ID_90" id="OPT_ID_90">
+                <span class="person" name="OPT_ID_91">
+                    <span class="persname" name="OPT_ID_92">
+                        <span class="fname" name="OPT_ID_93" title="fname">D.
+                            <span class="x">&nbsp;</span>
+                        </span>
+                        <span class="surname" name="OPT_ID_94" title="surname">Graham</span>
+                    </span>
+                </span>
+                <span class="x">,</span>
+                <a title="affa" class="author" name="optname" id="optname">
+                    <span class="x">
+                        <sup>a</sup>
+                    </span>
+                </a>
+            </div>
+            <div class="author" name="OPT_ID_95" id="OPT_ID_95">
+                <span class="person" name="OPT_ID_96">
+                    <span class="persname" name="OPT_ID_97">
+                        <span class="fname" name="OPT_ID_98" title="fname">K.
+                            <span class="x">&nbsp;</span>
+                        </span>
+                        <span class="surname" name="OPT_ID_99" title="surname">Faulds</span>
+                    </span>
+                </span>
+                <a title="corres" class="author" name="OPT_ID_95" id="OPT_ID_95">
+                    <span class="x">
+                        <sup>*</sup>
+                    </span>
+                </a>
+                <span class="x">
+                    <sup>,</sup>
+                </span>
+                <a title="affa" class="author" name="optname" id="optname">
+                    <span class="x">
+                        <sup>a</sup>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="elementSync">
+        <h1>ElementSync</h1>
+        <div class="authgrp"></div>
+    </div>
+    <div>
+        <button class="boldBtn">Bold</button>
+        <button class="italicBtn">Italic</button>
+    </div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/EventBus', 'scripts/ElementSync',
+            'scripts/ElementSyncFormatter'
+        ],
+        function(EventBus, ElementSync, ElementSyncFormatter) {
+            var elementSyncContainer, elem, actualNode, elementSyncNode,
+                actualEl = document.querySelector('.actual .authgrp'),
+                elementSyncEl = document.querySelector('.elementSync .authgrp'),
+                boldBtn = document.querySelector('.boldBtn'),
+                italicBtn = document.querySelector('.italicBtn'),
+                config = {
+                    'subtree': true,
+                    'attributes': true
+                };
+
+            elem = ElementSyncFormatter.changeElementSyncAttrs(
+                window, actualEl.cloneNode(true), 'elementsync'
+                );
+            elementSyncEl.innerHTML = elem.innerHTML;
+            actualNode = actualEl.querySelector('#OPT_ID_65');
+            elementSyncNode = elementSyncEl.querySelector('[data-elementsync-id="OPT_ID_65"]')
+            elementSyncContainer = new ElementSync(window, document);
+            elementSyncContainer.setChangeElementSyncAttrCallbacks(
+                ElementSyncFormatter.changeElementSyncAttrs,
+                ElementSyncFormatter.changeActualElementAttrs
+            );
+            elementSyncContainer.setOptions(config);
+            elementSyncContainer.synchronize(actualEl, elementSyncEl);
+
+            boldBtn.addEventListener('click', boldFn.bind(this, actualNode));
+            italicBtn.addEventListener('click', italicFn.bind(this, elementSyncNode));
+        });
+    };
+
+    function boldFn(actualNode) {
+        var dataset = actualNode.dataset,
+            changes = 0;
+
+        if (typeof dataset.changes === 'undefined') {
+            changes = 0;
+        }
+        else {
+            changes = parseInt(dataset.changes, 10);
+        }
+        changes += 1;
+        dataset.changes = changes;
+    }
+
+    function italicFn(elementSyncNode) {
+        var dataset = elementSyncNode.dataset,
+            changes = 0;
+
+        if (typeof dataset.changes === 'undefined') {
+            changes = 0;
+        }
+        else {
+            changes = parseInt(dataset.changes, 10);
+        }
+        changes += 1;
+        dataset.changes = changes;
+    }
+    </script>
+  </body>
+</html>

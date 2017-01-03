@@ -1,0 +1,429 @@
+.contextual-menu {
+  position: absolute;
+  padding: 5px;
+  height: 50px;
+  box-sizing: border-box;
+  background: #474649;
+  z-index: 1;
+  border-radius: 8px;
+  transition: top .1s 0s, left .1s 0s;
+  -webkit-transition: top .1s 0s, left .1s 0s;
+  -moz-transition: top .1s 0s, left .1s 0s;
+}
+.contextual-menu button i {
+  font-style: normal;
+}
+.active > button{
+  background-color:#9c9b9b;
+}
+.contextual-menu.hide {
+  visibility: hidden;
+}
+.contextual-menu.visible {
+  visibility: visible;
+}
+.contextual-menu > .show{
+  display: inline-block;
+}
+.contextual-menu > .hide{
+  display: none;
+}
+
+.contextual-menu .btn {
+  color: #0D0C0C;
+  background-color: #F7F7F7;
+  border-color: #C0BFC7;
+}
+
+.btn {
+  background: #fafafa;
+  background-image: -webkit-linear-gradient(top, #fafafa, #f0f0f0);
+  background-image: -moz-linear-gradient(top, #fafafa, #f0f0f0);
+  background-image: -ms-linear-gradient(top, #fafafa, #f0f0f0);
+  background-image: -o-linear-gradient(top, #fafafa, #f0f0f0);
+  background-image: linear-gradient(to bottom, #fafafa, #f0f0f0);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 14px;
+  padding: 1px 10px 1px 10px;
+  margin: .5px;
+  border: solid #e8e8e8 1px;
+  text-decoration: none;
+}
+
+.btn:hover, .active > .btn {
+  background: #bdbdbd;
+  background-image: -webkit-linear-gradient(top, #bdbdbd, #a8a8a8);
+  background-image: -moz-linear-gradient(top, #bdbdbd, #a8a8a8);
+  background-image: -ms-linear-gradient(top, #bdbdbd, #a8a8a8);
+  background-image: -o-linear-gradient(top, #bdbdbd, #a8a8a8);
+  background-image: linear-gradient(to bottom, #bdbdbd, #a8a8a8);
+  text-decoration: none;
+}
+
+.ui-buttonset {
+    margin-right: 7px;
+}
+.ui-buttonset .ui-button {
+  margin-left: 0;
+  margin-right: -.4em;
+}
+.ui-button {
+  background: transparent;
+}
+/*.ui-button.active,
+.ui-button.active[data-id='insert']:hover,
+.ui-button.active[data-id='instruct']:hover {
+  background-image: linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#D8D6D6), color-stop(25%, #F5F5F5), to(#FFFFFF));
+  background-image: -webkit-linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+  background-image: -moz-linear-gradient(top, #D8D6D6, #F5F5F5 25%, #FFFFFF);
+  background-image: -ms-linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+  background-image: -o-linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+}*/
+
+.ui-button, .ui-button.active[data-id='insert'],
+.ui-button.active[data-id='instruct'] {
+  cursor: pointer;
+  display: inline-block;
+  background-color: none;
+  background-repeat: no-repeat;
+  padding: 5px 10px 6px;
+  margin: 0;
+  color: #333;
+  border: none;
+  font-size: 13px;
+  font-style: normal;
+  line-height: normal;
+  -webkit-transition: 0.1s linear background-image;
+  -moz-transition: 0.1s linear background-image;
+  -ms-transition: 0.1s linear background-image;
+  -o-transition: 0.1s linear background-image;
+  transition: 0.1s linear background-image;
+  overflow: visible;
+  outline: none;
+}
+
+
+
+.ui-button:disabled {
+  background-image: none;
+  background-color: #E7E7E7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ui-button:disabled .ui-button-text {
+  opacity: 0.4;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -khtml-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -khtml-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -khtml-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-tr {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -khtml-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.ui-button .ui-button-text {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.ui-button .ui-button-text:hover {
+	background: #e47d22;
+}
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "untitled-font-8";
+  src:url("../fonts/untitled-font-8.eot");
+  src:url("../fonts/untitled-font-8.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/untitled-font-8.woff") format("woff"),
+    url("../fonts/untitled-font-8.ttf") format("truetype"),
+    url("../fonts/untitled-font-8.svg#untitled-font-8") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+.icon-proof-central-01:before {
+  content: "\61";
+}
+.icon-proof-central-02:before {
+  content: "\62";
+}
+.icon-proof-central-03:before {
+  content: "\63";
+}
+.icon-proof-central-04:before {
+  content: "\64";
+}
+.icon-proof-central-05:before {
+  content: "\65";
+}
+.icon-proof-central-06:before {
+  content: "\66";
+}
+.icon-proof-central-07:before {
+  content: "\67";
+}
+.icon-proof-central-08:before {
+  content: "\68";
+}
+.icon-proof-central-09:before {
+  content: "\69";
+}
+.icon-proof-central-10:before {
+  content: "\6a";
+}
+.icon-proof-central-11:before {
+  content: "\6b";
+}
+.icon-proof-central-12:before {
+  content: "\6c";
+}
+.icon-proof-central-13:before {
+  content: "\6d";
+}
+.icon-proof-central-14:before {
+  content: "\6e";
+}
+
+.icon-bold {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-bold:before {
+    content: "\47";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.icon-edit {
+  width: 16px;
+  height: 16px;
+  background: url("/images/editor-icon.svg") no-repeat center center;
+  display: block;
+}
+
+.icon-italic {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-italic:before {
+    content: "\51";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.icon-superscript {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-superscript:before {
+    content: "\4d";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.icon-subscript {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-subscript:before {
+	content: "\4c";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.icon-smallcaps{
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-smallcaps:before {
+    content: "\48";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.icon-monospace{
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-monospace:before {
+	content: "\4b";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.ui-button.active .icon-undo {
+  width: 16px;
+  height: 16px;
+  background: url("/images/redo.png") no-repeat center center;
+  display: block;
+}
+
+.icon-undo {
+ 	width: 16px;
+    height: 16px;
+    background: url(/images/undo.png) no-repeat center center;
+    display: block;
+    padding: 14px;
+
+}
+
+.ui-button.active .icon-delete:before {
+    content: "\61";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.icon-delete {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-delete:before {
+    content: "\78";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.icon-insert {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-insert:before {
+    content: "\57";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.ui-button.active .icon-insert {
+  width: 16px;
+  height: 16px;
+  background: url("/images/undo.png") no-repeat center center;
+  display: block;
+}
+
+.icon-instruct {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: relative;
+}
+.icon-instruct:before {
+    content: "\76";
+    font-family: 'proof-central';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.ui-button.active .icon-instruct {
+  width: 16px;
+  height: 16px;
+  background: url("/images/undo.png") no-repeat center center;
+  display: block;
+}
+
+.icon-delete-reference {
+  width: 16px;
+  height: 16px;
+  background: url("/images/minus.png") no-repeat center center;
+  display: block;
+}
+.icon-delete-reference:before {
+    content: "\68";
+    font-family: 'proof-central';
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;	
+}
+.ui-button.active .icon-delete-reference {
+  width: 16px;
+  height: 16px;
+  background: url("/images/undo.png") no-repeat center center;
+  display: block;
+}

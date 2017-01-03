@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Bold Plugin</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/article.css" />
+    <link rel="stylesheet" type="text/css" href="styles/editor.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/dataset.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+  </head>
+  <body class="editor">
+    <div>Test Bold</div>
+    <div data-request-id="onBold" class="onBold"><span class="sb_ellipsis" name="OPT_ID_218"><span class="x"></span></span></div>
+    <div class="bold-button"></div><br />
+    <div>Test Undo</div>
+    <div data-request-id="onUndo" class="onUndo"><span class='optbold'>Hello </span><span class='optbold optitalic'>World</span><span class='optbold'>!!</span></div>
+    <div class="undo-button"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/EventBus', 'scripts/BoldMenuItem', 'scripts/BoldCommand'
+        ],
+        function(EventBus, BoldMenuItem, BoldCommand) {
+            var win = window,
+                boldMenuItem,
+                boldCommand,
+                boldMenuContainer,
+                contextualMenu;
+            EventBus.subscribe('Bold:onRequest', function (data) {
+                console.log('Bold:onRequest', data);
+            });
+            EventBus.subscribe('Bold:onComplete', function (fragment) {
+                var requestId = fragment.firstChild.dataset.requestId,
+                    elementToBeReplaced = win.document.querySelector('[data-request-id="' + requestId + '"]');
+                console.log('Bold:onComplete', fragment.cloneNode(true));
+                elementToBeReplaced.parentNode.replaceChild(fragment, elementToBeReplaced);
+            });
+            //boldMenuItem = new BoldMenuItem(EventBus, win);
+            //boldMenuContainer = boldMenuItem.render();
+            boldCommand = new BoldCommand(EventBus, window, document);
+            //win.document.querySelector('.bold-button').appendChild(boldMenuContainer);
+            domFragment = win.document.createDocumentFragment();
+            domFragment.appendChild(document.querySelector('.onBold').cloneNode(true));
+            boldCommand.execute(domFragment, []);
+           /* contextualMenu = {
+                domFragment: domFragment,
+                context: []
+            };
+            boldMenuItem.setContextualMenu(contextualMenu);
+            boldMenuItemForUndo = new BoldMenuItem(EventBus, win);
+            boldMenuContainer = boldMenuItemForUndo.render();
+            domFragmentForUndo = win.document.createDocumentFragment();
+            domFragmentForUndo.appendChild(document.querySelector('.onUndo').cloneNode(true));
+            contextualMenu = {
+                domFragment: domFragmentForUndo,
+                context: ['onBold']
+            };
+            win.document.querySelector('.undo-button').appendChild(boldMenuContainer);
+            boldMenuItemForUndo.setContextualMenu(contextualMenu);*/
+        });
+    };
+    </script>
+  </body>
+</html>

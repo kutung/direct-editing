@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>DoT Test</title>
+    <style>
+    body {
+        margin: 20px;
+    }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="phoenix/scripts/polyfills/classList.js"></script>
+    <script src="phoenix/scripts/polyfills/polyfills.js"></script>
+     <script>
+         require.config({
+                'baseUrl': '/',
+                'urlArgs': 'v5',
+                'map': {
+                    '*': {
+                        'dot': 'scripts/libs/doT',
+                        'scripts/radio': '/phoenix/scripts/radio',
+                        'scripts/Helper': '/phoenix/scripts/Helper',
+                        'scripts/EventBus': '/phoenix/scripts/EventBus',
+                    }
+                }
+            });
+     </script>
+</head>
+<body>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/TemplateHelper'
+        ], function(TemplateHelper) {
+            var locale = {"array": [{"enable": true, "name": "en-US", "title": "English", "imageUrl":"images/en.png"}, {"enable": true, "name": "es-Es", "title": "spanish", "imageUrl":"images/es.png"}]},
+            template = [
+              '<div class="locale-container">',
+                  '{{~it.array :hash:index}}',
+                  '{{?hash.enable == true }}',
+                    '<a href="#" data-name="{{=hash.name}}" title="{{=hash.title}}">',
+                      '<img src="{{=hash.imageUrl}}" />',
+                    '</a>',
+                  '{{?}}{{~}}',
+              '</div>'
+            ], str, tempStr;
+
+            str = template.join('');
+            tempStr = TemplateHelper.render(str, {}, locale);
+            console.log(tempStr);
+        });
+    };
+    </script>
+</body>
+</html>

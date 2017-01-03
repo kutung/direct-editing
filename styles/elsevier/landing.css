@@ -1,0 +1,375 @@
+body {
+    font-family: "Roboto Regular", Arial, sans-serif;
+    color: #454545;
+    background: #fff;
+}
+
+* {
+  outline: none;
+}
+
+body * {
+  box-sizing: -webkit-border-box;
+  box-sizing: -moz-border-box;
+  box-sizing: border-box;
+}
+
+/* Clearing floats */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.btn {
+  padding: 3px 20px;
+  font-family: "Roboto Regular", Arial, sans-serif;
+  line-height: 22px;
+  background: #4aaf2d;
+  color: #fff;
+  border: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+}
+
+.btn:hover {
+  background: #569626;
+}
+
+.landing-page {
+    background: #eee;
+}
+
+.landing-page .container {
+  padding: 0 0;
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+}
+
+.landing-page .article-details {
+    flex: none;
+    border-radius: 2px;
+    background: #fff;
+    float: left;
+    width: 224px;
+    line-height: 18px;
+    color: #313131;
+    padding: 20px;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: 15px;
+}
+
+.landing-page .article-details dt {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.landing-page .article-details dd {
+    padding: 1px 0 6px;
+    font-size: 14px;
+}
+
+.landing-page .article-cover-img {
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.landing-page .article-cover-img img {
+  border: 1px solid #D2D2D2;
+}
+.landing-page .right-content {
+    width: 720px;
+    float: left;
+    margin: 0 0 0 35px;
+    color: #414141;
+    border-right: 2px solid #fff;
+    padding: 0 25px 0 0;
+    box-sizing: border-box;
+    flex: none;
+}
+
+.landing-page .content-list {
+  font: normal 14px/20px "Roboto Light", arial, sans-serif;
+}
+
+.landing-page .content-list h2 {
+    font-size: 16px;
+}
+
+.landing-page .content-list .info {
+    font-size: 14px;
+    margin: 8px 0 8px 0;
+    line-height: 24px;
+}
+
+.landing-page .content-list .submit-title {
+    font-size: 16px;
+    color: #DC7B03;
+}
+
+.landing-page .welcome-content {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.landing-page .welcome-content p {
+    font-size: 14px;
+    line-height: 37px;
+}
+
+.landing-page .screen-list li p {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 0 0 20px;
+    width: 580px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.landing-page .screen-list li .img-list {
+  border: 2px solid #7e7e7e;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 65px;
+  height: 60px;
+  display: inline-block;
+  vertical-align: middle;
+  background: white;
+}
+
+.landing-page .screen-list li {
+  overflow: hidden;
+  padding: 7px 0 7px;
+}
+
+.landing-page .right-content footer {
+  font: normal 14px/20px "Roboto Light", arial, sans-serif;
+  margin: 8px 0;
+  bottom: 0;
+  padding: 0 0 10px;
+  color: #414141;
+  font-size: 14px;
+  clear: both;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.landing-page .right-content .author-help {
+    display: inline-block;
+    width: 580px;
+}
+
+.landing-page .right-content .author-help a {
+  text-decoration: underline;
+  color: #1c50d5;
+}
+
+nav a {
+    line-height: 25px;
+}
+
+.top-menu {
+    width: 980px;
+    margin: 0 auto;
+    text-align: right;
+    padding-top: 5px;
+}
+
+.help {
+    padding: 3px 10px 0 6px;
+    display: inline-block;
+}
+
+
+
+.article-details.article-cover-img {
+  display: none;
+}
+
+.related-link.hide, .submission-link.hide, .referee-link.hide {
+    display: none;
+}
+
+.unsupport-browser .proceed {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url('/images/ajax-loader.gif') no-repeat center center #aaaaaa;
+    opacity: 0.6;
+}
+
+.overlay-image {
+    top: 0;
+    left: 0;
+    width: 132px;
+    height: 178px;
+    z-index: 999;
+    background: url('/images/ajax-loader.gif') no-repeat center center #aaaaaa;
+}
+
+.landing-page .container.EditorC .screen-list li p {
+    padding: 0;
+}
+.landing-page .flash-message-container.hide {
+    display: none;
+}
+.landing-page .flash-message-container.show {
+    display: block;
+}
+.landing-page .flash-message-container {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    background-color: #d9edf7;
+    color: #31708f;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 3px #31708f;
+    -moz-box-shadow: 0 0 3px #31708f;
+    box-shadow: 0 0 3px #31708f;
+    font: 16px/2.5 "Roboto Regular", Arial, sans-serif;
+    width: 100%;
+    padding: 2px 0px;
+  }
+
+.proceed[disabled] {
+    opacity: 0.3;
+    cursor: default;
+}
+.proceed[disabled]:hover {
+    background: #4aaf2d;
+}
+.error-message-container {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    background-color: #F7D9D9;
+    color: #8F3131;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 3px #8F3131;
+    -moz-box-shadow: 0 0 3px #8F3131;
+    box-shadow: 0 0 3px #8F3131;
+    font: 16px/2.5 "Roboto Regular", Arial, sans-serif;
+    width: 100%;
+    padding: 2px 0px;
+}
+.error-message-container.hide{
+  display: none;
+}
+.error-message-container.show{
+  display: block;
+}
+.wrapper.hide{
+  display: none;
+}
+.wrapper.show{
+  display: block;
+}
+.edit-content {
+  margin: 20px 0 0 0;
+}
+.edit-content .screen-list li:first-child {
+  border-top: 1px solid #ccc;
+}
+.edit-content .screen-list li {
+  padding: 14px;
+  border-bottom: 1px solid #ccc;
+}
+.edit-content .content {
+  font-size: 14px;
+  float: left;
+}
+.edit-content .count {
+  font-size: 14px;
+  float: right;
+  color: green;
+}
+.edit-content .count.red {
+  color: red;
+}
+.content-list .instruction {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  font-style: italic;
+  padding-left: 20px;
+}
+.content-list .instruction .red {
+  color: red;
+}
+
+.localization {
+    display: inline-block;
+    padding-top: 3px;
+}
+
+.localization .locale-link {
+    padding-right: 3px;
+    opacity: 0.4
+}
+.localization .locale-link.active {
+    opacity: 1
+}
+.top-menu .help .help-link {
+  text-decoration: underline;
+  color: #1c50d5;
+  font: normal 14px "Roboto Light", arial, sans-serif;
+}
+
+.landing-page i {
+  font-style: italic;
+}
+
+.landing-page u {
+  text-decoration: underline;
+}
+
+.landing-page b,
+.landing-page strong {
+  font-weight: bold;
+}
+
+.landing-page sub {
+  vertical-align: sub;
+}
+
+.landing-page sup {
+  vertical-align: super;
+}
+
+break {
+    display: block;
+}

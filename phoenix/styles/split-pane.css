@@ -1,0 +1,43 @@
+.split-pane {
+    display: flex;
+    flex-wrap: nowrap;
+    /*align-items: stretch;*/
+    position: relative;
+}
+.split-pane .separator-clone {
+    opacity: 0.5;
+    position: absolute;
+}
+.split-pane .separator, .split-pane .separator-clone {
+    box-sizing: border-box;
+    background-color: gray;
+}
+/* Specific to Vertical Splitpane */
+.split-pane.vertical {
+    flex-direction: column;
+}
+.split-pane.vertical .pane.top {
+    height: 50%
+}
+.split-pane.vertical .pane.bottom {
+    height: 50%;
+}
+.split-pane.vertical .separator, .split-pane.vertical .separator-clone {
+    height: 5px;
+    cursor: row-resize;
+}
+
+/* Specific to Horizontal Splitpane */
+.split-pane.horizontal {
+    flex-direction: row;
+}
+.split-pane.horizontal .pane.left {
+    width: 50%;
+}
+.split-pane.horizontal .pane.right {
+    width: 50%;
+}
+.split-pane.horizontal .separator, .split-pane.horizontal .separator-clone {
+    width: 5px;
+    cursor: col-resize;
+}

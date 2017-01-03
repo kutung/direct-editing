@@ -1,0 +1,1023 @@
+@font-face {
+  font-family: 'STIX';
+  src: url("../../../../fonts/STIX-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'STIX';
+  src: url("../../../../fonts/STIX-Bold.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'STIX';
+  src: url("../../../../fonts/STIX-Italic.otf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'STIX';
+  src: url("../../../../fonts/STIX-BoldItalic.otf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CharisSIL';
+  src: url('../../../../fonts/CharisSIL-R.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CharisSIL';
+  src: url('../../../../fonts/CharisSIL-B.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CharisSIL';
+  src: url('../../../../fonts/CharisSIL-I.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CharisSIL';
+  src: url('../../../../fonts/CharisSIL-BI.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+/*Base font (Running Text): font1*/
+.pager {
+  font-size: 8pt;
+  line-height: 10.5pt;
+  text-align: left;
+  font-family: "CharisSIL", Times, serif;
+  color: #1A1A1A;
+  letter-spacing: -0.05px;
+}
+
+/*font2*/
+/*Offprint line*/ .page .document-header .before-logo-container,
+/*right-folio*/ .pager .page-header .right-header,
+/*left-folio*/ .pager .page-header .left-header,
+/*running-head*/ .pager .page-header .center-header,
+/*DOI line*/ .pager .doi-panel,
+/*copyright-line*/ .pager .copyright-panel,
+/*Misc info*/ .pager .ce_miscellaneous,
+/*Presented by*/  .pager .ce_presented,
+/*Dedicated to*/ .pager .ce_dedication,
+/*Affiliations*/ .pager .ce_author-group .ce_affiliation,
+/*Article Info*/ .pager .article-abstract-group .article-info-group,
+/*Article History*/ .pager .article-history,
+/*keywords*/ .pager .article-abstract-group .ce_keywords,
+/*Abbreviation keyword on the opener footnote*/ .pager .abbrevation-filled,
+/*text footnote*/ .pager .ce_foonote,
+/*article footnote*/ .pager .ce_article-footnote,
+/*author footnote in the opening page*/ .pager .ce_footnote,
+/*corresponding author detail*/ .pager .ce_correspondence,
+/*author name in e-mail address*/ .pager .author-web-generated,
+/*Figure*/ .pager .figure,
+/*Table*/ .pager .table,
+/*Display table*/ .pager .displayfigtab,
+/*Page Number*/ .pager .page-number {
+  font-size: 6.4pt;
+  line-height: 8.6pt;
+}
+
+/*Reference section title*/ .pager .ce_bibliography .ce_bibliography-sec .sectionline_opt,
+/*Further reading section title*/ .pager .ce_further-reading .ce_further-reading-sec .sectionline_opt,
+/* References */ .pager .ce_bib-reference,
+/*Biography text*/ .pager .ce_biography .newline_simplepara,
+/*Glossary entries (tail part)*/ .pager .ce_glossary .ce_glossary-entry {
+  font-size: 6.4pt;
+  line-height: 8pt;
+}
+
+/*font3*/
+/*Abstract text*/ .pager .ce_abstract-sec {
+  font-size: 7.2pt;
+  line-height: 9.6pt;
+}
+
+/*font4*/
+/*SD line*/ .pager .document-header .middle-header .document-title-top,
+/*URL line (Univers)*/ .pager .document-header .middle-header .document-title-bottom,
+/*1hd*/ .pager .first_level > .title_wrapper .sectionline_opt,
+/*2hd*/ .pager .second_level > .title_wrapper .sectionline_opt,
+/*3hd*/ .pager .third_level > .title_wrapper .sectionline_opt,
+/*4hd*/ .pager .fourth_level > .title_wrapper .sectionline_opt,
+/*5hd*/ .pager .fifth_level > .title_wrapper .sectionline_opt,
+/*Acknowledgment*/ .pager .ce_acknowledgment .ce_section-title,
+/*Reference title*/ .pager .ce_bibliography > .ce_section-title,
+/*text box title*/ .pager .ce_textbox .ce_textbox-head .ce_title,
+/*display text box title*/ .pager .ce_dtextbox .ce_textbox-head .ce_title,
+/*glossary section title (tail part)*/ .pager .ce_glossary > .ce_section-title {
+  font-size: 8pt;
+  line-height: 10.5pt;
+}
+
+/*font5*/
+/*Abstract title*/ .pager .ce_abstract > .ce_section-title,
+/*Article info title*/ .pager .article-info-title {
+  font-size: 9pt;
+  line-height: 10pt;
+}
+
+/*font6*/
+/*Dochead*/ .pager .ce_dochead {
+  font-size:9.6pt;
+  line-height: 10.5pt;
+}
+
+/*font7*/
+/*Author names*/ .pager .ce_author-group {
+  font-size: 10.6pt;
+  line-height: 13pt;
+}
+
+/*font8*/
+/*Article title*/ .pager .ce_title,
+/*Article subtitle*/ .pager .ce_subtitle {
+  font-size: 13.5pt;
+  line-height: 17.3pt;
+}
+
+/*font9*/
+/*Journal name*/ .pager .document-header .middle-header .document-title {
+  font-size:14pt;
+  line-height: 16pt;
+}
+
+/*------------------------------------------------------------------------------------*/
+
+/*Character styles*/
+/*Superscript*/
+.pager .ce_sup {
+  font-size: 70%;
+  line-height: 0;
+  position: relative;
+  bottom: 0.5em;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+/*Subscript*/
+.pager span.ce_inf {
+  line-height: 0;
+  font-size: 70%;
+  position: relative;
+  bottom: -0.33em;
+  word-break: keep-all;
+}
+.pager .ce_sup:before,
+.pager .ce_inf:before {
+  content: "\2060";/*nk*/
+}
+/*Unicode char*/
+.pager .unicode-char {
+  font-family: "CharisSIL", STIX;
+}
+/*Boldface*/
+.pager .ce_bold {
+  font-weight: bold;/*nk*/
+}
+/*Italicface*/
+.pager .ce_italic {
+  font-style: italic;/*nk*/
+}
+
+
+/*Superscript labels*/
+/*Table footnote labels*/ .pager .table .ce_table-footnote .ce_label,
+/*Text footnote label*/ .pager .ce_foonote .ce_label,
+/*Article footnote label*/.pager .ce_article-footnote .ce_label,
+/*Corresponding author label*/.pager .ce_correspondence .ce_label,
+/*author footnote in the opening page*/ .pager .ce_footnote .ce_label,
+/*Affiliation label*/.pager .ce_affiliation .ce_label {
+  font-size: 70%;
+  line-height: 0;
+  font-style: normal;
+  position: relative;
+  bottom: 0.65em;
+}
+
+.pager .table .ce_table-footnote .ce_label {
+  display: inline-block;
+  width: 12pt;
+  text-align: right;
+  padding-right: 4pt;
+}
+
+/*------------------------------------------------------------------------------------*/
+/*Opener Header Panel*/
+
+/*Offprint line*/
+.page .document-header .before-logo-container {
+  text-align: center;
+  padding-bottom: 12pt;
+}
+
+/*Rule below offprint line*/
+.pager .document-header .top-ruler {
+  border-top: 0.25pt solid #000;
+}
+
+/*Logo panel*/
+.pager .document-header .logo-container {
+  padding-bottom: 6pt;
+  width: 100%;
+  display: table;
+}
+.pager .document-header .logo-container-child {
+  display: table-cell;
+  width: 100%;
+}
+.pager .document-header .logo-container-child .child-row {
+  margin-top: 2mm;
+  width: 100%;
+  display: table;
+}
+.pager .document-header .logo-container .gap {
+  width: 5mm;
+}
+
+/*Grey box*/
+.pager .document-header .middle-header {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #eaeaea;
+}
+
+/*3pt bottom ruler*/
+.pager .document-header .bottom-ruler {
+  border-top: 1mm solid #000;
+}
+
+/*Customer logo*/
+.pager .document-header .left-header {
+  display: table-cell;
+  width: 21mm;
+}
+.pager .document-header .left-header > img {
+  height: 23mm;
+  vertical-align: middle;
+}
+
+/*Journal logo*/
+.pager .document-header .right-header {
+  display: table-cell;
+  width: 19mm;
+}
+.pager .document-header .right-header > img {
+  height: 25.24mm;
+  vertical-align: middle;
+  margin-top: -2mm;
+  border: 0.5pt solid black;
+}
+
+/*Grey box contens*/
+/*SD line*/
+.pager .document-header .middle-header .document-title-top {
+  padding-bottom: 13pt;
+}
+
+/*URL line (Univers)*/
+.pager .document-header .middle-header .document-title-bottom {
+  padding-top: 13pt;
+  padding-bottom: 1.5pt;
+}
+
+/*Running head*/
+.pager .page-header {
+  display: table;
+  width: 100%;
+  font-style: italic;
+}
+.pager .page-header .right-header {
+  text-align: right;
+  display: table-cell;
+}
+.pager .page-header .left-header {
+  text-align: left;
+  display: table-cell;
+}
+/*Running footer*/
+.pager .page-footer {
+  text-align: center;
+  padding-top: 10.75pt;
+}
+
+/*Opener page footer*/
+.pager .firstpage .page-footer {
+  padding-top: 12pt;
+  text-align: left;
+}
+
+/*Dochead*/
+.pager .ce_dochead {
+  position: absolute;
+}
+
+/*Article title*/
+.pager .ce_title {
+  padding-top: 16pt;
+  margin-bottom: 10pt;
+}
+
+/*Article subtitle*/
+.pager .ce_subtitle {
+  margin: 0 0 10pt 0;
+}
+.pager .ce_title + .ce_subtitle{
+  margin-top: -10pt;
+}
+
+/*Article short title*/
+.pager .stitle {
+  display: none;
+}
+
+/*Misc, Presented by and Dedicated to Info*/
+.pager .ce_miscellaneous,
+.pager .ce_presented,
+.pager .ce_dedication {
+  text-align: left;
+}
+.pager .ce_miscellaneous:last-child,
+.pager .ce_presented,
+.pager .ce_dedication {
+  margin-bottom: 9pt;
+}
+
+/*Author names*/
+.pager .ce_author-group .ce_author {
+  display: inline;
+}
+.pager .ce_author-group .ce_author > * {
+  white-space: nowrap;
+}
+.pager .ce_author-group .ce_author .ce_roles,
+.pager .ce_author-group .ce_author .author-end {
+  white-space: normal;
+}
+
+/*Affiliations*/
+.pager .ce_author-group .ce_affiliation {
+  font-style: italic;
+  margin-top: 6pt;
+  margin-bottom: 0;
+}
+.pager .ce_author-group .ce_affiliation + .ce_affiliation {
+  margin-top: 0;
+}
+.pager .ce_author-group .sa_affiliation {
+  display: none;
+}
+
+/*Closing rule after affiliation*/
+.pager .ce_author-group {
+  /*border-bottom: 1pt solid;*/
+  margin-bottom: 6pt;
+}
+.pager .article-abstract-group {
+  border-top: 0.25pt solid #000;
+  margin-top: 8pt;
+}
+
+.pager .pagination-container .paginator .article-abstract-group.continued {
+  border-top: none;
+}
+
+/*Article info & Abstract group */
+.pager .article-abstract-group {
+  padding-top: 14pt;
+}
+.pager .article-abstract-group-bottom {
+  clear: both;
+  /*border-bottom: 1pt solid;*/
+  padding-top: 6pt;
+}
+.pager .article-abstract-group-bottom .top-ruler {
+  border-top: 0.25pt solid #000;
+  padding-top: 21pt;
+}
+/*Article Info & Abstract - section titles*/
+.pager .ce_abstract > .ce_section-title,
+.pager .article-info-title {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 3px;
+  display: block;
+  border-bottom: 0.25pt solid;
+  padding-bottom: 8pt;
+  margin-bottom: 3pt;
+}
+
+/*Abstract text*/
+.pager .ce_abstract-sec {
+  text-align: justify;
+}
+.pager .ce_abstract-sec .ce_simple-para + .newline_simplepara,
+.pager .ce_abstract-sec .newline_simplepara + .newline_simplepara {
+  text-indent: 10.5pt;/*nk*/
+  display: block;/*nk*/
+}
+/*Section titles in abstract - Materials & Methods*/
+.pager .ce_abstract .ce_abstract-sec .ce_section-title {
+  font-style: italic;
+}
+.pager .ce_abstract .ce_abstract-sec .ce_section-title:after {
+  content: ": "
+}
+
+
+/*Copyright line - 1 (below abstract)*/
+.pager .article-abstract-group .copyright-panel {
+  text-align: right;
+}
+
+/*Article Info*/
+.pager .article-abstract-group .article-info-group {
+  text-align: left;
+}
+.pager .article-abstract-group .article-info-group .article-history-title {
+  font-style: italic;
+  display: block;
+}
+/*.pager .article-abstract-group .right-panel {
+  width: 125mm;
+}
+.pager .article-abstract-group .left-panel {
+  width: 47mm;
+}*/
+/*Keywords*/
+.pager .article-abstract-group .keywords-group {
+  border-top: 0.25pt solid;
+  padding-top: 3pt;
+}
+.pager .miscellaneous-info:empty + .presented-info:empty + .dedication-info:empty + .keywords-group,
+.pager .left-panel.continued .keywords-group:nth-of-type(1),
+.pager .dedication-info.continued:empty + .keywords-group {
+  border-top: 0pt;
+  padding-top: 0pt;
+}
+
+.pager .article-abstract-group .ce_keywords {
+  text-align: left;
+  margin-bottom: 10pt;
+}
+.pager .article-abstract-group .ce_keywords .ce_section-title {
+  font-style: italic;
+  display: block;
+}
+.pager .article-abstract-group .ce_keywords .ce_keyword {
+  display: block;
+}
+.pager .article-abstract-group .ce_keywords .ce_keyword .x {
+  display: none;
+}
+
+/*Abbreviation keyword on the opener footnote*/
+.pager .abbrevation-filled {
+  text-align: justify;
+  text-indent: 12pt;
+}
+.pager .abbrevation-filled .ce_keywords .ce_section-title {
+  font-style: italic;
+}
+.pager .abbrevation-filled .ce_keywords .ce_section-title:after {
+  content:": ";
+}
+.pager .abbrevation-filled .ce_keywords .ce_section-title .x {
+  display: none;
+}
+/*Comma separtor after abbreviation*/
+.pager .abbrevation-filled .ce_keywords > .ce_keyword > .ce_text:after {
+  content: ", "
+}
+.pager .abbrevation-filled .ce_keywords .ce_keyword > .ce_text .x {
+  display: none;
+}
+/*closing period after abbreviation section*/
+.pager .abbrevation-filled .ce_keywords .ce_keyword:last-child > .ce_text:last-child:after {
+  content:".";
+}
+
+/*Text (Paragraph)*/
+.pager .ce_para {
+  text-align: justify;
+  text-indent: 12pt;
+}
+.pager .ce_para.continued {
+  text-indent: 0pt;
+}
+
+/*Section titles*/
+/*First level hd (1 hd)*/
+.pager .first_level > .title_wrapper .sectionline_opt {
+  margin: 8.5pt 0;
+  font-weight: bold;
+}
+
+/*Second level head (2 hd)*/
+.pager .second_level > .title_wrapper .sectionline_opt {
+  margin: 8.5pt 0;
+  font-style: italic;
+}
+
+/*Third level head (3 hd)*/
+.pager .third_level > .title_wrapper .sectionline_opt {
+  margin: 8.5pt 0 0 0;
+  font-style: italic;
+}
+
+/*Fourth level head (4 hd)*/
+.pager .fourth_level > .title_wrapper .sectionline_opt {
+  margin: 8.5pt 0 0 0;
+  font-style: italic;
+}
+/*Fifth level head (5 hd)*/
+.pager .fifth_level > .title_wrapper .sectionline_opt {
+  padding-left: 12pt;
+  font-style: italic;
+}
+/*Empty Title or Deleted Title*/
+.pager .title_wrapper .sectionline_opt.empty-content {
+  margin: 0;
+}
+/*Fourth and Fifth Level Head - Run on*/
+.pager .fourth_level > .title_wrapper .sectionline_opt,
+.pager .fifth_level > .title_wrapper .sectionline_opt,
+.pager .fourth_level > .title_wrapper + .ce_para ,
+.pager .fifth_level > .title_wrapper + .ce_para {
+  display: inline;
+}
+/*Footnotes*/
+/*text footnote*/ .pager .ce_foonote,
+/*article footnote*/ .pager .ce_article-footnote,
+/*corresponding author detail*/ .pager .ce_correspondence,
+/*author name in e-mail address*/ .pager .author-web-generated {
+  text-align: justify;
+  text-indent: 12pt;
+}
+/*Rule over footnote*/
+.pager .short-ruler {
+  width: 36pt;
+  height: 1px;
+  border-top: 0.3pt solid #000;
+  margin-bottom: 3pt;
+  margin-top: 21pt;
+}
+
+/*Figure*/
+.pager .figure {
+  margin: 10.5pt 0;
+}
+.pager .figure > .wrapper img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pager .nested-figure div:not(.figcaption) .wrapper img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pager .figcaption {
+  padding-top: 10.5pt;
+  text-align: justify;
+}
+.pager .figure.nested-figure .wrapper + .figcaption {
+  padding-bottom: 9pt;
+}
+.pager .figure.nested-figure > .figcaption {
+  padding-top: 0pt;
+}
+.pager .figcaption div.ce_source {
+  display: inline;
+}
+.pager .figcaption.keep-in-center {
+  text-align: center;
+}
+.pager .figcaption .ce_label {
+  font-weight: bold;
+}
+
+.pager .figure .figcaption.top-most {
+    border-bottom: 0.25pt solid black;
+    padding-bottom: 6pt;
+}
+.pager .figure .figcaption-arrow {
+  position: absolute;
+  top: 0;
+  left: -8pt;
+}
+/*Table & Display table*/
+.pager .table,
+.pager .displayfigtab {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+/*Table caption*/
+.pager .table .tablecaption, .pager .table .ce_source,
+.pager .displayfigtab .tablecaption, .pager .displayfigtab .ce_source {
+  text-align: justify;
+  text-indent: 0;
+}
+.pager .table .tablecaption .x,
+.pager .displayfigtab .tablecaption .x {
+  display: none;
+}
+.pager .table[data-continued="true"] .tablecaption .ce_caption {
+  font-style: italic;
+}
+.pager .table[data-continued="true"] .tablecaption .ce_label,
+.pager .table[data-continued="true"] .tablecaption .x {
+  display: inline;
+}
+/*Table number*/
+.pager .table .tablecaption .ce_label,
+.pager .displayfigtab .tablecaption .ce_label {
+  font-weight: bold;
+  display: block;
+}
+/*Table source label*/
+.pager .table .ce_source .ce_label,
+.pager .displayfigtab .ce_source .ce_label {
+  font-weight: bold;
+}
+/*table - column hd & t body*/
+.pager .table table,
+.pager .displayfigtab table {
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+/*table column head*/
+.pager .table thead td.td,
+.pager .displayfigtab thead td.td {
+  padding-top: 3pt;
+  padding-bottom: 3pt;
+  text-indent: 0;
+}
+.pager .table thead tr,
+.pager .displayfigtab thead tr {
+  border-top: 0.5pt solid;
+}
+.pager .table thead .td,
+.pager .displayfigtab thead .td {
+  vertical-align: bottom;
+}
+/*Table body*/
+.pager .table td,
+.pager .displayfigtab td {
+  padding-left: 3pt;/*nk*/
+  padding-right: 3pt;/*nk*/
+}
+.pager .table tbody,
+.pager .displayfigtab tbody {
+  border-top: 0.5pt solid;
+  border-bottom: 0.5pt solid;
+}
+.pager .table tbody tr:first-child td,
+.pager .displayfigtab tbody tr:first-child td {
+  padding-top: 3pt;
+}
+.pager .table tbody td,
+.pager .displayfigtab tbody td {
+  vertical-align: top;
+}
+.pager .table td.td,
+.pager .displayfigtab td.td {
+  padding: 0 6pt 0 18pt;
+  /*text-indent: -12pt;*/
+}
+/*.pager .table tbody tr:last-child td,
+.pager .displayfigtab tbody tr:last-child td {
+  padding-bottom: 3pt; //nk
+}*/
+.pager .table tr td:first-child,
+.pager .displayfigtab tr td:first-child {
+  padding-left: 6pt;
+}
+.pager .table tr td:last-child,
+.pager .displayfigtab tr td:last-child {
+  padding-right: 6pt;
+}
+.pager .table tbody tr:last-child td,
+.pager .displayfigtab tbody tr:last-child td{
+  padding-bottom: 3pt;
+}
+.pager .table table ~ table,
+.pager .displayfigtab table ~ table,
+.pager .table table ~ table thead tr:first-child,
+.pager .displayfigtab table ~ table thead tr:first-child {
+    border-top: none;
+}
+.pager .table table ~ table,
+.pager .displayfigtab table ~ table {
+    margin-top: -4px;
+}
+/*Table legend & footnote*/
+.pager .table .ce_legend, .pager .table .ce_table-footnote,
+.pager .displayfigtab .ce_legend, .pager .displayfigtab .ce_table-footnote {
+  text-align: justify;
+  text-indent: 0;
+}
+.pager .table table,
+.pager .displayfigtab table {
+  margin-bottom: 3pt;
+}
+.pager .table .ce_legend .newline_simplepara,
+.pager .displayfigtab .ce_legend .newline_simplepara {
+  display: block;
+}
+
+/*Table list*/
+
+.pager table td .ce_list {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/*Displayed Quote*/
+.pager .ce_displayed-quote {
+  margin: 5.25pt 0;
+  padding-left: 12pt;
+  text-indent: 0;
+}
+.pager .ce_displayed-quote .ce_source {
+  text-align: right;
+}
+
+/*Acknowledgment*/
+.pager .ce_acknowledgment .ce_section-title {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin: 10.5pt 0;
+}
+
+/*Box*/
+.pager .ce_textbox, .pager .ce_dtextbox {
+  margin-top: 10.5pt;
+  margin-bottom: 10.5pt;
+  padding: 10pt;
+  border: 0.25pt solid;
+}
+.pager .ce_textbox > .ce_label, .pager .ce_dtextbox > .ce_label,
+.pager .ce_textbox .ce_caption, .pager .ce_dtextbox .ce_caption {
+  font-weight: bold;
+}
+.pager .ce_textbox .ce_textbox-head .ce_title,
+.pager .ce_dtextbox .ce_textbox-head .ce_title {
+  font-weight: bold;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+.pager .ce_textbox .ce_textbox-body, .pager .ce_dtextbox .ce_textbox-body {
+  margin-top: 10pt;
+}
+.pager .ce_dtextbox {
+  text-indent: 0;
+}
+.pager .ce_textbox .ce_textbox-body .ce_sections .ce_para:first-child,
+.pager .ce_dtextbox .ce_textbox-body  .ce_sections .ce_para:first-child {
+  text-indent: 0;
+}
+
+/*List*/
+.pager .ce_list {
+  margin: 10pt 0 10pt 0;
+}
+.pager .ce_list .ce_list {
+  margin: 0 0 0 0;
+}
+/*Generic list structure*/
+.pager .ce_list .ce_list-item {
+  text-indent: 0;
+}
+.pager .ce_list .ce_list-item > .cpeins > .ce_label,
+.pager .ce_list .ce_list-item > .ce_label {
+  display: inline-block;
+  padding-right: 4pt;
+  text-align: right;
+}
+.pager .ce_list .ce_list-item .ce_para {
+  padding-left: 0;
+  text-indent: 0;
+}
+
+/*List title*/
+.pager .ce_list .sectionline_opt,
+.pager .ce_list .ce_section-title {
+  text-indent: 0;
+  font-style: italic;
+}
+
+/*Biography*/
+.pager .ce_biography {
+  margin-top: 10.5pt;
+  text-align: justify;
+  clear: both;
+}
+.pager .ce_biography .wrapper {
+  float: left;
+  padding: 0 10.5pt 10.5pt 0;
+  width: 110px;
+}
+.pager .ce_biography .newline_simplepara {
+  display: block;
+  margin-left: 110px;
+}
+
+/*Glossary*/
+.pager .ce_glossary > .ce_section-title {
+  font-weight: bold;
+  display: block;
+  margin: 10.5pt 0;
+}
+.pager .ce_glossary {
+  clear: both;
+}
+.pager .ce_glossary .ce_glossary-entry {
+  padding-left: 12pt;
+  text-indent: -12pt;
+}
+.pager .ce_glossary .ce_glossary-entry .ce_glossary-heading,
+.pager .ce_glossary .ce_glossary-entry .ce_glossary-def{
+  display: inline;
+}
+.pager .ce_glossary .ce_glossary-entry .ce_glossary-heading {
+  font-style: italic;
+}
+
+/*Inline elements*/
+/*inline image*/
+.pager .ce_inline-figure, .pager .ce_inline-figure div {
+  display: inline;
+}
+/*inline formula*/
+.pager .inline-formula, .pager .inline-formula div {
+  display: inline;
+}
+.pager .inline-formula img,
+.pager .ce_inline-figure img {
+  margin-top: 1px;
+  vertical-align: middle;
+}
+/*Inline glyph*/
+.pager .ce_glyph div, .pager .ce_glyph img {
+  display: inline;
+}
+
+/*Display equations*/
+.pager .ce_display table.formula {
+  text-indent: 0;
+  width: 100%;
+  margin: 5.25pt 0 5.25pt 0;
+}
+.pager .threeG-single-column .ce_display table.formula .eqn-container {
+  padding-left: 24pt;
+}
+
+/*Hidden elements */
+/*Item info*/
+.pager .item-info {
+  display: none;
+}
+
+/*Nomenclature*/
+.pager .ce_nomenclature {
+  border: 0.25pt solid black;
+  margin: 10.5pt 0;
+  padding: 10pt;
+}
+.pager .ce_nomenclature .ce_section-title,
+.pager .ce_def-list .nomenclature_secttitle {
+  font-weight: bold;
+}
+.pager .ce_def-list .nomenclature_secttitle {
+  display: block;
+  font-style: italic;
+  margin-bottom: 6pt;
+}
+.pager .ce_def-list {
+  margin: 15px 0 0;
+  text-indent:0;
+}
+.pager .ce_def-list .ce_def-term {
+  width: 30pt;
+  display: inline-block;
+  vertical-align: top;
+}
+.pager .ce_def-list .ce_para {
+  text-indent:0;
+}
+.pager .ce_def-list .ce_def-description {
+  padding-left: 6pt;
+}
+
+/*References and Further Reading*/
+/*Reference title & Further Reading title*/
+.pager .ce_bibliography > .ce_section-title,
+.pager .ce_further-reading > .ce_section-title {
+  text-align: left;
+  font-weight: bold;
+  display: block;
+  margin: 10.5pt 0;
+}
+/*Reference section title*/
+.pager .ce_bibliography .ce_bibliography-sec .sectionline_opt,
+.pager .ce_further-reading .ce_further-reading-sec .sectionline_opt {
+  font-weight: bold;
+  margin-top: 8.6pt;
+}
+/* Unnumbered references */
+.pager .ce_bib-reference.unlabeled .reference_wrapper {
+  padding-left: 12pt;
+  text-indent: -12pt;
+  text-align: justify;/*nk*/
+  margin-top: 0;
+}
+.pager .ce_bib-reference.unlabeled .reference_label_wrapper {
+  display: none;
+}
+/* Numbered references */
+.pager .ce_bib-reference .reference_label_wrapper {
+  display: inline-block;
+  /*vertical-align: top;*/
+  padding-right: 2mm;
+  text-align: right;
+  max-width: 31px;
+}
+/* For Sub-Reference */
+.pager .ce_bib-reference #sbref-proof,
+.pager .ce_bib-reference #sbref {
+  display: block;
+}
+.pager .ce_section .cpeins + .sectionline_opt {
+  display: inline;
+}
+.pager .table .tablecaption > .wrapper > .container-image {
+  text-align: center;
+}
+.pager .ce_display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/* Watermark for uncorrected Proof */
+.pager .page .watermark {
+  bottom: 50%;
+  position: absolute;
+  display: block;
+  color: #E2E2E2;
+  font-family: sans-serif;
+  font-size: 79px;
+  margin-left: -50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-transform: rotate(303deg);
+  -webkit-transform: rotate(303deg);
+  transform: rotate(303deg);
+}
+.pager .landscapepage .watermark {
+  margin-left: 50px;
+  -ms-transform: rotate(330deg);
+  -webkit-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+/* For Cross Reference Hyperlinks within document*/
+.pager .ce_cross-ref,
+.pager .ce_cross-refs {
+  font-style: normal;
+  text-decoration: none;
+  color: #1A1A1A;
+}
+
+.pager .pagination-container .paginator .author-group-footnote-filled .author-footnote {
+  text-align: justify;
+}
+
+@media print {
+  .pager .table,
+  .pager .displayfigtab {
+    overflow: hidden;
+  }
+
+  .pager .ce_display {
+    overflow: hidden;
+  }
+
+  .page:before, .page:after {
+    overflow: visible;
+  }
+}

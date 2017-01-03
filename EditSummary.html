@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Page Central - Editor</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <style type="text/css">
+          #editor span.optbold {
+            font-weight: bold;
+            background-color: #FF9;
+            cursor: pointer;
+            color: black;
+          }
+          #editor span.optitalic {
+            font-style: italic;
+            background-color: #FF9;
+            cursor: pointer;
+            color: black;
+          }
+          #editor span.optsup {
+            vertical-align: super;
+            font-size: 10px;
+            cursor: pointer;
+            background-color: #FF9;
+            color: black;
+            line-height: 0 !important;
+          }
+          #editor span.optsub {
+            vertical-align: sub;
+            font-size: 10px;
+            cursor: pointer;
+            background-color: #FF9;
+            color: black;
+            line-height: 0 !important;
+          }
+          #editor span.optdel {
+            text-decoration: line-through;
+            color: red;
+            cursor: pointer;
+            background-color: #FF9;
+          }
+          #editor span.optcomment {
+            background-color: #FF9;
+            color: black;
+            cursor: pointer;
+          }
+          #editor span.comntText {
+            display: inline-block;
+            height: 0;
+            width: 0;
+            font-size: 0;
+            clear: both;
+            visibility: hidden;
+            line-height: 0px;
+          }
+          #editor span.optinsert {
+            text-decoration: underline;
+            color: green;
+            cursor: pointer;
+            background-color: #FFFF99;
+          }
+          /* Edit Summary */
+          .edit-summary-list {
+            list-style: none;
+            border-bottom: 1px solid #e9e9e9;
+          }
+          #edit-summary-author span.optbold {
+            font-weight: bold;
+            background-color: #FF9;
+            cursor: pointer;
+            color: black;
+          }
+          #edit-summary-author span.optitalic {
+            font-style: italic;
+            background-color: #FF9;
+            cursor: pointer;
+            color: black;
+          }
+          #edit-summary-author span.optsup {
+            vertical-align: super;
+            font-size: 10px;
+            cursor: pointer;
+            background-color: #FF9;
+            color: black;
+            line-height: 0 !important;
+          }
+          #edit-summary-author span.optsub {
+            vertical-align: sub;
+            font-size: 10px;
+            cursor: pointer;
+            background-color: #FF9;
+            color: black;
+            line-height: 0 !important;
+          }
+          #edit-summary-author span.optdel {
+            text-decoration: line-through;
+            color: red;
+            cursor: pointer;
+            background-color: #FF9;
+          }
+          #edit-summary-author span.optcomment {
+            background-color: #FF9;
+            color: black;
+            cursor: pointer;
+          }
+          #edit-summary-author span.comntText {
+            display: inline-block;
+            height: 0;
+            width: 0;
+            font-size: 0;
+            clear: both;
+            visibility: hidden;
+            line-height: 0px;
+          }
+          #edit-summary-author span.optinsert {
+            text-decoration: underline;
+            color: green;
+            cursor: pointer;
+            background-color: #FFFF99;
+          }
+
+          #edit-summary-copy-editor .cpeins {
+            text-decoration: underline;
+            color: #008000;
+            cursor: pointer;
+            background-color: #D3D3D3;
+          }
+          #edit-summary-copy-editor .cpeins div {
+            background-color: inherit;
+          }
+          #edit-summary-copy-editor .cpedel {
+            text-decoration: line-through;
+            color: #f00;
+            cursor: pointer;
+            background-color: #D3D3D3;
+          }
+
+          #edit-summary-copy-editor .optreject {
+            border: none;
+            position: relative;
+            display: inline-block;
+          }
+          #edit-summary-copy-editor .optreject .cpeins {
+            text-decoration: underline;
+            color: green;
+            cursor: pointer;
+            background-color: #D3D3D3;
+            display: inline;
+          }
+          #edit-summary-copy-editor .optreject .cpedel {
+            background-color: #B3F0B3;
+            color: #008000;
+            text-decoration: none;
+          }
+
+          #editor .cpeins div, #component-container .cpeins div {
+            background-color: inherit;
+          }
+          #editor .cpedel, #component-container .cpedel {
+            text-decoration: line-through;
+            color: red;
+            cursor: pointer;
+            background-color: #D3D3D3;
+          }
+          #editor .cpeins, #component-container .cpeins {
+            text-decoration: underline;
+            color: green;
+            cursor: pointer;
+            background-color: #D3D3D3;
+            display: inline;
+          }
+          #editor .optreject, #component-container .optreject {
+            border: none;
+          }
+          #editor .optreject span.cpedel, #component-container .optreject span.cpedel {
+            background-color: #B3F0B3;
+            color: green;
+            text-decoration: none;
+          }
+          #editor .optreject span.cpeins, #component-container .optreject span.cpeins {
+            background-color: #B3F0B3;
+            color: red;
+            text-decoration: line-through;
+          }
+          .queries1 {
+            width: 350px;
+          }
+          .queries2 {
+            width: 400px;
+          }
+          .tab-panel .tab-content-container {
+            height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+          }
+        </style>
+        <link rel="stylesheet" type="text/css" href="styles/tabpanel.css" />
+    </head>
+    <body>
+        <div id='editor'>
+<span class="ce_simple-para" id="abspara0010" name="OPT_ID_463">Quantum chemical calculations <span class="optbold" name="opt3603241990">using</span> gradient-corrected DFT methods (BP86) using effective core po<span data-name="opt1703935759" class="optbold">tentials a</span><span data-name="opt1540110992" class="optitalic"><span data-name="opt1703935759" class="optbold">nd TZP qu</span>ality </span>basis sets <span data-name="opt1718101707" class="optbold">have <span data-name="opt1881876776" class="optitalic">been</span> carri</span>ed out for the complexes (CO)<span class="ce_inf" name="OPT_ID_464">3</span>M<span class="unicode-char">–</span>TMM (M<span class="unicode-char">&nbsp;</span>=<span class="unicode-char">&nbsp;</span>Fe, Ru, Os, Rh<span class="ce_sup" name="OPT_ID_465">+</span>; TMM<span class="unicode-char">&nbsp;</span>=<span class="unicode-char">&nbsp;</span>trimethylenemethane). The calculated equilibrium geometries give trigonal<span data-name="opt851936288" class="optsub"><span data-name="opt4317016421" class="optsup"> pyramidal structures which are in good agreement with experimental results for the iron and ruthenium species. The TMM ligand adopts a pyramidal coordination of the central carbon atom whic</span></span>h has a <span class="optinsert" name="opt1458345655">Test</span>shorter distance to the metal atom than the terminal carbon atoms. The theoretically predicted bond dissociation energies of the TMM ligand are between 108.0<span class="unicode-char">&nbsp;</span>kcal/mol for the iron complex and 155.1<span class="unicode-char">&nbsp;</span>kcal/mol for the rhodium complex. The trend of th<span data-name="opt1647065266" class="optcomment">e cal<span data-name="cm1647065266" class="comntText">test</span></span>culated TMM<span class="unicode-char">–</span>M<span data-name="LQ4"></span> bond strength is Fe<span class="unicode-char">&nbsp;</span>&lt;<span class="unicode-char">&nbsp;</span>Ru<span class="unicode-char">&nbsp;</span>&lt;<span class="unicode-char">&nbsp;</span>Os<span class="unicode-char">&nbsp;</span>&lt;<span class="unicode-char">&nbsp;</span>Rh<span class="ce_sup" name="OPT_ID_466">+</span>. The investigation of the elect<span data-name="opt2808810505" class="optsup">ronic structure of the complexes (CO)<span class="ce_inf" name="OPT_ID_467">3</span>M<span class="unicode-char">–</span>TMM using MO correlation diagrams and energy partiti</span>oning methods cle<span id="selectionBoundary_1426243196301_41456343443132937" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span>a<span id="selectionBoundary_1426243196301_2631524633616209" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span>rly shows that the metal atom is mainly bonded to the terminal carbon atoms of the TMM ligand while the bonding to the closer central carbon atom is much weaker. This is further <span class="cpeins" name="cpe_id_1"><span data-name="OPT_ID_468"></span>supported</span> by the AIM analysis which shows that the Laplacian distribution <span class="unicode-char">∇</span><span class="ce_sup" name="OPT_ID_469">2</span><span class="ce_italic" name="OPT_ID_470"><span class="unicode-char">ρ</span></span>(<span class="ce_italic" name="OPT_ID_471">r</span>) at the terminal carbon atoms possesses local area of<span data-name="opt767777271" class="optbold"> charge <span data-name="opt3947467292" class="optitalic">concentration</span> which</span> points toward the metal atom while the Laplacian distribution at the central carbon atoms is nearly undistorted. In spite of the shape of the Laplacian distribution, there are bond paths between the metal atom and the central carbon atom but not to the terminal carbon atom which comes from the different interatomic distances. This clearly shows that the absence and the existence of a bond path are not reliable criteria for chemical bonding.</span>
+        </div>
+        <div class='edit-summary-tab'></div>
+        <p>Author</p>
+        <div id='edit-summary-author'></div>
+        <p>Copy Editor</p>
+        <div id='edit-summary-copy-editor'></div>
+        <script src='scripts/libs/require-2.1.16.js'></script>
+        <script src="scripts/polyfills/classList.js"></script>
+        <script src="scripts/polyfills/dataset.js"></script>
+        <script src="scripts/polyfills.js"></script>
+        <script>
+            require.config({
+                baseUrl: ''
+            });
+        </script>
+        <script>
+            require([
+                'scripts/Helper', 'scripts/Request', 'scripts/RequestBuilder',
+                'scripts/RequestQueue', 'scripts/EventBus',
+                'scripts/EditSummary', 'scripts/TabPanel', 'scripts/EventBus'
+            ],
+            function(Helper, Request, RequestBuilder, RequestQueue, EventBus, EditSummary, TabPanel, EventBus) {
+                console.log('Dependencies loaded');
+
+                var authorEditSummaryContainer = document.getElementById('edit-summary-author');
+                var authorEditSummary = new EditSummary(authorEditSummaryContainer, EventBus, window);
+
+                var ceEditSummaryContainer = document.getElementById('edit-summary-copy-editor');
+                var ceEditSummary = new EditSummary(ceEditSummaryContainer, EventBus, window);
+
+                // Mocking; Getting NodeList
+
+                var AUTHOR_TAGS = [
+                  'span.optbold',
+                  'span.optitalic',
+                  'span.optsup',
+                  'span.optsub',
+                  'span.optdel',
+                  'span.optcomment',
+                  'span.optinsert'
+                ]
+
+                var CPE_TAGS = [
+                  'span.cpedel',
+                  'span.cpeins',
+                  'span.optreject'
+                ];
+                var editor = document.getElementById('editor');
+                var nodeList = editor.querySelectorAll(AUTHOR_TAGS.join(', '));
+                authorEditSummary.render(nodeList);
+
+                var editor = document.getElementById('editor');
+                var nodeList = editor.querySelectorAll(CPE_TAGS.join(', '));
+                ceEditSummary.render(nodeList);
+
+                var content;
+                tabPanel1 = new TabPanel(
+                    document.querySelector('.edit-summary-tab'),
+                    document, window, EventBus
+                );
+                tabPanel1.render();
+                tabPanel1.setTitle('Edit Summary');
+                tabPanel1.add('Author', authorEditSummaryContainer);
+                tabPanel1.add('Copy Editor', ceEditSummaryContainer);
+
+            });
+
+
+        </script>
+    </body>
+</html>

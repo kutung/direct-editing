@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>HTML Normalizer</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <style>
+    body {
+        margin-left: 20px;
+    }
+    .html-input {
+        width: 500px;
+        height: 300px;
+        border: 1px solid blue;
+    }
+    .label {
+        margin-top: 20px;
+    }
+    .input, .output {
+        border: 1px solid blue;
+        width: 500px;
+        height: 300px;
+    }
+    .normalize-btn {}
+    </style>
+    <script src="/phoenix/scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/phoenix/scripts/polyfills/classList.js"></script>
+</head>
+<body>
+    <textarea class="html-input"><div><span class="optbold">abc</span><span class="optbold">def</span><span class="optbold optitalic">ghi</span><span class="optbold">jkl</span><span class="optbold">mno</span></div></textarea>
+    <div><button class="normalize-btn">Normalize</button></div>
+    <div class="label">Rendering Before Normalizing</div>
+    <div class="input"></div>
+    <div class="label">Rendering After Normalizing</div>
+    <div class="output"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/Normalizer'
+        ],
+        function(Normalizer) {
+            var button = document.querySelector('.normalize-btn'),
+                normalizer = new Normalizer(),
+                htmlInput = document.querySelector('.html-input');
+
+            button.addEventListener('click', function () {
+                var elem = document.querySelector('.input'),
+                    outElem = document.querySelector('.output'),
+                    value;
+
+                elem.innerHTML = htmlInput.value;
+                value = normalizer.normalize(
+                    elem.firstElementChild.cloneNode(true)
+                );
+                outElem.innerHTML = '';
+                outElem.appendChild(value);
+                console.log(value);
+            }, false);
+        });
+    };
+    </script>
+</body>
+</html>

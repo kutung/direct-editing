@@ -1,0 +1,40 @@
+/* About Tab Custom CSS */
+
+.about {
+    padding: 1em 1.4em;
+    font-size: 14px;
+    line-height: 30px;
+    word-wrap: break-word;
+    font-family: Times New Roman, Times;
+}
+.about span#note {
+    font-weight: bold;
+    font-size: 140%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.about .jid {
+    margin-top: 15px;
+}
+
+.about .item-info > .ce_title,
+.about .augroup > .ce_author {
+    display: inline;
+    font-size: 14px !important;
+    font-weight: 100;
+    background-color: none;
+    font-family: Times New Roman, Times;
+}
+.about .item-info > .link {
+    margin-top: 15px;
+}
+.about .submittedInfo {
+  border-top: 1px solid #AAA;
+  padding-top: 30px;
+  margin-top: 20px;
+}
+.about .title,
+.about .author {
+    display: inline-block;
+}

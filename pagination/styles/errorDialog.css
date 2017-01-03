@@ -1,0 +1,77 @@
+/********** style Sheet for ErrorDialog************/
+.ProofError-Dialog {
+  border: 0px;
+  padding: 0px;
+}
+.ProofError-Dialog .dialog-wrapper {
+  border: 2px solid #a1a1a1;
+  background: #E2E5E6;
+  position: fixed;
+  top: 30%;
+  z-index: 1000;
+  box-shadow: 0 0 5px #c5c5c5;
+  border-radius: 3px;
+  width: 475px;
+  left: 32%;
+}
+
+.ProofError-Dialog .dialog-wrapper header.clearfix {
+  padding: 7px;
+  padding-top: 4px;
+}
+
+.ProofError-Dialog .dialog-wrapper h2.heading {
+  font-size: 18px;
+  line-height: 10px;
+  text-shadow: 1px 1px 0px #eee;
+  float: left;
+  margin: 12px 0px 7px;
+}
+
+.ProofError-Dialog .dialog-wrapper .close {
+  padding: 1px 6px 3px;
+  background: #DA4143;
+  font-weight: bold;
+  color: #FFF;
+  font-size: 13px;
+  border-radius: 2px;
+  float: right;
+  margin-top: 4px;
+  cursor: pointer;
+}
+.ProofError-Dialog .dialog-wrapper .content {
+  padding: 10px;
+  background: #f7f7f7;
+  height: 75%;
+  clear: both;
+  line-height: 25px;
+}
+.ProofError-Dialog .dialog-wrapper .content div{
+  font-size: 15px;
+}
+.ProofError-Dialog .dialog-wrapper .content a {
+  color: #00f;
+  text-decoration: underline;
+}
+.ProofError-Dialog .button {
+  width: 13%;
+  margin: 1% 0%;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid #a1a1a1;
+  box-shadow: 0 0 5px #c5c5c5;
+  border-radius: 1px;
+  line-height: 25px;
+  display: none;
+}
+.ProofError-Dialog .show {
+  display: block;
+}
+
+.ProofError-Dialog .footer{
+  text-align: center;
+  padding: 0px;
+}
+.ProofError-Dialog .footer button.ok {
+  padding: 2px;
+}

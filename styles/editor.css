@@ -1,0 +1,491 @@
+div.editor {
+    position: relative;
+    margin: auto;
+    overflow-y : scroll;
+    overflow-x  :hidden;
+    line-height: 180% !important;
+    font-size: 14px;
+    padding: 52px 54px !important;
+}
+
+.editor div , .editor span {
+  font-family: Times New Roman, Times;
+}
+
+.editor a[title] {
+  color: #000;
+}
+.editor a[title]:hover {
+    color: #fff;
+	background: #df8130;
+}
+.editor .eqnChanged {
+  background: white;
+  border: 1px solid #888;
+  padding: 2px;
+  box-shadow: 5px 5px 5px #888;
+  -moz-box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow: 5px 5px 5px #888;
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=4,OffY=4,Color='#33000000');
+}
+.editor ul.file_tabs {
+    display:none;
+}
+.editor-parent-container .tab-header-container {
+    background-color: transparent;
+}
+
+.editor-parent-container .tab-header-container .tab-header-wrapper .tab-header li span:hover {
+        border-bottom: 40px solid #fff !important;
+}
+
+@keyframes highlight {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@-webkit-keyframes highlight {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.editor .scrollEffect {
+    -webkit-animation: highlight 0.5s linear 3;
+    -moz-animation: highlight 0.5s linear 3;
+    animation: highlight 0.5s linear 3;
+}
+.editor .cpeins div {
+    background-color: inherit;
+}
+.editor .cpedel {
+    text-decoration: line-through;
+    color: #e47d22;
+    cursor: pointer;
+}
+.editor .cpeins {
+    color: #d03e7f;
+    cursor: pointer;
+    background-color: #D3D3D3;
+}
+.editor .cpeins {
+    text-decoration: underline;
+    color: #d03e7f;
+    cursor: pointer;
+    background-color: #D3D3D3;
+    display: inline;
+}
+.editor .optreject {
+    border: none;
+}
+.editor .optreject .cpedel {
+    background-color: #B3F0B3;
+    color: green;
+    text-decoration: none;
+}
+.editor .optreject .cpeins {
+    background-color: #B3F0B3;
+    color: red;
+    text-decoration: line-through;
+}
+.editor .optsmallcaps,
+.editor .smallcaps {
+    font-variant: small-caps;
+    background-color: #FF9;
+    cursor: pointer;
+}
+.editor .optmono,
+.editor .mono {
+    font-family: Courier, monospace;
+    background-color: #FF9;
+    cursor: pointer;
+}
+.editor .optsmallcaps,
+.editor .optmono {
+    color: #000;
+}
+.editor .optbold {
+    font-weight: bold;
+    background-color: #FF9;
+    cursor: pointer;
+    color: black;
+}
+.editor .optitalic {
+    font-style: italic;
+    background-color: #FF9;
+    cursor: pointer;
+    color: black;
+}
+.editor .optsup {
+    vertical-align: super;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #FF9;
+    color: black;
+    line-height: 0 !important;
+}
+.editor .optsub {
+    vertical-align: sub;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #FF9;
+    color: black;
+    line-height: 0 !important;
+}
+
+.editor .optcomment {
+    color: black;
+    cursor: pointer;
+    background: url("/images/hand.svg") no-repeat center center;
+    display: inline-block;
+    background-color: #FF9;
+    width: 15px;
+    margin: 0px 1px 0px 1px;
+}
+
+.editor .comntText {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
+    line-height: 0px;
+}
+.editor .optinsert {
+    color: #39b54a;
+    cursor: pointer;
+}
+.editor .optdel,
+.editor .optdelreference {
+    text-decoration: line-through;
+    color: #ec2027;
+    cursor: pointer;
+}
+
+.editor .pvtentity .optdel {
+    color: red;
+    cursor: pointer;
+    background-color: #FF9;
+    display: inline-block;
+    height: 13px;
+    border-bottom: 1px solid red;
+}
+
+.editor-parent-container .tab-panel, .editor-parent-container .panel-body {
+    position: inherit;
+}
+
+.editor .extended1, .editor .extended2,
+.editor .ga, .editor .supplfile {
+    display:none;
+}
+.editor .mathml, .editor .equation_data_container{
+    display: none;
+}
+.editor .matheditor-parent-container .hide {
+    display: none;
+}
+.editor .eqnChanged {
+    background: white;
+    border: 1px solid #888;
+    padding: 2px;
+    box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=4,OffY=4,Color='#33000000');
+}
+.editor .cursor {
+    z-index: 1;
+    width: 1px;
+    text-indent: 0;
+    height: 15px;
+    border-left: 1px solid;
+    border-color: blue;
+    display: inline-block;
+}
+
+.editor .cursor {
+  -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from,to {
+        color: transparent;
+    }
+    50% {
+        color: blue;
+    }
+}
+
+@-moz-keyframes blink {
+    from,to {
+        color: transparent;
+    }
+    50% {
+        color: blue;
+    }
+}
+
+@-webkit-keyframes blink {
+    from,to {
+        color: transparent;
+    }
+    50% {
+        color: blue;
+    }
+}
+
+@-ms-keyframes blink {
+    from,to {
+        color: transparent;
+    }
+    50% {
+        color: blue;
+   }
+}
+
+.editor .base {
+  background: url("/images/arrow_up_green.png") no-repeat center center;
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  margin-left: -23px;
+  z-index: 15;
+}
+
+.editor .base:before {
+  height: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+
+.editor #toggle_button {
+    cursor: pointer;
+}
+
+.editor-parent-container .tab-content {
+    padding: 0;
+}
+
+.editor .content_modified {
+  background: url('/images/ArrowRight.png') no-repeat;
+  padding: 2px;
+  width: 25px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 4px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.queryReplier .content_modified {
+  display: none;
+}
+
+.editor img{
+  vertical-align: middle;
+}
+
+.editor div.annotator-container textarea, .editor a.annotorious-editor-button {
+    font-family: Verdana,Arial;
+}
+
+.supplementary .scrollEffect {
+    -webkit-animation: highlight 0.5s linear infinite;
+    -moz-animation: highlight 0.5s linear infinite;
+    animation: highlight 0.5s linear infinite;
+}
+.supplementary span.optsmallcaps,
+.supplementary span.smallcaps {
+    font-variant: small-caps;
+    background-color: #FF9;
+    cursor: pointer;
+}
+.supplementary span.optmono,
+.supplementary span.mono {
+    font-family: Courier, monospace;
+    background-color: #FF9;
+    cursor: pointer;
+}
+.supplementary span.optsmallcaps,
+.supplementary span.optmono {
+    color: #000;
+}
+.supplementary span.optbold {
+    font-weight: bold;
+    background-color: #FF9;
+    cursor: pointer;
+    color: black;
+}
+.supplementary .eqnChanged {
+  background: white;
+  border: 1px solid #888;
+  padding: 2px;
+  box-shadow: 5px 5px 5px #888;
+  -moz-box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow: 5px 5px 5px #888;
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=4,OffY=4,Color='#33000000');
+}
+.supplementary span.optitalic {
+    font-style: italic;
+    background-color: #FF9;
+    cursor: pointer;
+    color: black;
+}
+.supplementary span.optsup {
+    vertical-align: super;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #FF9;
+    color: black;
+    line-height: 0 !important;
+}
+.supplementary span.optsub {
+    vertical-align: sub;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #FF9;
+    color: black;
+    line-height: 0 !important;
+}
+.supplementary span.optcomment {
+    color: black;
+    cursor: pointer;
+    background: url("/images/hand.svg") no-repeat center center;
+    display: inline-block;
+    background-color: #FF9;
+    width: 15px;
+    margin: 0px 1px 0px 1px;
+}
+.supplementary span.comntText {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
+    line-height: 0px;
+}
+.supplementary span.optinsert {
+    text-decoration: underline;
+    color: green;
+    cursor: pointer;
+    background-color: #FFFF99;
+}
+
+
+.supplementary span.optdel {
+    text-decoration: line-through;
+    color: red;
+    cursor: pointer;
+    background-color: #FF9;
+}
+.supplementary .optreject {
+    border: none;
+}
+.supplementary .optreject span.cpedel {
+    background-color: #B3F0B3;
+    color: green;
+    text-decoration: none;
+}
+.supplementary .optreject span.cpeins {
+    background-color: #B3F0B3;
+    color: red;
+    text-decoration: line-through;
+}
+
+.supplementary .mathml, .supplementary .equation_data_container{
+    display: none;
+}
+.supplementary .eqn-container {
+    display: inline-block;
+    max-width: 590px;
+    overflow: auto;
+}
+.supplementary .mathsupplementary-parent-container .hide {
+    display: none;
+}
+
+.supplementary .figcaption {
+    margin-top: 10.5pt;
+    font-size: 14px;
+}
+.supplementary .table {
+    line-height: normal;
+    font-size: 12px;
+}
+.supplementary .eqnChanged {
+    background: white;
+    border: 1px solid #888;
+    padding: 2px;
+    box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=4,OffY=4,Color='#33000000');
+}
+.supplementary span.cursor {
+    z-index: 1;
+    width: 1px;
+    text-indent: 0;
+    height: 15px;
+    border-left: 1px solid;
+    border-color: blue;
+    display: inline-block;
+}
+
+.supplementary .newline_simplepara {
+    display: block;
+    text-indent: 35px;
+}
+
+.supplementary .base {
+    background: url("/images/arrow_up_green.png") no-repeat center center;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    margin-left: -23px;
+    z-index: 15;
+}
+
+.supplementary .base:before {
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+}
+
+.supplementary .x.suppltext {
+    display: block;
+    background-color: #EAEAEA;
+    padding: 8px;
+    text-align: justify;
+    margin-bottom: 25px;
+    -webkit-box-shadow:  2px 2px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow:  2px 2px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5);
+    border: 1px solid #E0E0E0;
+}
+
+.query-container.readonly .tools {
+    display:none;
+}
+.editor .blocker,
+.supplementary .blocker {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.6;
+}
+
+.editor .figure img.image-overlay-show {
+    opacity: 0.2;
+}

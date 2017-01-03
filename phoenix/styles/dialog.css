@@ -1,0 +1,112 @@
+/* Override polyfill's css */
+dialog[role="dialog"] {
+    background: none;
+    border: none;
+}
+
+dialog[role="dialog"][open] {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+dialog[role="dialog"] .clearfix:before,
+dialog[role="dialog"] .clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+dialog[role="dialog"] .clearfix:after {
+  clear: both;
+}
+
+dialog[role="dialog"] .clearfix {
+  zoom: 1;
+}
+
+/* Normal styles for the modal */
+.dialog-wrapper {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 3px 7px rgba(0,0,0,.25);
+}
+.dialog-wrapper .close[role="button"] {
+    float: right;
+    padding: .3em .6em;
+    background: #CA5142;
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.dialog-wrapper .close.hide[role="button"] {
+    display: none;
+}
+.dialog-wrapper section {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+.dialog-wrapper header, .dialog-wrapper footer {
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+}
+.dialog-wrapper section, .dialog-wrapper header {
+    padding: 1em 1.5em;
+    clear: both;
+    text-align: justify;
+}
+.dialog-wrapper h2 {
+    font-size: 2em;
+    line-height: 1em;
+    float: left;
+    margin: 0;
+}
+.dialog-wrapper footer {
+    border: none;
+    border-top: 1px solid #e7e7e7;
+    padding: 1em;
+    text-align: right;
+    display: none;
+}
+.dialog-wrapper footer.show {
+    display: block;
+}
+.dialog-wrapper footer .button[role="button"] {
+    display: none;
+    font-size: 1.2em;
+    margin-right: 1em;
+    padding: .5em 1em;
+}
+.dialog-wrapper footer .button.show[role="button"] {
+    display: inline;
+}
+.dialog-wrapper footer .cancel.button[role="button"],
+.dialog-wrapper footer .no.button[role="button"] {
+    background-color: #CA5142;
+    border: 1px solid #CA5142;
+    font-weight: bold;
+    color: #FFF;
+}
+.dialog-wrapper footer .ok.button[role="button"],
+.dialog-wrapper footer .yes.button[role="button"] {
+    background-color: #47a447;
+    border: 1px solid #47a447;
+    font-weight: bold;
+    color: #FFF;
+}
+.dialog-wrapper .dialog-overlay {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background: url("../images/ajax-loader.gif") no-repeat center center #aaaaaa;
+    opacity: 0.6;
+}
+

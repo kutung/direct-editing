@@ -1,0 +1,42 @@
+.file_tabs {
+  display: none;
+}
+
+#js-component-tab .compontent-tab {
+  display: none;
+}
+
+.js-message-container {
+  display: none;
+}
+
+#toggle_button {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #F5F3F3;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: url("../images/ajax-loader.gif") no-repeat center center #aaaaaa;
+  opacity: 0.6;
+}
+
+.logo_head, .btn-download {
+  display: none;
+}
+
+.query-tooltip-parent {
+  position: relative;
+}
+
+.ce_inline-figure {
+  display: inline-block;
+}
+

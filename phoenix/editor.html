@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TNQ Editor</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles/normalize.3.0.2.css" />
+        <link rel="stylesheet" href="styles/editor/format.css" />
+        <link rel="stylesheet" href="styles/editor/editor.css" />
+        <link rel="stylesheet" href="styles/editor/instruction.css" />
+        <link rel="stylesheet" href="styles/editor/edit-log.css" />
+        <link rel="stylesheet" href="styles/editor/anchor-widget.css" />
+        <link rel="stylesheet" href="styles/editor/toolbar.css" />
+        <link rel="stylesheet" href="styles/panel.css"/>
+        <style type="text/css">
+            body {
+                position: relative;
+                background-color: #fff;
+                color: #333;
+                font: normal 17px/23px arial, sans-serif;
+                overflow-x: hidden;
+                padding-top: 40px;
+            }
+            body * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            a {
+                color: blue;
+            }
+            main[role="main"] {
+                width: 95%;
+                margin: 5px auto;
+            }
+            .wrapper {
+                display: -ms-flexbox;
+                display: flex;
+                width: 100%;
+            }
+            .user-select-none {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="toolbar-panel">
+        <div class="format-items">
+          <ul>
+              <li><span class="bold-icon icon-prop" title="Bold(ctrl + B)"></span></li>
+              <li><span class="italic-icon icon-prop" title="Italic(ctrl + I)"></span></li>
+              <li><span class="sup-icon icon-prop" title="Superscript"></span></li>
+              <li><span class="sub-icon icon-prop" title="Subscript"></span</li>
+          </ul>
+        </div>
+        <span class="splitter"></span>
+        <div class="action-items">
+          <ul>
+              <li><span class="delete-icon icon-prop" title="Delete"></span></li>
+              <li><span class="instruct-icon icon-prop" title="Instruct(ctrl+Alt+c)"></span></li>
+              <!-- <li><span class="reject-icon icon-prop disabled" title="Reject"></span></li> -->
+          </ul>
+        </div>
+        <span class="splitter"></span>
+        <div class="other-items">
+            <ul>
+                <li>
+                    <div class="editLog edit-log-btn" title="Click to view Edit Log">
+                        <span class="editLog edit-log-icon"></span>
+                        <span class="editLog">Edit Log</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main role="main">
+        <div class="wrapper">
+            <div class="comments-panel"></div>
+            <article id="editor" typeof="schema:ScholarlyArticle" contenteditable="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></article>
+        </div>
+    </main>
+    <div class="edit-log-panel"></div>
+    <div class="anchor-widget-panel"></div>
+    <script src="/scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require([
+            'scripts/editor/ToolBar', 'scripts/editor/Helper', 'scripts/Helper',
+            'scripts/radio', 'scripts/EventBus', 'scripts/Request',
+            'scripts/RequestBuilder', 'scripts/editor/Editor', 'scripts/editor/UndoManager',
+            'scripts/editor/CommentsMapper', 'scripts/editor/CommentList', 'scripts/editor/Util',
+            'scripts/editor/SelectorConfigReader', 'SelectorConfig',
+            'scripts/polyfills/polyfills', 'scripts/polyfills/classList',
+            'scripts/polyfills/dataset', 'scripts/polyfills/assign'
+        ], function onLoad(
+            ToolBar, EditorHelper, Helper, radio, EventBus, Request, RequestBuilder,
+            Editor, UndoManager, CommentsMapper, CommentList, Util, SelectorConfigReader,
+            SelectorConfig
+        ) {
+            var editorEl = document.querySelector('#editor'), request,
+                wrapper = document.querySelector('.wrapper'),
+                panel = document.querySelector('.comments-panel'),
+                requestBuilder, commentsMapper, commentList, undoManager, editor,
+                tempEl, articleContent;
+
+            SelectorConfigReader.set(SelectorConfig);
+            // editLogpanel = document.querySelector('.edit-log-panel'),
+            // toolBarPanel = document.querySelector('.toolbar-panel'),
+            // anchorWidgetPanel = document.querySelector('.anchor-widget-panel'),
+            requestBuilder = new RequestBuilder();
+            // util = new Util(window, document),
+            commentsMapper = new CommentsMapper(window, document);
+            commentList = new CommentList(
+                window, document, panel, editorEl
+            );
+            undoManager = new UndoManager(
+                window, document, editorEl, commentsMapper
+            );
+            editor = new Editor(
+                editorEl, window, document, undoManager, commentsMapper, panel
+            );
+            //
+            //    toolBar = new ToolBar(
+            //     editorEl, editLogpanel, toolBarPanel, editor, window, document
+            // ),
+            tempEl = document.createElement('div');
+
+            requestBuilder.setUrl('/templates/main.html');
+            requestBuilder.setMethod('GET');
+            requestBuilder.setSuccessCallback(function successCallback(response) {
+                tempEl.innerHTML = response;
+                articleContent = tempEl.querySelector('.article');
+
+                editorEl.appendChild(articleContent);
+                // util.cleanNode(editorEl);
+                undoManager.setUp();
+                commentsMapper.setUp();
+                editor.setUp();
+                // toolBar.setUp();
+                wrapper.style.display = 'flex';
+                commentList.setUp();
+            });
+            requestBuilder.setFailureCallback(function failureCallback(response) {
+                console.log('failed ', response);
+            });
+            request = requestBuilder.build();
+            request.send();
+        });
+</script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+        <link rel="stylesheet" type="text/css" href="/styles/carousel.css">
+        <link rel="stylesheet" type="text/css" href="/styles/common.css">
+    </head>
+    <body>
+        <p>
+            IMAGE 1
+            <div id="fig1" name="OPT_ID_9" class="figure"><i class="expand-icon hide"></i><div class="wrapper" name="OPT_ID_13" id="OPT_ID_13"><span class="container-image" name="color_div"><img src="http://s3.amazonaws.com/pgc-dev-test/6951/proofs/elsevier/HLY/1128/images/gr1.jpg"  data-web-src="https://s3.amazonaws.com/pgc-dev-test/6853/proofs/elsevier/JOM/18406/images/gr1.png" class="imgrsize" width="329px" height="141px" data-id="OPT_ID_13" /></span></div><div class="figcaption" name="PC_3015346799" id="PC_3015346799"><span class="ce_label" name="OPT_ID_10">Fig.<span class="unicode-char">&#xA0;</span>1</span><span class="x">&#xA0;</span><span class="ce_caption" name="OPT_ID_11"><span class="ce_simple-para" id="fspara0010" name="OPT_ID_12">A 4-layer laminate;
+        </p>
+
+        <p>
+            IMAGE 2
+            <div id="fig1" name="OPT_ID_9" class="figure"><i class="expand-icon hide"></i><div class="wrapper" name="OPT_ID_13" id="OPT_ID_13"><span class="container-image" name="color_div"><img src="http://s3.amazonaws.com/pgc-dev-test/6951/proofs/elsevier/HLY/1128/images/gr2.jpg"  data-web-src="http://s3.amazonaws.com/pgc-dev-test/6951/proofs/elsevier/HLY/1128/typesetimages/gr1.jpg" class="imgrsize" width="329px" height="141px" data-id="OPT_ID_13" /></span></div><div class="figcaption" name="PC_3015346799" id="PC_3015346799"><span class="ce_label" name="OPT_ID_10">Fig.<span class="unicode-char">&#xA0;</span>1</span><span class="x">&#xA0;</span><span class="ce_caption" name="OPT_ID_11"><span class="ce_simple-para" id="fspara0010" name="OPT_ID_12">A 4-layer laminate;
+            definition of degrees of freedom at interfaces.</span></span></div></div>
+        </p>
+
+        <script src="/phoenix/scripts/libs/require-2.1.16.js"></script>
+        <script src="/scripts/config/Configuration.js"></script>
+        <script>
+            require.config({
+                'baseUrl': '/',
+                'urlArgs': 'ver=5',
+                'paths': {
+                        'templates': 'scripts/templates/elsevier',
+                        'customer': 'scripts/customer/elsevier'
+                    },
+                'map': {
+                    '*': {
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                        'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'dot': 'scripts/libs/doT',
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+                    }
+                }
+            });
+
+            window.onload = function () {
+                require([
+                     'scripts/ConfigReader',
+                     'scripts/CarouselViewer', 'scripts/EventBus'
+                ],
+                function(Config, CarouselViewer, EventBus) {
+                    var imageContainer = document.querySelector('.figure'),
+                        config = new Config(window).load();
+
+                    imageContainer.addEventListener('click', function(e) {
+                        var carouselViewer,
+                            oriSrc = e.target.dataset.webSrc;
+
+                        carouselViewer = new CarouselViewer(document, window);
+                        carouselViewer.load(oriSrc);
+                    });
+
+                });
+            };
+        </script>
+    </body>
+</html>

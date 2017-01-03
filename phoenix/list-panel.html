@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>List Panel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '/'
+        });
+    </script>
+    <script src="scripts/polyfills/classList.js"></script>
+    <script src="scripts/polyfills/polyfills.js"></script>
+    <style type="text/css">
+        .list-panel-container {
+            margin: 0 auto;
+            width: 75%;
+            border: 1px solid #2d2d2d;
+        }
+        .toolbar {
+            width: 75%;
+            margin: 0 auto;
+        }
+        .list-panel ul {
+            counter-reset: my-list-counter
+        }
+        .list-panel li:before {
+            content: counter(my-list-counter)" : ";
+            counter-increment: my-list-counter;
+            float: left;
+            padding-right:0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar"><button>Add New Node</button></div>
+    <div class="list-panel-container"></div>
+    <script>
+    window.onload = function onLoad() {
+        require([
+            'scripts/ListPanel', 'scripts/EventBus'
+        ],
+        function onDepsLoad(Panel, EventBus) {
+            var panel = new Panel(
+                    document.querySelector('.list-panel-container'),
+                    document, window, EventBus
+                ),
+                list = [
+                    ['item01', '<p class="list-item">List Content 1</p>'],
+                    ['item02', '<p class="list-item">List Content 2</p>'],
+                    ['item03', '<p class="list-item">List Content 3</p>'],
+                    ['item04', '<p class="list-item">List Content 4</p>'],
+                    ['item05', '<p class="list-item">List Content 5</p>'],
+                    ['item06', '<p class="list-item">List Content 6</p>'],
+                    ['item07', '<p class="list-item">List Content 7</p>'],
+                    ['item08', '<p class="list-item">List Content 8</p>'],
+                    ['item09', '<p class="list-item">List Content 9</p>']
+                ];
+
+            panel.render();
+            panel.ignoreHeaderClick(true);
+            panel.setTitle('List Panel');
+            list.forEach(function eachItem(item) {
+                panel.add(item[1], {'sectionId': item[0]});
+            });
+            panel.onNodeClick(function onNodeClick(data) {
+
+                //Your own code here
+            });
+            panel.onNodeEnterClick(function onNodeClick(data) {
+
+                //Your own code here
+            });
+            document.querySelector('button').addEventListener('click', function onClick() {
+                panel.add('<p>New List Item</p>', {'sectionId': 'item11'});
+            }, false);
+        });
+    };
+    </script>
+</body>
+</html>

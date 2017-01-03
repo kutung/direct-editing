@@ -1,0 +1,8 @@
+.upload-target {
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    visibility: hidden;
+}

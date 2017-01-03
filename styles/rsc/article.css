@@ -1,0 +1,652 @@
+/*
+Style sheet for RSC Tags
+*/
+@font-face {
+  font-family: 'STIXGeneral';
+    src: url('/fonts/STIXGeneral.eot'); /* EOT file for IE */
+    src: url('/fonts/STIXGeneral.eot?iefix') format('embedded-opentype'), url('../fonts/STIXGeneral.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+sup, sub {
+  line-height:0;
+  }
+
+.it, #qarea it {
+  font-style: italic;
+  }
+
+.bo, .editor #bo, .editor .compoundref {
+  font-weight: bold;
+  }
+
+.it span.bo, .editor .bo span.it, .editor .bi {
+  font-weight: bold;
+  font-style: italic;
+  }
+
+.ce_sup .optcomment {
+  line-height: 15px;
+}
+
+.ce_inf .optcomment {
+  line-height: 15px;
+}
+
+.scp , #qarea scp {
+  font-variant: small-caps;
+  }
+
+.inf , #qarea inf {
+  vertical-align: sub;
+  font-size: 80%;
+  line-height: 0px;
+  }
+
+.ga.ce_inter-ref-title {
+    cursor: pointer;
+}
+
+.sup {
+  vertical-align: super;
+  font-size: 80%;
+  line-height: 0px;
+  }
+
+.stack {
+  position: relative;
+  }
+
+.above {
+  vertical-align: super;
+  font-size: 12px;
+  line-height: 0px;
+  position:relative;
+  left: 1.5px;
+  top: -3.5px;
+  }
+
+.below {
+  vertical-align: sub;
+  font-size: 12px;
+  line-height: 0px;
+  position:relative;
+  left:-5px;
+  top: 3.5px;
+  }
+
+.foonote span.no {
+  vertical-align: super;
+  line-height: 0px;
+  }
+
+table.formula {
+  margin-top:6.0pt;
+  margin-bottom:6.0pt;
+  }
+
+.ul {
+  text-decoration: underline;
+  }
+
+div.aff {
+  /*font-style: italic;*/
+  }
+
+.editor .titlegrp .title {
+  font-size: 18pt;
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-weight: 700;
+  }
+
+.editor .citgroup .title {
+  font-style: italic;
+  font-weight: normal;
+  }
+
+a.citref {
+  font-weight: normal;
+  vertical-align: super;
+  font-size: 80%;
+  line-height:0;
+  }
+
+a.citref[position="baseline"] {
+  font-weight: inherit;
+  vertical-align: inherit;
+  font-size: inherit;
+  line-height:inherit;
+  }
+
+.editor .subsect1, .editor .subsect2, .editor .subsect3 {
+  margin-top:6pt;
+  }
+
+.editor .subsect1 > .sectionline_opt span.title,
+.editor .subsect1 > .sectionline_opt span.no
+  {
+  font-weight: 700;
+  font-size: 100%;
+  }
+
+.editor .subsect2 > .sectionline_opt span.title,
+.editor .subsect2 > .sectionline_opt span.no
+{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14pt;
+  }
+
+
+.editor .subsect3 > .sectionline_opt span.title,
+.editor .subsect4 > .sectionline_opt span.title,
+.editor .subsect5 > .sectionline_opt span.title,
+.editor .subsect6 > .sectionline_opt span.title,
+.editor .subsect3 > .sectionline_opt span.no,
+.editor .subsect4 > .sectionline_opt span.no,
+.editor .subsect5 > .sectionline_opt span.no,
+.editor .subsect6 > .sectionline_opt span.no {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12pt;
+  }
+
+/*Heading Level 4,5,6-text run on after a tab space*/
+.editor .subsect3 > .sectionline_opt + .p:before,
+.editor .subsect4 > .sectionline_opt + .p:before,
+.editor .subsect5 > .sectionline_opt + .p:before,
+.editor .subsect6 > .sectionline_opt + .p:before {
+  content:"\09";
+  }
+
+.editor .subsect3 > .sectionline_opt + .p,
+.editor .subsect4 > .sectionline_opt + .p,
+.editor .subsect5 > .sectionline_opt + .p,
+.editor .subsect6 > .sectionline_opt + .p {
+    display: inline;
+  }
+
+.editor .subsect3 > .sectionline_opt,
+.editor .subsect4 > .sectionline_opt,
+.editor .subsect5 > .sectionline_opt,
+.editor .subsect6 > .sectionline_opt {
+    display:inline;
+  }
+
+.editor .subsect3 {
+    text-align: justify;
+  }
+
+.editor .section .no,
+.editor .volumeno {
+  font-weight: bold;
+  }
+
+.editor .figure .title {
+  font-weight: normal;
+  }
+
+.editor .ack {
+  margin-top:12.0pt;
+  font-weight: bold;
+  }
+
+.editor .ack .p {
+  margin-top:10.0pt;
+  font-weight: normal;
+  }
+
+.editor .biblist{
+  margin-top:12.0pt;
+  font-weight: bold;
+  }
+
+.editor .citgroup {
+  margin-top:9.0pt;
+  font-weight: normal;
+  }
+
+.editor .citgroup > .citgroup {
+  margin-top:9.0pt;
+  padding-ndent: -44px;
+  text-indent: -44px ;
+  }
+
+.editor .title .footnote {
+  margin-top:10px;
+  }
+
+.editor .footnote {
+  font-size:15px;
+  margin-right:0in;
+  margin-left:0in;
+  font-weight:normal;
+  line-height:18px !important;
+  }
+
+.editor .footnote > a.citref {
+  font-weight: normal;
+  vertical-align: super;
+  font-size: 80%;
+  line-height: 0px;
+  }
+
+.editor .authgrp {
+  font-size:12pt;
+  margin-top:6.0pt;
+  margin-right:0in;
+  margin-bottom:6.0pt;
+  margin-left:0in;
+  font-size:100%;
+  }
+
+.editor .aff {
+  margin-top:6.0pt;
+  margin-right:0in;
+  margin-bottom:6.0pt;
+  margin-left:0in;
+  font-size:100%;
+  }
+
+.editor .citgroup {
+  padding-left: 22px;
+  text-indent: -22px;
+  }
+
+.editor .source {
+  font-style: italic;
+  }
+
+thead td span.inf {
+  vertical-align: sub;
+  font-size: 14px;
+  line-height: 0px;
+  }
+
+thead td span.sup {
+  vertical-align: super;
+  font-size: 14px;
+  line-height: 0px;
+  }
+
+.editor  #FileContainer div {
+    line-height: 25px;
+  }
+
+.editor  #FileContainer img {
+  vertical-align: middle;
+  }
+
+.editor  .textbox {
+  background-color: #E8E8E8;
+  border:solid;
+  width: 80%;
+  padding:8px;
+  text-align:justify;
+  margin-bottom: 10px;
+  }
+
+.editor  .vol {
+  font-weight: bold;
+  font-style: normal;
+  }
+
+/*Sections*/
+.editor  .list > .title {
+  margin-left: -100px;
+  font-style: normal;
+  }
+
+/* for avoiding margin-left: -100px; alignment in table.*/
+.editor  td .list .title {
+    margin-left: 0px;
+  }
+
+.editor .glossary > span.title,
+.editor .ack > span.title,
+span#fnhead {
+  font-weight: bold;
+  font-size: 140%;
+  margin-top: 10px;
+  }
+
+.editor .fn-sec > span#fnhead {
+  font-weight: bold;
+  font-size: 140%;
+  display:block;
+  margin-top:24pt;
+  }
+
+.editor .displayed-quote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align:justify;
+  text-indent:0px;
+  }
+
+/*Heading Level 1*/
+.editor .ictext{
+  padding: 1pc 1pc 6pt 1pc;
+  margin-top:15pt;
+  margin-right:.2in;
+  margin-bottom:15pt;
+  margin-left:.2in;
+  }
+
+.editor .abstract{
+  border-top: thin solid #F20C36;
+  border-bottom: thin solid #F20C36;
+  padding: 1pc 1pc 6pt 1pc;
+  margin-top:15pt;
+  margin-right:.2in;
+  margin-bottom:15pt;
+  margin-left:.2in;
+  }
+
+.editor .abstract > span.sectionline_opt{
+  font-size:100% !important;
+  font-weight:bold;
+  }
+
+.editor .scheme,
+.editor .chart,
+.editor .table {
+  position:relative;
+  margin-top:10px;
+  margin-bottom:10px;
+  overflow:auto;
+  }
+
+.editor .figure{
+  position:relative;
+  margin-top:10px;
+  margin-bottom:10px;
+  }
+
+.editor .p {
+  text-indent: 50px;
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-left: 0;
+  text-align: justify;
+  }
+
+.editor #qarea > .ce_para,
+.editor td#qareamin > div.ce_para {
+  text-indent:0;
+  margin-top:6pt;
+  margin-bottom:0;
+  line-height:12pt;
+  }
+
+.editor .table {
+  background-color:#F9F9F9;
+  margin-top:15px;
+  overflow:auto;
+  padding:5px;
+  }
+
+.editor .table table,
+.editor .ce_display table {
+  border-collapse: collapse;
+  margin-top:2px;
+  margin-bottom:2px;
+  text-indent:0;
+  width:100%;
+  }
+
+thead tr {
+  background-color:#E1E1E1;
+  }
+
+.editor .item-info {
+  display:none;
+  }
+
+.editor a[title] {
+  color:blue;
+  line-height:16px;
+  }
+
+.editor .box {
+  padding:10px;
+  border:5px solid gray;
+  margin-top:15pt;
+  margin-left:auto;
+  margin-right:auto;
+  width:80%;
+  }
+
+.ugraphic[display="inline"] > .wrapper {
+  display: inline;
+  }
+
+.ugraphic[display="inline"] {
+  display: inline;
+  }
+
+.inline-math-img * {
+  display:inline;
+  }
+
+.editor .INS,
+.editor .DEL {
+  display: inline;
+  }
+
+.editor .article td.td {
+  text-align: left;
+  border: 1px solid #D9D9D9;
+  padding: 0.5em;
+  }
+
+.editor .article td.td[align="right"] {
+  text-align: right;
+  }
+
+.editor .article td.td[align="center"] {
+  text-align: center;
+  }
+
+.editor .article thead td.td {
+  text-align: center;
+  }
+
+.editor span#sbref {
+  display:block;
+  margin-left:22px;
+  }
+
+.editor div#authorgp {
+  text-align: right;
+  }
+
+.editor .author > .person > .persname > .surname {
+  background-color:#00B3B3;
+  }
+
+.editor div#etab1,
+.editor div#etab2 {
+  background-color:#D3D3D3;
+  font-size:100%;
+  margin-bottom:6pt;
+  font-weight:bold;
+  height:24px;
+  width:100%;
+  font-size:100%;
+  font-family: Arial;
+  border-radius:3px;
+  line-height:1.6em;
+  text-decoration:none;
+  }
+
+.editor div#etab1 span,
+.editor div#etab2 span {
+  margin-left : 10px;
+  }
+
+.editor .img1,
+.editor .img2 {
+  padding-left:5px;
+
+  }
+
+.editor .unselectable,
+.editor .mmclink {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  }
+
+ /* This class is introduced for SPI journals. There is some author given names are coming on below class.*/
+.editor .x,
+.editor .wrapper {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+
+.editor .cke_iframe_shim{
+  display: none;
+  }
+
+.editor .ce_inline-figure .wrapper {
+  overflow: visible;
+  }
+
+.editor .table td ,
+.editor .tablecaption span ,
+.editor .ce_table-footnote span{
+  font-size: 12pt;
+  }
+
+.editor .proceed_button{
+  line-height: 30px;
+  font-weight:bold;
+  font-size: 14pt !important;
+  margin: 2px 16px !important;
+  }
+
+.editor .return_button{
+  font-weight:bold;
+  font-size: 10pt !important;
+  }
+
+.editor .ce_abstract-sec .ce_section-title {
+  font-style: italic;
+  }
+
+.editor .ce_bibliography .ref_title,
+.editor .ack .ack_title,
+.editor .sectionline_opt,
+.editor .x .sectionline_opt {
+  margin-top: 10px;
+  font-size:18pt;
+    font-weight:bold;
+  }
+
+.editor thead td[rowsep] {
+  border-bottom: 1px solid #C2C2C2 !important;
+  }
+
+.editor .box > .section {
+  margin-top: 6pt;
+  }
+
+.editor .biography,
+.editor .ce_bibliography {
+  margin-top: 24pt;
+  }
+
+.editor .eqntext {
+  text-indent: 0px;
+  }
+
+.editor #ce-reply .cke_contents iframe,
+.editor #reply-panel .cke_contents iframe {
+    height: 48px !important;
+}
+
+.editor .inline-formula,
+.editor .inline-formula .wrapper,
+.editor .inline-formula .annotator-container,
+.editor .figure .inline-formula,
+.editor .figure .inline-formula .wrapper,
+.editor .figure .inline-formula .annotator-container,
+.editor .ce_inline-figure,
+.editor .ce_inline-figure .wrapper,
+.editor .ce_inline-figure .annotator-container {
+    display: inline-block;
+}
+
+
+.session-invalid-content p {
+  padding: 0 0 4px;
+}
+
+.session-invalid-content a.session-LandingPageLink {
+  background: none;
+  border: 0;
+  line-height: 100%;
+  padding: 0;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.editor div.div-toggle-images {
+   font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+   margin-top: 10px;
+}
+
+.editor button.web-btn, button.print-btn {
+    font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+    background-color: #FDFDF0;
+    border: 2px outset #8B8378;
+    color: black;
+    line-height: 25px;
+    padding: 2px 10px 2px 5px;
+    width: 115px;
+    margin-right: 5px;
+}
+
+.editor button span.rbweb, button span.rbprint {
+    border: 1px solid black;
+    margin: 0 3px;
+    padding: 0 5px;
+}
+
+.editor button span.selected {
+    background-color: black;
+    border: 1px solid;
+}
+
+.editor .toggleoverlay {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background: url("/images/loading.gif") no-repeat center center #ffffff;
+    opacity: 0.6;
+}
+.editor .authgrp .author .orcresearchgrp {
+   display: none;
+}
+
+div.editor {
+    position: relative;
+    margin: auto;
+    overflow-y : scroll;
+    overflow-x  :hidden;
+    min-height: 600px;
+    line-height: 180% !important;
+    font-size: 16px;
+    padding: 52px 54px !important;
+}

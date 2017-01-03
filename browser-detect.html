@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Browser Detect</title>
+    <script src="/scripts/browser-compatability.js"></script>
+</head>
+<body>
+    <div></div>
+    <script>
+        window.onload = function () {
+            var browChk = browserDetect(
+                typeof navigator !== 'undefined' ? navigator.userAgent : ''
+            ),
+            isSupported = false;
+
+            if (browChk.chrome && browChk.version >= 39) {
+                console.log('I\'m chrome and I\'m Supported');
+                isSupported = true;
+            }
+            else if (browChk.firefox && browChk.version >= 30) {
+                console.log('I\'m firefox and I\'m Supported');
+                isSupported = true;
+            }
+            else if (browChk.msie && browChk.version >= 11.0) {
+                console.log('I\'m IE and I\'m Supported');
+                isSupported = true;
+            }
+        };
+    </script>
+</body>
+</html>

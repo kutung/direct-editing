@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Reject Plugin</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" href="styles/editor.css">
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/dataset.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+  </head>
+  <body>
+    <div>Test Reject</div>
+    <div class="editor editor-1">
+        
+        <span class='change-1'> 
+            <span class="cpeins tooltip" name="cpe_id_51">
+            <span name="OPT_ID_958"></span>&nbsp;chemistry</span>
+            <span class="cpedel tooltip" name="cpe_id_51">
+            <span name="OPT_ID_959"></span>&nbsp;mercury</span>
+        </span>
+    </div>
+    <div class="editor editor-2">
+       
+        <span class="optreject change-2"  data-id="opt2837632277">
+            <span class="cpeins tooltip" name="cpe_id_51">
+            <span name="OPT_ID_958"></span>&nbsp;chemistry</span>
+            <span class="cpedel tooltip" name="cpe_id_51">
+            <span name="OPT_ID_959"></span>&nbsp;mercury</span>
+        </span>
+
+    </div>
+       
+    
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/EventBus',  'scripts/RejectMenuItem'
+        ],
+        function(EventBus, RejectMenuItem) {
+
+            EventBus.subscribe('Reject:Complete', function(domFragment) {
+                var div;
+                div = document.querySelector('.editor-2');
+                div.appendChild(domFragment);
+            });
+            var fragment = document.createDocumentFragment(),
+            dom = document.createElement('span'),
+            change = document.querySelector('.change-2');
+            dom.dataset.requestId = 123;
+            dom.appendChild(change.cloneNode(true));
+           fragment.appendChild(dom);
+           
+            var contextualMenu = {
+                domFragment : fragment,
+                context : ['onReject'] //'onReject'
+            };
+            var rm = new RejectMenuItem(window, document, EventBus);
+            rm.setContextualMenu(contextualMenu);
+            rm.render();
+            rm.setAction(rm.rejectCommand);
+        });
+    };
+    </script>
+  </body>
+</html>

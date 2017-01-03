@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Custom File Input</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <style>
+    body {
+        margin: 20px;
+        font-size: 16px;
+    }
+    .files {
+        list-style: none;
+    }
+    .files li {
+        display: flex;
+    }
+    .files li .action {
+        width: 200px;
+    }
+    .files li .action progress {
+        width: 50%;
+    }
+    .files li .filename {
+        flex: 1;
+    }
+    .files li .filesize {
+        width: 100px;
+    }
+    .form .file-input .text {
+        color: blue;
+    }
+
+    .files li .action button {
+        margin-left: 10px;
+        font-size: .7em;
+    }
+
+    .files li .action progress {
+        height: 10px;
+        /* Important Thing */
+        -webkit-appearance: none;
+        border: none;
+    }
+
+    .files li .action progress::-webkit-progress-bar {
+        background: #C5C5C5;
+        border-radius: 50px;
+        padding: 2px;
+        box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .files li .action progress::-webkit-progress-value {
+        border-radius: 50px;
+        box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+        background: #655D5D;
+        -webkit-animation: move 5s linear 0 infinite;
+    }
+
+    @-webkit-keyframes move {
+        0% {background-position: 0px 0px, 0 0, 0 0}
+        100% {background-position: -100px 0px, 0 0, 0 0}
+    }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '/'
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+</head>
+<body>
+    <div style="width:500px" class="form"></div>
+    <ul class="files"></ul>
+    <script>
+    window.onload = function onLoad() {
+        require(['scripts/FileInput', 'scripts/Helper', 'scripts/RequestBuilder'],
+        function onDepsLoad(FileInput, Helper, RequestBuilder) {
+            var fileInput = new FileInput(
+                'Attach files to upload', 'Click to attach files', {
+                    'win': window,
+                    'doc': document
+                }),
+                filesElem = document.querySelector('.files');
+
+            fileInput.renderTo(document.querySelector('.form'));
+            fileInput.allowMultipleFiles();
+            fileInput.setFileFilter(['image/*', 'text/css']);
+            fileInput.onBeforeSelect(function onBeforeSelect() {
+                filesElem.innerHTML = '';
+            });
+            fileInput.onSelect(function onSelect(files) {
+                var frag, html, fd, rb, i = 0, len = files.length, file, req,
+                    createSuccessCallback = function createSuccessCallback(frag, file) {
+                        return function uploadSuccess(response) {
+                            var action = frag.querySelector('.action'),
+                                responseData = JSON.parse(response);
+
+                            if (responseData.success === 'true') {
+                                frag.dataset.hash = responseData.hash;
+                                action.innerHTML = '<button>Delete</button>';
+                            }
+                            else {
+                                frag.innerHTML = file.name + ' upload failed';
+                            }
+                            console.log(file.name + ' upload successfully');
+                        };
+                    },
+                    createFailureCallback = function createFailureCallback(frag, file) {
+                        return function uploadFailure() {
+                            frag.innerHTML = file.name + ' upload failed';
+                        };
+                    },
+                    createTimeoutCallback = function createTimeoutCallback(frag, file) {
+                        return function uploadTimeout() {
+                            frag.innerHTML = file.name + ' upload timed out';
+                        };
+                    },
+                    createProgressCallback = function createProgressCallback(frag, file) {
+                        return function uploadProgress(progressEvent) {
+                            var progress = frag.querySelector('progress');
+
+                            if (progressEvent.lengthComputable === true) {
+                                progress.max = progressEvent.total;
+                            }
+                            progress.value = progressEvent.loaded;
+                        };
+                    },
+                    createAbortCallback = function createAbortCallback(frag, file, req) {
+                        return function abortUpload() {
+                            req.abort();
+                            frag.innerHTML = file.name + ' upload aborted';
+                        };
+                    };
+
+                for (; i < len; i += 1) {
+                    frag = document.createElement('li');
+                    file = files[i];
+                    html = [
+                        '<span class="action">',
+                            '<progress></progress>',
+                            '<button class="abort">Cancel</button>',
+                        '</span>',
+                        '<span class="filename">',
+                            file.name,
+                        '</span>',
+                        '<span class="filesize">',
+                            Helper.formatBytes(file.size, 2),
+                        '</span>'
+                    ];
+                    frag.innerHTML = html.join('');
+                    filesElem.appendChild(frag);
+                    fd = new FormData();
+                    fd.append('uploadedFile', file, file.name);
+                    rb = new RequestBuilder();
+                    rb.setUrl('/file-upload.php');
+                    rb.setMethod('post');
+                    rb.setData(fd);
+                    rb.setTimeout(3 * 60 * 1000);
+                    rb.setSuccessCallback(createSuccessCallback(frag, file));
+                    rb.setFailureCallback(createFailureCallback(frag, file));
+                    rb.setTimeoutCallback(createTimeoutCallback(frag, file));
+                    rb.setProgressCallback(createProgressCallback(frag, file));
+                    req = rb.build();
+                    frag.querySelector('.abort').addEventListener(
+                        'click', createAbortCallback(frag, file, req), false
+                    );
+                    req.send();
+                }
+            });
+        });
+    };
+    </script>
+</body>
+</html>

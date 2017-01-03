@@ -1,0 +1,119 @@
+/*Dont delete this. Need to hide downloaded iframe*/
+.hideme {
+  display: none;
+}
+.proofview .pager {
+  position: relative;
+  top: 50px;
+  background-color: #808080;
+}
+
+.pager .supplementary_files, .pager .editor, .pager .tools,
+.pager .main_editor, .pager .header, .pager .file_tabs,
+.pager .equation_data_container, .pager .ann-container,
+.pager .image-annotate-canvas, .pager .tail, .pager .ga,
+.pager #editable-container-proof, .pager .edit-screen-link,
+.pager .pselection, .pager .hdr-actions > ul, .pager .ce_floats,
+.pager .stitle, .pager .sa_affiliation, .pager .optdel,
+.pager .comntText, .pager .hideme, .pager .pagination-results,
+.pager .table .tablecaption .x, .pager .inline-formula > .x,
+.pager .suppltext, .pager .ce_e-component, .pager .divToggleImages,
+.pager .ce_bib-reference.unlabeled .reference_label_wrapper,
+.pager .ce_inline-figure div.annotate-editor, .pager .table .ce_keywords,
+.pager .top-space-none.bottom-space-none, .pager .figure .ce_keywords,
+.pager .float_tools, .pager .table:empty,
+.pager .displayfigtab .ce_keywords, .pager .item-info,
+.pager .annotorious-popup, .pager .annotorious-editor,
+.pager .ce_alt-text, .pager .div-toggle-images, .pager .annotate-editor,
+.pager .pagination-container .figure i.expand-icon,
+.paginator .ce_indexed-name, .paginator span.content_modified,
+.paginator div.ce_bib-reference span.ce_label1, .paginator .cke_iframe_shim,
+.paginator .ce_inter-refs-text, .paginator span.ce_initials {
+  display: none;
+}
+
+.pager .editor, .pager .tools {
+  float: none;
+}
+.proofview .mode-buttons {
+  width: 100%;
+  /*padding-right: 28%;*/
+  position: fixed;
+  z-index: 1;
+  height: 50px;
+  top: 0;
+  background-color: #808080;
+}
+.pager .clearfix:before, .pager .clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.pager .clearfix:after {
+  clear: both;
+}
+/*Character styles*/
+/*Italicface*/
+.pager .ce_italic, .pager .optitalic{
+  font-style: italic;
+}
+/*Boldface*/
+.pager .ce_bold, .pager .optbold {
+  font-weight: bold;
+}
+/*Superscript*/
+.pager .ce_sup, .pager .optsup {
+  font-size: 70%;
+  line-height: 0;
+  position: relative;
+  bottom: 0.5em;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+/*Subscript*/
+.pager .ce_inf, .pager .optsub {
+  line-height: 0;
+  font-size: 70%;
+  position: relative;
+  bottom: -0.33em;
+  word-break: keep-all;
+}
+.pager .optinsert, .pager .optbold, .pager .optitalic,
+.pager .optcomment, .pager .cpeins, .pager .cpedel,
+.pager .optreject, .pager .optsup, .pager .optsub {
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+}
+.pager .optinsert, .pager .cpeins, .pager .cpedel {
+  text-decoration: none;
+}
+.pager .cpeins {
+  display: inline;
+}
+.pager .optreject {
+  border: none;
+}
+@media print {
+  body, .pager, .proofview {
+    margin: 0;
+    background-color: #fff !important;
+  }
+
+  .proofview {
+    height: auto !important;
+  }
+
+  .pager {
+    top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .mode-buttons {
+    display: none;
+  }
+}

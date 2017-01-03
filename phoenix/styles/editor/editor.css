@@ -1,0 +1,20 @@
+#editor {
+    font: 17px/23px "Times New Roman", sans-serif;
+    padding: 10px;
+    border: 1px solid #e6dfdf;
+    border-left: 0;
+    word-break: break-all;
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: calc(80% - 20px);
+    z-index: 0;
+}
+
+#editor:focus {
+    outline: none;
+}
+
+#editor section {
+    line-height: 26px;
+}

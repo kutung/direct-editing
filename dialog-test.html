@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .dialog-parent-container html, .dialog-parent-container body {
+      height: 100%;
+    }
+    .dialog-parent-container body, .dialog-parent-container h2, .dialog-parent-container p {
+      margin: 0;
+    }
+    .dialog-parent-container body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.428571429;
+      color: #333;
+      background-color: #FFF;
+      position: relative;
+    }
+    .dialog-parent-container a {
+      text-decoration: none;
+    }
+    .dialog-parent-container {
+      border: 2px solid #a1a1a1;
+      background: #fff;
+      position: absolute;
+      width: 992px;
+      margin: -206px 0 0 -486px;
+      top: 50%;
+      left: 50%;
+      z-index: 1000;
+      box-shadow: 0 0 6px #c5c5c5;
+      border-radius: 3px;
+    }
+    .dialog-title-container {
+      padding: 7px 12px;
+      border-bottom: 1px solid #ddd;
+      overflow: hidden;
+    }
+    .dialog-title-container h2 {
+      font-size: 16px;
+      line-height: 22px;
+      text-shadow: 1px 1px 0px #eee;
+      float: left;
+    }
+    .dialog-title-container a {
+      float: right;
+      font-size: 12px;
+      line-height: 18px;
+      color: #333;
+    }
+    .dialog-title-container a span {
+      display: inline-block;
+      padding: 1px 6px 3px;
+      background: #DA4143;
+      font-weight: bold;
+      color: #FFF;
+      font-size: 13px;
+      line-height: 15px;
+      border-radius: 2px;
+      margin: 0 0 0 5px;
+    }
+    .dialog-content-container {
+      padding: 15px;
+      background: #f7f7f7;
+      /*min-height: 345px;*/
+    }
+    .dialog-content-container p {
+      font-size: 12px;
+    }
+    .dialog-content-container p strong {
+      color: #DA4143;
+    }
+    .dialog-content-container p a {
+      color: #333;
+      font-weight: bold;
+    }
+    .dialog-parent-container .hide {
+      display: none;
+    }
+    .dialog-parent-container .show {
+      display: block;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function() {
+
+      document.querySelector('.dialog-wrapper-container').classList.add('hide');
+
+      document.querySelector('.dialog-open-button').addEventListener('click', function() {
+        document.querySelector('.dialog-wrapper-container').classList.add('show');
+        document.querySelector('.dialog-wrapper-container').classList.remove('hide');
+      });
+      document.querySelector('.dialog-close-button').addEventListener('click', function() {
+        document.querySelector('.dialog-wrapper-container').classList.add('hide');
+        document.querySelector('.dialog-wrapper-container').classList.remove('show');
+      });
+    };
+  </script>
+</head>
+<body>
+  <div class="dialog-parent-container">
+    <div class='dialog-wrapper-container'>
+      <div class="dialog-title-container">
+        <h2>Math  Editor</h2>
+        <a href="javascript:void(0);" class="dialog-close-button">Close<span>x</span></a>
+      </div>
+      <div class="dialog-content-container">
+        Hey... I'm a content
+      </div>
+    </div>
+  </div>
+  <span class='dialog-open-button'>Show Editor</span>
+</body>
+</html>

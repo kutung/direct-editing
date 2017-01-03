@@ -1,0 +1,8 @@
+{
+    "xmlEditorSchemaUrl": "xml-editor/data/xml-schema.json",
+    "elsevierSpecJsonUrl": "xml-editor/scripts/elsevier.spec.json",
+    "xmlSaveEndPoint": "http://api.pagecentral.com/app/web/index.php/saveXml",
+    "htmlToXmlEndpoint": "http://api.pagecentral.com/app/web/index.php/getXml",
+    "xmlToHtmlEndpoint": "http://api.pagecentral.com/app/web/index.php/getHtml",
+    "vtoolEndPoint": "http://api.pagecentral.com/app/web/index.php/vtool"
+}

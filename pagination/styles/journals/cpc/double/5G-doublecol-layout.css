@@ -1,0 +1,91 @@
+.pagination-container .page {
+    height: 280mm;
+    width: 210mm;
+}
+.pagination-container .landscapepage {
+    height: 210mm;
+    width: 280mm;
+}
+.pagination-container .page .page-margin {
+    height: 100%;
+    width: 184.2mm;
+    margin: 0mm 12.9mm;
+}
+.pagination-container .landscapepage .page-margin {
+    height: 100%;
+    width: 254.2mm;
+    margin: 0mm 12.9mm;
+}
+.pagination-container .page img {
+    max-height: 236.5mm;
+}
+.pagination-container .firstpage img {
+    max-height: 202.33mm;
+}
+.pagination-container .landscapepage img {
+    max-height: 189mm;
+}
+.pagination-container .firstpage .page-margin > .staticitem:first-child {
+    min-height: 56.67mm;
+}
+.pagination-container .versopage .page-margin > .staticitem:first-child,
+.pagination-container .rectopage .page-margin > .staticitem:first-child {
+    min-height: 20mm;
+}
+.pagination-container .page .page-margin > .staticitem:last-child {
+    min-height: 21mm;
+}
+.pagination-container .firstpage .page-margin > .staticitem:last-child {
+    min-height: 32mm;
+}
+.pagination-container .landscapepage .page-margin > .staticitem:first-child,
+.pagination-container .landscapepage .page-margin > .staticitem:last-child {
+    min-height: 10.5mm;
+}
+.pagination-container .column {
+    width: 50%;
+}
+.pagination-container .column-one > * {
+    margin-right: 3.175mm;
+}
+.pagination-container .column-two > * {
+    margin-left: 3.175mm;
+}
+.proofview .mode-buttons {
+  padding-right: 19.6%;
+}
+/*Running head*/
+.pager .page-header {
+  padding: 12.2mm 0mm 1.4mm 0mm;
+}
+/*Document Header Panel*/
+.pager .document-header {
+  padding: 12.2mm 0 3.4mm 0;
+}
+@media print {
+  @page {
+    margin: 0px;
+    size: 210mm 280mm;
+  }
+
+  @page landscape {
+    size: 210mm 280mm landscape;
+  }
+
+  .page {
+    height: 279.9mm !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    page-break-inside: avoid;
+  }
+
+  .landscapepage {
+    height: 209.9mm !important;
+    page: landscape;
+  }
+
+  .pager .destination-container {
+    page-break-inside: always;
+  }
+}

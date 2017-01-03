@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Page Central</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+        <link rel="stylesheet" type="text/css" href="styles/common.css" />
+        <link rel="stylesheet" type="text/css" href="styles/annotator.css" />
+        <link rel="stylesheet" type="text/css" href="styles/tabpanel.css" />
+        <link rel="stylesheet" type="text/css" href="styles/editor.css" />
+        <link rel="stylesheet" type="text/css" href="styles/supplementary.css" />
+        <link rel="stylesheet" type="text/css" href="styles/editsummary.css" />
+        <link rel="stylesheet" type="text/css" href="styles/contextualmenu.css" />
+        <link rel="stylesheet" type="text/css" href="styles/bold.css" />
+        <link rel="stylesheet" type="text/css" href="styles/italic.css" />
+        <link rel="stylesheet" type="text/css" href="styles/superscript.css" />
+        <link rel="stylesheet" type="text/css" href="styles/subscript.css" />
+        <link rel="stylesheet" type="text/css" href="styles/instructpanel.css" />
+        <link rel="stylesheet" type="text/css" href="styles/insertpanel.css" />
+        <link rel="stylesheet" type="text/css" href="styles/dialog.css" />
+        <link rel="stylesheet" type="text/css" href="styles/math-editor.css" />
+        <script src='http://localhost:8080/WIRISeditor-3.9.1.2439/editor?lang=en'></script>
+        <style>
+            .request {
+                background-color: #d1f7f9;
+            }
+
+            .queries1 {
+                width: 350px;
+            }
+
+            .queries2 {
+                width: 400px;
+            }
+            .tab-panel .tab-content-container {
+                /*height: 500px;*/
+                /*overflow-y: auto;*/
+                /*overflow-x: hidden;*/
+            }
+
+            .left-container, .right-container {
+                float: left;
+                width: 65%;
+            }
+
+            .right-container {
+                float: right;
+                width: 34%;
+            }
+
+            .editor{
+                margin: auto;
+                height: 500px;
+                overflow-y : scroll;
+                position: relative;
+            }
+              .mathml, .equation_data_container{
+                display: none;
+              }
+              .matheditor-parent-container .hide {
+                display: none;
+              }
+        </style>
+    </head>
+    <body>
+    <div class='parent-container'>
+        <div class="left-container">
+            <div class='editor-parent-container'></div>
+            <div class='editor'></div>
+            <div class='supplementary'></div>
+        </div>
+        <div class="right-container">
+            <div class='math-container'></div>
+            <div class='dialog-popup-container'></div>
+            <div class='edit-summary-tab'></div>
+            <div class='edit-summary-author'></div>
+            <div class='edit-summary-copy-editor'></div>
+            <div class="insert-container"></div>
+            <div class="instruction-container"></div>
+        </div>
+    </div>
+    <script src='scripts/libs/require-2.1.16.js'></script>
+    <script src="scripts/polyfills/classList.js"></script>
+    <script src="scripts/polyfills/dataset.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script>
+    require.config({
+        baseUrl: ''
+    });
+    </script>
+    <script>
+        require([
+            'scripts/Helper',
+            'scripts/Request',
+            'scripts/RequestBuilder',
+            'scripts/RequestQueue',
+            'scripts/Editor',
+            'scripts/EventBus',
+            'scripts/RangeHelper',
+            'scripts/FragmentSniffer',
+            'scripts/Annotate',
+            'scripts/TabPanel',
+            'scripts/EditSummary',
+            'scripts/ContextualMenu',
+            'scripts/BoldMenuItem',
+            'scripts/ItalicMenuItem',
+            'scripts/SuperscriptMenuItem',
+            'scripts/SubscriptMenuItem',
+            'scripts/InstructMenuItem',
+            'scripts/InstructPanel',
+            'scripts/InsertMenuItem',
+            'scripts/InsertPanel',
+            'scripts/MathEditor',
+            'scripts/EquationEditor',
+            'scripts/DialogPopupPanel',
+            'scripts/MathCommand'
+        ],
+        function(
+            Helper,
+            Request,
+            RequestBuilder,
+            RequestQueue,
+            Editor,
+            EventBus,
+            RangeHelper,
+            FragmentSniffer,
+            Annotate,
+            TabPanel,
+            EditSummary,
+            ContextualMenu,
+            BoldMenuItem,
+            ItalicMenuItem,
+            SuperscriptMenuItem,
+            SubscriptMenuItem,
+            InstructMenuItem,
+            InstructPanel,
+            InsertMenuItem,
+            InsertPanel,
+            MathEditor,
+            EquationEditor,
+            DialogPopupPanel,
+            MathCommand
+        ) {
+            console.log('Dependencies loaded');
+
+            var mathNodes, equationEditor, requestBuilder, mathEditor, mathCommand;
+
+            EventBus.subscribe('Math:OnSave', function(data) {
+              console.log('Saving math ', data);
+            });
+            articleContainer = document.querySelector('.editor');
+            supplementaryContainer = document.querySelector('.supplementary');
+            fragmentSniffer = new FragmentSniffer(window);
+            rangeHelper = new RangeHelper();
+
+            // Article loading
+            var Config = {
+                saveEndPoint: 'http://localhost/pg-api/app/web/index.php/saveHtml'
+            }
+            var htmlSaveQueue = new RequestQueue();
+            var requestBuilder = new RequestBuilder();
+            var editor1 = new Editor('article',
+                articleContainer, EventBus, rangeHelper, fragmentSniffer, window, document,
+                htmlSaveQueue, requestBuilder, Config.saveEndPoint
+            );
+            var endPoint = 'http://localhost/pg-api/app/web/index.php/load';
+            var token = 'SPIN27a0236e16df555fac0164c6c9e4cfdb4';
+            var url = endPoint + '/' + token;
+            var rB = new RequestBuilder();
+            rB.setUrl(url);
+            rB.setMethod('GET');
+            console.log('Requesting meta data ', url);
+            rB.setSuccessCallback(function(response) {
+                console.log('Meta Success');
+                var parsedResponse = JSON.parse(response);
+                var articleHtml = parsedResponse.data.filePath;
+                console.log('Downloading article Html ', articleHtml);
+                // TO BE REMOVED
+                articleHtml = 'data/article4.html';
+                var rB1 = new RequestBuilder();
+                rB1.setUrl(articleHtml);
+                rB1.setMethod('GET');
+                rB1.setSuccessCallback(function(response) {
+                    editor1.render(response);
+                });
+                req = rB1.build();
+                req.send();
+            });
+            req = rB.build();
+            req.send();
+            // Supplementary loading
+            // var editor2 = new Editor(
+            //     supplementaryContainer, EventBus, rangeHelper, fragmentSniffer, window
+            // );
+            // rB = new RequestBuilder();
+            // rB.setUrl('data/supplmentary.html');
+            // rB.setMethod('GET');
+            // rB.setSuccessCallback(function(response) {
+            //     editor2.render(response);
+            // });
+            // req = rB.build();
+            // req.send();
+
+            // Loading editor in Tabs
+            var content;
+            tabPanel1 = new TabPanel(
+                document.querySelector('.editor-parent-container'),
+                document, window, EventBus
+            );
+            tabPanel1.render();
+            tabPanel1.add('Full Article', articleContainer);
+            tabPanel1.add('Supplementary', supplementaryContainer);
+            contextualMenu = new ContextualMenu(
+                articleContainer, window, document, EventBus
+            );
+            // Contextual Menu
+            var boldMenuItem = new BoldMenuItem(EventBus, window),
+                italicMenuItem = new ItalicMenuItem(EventBus, window),
+                superscriptMenuItem = new SuperscriptMenuItem(EventBus, window),
+                subscriptMenuItem = new SubscriptMenuItem(EventBus, window);
+                instructMenuItem= new InstructMenuItem(EventBus, document, window);
+                insertmenuitem = new InsertMenuItem(window, document, EventBus);
+
+
+            contextualMenu.add('bold', boldMenuItem);
+            contextualMenu.add('italic', italicMenuItem);
+            contextualMenu.add('superScript', superscriptMenuItem);
+            contextualMenu.add('subScript', subscriptMenuItem);
+            contextualMenu.add('insert', insertmenuitem);
+            contextualMenu.add('instruct', instructMenuItem);
+
+
+            var isLoaded = false;
+
+                // Load Instruct Container
+                var queue = new RequestQueue(),
+                instructPanel1 = new InstructPanel(
+                    document.createElement('div'), document, window,
+                    EventBus, queue, {
+                        uri: '/upload.php',
+                        deleteUri: '/delete.php'
+                    }
+                );
+                instructPanel1.render();
+                instructPanel1.setTitle('Instruction');
+                document.querySelector('.instruction-container').appendChild(
+                    instructPanel1.getElement()
+                );
+            // Insert panel
+             var insertPanel1 = new InsertPanel(
+                    document.createElement('div'), document, window, EventBus
+                );
+            insertPanel1.render();
+            insertPanel1.setTitle('Insert');
+            document.querySelector('.insert-container').appendChild(
+                insertPanel1.getElement()
+            );
+
+            EventBus.subscribe('editor:loaded', function(htmlContainer) {
+                // console.log('loaded ', isLoaded);
+                if (isLoaded === true) {
+                    return
+                }
+                // Image Annotation
+                var anns = [];
+                Annotator = Annotate;
+                var imgs = htmlContainer.querySelectorAll('div.figure img'), ann;
+                for (var i=0; i<imgs.length;i++) {
+                    ann = new Annotator(imgs[i], document, window, EventBus);
+                    anns.push(ann);
+                    ann.render();
+                }
+
+                equationEditor = new EquationEditor(com.wiris);
+                requestBuilder = new RequestBuilder();
+                mathEditor = new MathEditor(
+                    document.querySelector('.math-container'), EventBus,
+                    requestBuilder, equationEditor, document
+                );
+                mathNodes = document.querySelectorAll('.eqn-container[editable="true"]');
+                dialogPopupPanel = new DialogPopupPanel(
+                    document.querySelector('.dialog-popup-container'), document, window,
+                    EventBus
+                );
+
+                var optToken = 'SPIN27a0236e16df555fac0164c6c9e4cfdb4';
+                mathCommand = new MathCommand(
+                    EventBus, document, window, optToken, requestBuilder
+                );
+                mathCommand.attachListeners();
+
+                for (i = 0; i < mathNodes.length; i++) {
+                    mathNodes[i].addEventListener('click', function(e) {
+                        var eqnContainer = e.target.parentNode;
+                        var mathNodeName = eqnContainer.getAttribute('name');
+                        var currentVersion = eqnContainer.querySelector('span.current_version');
+                        var mathmlNode = eqnContainer.querySelector(
+                            'span[version="'+currentVersion.innerHTML+'"] .mathml'
+                        );
+
+                        var mathFragment = document.createDocumentFragment();
+                        mathFragment.appendChild(eqnContainer.cloneNode(true));
+                        mathEditor.setMathContext(mathNodeName, mathFragment);
+                        var mathml = mathmlNode.innerHTML;
+                        mathEditor.render(mathml);
+
+                        var mathGeneratedNode = document.querySelector('.math-container');
+                        dialogPopupPanel.setTitle('Math Editor');
+                        dialogPopupPanel.setContent(document.querySelector('.math-container'));
+                        dialogPopupPanel.render();
+                    }, false);
+                }
+
+                // Updating Edit Summary Load
+                EventBus.publish('EditSummary:Load');
+
+                // Load Contextual Menu
+                contextualMenu.render();
+
+                isLoaded = true;
+            });
+
+            window.eB = EventBus;
+
+
+
+            EventBus.subscribe('EditSummary:Load', function() {
+                // Edit Summary
+                var authorEditSummaryContainer = document.querySelector(
+                    '.edit-summary-author'
+                );
+                var ceEditSummaryContainer = document.querySelector(
+                    '.edit-summary-copy-editor'
+                );
+                var authorEditSummary = new EditSummary(
+                    authorEditSummaryContainer, EventBus, window
+                );
+                var ceEditSummary = new EditSummary(
+                    ceEditSummaryContainer, EventBus, window
+                );
+                tabPanelEditSummary = new TabPanel(
+                    document.querySelector('.edit-summary-tab'),
+                    document, window, EventBus
+                );
+                tabPanelEditSummary.render();
+                tabPanelEditSummary.setTitle('Edit Summary');
+                tabPanelEditSummary.add('Author', authorEditSummaryContainer);
+                tabPanelEditSummary.add('Copy Editor', ceEditSummaryContainer);
+                var AUTHOR_TAGS = [
+                  'span.optbold',
+                  'span.optitalic',
+                  'span.optsup',
+                  'span.optsub',
+                  'span.optdel',
+                  'span.optcomment',
+                  'span.optinsert'
+                ];
+
+                var CPE_TAGS = [
+                  'span.cpedel',
+                  'span.cpeins',
+                  'span.optreject'
+                ];
+
+
+                // Edit Summary
+                var editor = document.querySelector('.editor');
+                var nodeList = editor.querySelectorAll(AUTHOR_TAGS.join(', '));
+                authorEditSummary.render(nodeList);
+
+                var editor = document.querySelector('.editor');
+                var nodeList = editor.querySelectorAll(CPE_TAGS.join(', '));
+                ceEditSummary.render(nodeList);
+
+            });
+
+        });
+        </script>
+    </body>
+</html>

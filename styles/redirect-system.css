@@ -1,0 +1,403 @@
+/*
+PDF Proofing 
+*/
+body {
+	padding: 0;
+	margin: 0;
+}
+
+@font-face {
+   font-family: downloadicon;
+   src: url(../fonts/icons_save.svg);
+   font-weight: bold;
+}
+
+.pdf-proofing-wrapper {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.pdf-proofing-heading {
+	border-top: 1px solid #e47d22;
+	padding: 13px 14px 13px 40px;
+	background: #f0f0f0;
+	float: left;
+	width: 100%;
+    box-sizing: border-box;
+	height: 46px;
+}
+
+.pdf-proofing-heading span {
+	color: #e47d22;
+	float: left;
+	font-size: 16px;
+}
+
+.pdf-proofing-heading button {
+	border: none;
+	outline: none;
+	background: none;
+	color: #fc1212;
+	font-size: 12px;
+	float: right;
+	cursor: pointer;
+}
+
+.pdf-proofing-leftpanel {
+	padding: 0px 40px;
+	box-sizing: border-box;
+	height: 100%;
+	width: 70%;
+	float: left;
+	margin: 37px 0;
+}
+
+.pdf-proofing-leftpanel .annotate-info {
+	color: #000;
+	font-size: 14px;
+	font-weight: 800;
+	font-family: 'OpenSans-Regular';
+	padding-bottom: 29px;
+	margin: 0;
+}
+
+.pdf-proofing-para {
+	color: #808285;
+	font-size: 12px;
+	font-family: 'OpenSans-Regular';
+	float: left;
+	width: 100%;
+	line-height: 24px;
+	padding: 0;
+	margin: 0;
+}
+
+.pdf-proofing-para a {
+	color: blue;
+	text-decoration: none;
+}
+
+.upload-file-info {
+	padding: 22px 10px 10px 15px;
+	box-sizing: border-box;
+	float: left;
+	font-weight: 800;
+}
+
+.upload-file-info h4, .upload-file-area h4, .pdf-proofing-rightpanel h4 {
+	color: #231f20;
+	font-size: 12px;
+	float: left;
+	width: 100%;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+.pdf-proofing-rightpanel h4 {
+	padding-top: 18px;
+}
+
+.pdf-proofing-rightpanel img {
+	margin-bottom: 13px;
+}
+
+.upload-file-area {
+	float: left;
+	width: 100%;
+	padding: 30px 10px 13px 10px;
+	box-sizing: border-box;
+}
+
+.upload-file-info table {
+    border-collapse: collapse;
+    width: 100%;
+	margin-bottom: 25px;
+}
+
+.upload-file-info th,.upload-file-info td {
+    text-align: left;
+    padding: 11px 50px;
+    font-weight: 400;
+    color: #000;
+}
+
+.upload-file-info tr:nth-child(even) {
+	background-color: #f0f0f0;
+}
+
+.upload-file-info tr:nth-child(odd) {
+	background-color: #e5e5e5;
+}
+
+.upload-file-info th {
+    background-color: #cdcdcd;
+	color: #231f20;
+	font-weight: 800;
+}
+
+.upload-file-div {
+	float: left;
+	background: #f0f0f0;
+	padding: 15px 20px;
+	box-sizing: border-box;
+	width: 100%;
+	position: relative;
+}
+
+.upload-file-div .upload-file-btn {
+	border: none;
+    outline: none;
+    background: #e47d22;
+    color: #fff;
+    text-align: center;
+    width: 135px;
+    height: 37px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.upload-file-browsebtn {
+	border: none;
+    outline: none;
+    background: #231f20;
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    height: 37px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.upload-file-div .upload-file-name {
+    color: #231f20;
+    font-size: 14px;
+    font-weight: 400;
+    float: left;
+    padding-left: 119px;
+    line-height: 35px;
+    padding-right: 10px;	
+}
+
+.upload-file-div .upload-file-size {
+	color: #e47d22;
+	font-weight: 800;
+	font-size: 12px;
+	float: left;
+    line-height: 35px;
+}
+
+.upload-file-div .upload-file-size:before {
+	content: "|";
+	font-size: 20px;
+	color: #ccc;
+    padding-right: 10px;
+}
+
+.upload-file-div input {
+	background: #fff;
+    border: none;
+    padding: 11px 14px;
+    color: #000;
+    width: 79%;
+    box-sizing: border-box;
+    margin-left: 101px;
+}
+
+.pdf-proofing-rightpanel {
+	padding: 10px 40px;
+	box-sizing: border-box;
+	height: 100%;
+	width: 30%;
+	float: left;
+	margin: 40px 0;
+	border-left: 1px solid #b2b2b2;
+}
+
+.footnote-detail {
+	padding-left: 33px !important;
+}
+
+.citation-count-listsplit.footnote-annotaion {
+    padding-left: 0;
+}
+
+span.ref-author-name.footnote-view {
+    padding-left: 10px;
+}
+
+.cite-close-icon:before {
+    content: "x";
+    font-size: 23px;
+    color: #f00;
+    position: absolute;
+    top: 0px;
+    left: 18px;
+}
+
+.cite-close-icon:after {
+	content: "ESC";
+	font-size: 8px;
+	color: #fff;
+}
+
+.upload-file-info table td .download-icon {
+	background: url(../fonts/icons_save.svg) no-repeat;
+  	height: 15px;
+  	width: 15px;
+	color: #e47d22;
+	cursor: pointer;
+}
+
+button.cite-close-icon {
+    padding: 20px 8px;
+    position: relative;
+    z-index: 1;
+    width: 50px !important;
+    box-sizing: border-box;
+}
+
+button.cite-close-icon:hover {
+	background: #3a3a3c !important;
+}
+
+/*
+Invite collaborators
+*/
+
+.invite-mail-list {
+	width: 100%;
+	box-sizing: border-box;
+    margin-top: 75px;
+    float: left;
+}
+
+.invite-mail-list table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.invite-mail-list table tr th {
+	color: #474747;
+	font-size: 12px;
+	font-weight: 800;
+	padding: 5px 0px;
+	min-width: 10%;
+}
+
+.invite-mail-list table tr:first-child {
+	background: #e6e6e6;
+}
+
+.invite-mail-list table tr {
+	padding: 5px 0 5px 20px;
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	font-family: 'OpenSans-Regular';
+}
+
+.invite-mail-list table tr th:first-child {	
+	width: 44%;
+	text-align: left;
+	float: left;
+}
+
+.invite-mail-list table tr th:nth-child(2),
+.invite-mail-list table tr td:nth-child(3)
+ {	
+	width: 30%;
+	text-align: left;
+	float: left;
+    font-family: 'OpenSans-Regular';
+    font-size: 13px;
+}
+
+.invite-mail-list table tr td.user-name-captial {
+	color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    float: left;
+    padding: 3px 1px;
+    background: #454545;
+	margin-right: 10px;
+	width: 25px;
+	font-family: 'OpenSans-Regular';
+}
+
+.collaborator-user-name {
+	float: left;
+	width: 36%;
+	line-height: 23px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 13px;
+}
+
+.expire-on {
+	float: left;
+	width: 30%;
+    line-height: 23px;
+}
+
+.clock-icon {
+	float: left;
+}
+
+.clock-icon:before {
+	content: "\34";
+    font-family: 'proof-central';
+    left: 10px;
+    font-size: 14px;
+    color: #b6bbbb;
+	line-height: 22px;
+	width: 16px;
+    display: block;
+}
+
+.close-icon {
+    width: 13px;
+    height: 13px;
+    background: #f00;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+    position: relative;
+    margin: 4px 0 0 25px;
+}
+
+.close-icon:before {
+    content: "\6a";
+    font-family: 'proof-central';
+    font-size: 6px;
+    color: #ffffff;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+	width: 25px;
+    display: block;
+}
+
+.close-icon:before {
+    content: "x";
+    font-size: 11px;
+    border-radius: 50%;
+    background: #f00;
+    color: #ffffff;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    display: block;
+    text-align: center;
+    padding: 0 0 3px 0;
+    margin-left: 10px;
+}

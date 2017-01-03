@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Treepanel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <style>
+    body {
+        font-size: 12px;
+    }
+    .container {
+        display: flex;
+    }
+    .article {
+        flex: 1;
+        order: 2;
+        padding-left: 10px;
+    }
+    .table-of-content {
+        width: 400px;
+        order: 1;
+    }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '/'
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+</head>
+<body>
+    <button>Add New Node</button>
+    <div class="container">
+        <div class="article chapter">
+            <div data-heading-level="4">Chapter 4</div>
+            <div data-heading-level="4.1">Sub heading 1.1</div>
+            <div data-heading-level="4.1.1">Sub heading 1.1.1</div>
+            <div data-heading-level="4.1.2">Sub heading 1.1.2</div>
+            <div data-heading-level="4.2">Sub heading 1.2</div>
+            <div data-heading-level="4.3">Sub heading 1.3</div>
+            <div data-heading-level="4.4">Sub heading 1.4</div>
+            <div data-heading-level="4.5">Sub heading 1.5</div>
+            <div data-heading-level="4.6">Sub heading 1.6</div>
+            <div data-heading-level="4.7">Sub heading 1.7</div>
+            <div data-heading-level="4.8">Sub heading 1.8</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        require([
+            'scripts/TreePanel', 'scripts/TreeModel'
+        ],
+        function onDepsLoad(TreePanel, TreeModel) {
+            var treeModel = new TreeModel(),
+                headings = document.querySelectorAll('[data-heading-level]'),
+                len = headings.length, i = 0, heading, label, tree, parent;
+
+            function findParentNode(model, level) {
+                var parentNode = null, subLevels = level.split('.'), j = subLevels.length - 1;
+
+                for (; j >= 1; j -= 1) {
+                    parentNode = model.findNodeBy(function findByLevel(node) {
+                        return node.data.sectionId === subLevels.slice(0, j).join('.');
+                    });
+                    if (parentNode !== null) {
+                        return parentNode;
+                    }
+                }
+
+                return null;
+            }
+
+            for (; i < len; i += 1) {
+                heading = headings[i].dataset.headingLevel;
+                label = headings[i].textContent;
+                parent = findParentNode(treeModel, heading);
+                if (parent === null) {
+                    treeModel.addNode(
+                        TreeModel.ROOT_NODE, (heading + ' ' + label), {'sectionId': heading}
+                    );
+                }
+                else {
+                    treeModel.addNode(
+                        parent.key, (heading + ' ' + label), {'sectionId': heading}
+                    );
+                }
+            }
+
+            tree = new TreePanel(window, document);
+            tree.setModel(treeModel);
+            tree.onNodeClick(function onNodeClick(data) {
+                var node = document.querySelector('[data-heading-level="' + data.sectionId + '"]');
+
+                // node.scrollIntoView();
+            });
+            tree.renderTo(
+                document.querySelector('.container'),
+                {'toc.heading.text': 'Table of Contents'}
+            );
+
+            document.querySelector('button').addEventListener('click', function onClick() {
+                var parentNode = treeModel.findNodeBy(function findByLevel(node) {
+                    return node.data.sectionId === '4.1';
+                });
+
+                treeModel.addNode(parentNode.key, '4.1.4 new node', {'sectionId': '4.1.4'});
+            }, false);
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,241 @@
+/*Dont delete this. Need to hide downloaded iframe*/
+.hideme {
+  display: none;
+}
+.proofview .pager {
+  position: relative;
+  top: 50px;
+  background-color: #808080;
+}
+
+.pager .clearfix:before, .pager .clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.pager .clearfix:after {
+  clear: both;
+}
+.pager .contents {
+  height: 12%;
+}
+.pager .get-height-container {
+  height: 291mm;
+  margin: 3mm 0;
+  border: 1px solid #000;
+  width: 100%;
+}
+.pager .hdr-actions {
+  margin-top: 0;
+}
+.pager .btn-group {
+  margin-bottom: 7px;
+  margin-right: 0;
+}
+.pager a.btn-download {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+  margin-left: 43px;
+}
+.pager a.btn-download a {
+  font-size: 12px;
+}
+.pager a.btn-download i {
+  padding-right: 0;
+  margin-right: 0;
+}
+.pager p.btn-group a.btn-download:active, .pager p.btn-group a.btn-download.active {
+  background-color: #FFFFFF;
+  border-radius: 4px; /*!important*/
+  color: #2F2F2F;
+  opacity: 1;
+}
+.pager .editor {
+  float: none;
+}
+.pager .tools {
+  float: none;
+  display: none;
+}
+.pager #editable-container, .pager .edit-screen-link, .pager .pselection, .pager .hdr-actions > ul {
+  display: none;
+}
+.pager .main_editor {
+  display: none;
+}
+.pager .row.edit_head {
+  background-color: #808080;
+  position: fixed;
+  top: 0;
+  width: 210mm;
+  z-index: 100;
+  margin-left: 98px;
+}
+.pager .edit_head .pull-left {
+  color: #fff;
+}
+.pager .header, .pager .file_tabs, .pagination-container .equation_data_container, .pager .ann-container, .pager .ga, .pager .image-annotate-canvas, .pager .tail, .pager .ce_floats {
+  display: none;
+}
+.pager .pagination-container .paginator .optdel,
+.pager .pagination-container .paginator .comntText,
+.pager .pagination-container .paginator .hideme,
+.pager .pagination-container .paginator .pagination-results,
+.pagination-container .paginator .annotorious-popup,
+.pagination-container .paginator .annotorious-editor,
+.pagination-container .paginator .ce_alt-text {
+  display: none;
+}
+.pagination-container .paginator span#fnhead {
+  display: none;
+}
+.pagination-container .paginator .optdel, .pagination-container .paginator .comntText, .pagination-container .paginator .hideme, .pagination-container .paginator .pagination-results {
+  display: none;
+}
+.pagination-container .paginator .optinsert {
+  text-decoration: none;
+  color: auto;
+  cursor: auto;
+  background-color: transparent;
+}
+.pagination-container .paginator .optbold {
+  font-weight: bold;
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+}
+.pagination-container .paginator .optitalic {
+  font-style: italic;
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+}
+.pagination-container .paginator .optcomment {
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+}
+.pagination-container .paginator .cpeins {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto;
+  background-color: transparent;
+  display: inline;
+}
+.pagination-container .paginator .cpeins div {
+  background-color: transparent;
+}
+.pagination-container .paginator .cpedel {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto;
+  background-color: transparent;
+}
+.pagination-container .paginator .optreject {
+  border: none;
+}
+.pagination-container .paginator .optreject.cpedel {
+  background-color: transparent;
+  color: inherit;
+}
+.pager .pagination-container .paginator .figure .wrapper > img {
+  /* Remove this important only when Edit mode is fine tuned for
+  image annotation. As there is inline style appears we need to
+  include this important*/
+  display: block;  /*!important*/
+}
+.pager .pagination-container .paginator .suppltext,
+.pager .pagination-container .paginator .ce_e-component {
+  display: none;  /*!important*/
+}
+.pager .pagination-container .paginator .ce_inter-ref,
+.pager .pagination-container .paginator .ce_doi  {
+  color: inherit;
+}
+.pagination-container .paginator a[title] {
+  color: inherit;
+}
+.pagination-container .paginator a:hover, .pagination-container .paginator a:focus {
+  text-decoration: none;
+}
+.pagination-container .paginator div.ce_author > .ce_surname {
+  background-color: transparent;
+}
+.pagination-container .paginator .ce_italic .page-number,
+.pagination-container .paginator .ce_salutation .page-number,
+.pagination-container .paginator .ce_bold .page-number {
+  font-style: normal;
+}
+.pagination-container .paginator .optsup,
+.pagination-container .paginator .optsub {
+  line-height: 0;
+  font-size: 70%;
+  position: relative;
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+  word-break: keep-all;
+}
+.pagination-container .paginator .optsub {
+  bottom: -0.33em;
+}
+.pagination-container .paginator .optsup {
+  bottom: 0.65em;
+}
+.pagination-container .paginator .ce_section .cpeins + .sectionline_opt {
+  display: inline;
+}
+.pagination-container .paginator .table .tablecaption > .wrapper > .container-image {
+  text-align: center;
+}
+.pagination-container .paginator .ce_display table.formula {
+  border: none;
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.pager .pagination-container .figure .ce_keywords,
+.pager .pagination-container .displayfigtab .ce_keywords,
+.pager .pagination-container .table .ce_keywords {
+  display: none;
+}
+.pager .pagination-container .paginator .ce_display {
+  margin: 5.25pt 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.pager .pagination-container .paginator .formula td:nth-child(2) {
+  padding-left: 0.5em;
+}
+.paginator .annotate-editor, .paginator .div-toggle-images,
+.paginator .ce_indexed-name, .paginator span.content_modified,
+.paginator div.ce_bib-reference span.ce_label1, .paginator .cke_iframe_shim,
+.paginator .ce_inter-refs-text, .paginator span.ce_initials,
+.pager .pagination-container .figure i.expand-icon {
+  display: none;
+}
+
+@media print {
+  body, .pager, .proofview {
+    margin: 0;
+    background-color: #fff !important;
+  }
+
+  .proofview {
+    height: auto !important;
+  }
+
+  .pager {
+    top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .mode-buttons {
+    display: none;
+  }
+}

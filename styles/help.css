@@ -1,0 +1,303 @@
+@font-face {
+  font-family: 'robotoregular';
+    src: url('/fonts/help/Roboto-Regular-webfont.eot');
+    src: url('/fonts/help/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/help/Roboto-Regular-webfont.woff') format('woff'),
+         url('/fonts/help/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/help/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'robotolight';
+    src: url('/fonts/help/Roboto-Light-webfont.eot');
+    src: url('/fonts/help/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/help/Roboto-Light-webfont.woff') format('woff'),
+         url('/fonts/help/Roboto-Light-webfont.ttf') format('truetype'),
+         url('/fonts/help/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    outline: none;
+}
+
+body {
+    background: #E6E6E6;
+    color: #333;
+    font: normal 14px/20px 'robotolight', Helvetica, Arial, sans-serif;
+}
+
+body * {
+    -web-kit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+a:link, a:visited, a:hover, a:active {
+    color: #050594;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #FFF;
+    border-bottom: 2px solid #FA961B;
+    padding: 3px 0px;
+    box-shadow: 1px 1px 3px #B8B8B8;
+}
+
+.header-inner {
+    text-align: center;
+}
+
+h1 {
+    float: left;
+    margin: 2px 0 0;
+}
+
+h1 a {
+    display: block;
+    width: 186px;
+    height: 32px;
+    background: url("/images/help/logo.png") no-repeat left top;
+    text-indent: -999em;
+    background-size: 100%;
+}
+
+.caption {
+    display: inline-block;
+    font: italic 9pt/9pt Helvetica, Arial, sans-serif;
+    color: #000;
+    margin: 18px 0 0;
+}
+
+.customer-logo {
+    float: right;
+}
+
+.customer-logo img {
+    margin: 4px 0 0;
+}
+
+.main {
+    margin: 15px 0 0;
+}
+
+.main h2 {
+    font: normal 18pt/24pt 'robotolight', Helvetica, Arial, sans-serif;
+    padding: 0 0 5px;
+}
+
+.left-panel {
+    background: #f5f5f5;
+    float: left;
+    width: 220px;
+    height: 500px;
+    padding: 10px;
+    border: 2px solid #f2f2f2;
+    outline: 1px solid #f5f5f5;
+}
+
+.right-panel {
+    float: right;
+    width: 725px;
+    background: #f5f5f5;
+    padding: 15px 10px;
+    border: 2px solid #f2f2f2;
+    outline: 1px solid #f5f5f5;
+}
+
+.help-container {
+    margin: 15px 0 0;
+}
+
+.help-container:first-child {
+    margin: 0;
+}
+
+.help-content {
+    margin: 10px 0 0;
+}
+
+h3 {
+    font: normal 16pt/22pt 'robotolight', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid #cdcdcd;
+    margin: 5px 0 0;
+    padding: 0 6px 5px;
+}
+
+h4 {
+    font: normal 13pt/19pt 'robotolight', Helvetica, Arial, sans-serif;
+    margin: 5px 0 0 5px;
+    padding: 5px 0 6px;
+}
+
+.help-container:first-child h3 {
+    margin: 0;
+}
+
+.right-panel ul {
+    list-style: disc;
+    padding: 0 0 0 25px;
+}
+
+.right-panel ul li {
+    padding: 5px 0;
+}
+
+.right-panel ul li.bullet-free {
+    list-style: none;
+    padding: 12px 0;
+}
+
+.right-panel ol {
+    list-style-type: decimal;
+    padding: 0 0 0 25px;
+}
+
+.menu li {
+    padding: 2px 0;
+}
+
+.menu > li > a  {
+    text-decoration: underline;
+    padding: 0 0 0 18px;
+    display: inline-block;
+}
+
+.menu li .open, .menu li .close {
+    background: url("/images/help/minus.png") no-repeat 0 2px;
+}
+
+.menu li .close {
+    background: url("/images/help/plus.png") no-repeat 0 2px;
+}
+
+.sub-menu {
+    margin: 0 0 0 40px;
+}
+
+.sub-menu li a {
+    text-decoration: underline;
+    font-size: 11pt;
+}
+
+.menu li a:hover {
+    text-decoration: none;
+}
+
+.help-content img {
+    vertical-align: middle;
+}
+
+.resize-img img {
+    width: 100%;
+}
+
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.note {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.move-top {
+  text-indent: -999em;
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  background: url("/images/help/arrow_top.png") no-repeat left top;
+  width: 32px;
+  height: 32px;
+  margin-left: 490px;
+}
+
+.help-header-title {
+  float: left;
+  display: inline-block;
+}
+
+.localization {
+    float: right;
+    display: inline-block;
+    padding-top: 12px;
+}
+
+.localization .locale-link {
+    padding-left: 3px;
+    opacity: 0.4
+}
+.localization .locale-link.active {
+    opacity: 1
+}
+
+.overlay {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url('/images/ajax-loader.gif') no-repeat center center #aaaaaa;
+    opacity: 0.6;
+}
+
+.error-message-container {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    background-color: #F7D9D9;
+    color: #8F3131;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 3px #8F3131;
+    -moz-box-shadow: 0 0 3px #8F3131;
+    box-shadow: 0 0 3px #8F3131;
+    font: 16px/2.5 "Roboto Regular", Arial, sans-serif;
+    width: 100%;
+    padding: 2px 0px;
+}
+.error-message-container.hide{
+  display: none;
+}
+.error-message-container.show{
+  display: block;
+}
+
+.wrapper.hide {
+    display: none;
+}
+.author-help {
+   padding: 8px;
+   border: 1px solid #aaaaaa;
+}
+
+.inline-block {
+  display: inline-block;;
+}

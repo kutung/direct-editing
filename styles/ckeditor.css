@@ -1,0 +1,60 @@
+.cke_top {
+    background-image: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.cke .cke_toolbox .cke_toolbar .cke_toolgroup {
+    margin: 0;
+    border: 0;
+    background: none;
+    background-image: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.cke_editable {
+    font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+    color: #333;
+    background-color: #fff;
+    font-size: 13px;
+    line-height: 1.6em;
+    margin: 8px;
+}
+
+/*FIXME: This must be removed. Find and fix.*/
+.cke_contents .cke_wysiwyg_frame {
+    width: 100% !important;
+}
+
+/*a.cke_button_on:hover, a.cke_button_on:focus,
+a.cke_button_on:active, a.cke_button_off:hover,
+a.cke_button_off:focus, a.cke_button_off:active,
+a.cke_button_disabled:hover, a.cke_button_disabled:focus,
+a.cke_button_disabled:active {
+    background-image: -webkit-linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+    background-image: linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+    box-shadow: none;
+}
+a.cke_button.cke_button_on {
+    background-image: -webkit-linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+    background-image: linear-gradient(#D8D6D6, #F5F5F5 25%, #FFFFFF);
+}*/
+a.cke_button {
+    margin: 0;
+    color: #333;
+    font-size: 13px;
+    border: 1px solid #B2ADAD;
+    border-bottom-color: #8B8B8B;
+	cursor: pointer !important;
+}
+
+.smallcaps {
+    font-variant: small-caps;
+}
+.mono {
+    font-family: Courier, monospace;
+}

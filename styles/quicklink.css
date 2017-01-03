@@ -1,0 +1,488 @@
+.quicklinks-tab .tab-panel .header .text {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.quicklinks-tab .tab-panel .header .icon {
+    background-image: url("/images/quicklink.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px 16px;
+}
+
+.quicklinks-tab .tab-panel.open .header .icon {
+    background-image: url("/images/quicklink-open.png");
+    background-size: 16px 16px;
+}
+
+.quick-links {
+    border-bottom: 1px solid #e9e9e9;
+    min-height: 320px;
+}
+
+.quick-links li {
+    cursor: pointer;
+	outline: none;
+}
+.figure_list .list-panel  ul,
+.table_list .list-panel  ul,
+.equation_list .list-panel  ul,
+.edit-citation-footnotes .equation_list .list-panel ul {
+	padding: 0px;
+	margin-top: 0px;
+	width: 100%;
+}
+.figure_list .list-panel ul li.figListItem,
+.table_list .list-panel ul li.tableListItem,
+.equation_list .list-panel ul li.eqnListItem {
+	width: 100%;
+	float: left;
+}
+.figure_list .list-panel ul li.figListItem:hover,
+.table_list .list-panel ul li.tableListItem:hover,
+.equation_list .list-panel ul li.eqnListItem:hover,
+.edit-citation-footnotes .equation_list .list-panel ul li:hover {
+	background: #ebebeb;
+}
+.edit-citation-footnotes .equation_list .list-panel ul li {
+	padding: 0 1em;
+}
+.edit-citation-footnotes .equation_list .list-panel ul li {
+	width: 100%;
+	float: left;
+    padding-top: 5px;	
+}
+.table_list .list-panel  ul.tableCitationList,
+.figure_list .list-panel  ul.figCitationList,
+.equation_list .list-panel  ul.eqnCitationList {
+	margin-top: 10px;
+}
+.equation_list .citation-fig-wrapper.active  {
+	width: 210px;
+	background: #fff;
+}
+
+.quicklink_list_panel .list-panel ul li:hover .citation-fig-wrapper {
+	background: #fff;
+} 
+.quick-links.empty span {
+    color: #aaa;
+    cursor: default;
+    min-height: 50px;
+    display: inline-block;
+    margin: 30px 0px 0px 25px;
+}
+
+.quicklinks-tab .tab-content-container {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.quicklinks-tab .tab-panel .header .tools .tool.toggle {
+    background-image: url("/images/closeArrow.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.quicklinks-tab .tab-panel.open .header .tools .tool.toggle {
+    background-image: url("/images/downArrow.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*.quicklinks-tab .tab-header-container .tab-header-wrapper {
+    border-bottom: 1px solid #999;
+}*/
+
+.quicklinks-tab .tab-panel .header .text,
+.references-container .tab-panel .header .text,
+.edit-citation-tab .tab-panel .header .text,
+.article-info-tab .tab-panel .header .text {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 4px 10px;
+}
+
+/* For Table of content */
+.quicklinks-tab .table-of-content {
+    font-size: 1.2em;
+	padding: 10px;
+}
+.quicklinks-tab .table-of-content header {
+    display: none;
+}
+.quicklinks-tab .table-of-content li .label
+{
+    width :calc(100% - 0.7em);
+}
+.quicklinks-tab .table-of-content li {
+    color: #1a0dab;
+    font : 12px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.quicklinks-tab .table-of-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.container .quicklinks-tab .table-of-content li {
+    padding-left: 0.75em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	outline: none;
+}
+.container .quicklinks-tab .table-of-content .toc-parent li {
+    padding-left : 1.5em;
+}
+.container .quicklinks-tab .table-of-content .toc-parent li.toc-parent {
+     padding-left : 0.9em;
+}
+
+.quicklinks-tab .table-of-content li:focus{
+    outline: none;
+}
+
+.quicklinks-tab .table-of-content li.quicklink-item-mouse-click > .label{
+    text-decoration: none;
+    color:#000;
+}
+.quicklinks-tab .table-of-content li.quicklink-item-mouse-click > .label.selected {
+	font-weight: 600;
+}
+.quicklinks-tab .table-of-content li:focus > .label{
+    border-radius: 3px;
+
+}
+
+.quicklinks-tab .table-of-content li.toc-parent {
+    padding-left: 0.12em;
+}
+.container .quicklinks-tab .table-of-content .toc-parent[aria-expanded="true"] > .icon, .container .quicklinks-tab .table-of-content .toc-parent[aria-expanded="false"] > .icon{
+    height: 0.7em;
+    width:0.7em;
+}
+.quicklinks-tab .table-of-content header {
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding: 1em;
+}
+.quicklinks-tab .table-of-content .section-toc {
+    color: grey;
+    font : 12px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.quicklinks-tab .table-of-content.show {
+    display: block;
+}
+.quicklinks-tab .table-of-content.hide {
+    display: none;
+}
+
+.quicklinks-tab .table-of-content .optsmallcaps {
+    font-variant: small-caps;
+}
+.quicklinks-tab .table-of-content .optmono {
+    font-family: monospace;
+}
+.quicklinks-tab .table-of-content .optbold {
+    font-weight: bold;
+}
+.quicklinks-tab .table-of-content .optitalic {
+     font-style: italic;
+}
+.quicklinks-tab .table-of-content .optsup {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+.quicklinks-tab .table-of-content .optsub {
+    font-size: 0.8em;
+    vertical-align: sub;
+}
+.quicklinks-tab .table-of-content .optsmallcaps {
+    font-variant: small-caps;
+}
+.quicklinks-tab .table-of-content .optmono {
+   font-family: Courier,monospace;
+}
+.quicklinks-tab .table-of-content .optdel,
+.quicklinks-tab .table-of-content .cpedel,
+.quicklinks-tab .table-of-content .comntText,
+.quicklinks-tab .table-of-content .pc_cpereplace .cpedel,
+.quicklinks-tab .table-of-content .optreject .cpeins {
+    display: none;
+}
+.quicklinks-tab .table-of-content .optreject .cpedel{
+    display: inline-block;
+}
+.quicklinks-tab .table-of-content .mathml,
+.quicklinks-tab .table-of-content .equation_data_container {
+    display:none;
+}
+
+/***QuickLink Figure ***/
+.quicklinks-tab .quicklinks-figure-and-table .figure_list img{
+    width :14em;
+    height: 13em;
+    border: 1px solid #ccc;
+}
+.quicklinks-figure-and-table .list-panel .panel-header .icon {
+    display:none;
+}
+.quicklinks-figure-and-table .list-panel.open .panel-header {
+    border: none;
+    background: none;
+}
+.quicklinks-figure-and-table .list-panel.open .panel-header .text {
+    color: #2883d6;
+    font-size: 13px;
+    font-weight: bold;
+}
+.quicklinks-figure-and-table .list-panel li div{
+    display: inline;
+}
+.quicklinks-figure-and-table .list-panel li {
+    width :calc(100% - 0.7em);
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.2em 0.5em 0 0.5em;
+    white-space: nowrap;
+    color:#1a0dab;
+}
+.quicklinks-figure-and-table .list-panel li.active .fig-list-title,
+.quicklinks-figure-and-table .list-panel li.active .fig-count,
+.quicklinks-figure-and-table .list-panel li.active .fig-cap-captiontext {
+	color: #e47d22;
+}
+.quicklinks-equation .equation_list li.active .fig-list-title,
+.quicklinks-equation .equation_list li.active .fig-count,
+.quicklinks-equation .equation_list li.active .fig-cap-captiontext {
+	color: #e47d22;	
+}
+
+.quicklinks-equation .equation_list li.active .eqn-container {
+    border: 1px solid #e47d22;	
+}
+
+.quicklinks-figure-and-table .list-panel li.active .figure-list-container {
+    border: 1px solid #e47d22;	
+}
+.quicklinks-figure-and-table .table_list .list-panel li {
+    text-overflow: ellipsis;
+}
+.quicklinks-figure-and-table .list-panel li:focus,
+.quicklinks-figure-and-table .list-panel li:focus .list-label {
+    outline:none;
+}
+.quicklinks-tab .quicklinks-figure-and-table .figure_list li:focus img {
+    box-shadow: 0px 0px 4px #377fb3;
+    border-radius: 3px;
+}
+.quicklinks-tab .quicklinks-figure-and-table li .optbold {
+    font-weight: bold;
+}
+.quicklinks-tab .quicklinks-figure-and-table li .optitalic {
+    font-style: italic;
+}
+.quicklinks-tab .quicklinks-figure-and-table li .optsup {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+.quicklinks-tab .quicklinks-figure-and-table li .optsub {
+    font-size: 0.8em;
+    vertical-align: sub;
+}
+.quicklinks-tab .quicklinks-figure-and-table li .optsmallcaps {
+    font-variant: small-caps;
+}
+.quicklinks-tab .quicklinks-figure-and-table li .optmono {
+   font-family: Courier,monospace;
+}
+.quicklinks-tab .quicklinks-figure-and-table li .optdel,
+.quicklinks-tab .quicklinks-figure-and-table li .cpedel,
+.quicklinks-tab .quicklinks-figure-and-table li .comntText,
+.quicklinks-tab .quicklinks-figure-and-table li .pc_cpereplace .cpedel,
+.quicklinks-tab .quicklinks-figure-and-table li .optreject .cpeins {
+    display: none;
+}
+.quicklinks-tab .quicklinks-figure-and-table .optreject .cpedel {
+    display: inline-block;
+}
+.quicklinks-tab .quicklinks-figure-and-table .mathml,
+.quicklinks-tab .quicklinks-figure-and-table .equation_data_container {
+    display:none;
+}
+/*.quicklinks-figure-and-table .table_list .list-panel li:focus{
+    box-shadow: 0px 0px 4px #377fb3;
+    border-radius: 3px;
+}*/
+.quicklinks-figure-and-table .table_list .list-panel li:hover {
+    text-decoration: underline;
+}
+.quicklinks-tab .table_list .list-panel ul{
+    margin:0;
+    padding: 1em;
+}
+.quicklinks-tab .table_list .list-panel .quicklink-table-visited-item{
+    color: #660099;
+    text-decoration: none;
+}
+
+/* Added fig caption */
+.quicklinks-figure-and-table .list-panel li .figure-list-container {
+    width: 120px;
+    height: 120px;
+    float: left;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.quicklinks-figure-and-table .list-panel li .figure-list-container .figure-table-container {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.quicklinks-figure-and-table .list-panel li .figure-list-container .figure-table-container .figure-table-cell {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.quicklinks-figure-and-table .list-panel li .figure-list-container .figure-table-container .figure-table-cell .figure-table-inner{
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.quicklinks-figure-and-table .list-panel li .figure-list-container .figure-table-container .figure-table-cell .figure-table-inner img {
+    max-width: 100%;
+    width: inherit;
+    height: inherit;
+}
+.quicklinks-figure-and-table .list-panel li div.figure-table-captionwrapper {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding:10px  0px;
+    clear: both;
+	font-family: 'OpenSans-Regular';
+    font-size: 11px;	
+}
+.fig-count {
+    display: inline;
+    font-size: 11px;
+    font-weight: 600;
+    padding-right: 5px;
+}
+.fig-cap-captiontext {
+    display: inline;
+    font-size: 11px;
+    color: #474747;
+	white-space: initial;
+}
+.fig-list-title {
+    float: left;
+    padding-right: 30px;
+    font-size: 11px;
+    color: #474747;
+    width: 74px;
+}
+.figure-wrapper {
+    width: 269px;
+    float: left;
+}
+.highResImageView.new-fig-nav .container-image {
+	border: 1px solid green;
+}
+.editor .new-fig-nav .figcaption,
+.editor .new-fig-nav .ce_keywords,
+.editor .new-fig-nav .kw_label,
+.editor .new-fig-nav .cpedel{
+	color: green;
+}
+.editor .new-fig-nav .kw_label {
+	border: 1px solid green;
+}
+
+.ce_sections .fig-nav .container-image {
+	border: 1px solid #f00;	
+}
+.editor .fig-nav .figcaption,
+.editor .fig-nav .ce_keywords {
+	    color: #000;
+}
+
+.table_list .list-panel ul li.tableListItem .citation-listcheck table thead th {
+	height: 18px;
+	border: 1px solid #ccc;
+}
+.table_list .list-panel ul li.tableListItem .citation-fig-wrapper.active  {
+    height: 50px;
+    width: 70px;	
+}
+.table_list .list-panel ul li.tableListItem .comman-othercitation-wrapper .citation-fig-wrapper.active table thead th {
+	background: #474747;
+	border: 1px solid #474747;
+}
+
+.table_list .list-panel ul li.tableListItem .citation-listcheck.active table td {
+	border: 1px solid #474747;
+}
+.figure-list-container table,
+.comman-othercitation-wrapper table {
+	width: 99.9%;
+    height: 99%;
+    cursor: pointer;
+}
+.edit-citation-table .citation-fig-wrapper {
+	border: none;
+}
+.table_list .list-panel ul li.tableListItem:hover .comman-othercitation-wrapper table td {
+	border: 1px solid #ccc;
+}
+.table_list .list-panel ul li.tableListItem:hover .citation-listcheck.active table tbody td {
+	border: 1px solid #000;
+}
+.figure-list-container table tr td, 
+.comman-othercitation-wrapper table td {
+    border: 1px solid #eaecec;
+    padding: 0px;
+    height: 10px;
+}
+.figure-list-container table thead th,
+.comman-othercitation-wrapper table thead th {
+    width: 100%;
+    background: #ccc;
+    height: 34px;
+	border: 1px solid #ccc;
+}
+.tab-content .quicklinks-figure-and-table .table_list .figure-list-container {
+	border: 1px solid transparent;
+}
+.tab-content .quicklinks-figure-and-table .table_list ul li.active .figure-list-container {
+	border: 1px solid #e57d37;
+}
+.query-btn-container {
+	width: 100%;
+	float: left;
+    border-top: 1px solid #e3e4e8;
+    padding-top: 10px;
+	padding-bottom: 10px;
+}
+.reset-btn,
+.respond-btn {
+    width: 97px;
+    height: 31px;
+	font-size: 12px;
+    float: right;
+    margin-right: 7px;
+	text-align: center;
+	line-height: 31px;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.reset-btn {
+	background: #989e9e;
+}
+.respond-btn {
+	background: #3a3a3c;	    
+}

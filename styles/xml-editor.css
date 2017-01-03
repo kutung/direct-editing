@@ -1,0 +1,294 @@
+
+.container .xml-editor-accordian-container .asset-list-container .panel-content {
+    padding: 0;
+}
+.container .xml-editor-accordian-container .edit-summary-container,
+.container .xml-editor-accordian-container .asset-upload-container {
+    margin-bottom: 2px;
+}
+.container .xml-editor-accordian-container .asset-upload-container .panel-content {
+    padding: 0;
+}
+.container .xml-editor-container {
+    width: 750px;
+    float: left;
+    overflow: hidden;
+}
+.container .xml-editor-accordian-container {
+    width: 348px;
+    float: left;
+    overflow: auto;
+    margin-left: 2px;
+}
+.container .xml-editor-accordian-container {
+    margin-top: 35px;
+}
+.container .xml-editor-action-buttons {
+    position: absolute;
+    width: 348px;
+    right: 0px;
+}
+.proofCorrector .container .mode-buttons .xmlEditorBtn {
+    display: none;
+}
+.proofview .mode-buttons .xmlEditorBtn.hide,
+.container .mode-buttons .xmlEditorBtn.hide {
+    display: none;
+}
+
+.proofview .mode-buttons .xmlEditorBtn.show,
+.container .mode-buttons .xmlEditorBtn.show {
+    display: inline-block;
+}
+
+.proofview .mode-buttons .xmlEditorBtn,
+.container .mode-buttons .xmlEditorBtn {
+    display: none;
+    background-image: url(../images/xml-editor-icon.png);
+    background-repeat: no-repeat;
+    background-position: 8px 5px;
+    padding-left: 30px;
+}
+
+/*.proofview .mode-buttons .xmlEditorBtn[disabled],
+.container .mode-buttons .xmlEditorBtn[disabled] {
+    background-image: url(../images/xml-editor-icon.png);
+}*/
+.container .xml-editor-action-buttons {
+    text-align: right;
+    margin-bottom: 5px;
+    min-height: 28px;
+    display: flex;
+}
+.container .xml-editor-action-buttons .left {
+    flex: 1;
+}
+.container .xml-editor-action-buttons .right {
+    flex: 3;
+}
+.container .xml-editor-action-buttons .right {
+    text-align: right;
+}
+.container .xml-editor-action-buttons .left {
+    text-align: left;
+    padding-top: 1px;
+    margin-left: 10px;
+}
+.container .xml-editor-action-buttons .fullscreenBtn {
+    margin: 0;
+    border: 1px solid #999;
+    height: 20px;
+    padding-left: 16px;
+    background-color: #fff;
+    background-image: url(../images/session-report.png);
+    background-repeat: no-repeat;
+    background-position: 3px 1px;
+    vertical-align: bottom;
+}
+.container .xml-editor-action-buttons .fullscreenBtn {
+    background-image: url(../images/fullscreen.png);
+}
+.container .xml-editor-action-buttons .submitBtn {
+    background-color: #47a447;
+    border-color: #47a447;
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #FFF;
+    border: 1px solid #47a447;
+}
+.container .xml-editor-action-buttons .vtoolBtn {
+    background-color: #CA5142;
+    border-color: #CA5142;
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #FFF;
+    border: 1px solid #CA5142;
+    margin-right: 5px;
+}
+.container .xml-editor-action-buttons .saveBtn {
+    background-color: #428bca;
+    border-color: #428bca;
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #FFF;
+    border: 1px solid #428bca;
+    margin-right: 5px;
+}
+.container .xml-editor-action-buttons .saveBtn[disabled],
+.container .xml-editor-action-buttons .vtoolBtn[disabled],
+.container .xml-editor-action-buttons .submitBtn[disabled] {
+    opacity: 0.5;
+}
+.container .xml-editor-action-buttons .saveBtn.progress {
+    padding-left: 30px;
+    background-image: url(../images/save-progress.gif);
+    background-repeat: no-repeat;
+    background-position: 8px center;
+}
+.xml-editor-container.hide, .xml-editor-action-buttons.hide,
+.xml-editor-accordian-container.hide {
+    display: none;
+}
+.xml-editor-container {
+    margin-top: 35px;
+}
+.xml-editor-container.full {
+    width: 1100px;
+}
+.xml-conversion-progress {
+    width: 250px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    z-index: 1000;
+}
+.xml-conversion-progress.hide {
+    display: none;
+}
+.xml-conversion-progress .info {
+
+}
+.xml-conversion-progress > .progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 100%;
+    height: 10px;
+}
+.xml-conversion-progress > .progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.xml-conversion-progress > .progress::-webkit-progress-value {
+    background-image:
+        -webkit-linear-gradient(-45deg,
+                               transparent 33%, rgba(0, 0, 0, .1) 33%,
+                               rgba(0, 0, 0, .1) 66%, transparent 66%),
+        -webkit-linear-gradient(top,
+                               rgba(255, 255, 255, .25),
+                               rgba(0, 0, 0, .25));
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    -webkit-animation: animate-stripes 5s linear infinite;
+    animation: animate-stripes 5s linear infinite;
+}
+.xml-conversion-progress > .progress::-moz-progress-bar {
+    background-image:
+        -moz-linear-gradient(
+            135deg,
+            transparent 33%,
+            rgba(0, 0, 0, 0.1) 33%,
+            rgba(0, 0, 0, 0.1) 66%,
+            transparent 66%
+        ),
+        -moz-linear-gradient(
+            top,
+            rgba(255, 255, 255, 0.25),
+            rgba(0, 0, 0, 0.25)
+        );
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+@-webkit-keyframes animate-stripes {
+    100% { background-position: -100px 0px; }
+}
+
+@keyframes animate-stripes {
+    100% { background-position: -100px 0px; }
+}
+
+.edit-summary-container .panel .panel-header .icon {
+    background-image: url("/images/edit-summary-header.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.edit-summary-container .panel.open .panel-header .icon {
+    background-image: url("/images/edit-summary-header-open.png");
+}
+
+.vtool-error-container {
+    margin-bottom: 2px;
+}
+.vtool-error-container .panel .panel-header .icon {
+    background-image: url(../images/vtool.png);
+    background-repeat: no-repeat;
+    background-position: 6px 7px;
+}
+
+.xml-editor-readonly-message-container {
+    display: none;
+    background-color: #FAFAFA;
+    margin: 20px;
+    padding: 10px;
+    -webkit-box-shadow: 5px 5px 25px -6px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 25px -6px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 25px -6px rgba(0,0,0,0.5);
+    border: 1px solid #E0E0E0;
+
+}
+
+.edit-summary-container .comnt {
+    background-color: #FF9;
+}
+
+.edit-summary-container .change.ins:not(.math) {
+    background-color: #FF9;
+}
+
+.edit-summary-container .change.del:not(.math) {
+    background-color: #FF9;
+}
+
+dialog.xmlToEditMode .dialog-wrapper, dialog.xmlToEditMode header,
+dialog.xmlToEditMode footer,
+dialog.editToXmlMode .dialog-wrapper, dialog.editToXmlMode header,
+dialog.editToXmlMode footer,
+dialog.xmlToProofMode .dialog-wrapper, dialog.xmlToProofMode header,
+dialog.xmlToProofMode footer {
+    border-radius: 2px;
+}
+
+dialog.xmlToEditMode header, dialog.xmlToEditMode footer,
+dialog.editToXmlMode header, dialog.editToXmlMode footer,
+dialog.xmlToProofMode header, dialog.xmlToProofMode footer {
+    padding: 8px 10px 8px 20px
+}
+
+dialog.xmlToEditMode header, dialog.editToXmlMode header,
+dialog.xmlToProofMode header {
+    background-color: #525252;
+    color: white;
+}
+
+dialog.xmlToEditMode .dialog-wrapper .content,
+dialog.editToXmlMode .dialog-wrapper .content,
+dialog.xmlToProofMode .dialog-wrapper .content {
+    color: #505050;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: left;
+}
+
+dialog.xmlToEditMode .dialog-wrapper .close[role="button"],
+dialog.editToXmlMode .dialog-wrapper .close[role="button"],
+dialog.xmlToProofMode .dialog-wrapper .close[role="button"] {
+    background: none;
+}
+
+dialog.xmlToEditMode .dialog-wrapper h2,
+dialog.editToXmlMode .dialog-wrapper h2,
+dialog.xmlToProofMode .dialog-wrapper h2 {
+    font: 20px Arial;
+}
+
+dialog.xmlToEditMode .dialog-wrapper footer .button[role="button"],
+dialog.editToXmlMode .dialog-wrapper footer .button[role="button"],
+dialog.xmlToProofMode .dialog-wrapper footer .button[role="button"] {
+    font-size: 1em;
+    padding: 3px 7px;
+    border-radius: 1px;
+}

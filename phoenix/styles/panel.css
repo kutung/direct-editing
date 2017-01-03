@@ -1,0 +1,65 @@
+.panel .panel-header,
+.panel .panel-header .text,
+.panel .panel-header .icon {
+    cursor: pointer;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.panel .panel-header {
+    margin: 0;
+    color: #333;
+    background-color: #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    display: none;
+    clear: both;
+}
+
+.panel.open .panel-header {
+    background-color: #474747;
+}
+
+.panel.open .panel-header .text {
+    color: #fff;
+}
+
+.panel.open .panel-header .icon {
+    background-color: #2d2d2d;
+}
+
+.panel .panel-header .icon {
+    flex: none;
+    align-items: stretch;
+    width: 2em;
+    background-color: #b5b5b5;
+}
+
+.panel .panel-header .text {
+    flex: 1;
+    font-weight: bold;
+    padding: .5em .7em;
+    color: #333;
+}
+
+.panel .panel-content {
+    display: none;
+    background: #FFFFFF;
+    border: 1px solid #999;
+    overflow-y: auto;
+    padding: .6em;
+}
+
+.panel {
+    position: relative;
+}
+
+.panel .panel-overlay {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background: url("../images/ajax-loader.gif") no-repeat center center #aaaaaa;
+    opacity: 0.6;
+}

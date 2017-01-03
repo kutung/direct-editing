@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Rich Text Editor</title>
+    <link rel="stylesheet" type="text/css" href="phoenix/styles/normalize.3.0.2.css" />
+    <style>
+    .rte-1,
+    .rte-2 {
+        width: 300px;
+        border: 1px solid #474747;
+        display: block;
+    }
+    </style>
+    <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+    <script src="scripts/config/Configuration.js"></script>
+    <script>
+        CKEDITOR_BASEPATH = '/scripts/libs/ckeditor-4.5.9/';
+        require.config({
+            baseUrl: "/",
+            urlArgs: "v8",
+            'paths': {
+                'customer': 'scripts/customer/elsevier'
+            },
+            // For developement
+            // urlArgs: "bust=" +  (new Date()).getTime()
+            'map': {
+                '*': {
+                    'css': 'scripts/libs/css.js',
+                    'ckeditor': 'scripts/libs/ckeditor-4.5.9/ckeditor',
+                    'he': 'phoenix/scripts/libs/he-0.5.0',
+                    'sax': 'phoenix/scripts/libs/sax-0.6.1',
+                    'rangy': 'scripts/libs/rangy-core',
+                    'rangyselection': 'scripts/libs/rangy-selectionsaverestore',
+                    'uri': 'scripts/libs/uri/uri-1.17.0',
+                    'pagebreaker': 'pagination/Layout_3g/scripts/PageBreaker',
+                    'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                    'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                    'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                    'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                    'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                    'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog',
+                    'scripts/radio': 'phoenix/scripts/radio',
+                    'scripts/Helper': 'phoenix/scripts/Helper',
+                    'scripts/Request': 'phoenix/scripts/Request',
+                    'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                    'scripts/Panel': 'phoenix/scripts/Panel',
+                    'scripts/TabPanel': 'phoenix/scripts/TabPanel',
+                    'scripts/TableCharAlign': 'phoenix/scripts/TableCharAlign',
+                    'scripts/Logger': 'phoenix/scripts/Logger',
+                    'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                    'scripts/AbstractMenuItem': 'phoenix/scripts/AbstractMenuItem',
+                    'scripts/Annotate': 'phoenix/scripts/Annotate',
+                    'scripts/EventBus': 'phoenix/scripts/EventBus',
+                    'scripts/ContextualMenu': 'phoenix/scripts/ContextualMenu',
+                    'scripts/SelectBox': 'phoenix/scripts/SelectBox',
+                    'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                    'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="rte-1"></div>
+    <div class="rte-2"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/RichTextEditor', 'scripts/EventBus', 'scripts/ConfigReader',
+            'scripts/ErrorHandler'
+        ],
+        function(RichTextEditor, EventBus, ConfigReader, ErrorHandler) {
+            var rte1, rte2,
+                config = new ConfigReader(window).load();
+
+            window.addEventListener('error', function error(errorData) {
+                console.log('logger: ', errorData);
+            });
+
+            EventBus.subscribe('Configuration:Loaded', function () {
+                rte1 = new RichTextEditor(
+                    window, document, document.querySelector('.rte-1'),
+                    {'allowedContent': 'b i sub sup'}
+                );
+                rte2 = new RichTextEditor(
+                    window, document, document.querySelector('.rte-2'),
+                    {'allowedContent': 'b i sub sup', 'height': '110px'}
+                );
+                rte1.render();
+                rte2.render();
+                rte1.setData('sample 1');
+                rte1.setSelection();
+                rte2.setData('sample 2');
+                rte2.setReadOnly();
+                rte1.setErrorCallback(function error(e){
+                    console.log(e);
+                });
+                rte1.observeKeyEvent({'13': function(){
+                    console.log('am 13');
+                    throw new Error('sample');
+                }
+                });
+            });
+        });
+    };
+</script>
+
+
+</body>
+</html>
+

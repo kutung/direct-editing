@@ -1,0 +1,58 @@
+header.header {
+  background: #FFF;
+  border-bottom: 2px solid #FA961B;
+  padding: 3px 0px;
+  box-shadow: 1px 1px 3px #B8B8B8;
+}
+
+header.header .header-container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+header.header .header-inner {
+  text-align: center;
+  display: flex;
+}
+
+header.header h1 {
+  margin: 2px 0 0;
+  flex: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+header.header h1 a {
+  display: block;
+  width: 186px;
+  height: 30px;
+  background: url("/images/landing/logo.png") no-repeat left top;
+  text-indent: -999em;
+  background-size: 100%;
+  margin-top: 1px;
+}
+
+header.header .caption {
+  font-style: italic;
+  font-size: 14px;
+  display: flex;
+  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+  color: #000;
+  flex: 1.5;
+  align-items: center;
+}
+
+header.header .caption span {
+  padding: 0 10px 0 0;
+  background: url("/images/landing/triangle.png") no-repeat right center;
+}
+
+header.header .customer-logo {
+  margin: 0;
+  flex: 1;
+  text-align: right;
+}
+
+header.header .customer-logo img {
+  margin: 4px 0 0;
+}

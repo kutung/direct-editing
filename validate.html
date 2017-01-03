@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <link rel="stylesheet" data-original="true" href="styles/normalize.3.0.2.css"/>
+        <link rel="stylesheet" data-original="true" href="styles/common.css"/>
+        <link rel="stylesheet" data-original="true" href="pagination/validator/styles/validationUI.css"/>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <section class="proofview clearfix">
+            <div class="validation-panel">
+                <div class="pager"></div>
+                <div class="validation-result"></div>
+            </div>
+            <div class="proof-submission-panel">
+                <div class="proof-submission-label">
+                    <h3>Paginated HTML For Validation</h3>
+                    <hr/>
+                    <br/>
+                </div>
+                <div class="proof-submission-form">
+                    <textarea cols="50" rows="10" id="validation-html" spellcheck="false" autocomplete="off"></textarea>
+                    <button id="validation-submitBtn">Validate</button>
+                </div>
+            </div>
+        </section>
+        <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+        <script src="scripts/config/Configuration.js"></script>
+        <script src='scripts/libs/jquery/hyphenation-plugin.js'></script>
+        <script>
+            require.config({
+                'baseUrl': '/',
+                'urlArgs': 'bust=' + (new Date()).getTime(),
+                'paths': {
+                    'customer-proof-validate': 'pagination/validator/config/elsevier'
+                },
+                'map': {
+                    '*': {
+                        'css': 'scripts/libs/css.js',
+                        'he': 'phoenix/scripts/libs/he-0.5.0',
+                        'sax': 'phoenix/scripts/libs/sax-0.6.1',
+                        'rangy': 'scripts/libs/rangy-core',
+                        'jquery': 'scripts/libs/jquery/jquery-1.10.1.min',
+                        'jquery-en-us': 'scripts/libs/jquery/en-us',
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                        'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/TableCharAlign': 'phoenix/scripts/TableCharAlign',
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+                    }
+                }
+            });
+        </script>
+        <script src="scripts/appValidate.js"></script>
+    </body>
+</html>

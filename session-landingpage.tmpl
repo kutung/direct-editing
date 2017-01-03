@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="##LOCALE##">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/pcsessionpage.css?ver=##VERSION##">
+    </head>
+   <body  class="session-page">
+        <div class="error-message-container hide"></div>
+        <div class="overlay"></div>
+        <section class="template"></section>
+        <script src="/phoenix/scripts/libs/require-2.1.16.js"></script>
+        <script>
+            require.config({
+                'baseUrl': '/',
+                'urlArgs': 'ver=##VERSION##',
+                'paths': {
+                    'templates': 'scripts/templates/##CUSTOMER##',
+                    'customer': 'scripts/customer/##CUSTOMER##'
+                    },
+                'map': {
+                    '*': {
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog',
+                        'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'dot': 'scripts/libs/doT',
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+                    }
+                }
+            });
+        </script>
+        <script src="config/Configuration.js?ver=##VERSION##"></script>
+        <script src="/pcsessionlandingpage.js?ver=##VERSION##"></script>
+    </body>
+</html>

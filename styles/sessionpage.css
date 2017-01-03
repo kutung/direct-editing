@@ -1,0 +1,232 @@
+body {
+    font-family: "Roboto Regular", Arial, sans-serif;
+    color: #454545;
+    background: #fff;
+}
+
+* {
+  outline: none;
+}
+
+body * {
+  box-sizing: -webkit-border-box;
+  box-sizing: -moz-border-box;
+  box-sizing: border-box;
+}
+
+/* Clearing floats */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.btn {
+  padding: 3px 20px;
+  font-family: "Roboto Regular", Arial, sans-serif;
+  line-height: 22px;
+  background: #4aaf2d;
+  color: #fff;
+  border: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+}
+
+.btn:hover {
+  background: #569626;
+}
+
+.session-page {
+    background: #eee;
+}
+
+.session-page .container {
+  padding: 0 0;
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.session-page .sessionpage-details {
+    border-radius: 2px;
+    background: #fff;
+    float: left;
+    line-height: 18px;
+    color: #313131;
+    padding: 20px;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: 15px;
+    padding-top: 150px;
+    min-height: 600px;
+    width: 100%;
+}
+
+.session-page .sessionpage-details dt {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.session-page .sessionpage-details dd {
+    padding: 1px 0 6px;
+    font-size: 14px;
+}
+
+.session-page .sessionpage-cover-img {
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.session-page .sessionpage-cover-img img {
+  border: 1px solid #D2D2D2;
+}
+.session-page .right-content {
+    width: 720px;
+    float: left;
+    margin: 0 0 0 35px;
+    color: #414141;
+    border-right: 2px solid #fff;
+    padding: 0 25px 0 0;
+    box-sizing: border-box;
+    flex: none;
+}
+
+.session-page .content-list {
+  font: normal 14px/20px "Roboto Light", arial, sans-serif;
+}
+
+.session-page .content-list h2 {
+    font-size: 16px;
+}
+
+.session-page .content-list .info {
+    font-size: 14px;
+    margin: 8px 0 8px 0;
+    line-height: 24px;
+}
+
+.session-page .content-list .submit-title {
+    font-size: 16px;
+    color: #DC7B03;
+}
+
+.session-page .welcome-content {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.session-page .welcome-content p {
+    font-size: 14px;
+    line-height: 37px;
+}
+
+nav a {
+    line-height: 25px;
+}
+
+.top-menu {
+    width: 980px;
+    margin: 0 auto;
+    text-align: right;
+    padding-top: 5px;
+}
+
+.overlay {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url('/images/ajax-loader.gif') no-repeat center center #aaaaaa;
+    opacity: 0.6;
+}
+
+.overlay-image {
+    top: 0;
+    left: 0;
+    width: 132px;
+    height: 178px;
+    z-index: 999;
+    background: url('/images/ajax-loader.gif') no-repeat center center #aaaaaa;
+}
+
+.session-page .flash-message-container.hide {
+    display: none;
+}
+.session-page .flash-message-container.show {
+    display: block;
+}
+.session-page .flash-message-container {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    background-color: #d9edf7;
+    color: #31708f;
+    text-align: left;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 3px #31708f;
+    -moz-box-shadow: 0 0 3px #31708f;
+    box-shadow: 0 0 3px #31708f;
+    font: 16px/2.5 "Roboto Regular", Arial, sans-serif;
+    width: 100%;
+    padding: 2px 0px;
+}
+
+.error-message-container {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    background-color: #F7D9D9;
+    color: #8F3131;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 3px #8F3131;
+    -moz-box-shadow: 0 0 3px #8F3131;
+    box-shadow: 0 0 3px #8F3131;
+    font: 16px/2.5 "Roboto Regular", Arial, sans-serif;
+    width: 100%;
+    padding: 2px 0px;
+}
+.error-message-container.hide{
+  display: none;
+}
+.error-message-container.show{
+  display: block;
+}
+.wrapper.hide{
+  display: none;
+}
+.wrapper.show{
+  display: block;
+}
+
+.session-page .sessionpage-details h2.session-message {
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+}

@@ -1,0 +1,6 @@
+scripts/libs
+tests/libs
+**/node_modules
+dist/
+*.log
+uploads/

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>Page Central</title>
+    <link rel="stylesheet" type="text/css" href="styles/redirect-system.css" />
+</head>
+<body>
+	<div class="pdf-proofing-wrapper">
+		<div class="pdf-proofing-heading">
+			<span>PDF Proofing</span>
+			<button>Open in next tab</button>
+		</div>
+		<div class="pdf-proofing-leftpanel">
+			<h4 class="annotate-info">Please follow these steps to annotate and return the PDF to us</h4>
+			<p class="pdf-proofing-para">1. Download the PDF proof and associated files (if any) from the download pane.</p>
+			<div class="upload-file-info">
+				<h4>Download your file(s)</h4>
+				<table>
+					<tr>
+						<th>File Name</th>
+						<th>Size (KB)</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>BAE_78.pdf</td>
+						<td>2365.25</td>
+						<td><div class="download-icon"></div></td>
+					</tr>
+					<tr class="tableData">
+						<td>mmc1.docx</td>
+						<td>43.91</td>
+						<td><div class="download-icon"></div></td>
+					</tr>
+				</table>
+			</div>
+			<p class="pdf-proofing-para">2. Review the PDF proof and queries and annotate as needed.</p>
+			<p class="pdf-proofing-para">To annotate the PDF, you will need Adobe Reader 9.0 or later versions. To download the latest version of Adobe Reader <a href="">click here</a>. For help with the annotation of PDF using Adobe Reader <a href="">click here</a>. iPad users can annotate the PDF using Aji iAnnotate (note: this app is not free). For help with the annotation of PDF on iPad <a href="">click here</a>.</p>
+			<div class="upload-file-area">
+				<h4>Upload your file(s)</h4>
+				<div class="upload-file-div">
+					<button class="upload-file-browsebtn browseBtn">Browse</button>
+					<input type="file" name="" class="UploadFile" style="display: none">
+					<input type="text" name="" class="fileName" placeholder="Choosefile">
+					<button class="upload-file-btn uploadSubmit">submit</button>
+					<span class="upload-file-name" style="display: none">uploadedarticle.pdf</span>
+					<span class="upload-file-size" style="display: none">2.5MB</span>
+				</div>
+			</div>
+			<p class="pdf-proofing-para">3. Upload the annotated PDF (with the same name as the proof PDF that you obtained from the download pane) and other supporting files through the upload pane.</p>
+		</div>
+		<div class="pdf-proofing-rightpanel">
+			<img src="images/article-book.png"/>
+			<h4 class="">Article name</h4>
+			<p class="pdf-proofing-para">A conceptual demonstration of freeze desalination–membrane distillation (FD–MD) hybrid desalination process utilizing liquefied natural gas (LNG) cold energy</p>
+			<h4>Corresponding author</h4>
+			<p class="pdf-proofing-para">Tai-Shung Chung, Zheng Li</p>
+			<h4>Journal</h4>
+			<p class="pdf-proofing-para">Building and Environment</p>
+			<h4>Our reference</h4>
+			<p class="pdf-proofing-para">BAE 78</p>
+			<h4>Date article posted</h4>
+			<p class="pdf-proofing-para">07-Nov-2016</p>
+			<h4>Date author corrections submitted</h4>
+			<p class="pdf-proofing-para">07-Nov-2016 10:23:32 (UTC)</p>
+		</div>
+	</div>
+	<script src="jquery-min.js"></script>
+	<script type="text/javascript">
+	var Selectedfiles;
+		$('.browseBtn').off('click').on('click', function(){
+			$('.UploadFile').trigger('click');
+		});
+		$('.UploadFile').off('change').on('change', function(){
+			if(this.files.length == 0){
+                    return;
+            }
+            Selectedfiles = this;
+            $('.fileName').val(Selectedfiles.files[0].name)
+		});
+		$('.uploadSubmit').on('click', function(){
+			var tempNode = $('.tableData').clone();
+			var tdValues = tempNode.find('td');
+			$(tdValues[0]).html('').html(Selectedfiles.files[0].name);
+			var sizes = (Selectedfiles.files[0].size/1024).toFixed(2);
+			$(tdValues[1]).html('').html(sizes);
+			$('table tbody').append(tempNode);
+		});
+	</script>
+</body>
+</html>

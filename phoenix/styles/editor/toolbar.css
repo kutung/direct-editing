@@ -1,0 +1,138 @@
+/* Tool Bar */
+.toolbar-panel {
+    display: flex;
+    background: #e6e6e6;
+    width: 100%;
+    border: 1px solid #D3D2D2;
+    padding: 0.4% 2%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.toolbar-panel .format-items {
+
+}
+
+.toolbar-panel .action-items {
+
+}
+
+.splitter {
+    border-left: 1px solid #fff;
+    width: 1px;
+    display: inline-block;
+    margin: 4px 7px;
+}
+
+.format-items ul, .action-items ul, .other-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    display: flex;
+}
+
+.format-items ul li, .action-items ul li {
+    text-align: center;
+    cursor: pointer;
+    flex: none;
+    border: 0;
+    transition: border 0.5s ease;
+    background: #fff;
+    margin: 0 3px;
+    /*border-radius: 3px;*/
+}
+
+.icon-prop {
+    display: inline-block;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+}
+
+.icon-prop:hover {
+    /*border-radius: 3px;*/
+    box-shadow: inset 1px 1px 6px #C7C1C1;
+}
+
+
+.format-items ul li .bold-icon {
+    background: url('../../images/editor/bold.png') center no-repeat;
+}
+
+.format-items ul li .italic-icon {
+    background: url('../../images/editor/italic.png') center no-repeat;
+}
+
+.format-items ul li .sup-icon {
+    background: url('../../images/editor/superscript.png') center no-repeat;
+}
+
+.format-items ul li .sub-icon {
+    background: url('../../images/editor/subscript.png') center no-repeat;
+}
+
+.action-items ul li .delete-icon {
+    background: url('../../images/editor/delete.png') center no-repeat;
+}
+
+.action-items ul li .instruct-icon {
+    background: url('../../images/editor/instruct.png') center no-repeat;
+}
+
+.action-items ul li .reject-icon {
+    background: url('../../images/editor/reject.png') center no-repeat;
+}
+
+.format-items sup {
+    font-size: 10px;
+    top: -1em;
+}
+
+.action-items ul li .reject-icon.disabled {
+    background-color: #e6e6e6;
+    box-shadow: none;
+    cursor: default;
+}
+
+.format-items sub {
+    font-size: 10px;
+    top: 0.3em;
+}
+
+.other-items {
+
+}
+
+.other-items ul li {
+    text-align: center;
+    cursor: pointer;
+    flex: none;
+    border: 0;
+    transition: border 0.5s ease;
+    margin: 0 3px;
+    /*border-radius: 3px;*/
+}
+
+.other-items .edit-log-btn {
+    font-size: 14px;
+    background: #BCC0C0;
+    /*border-radius: 3px;*/
+    padding: 0px 3px;
+    margin: 2px 0;
+}
+
+.other-items ul li .edit-log-icon{
+    background: url('../../images/editor/edit-log.png') center no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}

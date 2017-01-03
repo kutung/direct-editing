@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Page Central - Editor</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <link rel="stylesheet" type="text/css" href="styles/dialog.css" />
+        <style type="text/css">
+          .mathml, .equation_data_container{
+            display: none;
+          }
+          .matheditor-parent-container .hide {
+            display: none;
+          }
+        </style>
+    </head>
+    <body>
+        <div id='editor'>
+            <div class="ce_display" name="OPT_ID_511"><span id="fo0005"><table class="formula" name="OPT_ID_512"><tr><td align="left" style="padding-right:50px;"><div class="wrapper" name="OPT_ID_513"><div editable="true" name="OPT_ID_513" namespace="mml" class="eqn-container" title="Click on the equation to provide comment"><img id="OPT_ID_513" src="http://localhost/proofs/elsevier/NANO/937/images/si1.gif"></img><span class="equation_data_container"><span class="current_version">0</span><span version="0"><span class="mathml"><math altimg="si1.gif" name="OPT_ID_513"><mrow name="OPT_ID_514"><mi mathvariant="normal" name="OPT_ID_515">Vol</mi><mspace width="0.25em" name="OPT_ID_516"></mspace><mi mathvariant="normal" name="OPT_ID_517">of</mi><mspace width="0.25em" name="OPT_ID_518"></mspace><mi mathvariant="normal" name="OPT_ID_519">Heparin</mi><mspace width="0.25em" name="OPT_ID_520"></mspace><mi mathvariant="normal" name="OPT_ID_521">layer</mi><mo name="OPT_ID_522">=</mo><mfrac name="OPT_ID_523"><mn name="OPT_ID_524">4</mn><mn name="OPT_ID_525">3</mn></mfrac><mi mathvariant="italic" name="OPT_ID_526">&#960;</mi><mfenced open="(" close=")" name="OPT_ID_527"><mrow name="OPT_ID_528"><mi mathvariant="normal" name="OPT_ID_529">radius</mi><mspace width="0.25em" name="OPT_ID_530"></mspace><mi mathvariant="italic" name="OPT_ID_531">Q</mi><msup name="OPT_ID_532"><msub name="OPT_ID_533"><mi mathvariant="italic" name="OPT_ID_534">D</mi><mrow name="OPT_ID_535"><mi mathvariant="normal" name="OPT_ID_536">gel</mi><mo stretchy="true" name="OPT_ID_537">/</mo><mi mathvariant="normal" name="OPT_ID_538">hep</mi></mrow></msub><mn name="OPT_ID_539">3</mn></msup></mrow></mfenced><mo name="OPT_ID_540">&#8722;</mo><mi mathvariant="normal" name="OPT_ID_541">Volume</mi><mspace width="0.25em" name="OPT_ID_542"></mspace><mi mathvariant="normal" name="OPT_ID_543">of</mi><mspace width="0.25em" name="OPT_ID_544"></mspace><mi mathvariant="italic" name="OPT_ID_545">Q</mi><msub name="OPT_ID_546"><mi mathvariant="italic" name="OPT_ID_547">D</mi><mi mathvariant="normal" name="OPT_ID_548">gel</mi></msub></mrow></math></span><span class="image">http://localhost/proofs/elsevier/NANO/937/images/si1.gif</span></span><span version="1"><span class="mathml"></span><span class="image">http://localhost/proofs/elsevier/NANO/937/images/si1.gif</span></span></span></div></div></td><td align="right" valign="middle"></td></tr></table></span></div>
+        </div>
+        <div class='dialog-popup-container'></div>
+        <script src='scripts/libs/require-2.1.16.js'></script>
+        <script src="scripts/polyfills/classList.js"></script>
+        <script src="scripts/polyfills/dataset.js"></script>
+        <script src="scripts/polyfills.js"></script>
+        <script>
+            require.config({
+                baseUrl: ''
+            });
+        </script>
+        <script>
+        window.onload = function () {
+            require([
+                'scripts/Helper', 'scripts/Request', 'scripts/RequestBuilder',
+                'scripts/RequestQueue', 'scripts/EventBus', 'scripts/DialogPopupPanel'
+            ],
+            function(Helper, Request, RequestBuilder, RequestQueue, EventBus, DialogPopupPanel) {
+                console.log('Dependencies loaded');
+
+                dialogPopupPanel = new DialogPopupPanel(
+                    document.querySelector('.dialog-popup-container'), document, window,
+                    EventBus
+                );
+                dialogPopupPanel.setTitle('Edit Math');
+                dialogPopupPanel.setContent('Me Content');
+                dialogPopupPanel.setFooter('Hey.. I"m footer');
+                dialogPopupPanel.render();
+                // dialogPopupPanel.show();
+            });
+          };
+
+        </script>
+    </body>
+</html>

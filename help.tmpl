@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="##LOCALE##">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Proof Central - Help</title>
+    <link rel="stylesheet" href="/pchelp.css?ver=##VERSION##">
+  </head>
+  <body>
+    <div class="error-message-container hide"></div>
+    <div class="overlay"></div>
+    <section class="template"></section>
+    <script src="/phoenix/scripts/libs/require-2.1.16.js"></script>
+    <script src="Configuration.js?ver=##VERSION##"></script>
+    <script>
+      require.config({
+          'baseUrl': '/',
+          'urlArgs': 'ver=##VERSION##',
+          'paths': {
+                'templates': 'scripts/templates/##CUSTOMER##'
+            },
+          'map': {
+              '*': {
+                  'css': 'scripts/libs/css.js',
+                  'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                  'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                  'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                  'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                  'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                  'dot': 'scripts/libs/doT',
+                  'scripts/radio': 'phoenix/scripts/radio',
+                  'scripts/Helper': 'phoenix/scripts/Helper',
+                  'scripts/Request': 'phoenix/scripts/Request',
+                  'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                  'scripts/EventBus': 'phoenix/scripts/EventBus',
+                  'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+              }
+          }
+      });
+    </script>
+    <script src="/pchelp.js?ver=##VERSION##"></script>
+  </body>
+</html>

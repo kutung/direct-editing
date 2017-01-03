@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>QueryPanel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/panel.css" />
+    <link rel="stylesheet" type="text/css" href="styles/tabpanel.css" />
+    <link rel="stylesheet" type="text/css" href="styles/querypanel.css" />
+    <style>
+    .queries {
+        width: 300px;
+    }
+
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <div class="queries"></div>
+    <div class="ED"></div>
+    <script>
+    CKEDITOR_BASEPATH = 'scripts/libs/ckeditor-4.5.9/';
+    require.config({
+        baseUrl: "/",
+        urlArgs: "v5",
+        // For developement
+        // urlArgs: "bust=" +  (new Date()).getTime()
+        map: {
+            '*': {
+                'css': 'scripts/libs/css.js',
+                'ckeditor': 'scripts/libs/ckeditor-4.5.9/ckeditor',
+                'he': 'scripts/libs/he-0.5.0',
+                'sax': 'scripts/libs/sax-0.6.1',
+                'rangy': 'scripts/libs/rangy-1.3.0',
+                'jquery': 'scripts/libs/jquery/jquery-1.10.1.min',
+                'jquery-hyphenation': 'scripts/libs/jquery/hyphenation-plugin',
+                'jquery-en-us': 'scripts/libs/jquery/en-us',
+                'pagebreaker': 'pagination/scripts/PageBreaker',
+                'preprocessor': 'pagination/scripts/PreProcessor'
+            }
+        }
+    });
+    window.onload = function () {
+        require([
+            'scripts/QueryPanel', 'scripts/EventBus', 'scripts/TabPanel',
+            'scripts/RequestQueue'
+        ],
+        function(QueryPanel, EventBus, TabPanel, RequestQueue) {
+            var tabPanel1 = new TabPanel(
+                document.querySelector('.queries'), document, window, EventBus
+            ),
+            queue = new RequestQueue(), queryPanel1, tabId, tabEl;
+
+            tabPanel1.render();
+            tabPanel1.setTitle('Queries');
+            tabId = tabPanel1.add('Q1');
+            tabEl = tabPanel1.getTabContentElement(tabId);
+            queryPanel1 = new QueryPanel(
+                tabEl, document, window, EventBus, queue, {
+                    saveQuery: 'http://localhost/pg-api/app/web/index.php/saveQuery',
+                    uri: 'http://localhost/pg-api/app/web/index.php/queryUpload',
+                    deleteUri: 'http://localhost/pg-api/app/web/index.php/removeQueryAttachment'
+                },
+                '3b39f75475934434cd00FF2700SFftest'
+            );
+            queryPanel1.setUploadLimit(20 * 1024 * 1024);
+            queryPanel1.render();
+            queryPanel1.setQuestion('Please note that Fig. 9 was not cited in the text. Please check that the citation suggested by the copyeditor are in the appropriate place, and correct if necessary.'
+            );
+            queryPanel1.setQueryId('Q1');
+            queryPanel1.setAnswer('Answer');
+            queryPanel1.focusOnAnswer();
+            queryPanel1.addUploadedFile(
+                'Dog.jpg', 'some-url', 'file-1234', 12345
+            );
+            queryPanel1.addUploadedFile(
+                'Script.doc', 'some-url', 'file-1244', 345344
+            );
+            queryPanel1.addUploadedFile(
+                'Data.xlsx', 'some-url', 'file-1264', 6564564
+            );
+            queryPanel1.addUploadedFile(
+                'Comm.txt', 'some-url', 'file-1284', 76757576
+            );
+
+            tabId = tabPanel1.add('Q2');
+            tabEl = tabPanel1.getTabContentElement(tabId);
+            queryPanel1 = new QueryPanel(
+                tabEl, document, window, EventBus, queue, {
+                    uri: '/upload.php',
+                    deleteUri: '/delete.php'
+                }
+            );
+            queryPanel1.render();
+            queryPanel1.setQuestion('Please note that Fig. 9 was not cited in the text. Please check that the citation suggested by the copyeditor are in the appropriate place, and correct if necessary.'
+            );
+            queryPanel1.setAnswer('Answer');
+            queryPanel1.focusOnAnswer();
+            queryPanel1.addUploadedFile('Dog.jpg', 'some-url', 'file-1234');
+            queryPanel1.addUploadedFile('Script.doc', 'some-url', 'file-1244');
+            queryPanel1.addUploadedFile('Data.xlsx', 'some-url', 'file-1264');
+            queryPanel1.addUploadedFile('Comm.txt', 'some-url', 'file-1284');
+
+
+            window.queryPanel1 = queryPanel1;
+        });
+    };
+    </script>
+</body>
+</html>

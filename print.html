@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <link rel="stylesheet" href="styles/normalize.3.0.2.css"/>
+        <link rel="stylesheet" href="styles/common.css"/>
+        <style type="text/css">
+            .pager {
+                margin: 0 auto;
+            }
+            body {
+                background-color: #808080;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="editor" style="display:none;"></div>
+        <section class="proofview clearfix">
+            <div class="pager"></div>
+        </section>
+        <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+        <script src="scripts/config/Configuration.js"></script>
+        <script src='scripts/libs/jquery/hyphenation-plugin.js'></script>
+       <script>
+            require.config({
+                'baseUrl': '/',
+                'urlArgs': 'bust=' + (new Date()).getTime(),
+                'map': {
+                    '*': {
+                        'css': 'scripts/libs/css.js',
+                        'he': 'phoenix/scripts/libs/he-0.5.0',
+                        'sax': 'phoenix/scripts/libs/sax-0.6.1',
+                        'rangy': 'scripts/libs/rangy-core',
+                        'jquery': 'scripts/libs/jquery/jquery-1.10.1.min',
+                        'jquery-en-us': 'scripts/libs/jquery/en-us',
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/TableCharAlign': 'phoenix/scripts/TableCharAlign',
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader'
+                    }
+                }
+            });
+        </script>
+        <script src="scripts/appPrint.js"></script>
+    </body>
+</html>

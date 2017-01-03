@@ -1,0 +1,8 @@
+{
+    "printLoadEndPoint": "http://api.pagecentral.com/app/web/index.php/load",
+    "saveAsPdfEndPoint": "http://api.pagecentral.com/app/web/index.php/saveAsPdf",
+    "downloadPdfEndPoint": "http://api.pagecentral.com/app/web/index.php/downloadPdf",
+    "sciUri": "http://refhub.elsevier.com",
+    "serverSidePaginateEndPoint": "http://api.pagecentral.com/app/web/index.php/rePaginate",
+    "savePaginatedHtml": "http://api.pagecentral.com/app/web/index.php/savePaginatedHtml"
+}

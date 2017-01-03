@@ -1,0 +1,1354 @@
+/*@font-face {
+  font-family: 'STIXGeneral';
+   src: url('../../../../fonts/STIXGeneral.eot');
+   EOT file for IE
+  src: url("../../../../fonts/STIXGeneral.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+@font-face {
+  font-family: 'Web-STIX';
+  src: url('../../../../fonts/stix-regular-webfont.eot');
+  src: url('../../../../fonts/stix-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../../../../fonts/stix-regular-webfont.woff2') format('woff2'),
+       url('../../../../fonts/stix-regular-webfont.woff') format('woff'),
+       url('../../../../fonts/stix-regular-webfont.ttf') format('truetype'),
+       url('../../../../fonts/stix-regular-webfont.svg#webfontZXtFAA5Q') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Web-STIX';
+  src: url('../../../../fonts/stix-bolditalic-webfont.eot');
+  src: url('../../../../fonts/stix-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../../../../fonts/stix-bolditalic-webfont.woff2') format('woff2'),
+       url('../../../../fonts/stix-bolditalic-webfont.woff') format('woff'),
+       url('../../../../fonts/stix-bolditalic-webfont.ttf') format('truetype'),
+       url('../../../../fonts/stix-bolditalic-webfont.svg#webfont2oJeLJIt') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Web-STIX';
+  src: url('../../../../fonts/stix-italic-webfont.eot');
+  src: url('../../../../fonts/stix-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../../../../fonts/stix-italic-webfont.woff2') format('woff2'),
+       url('../../../../fonts/stix-italic-webfont.woff') format('woff'),
+       url('../../../../fonts/stix-italic-webfont.ttf') format('truetype'),
+       url('../../../../fonts/stix-italic-webfont.svg#webfontwFpnxWyx') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Web-STIX';
+  src: url('../../../../fonts/stix-bold-webfont.eot');
+  src: url('../../../../fonts/stix-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../../../../fonts/stix-bold-webfont.woff2') format('woff2'),
+       url('../../../../fonts/stix-bold-webfont.woff') format('woff'),
+       url('../../../../fonts/stix-bold-webfont.ttf') format('truetype'),
+       url('../../../../fonts/stix-bold-webfont.svg#webfontSsfHxKRo') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.clearfix:before, .clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*Dont delete this. Need to hide downloaded iframe*/
+.hideme {
+  display: none;
+}
+
+.pager {
+  font-size: 10pt;
+  line-height: 15pt;
+  font-family: "Web-STIX", "Times New Roman", serif;
+  text-align: justify;
+}
+  /*background-color: #808080;*/
+  /*font-size: 11pt;*/
+  /*line-height: 130%;*/
+  /*font-family: "Times New Roman", serif;*/
+
+.pager .contents {
+  height: 12%;
+}
+.pager .header, .pager .file_tabs, .pager .equation_data_container, .pager .ann-container, .pager .ga, .pager .image-annotate-canvas, .pager .tail, .pager .ce_floats {
+  display: none;
+}
+.pager .hdr-actions {
+  margin-top: 0px;
+}
+.pager .btn-group {
+  margin-bottom: 7px;
+  margin-right: 0px;
+}
+.pager a.btn-download {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+  margin-left: 43px;
+}
+.pager a.btn-download a {
+  font-size: 12px;
+}
+.pager a.btn-download i {
+  padding-right: 0;
+  margin-right: 0;
+}
+.pager p.btn-group a.btn-download:active, .pager p.btn-group a.btn-download.active {
+  background-color: #FFFFFF;
+  border-radius: 4px !important;
+  color: #2F2F2F;
+  opacity: 1;
+}
+.pager .editor {
+  float: none;
+}
+.pager .tools {
+  float: none;
+  display: none;
+}
+.pager #editable-container, .pager #editable-container-proof, .pager .edit-screen-link, .pager .pselection, .pager .hdr-actions > ul {
+  display: none;
+}
+.pager .main_editor {
+  /*display: none;*/
+  height: auto;
+}
+
+.pager .row.edit_head {
+  background-color: #808080;
+  position: fixed;
+  top: 0;
+  width: 210mm;
+  z-index: 100;
+  margin-left: 98px;
+}
+.pager .edit_head .pull-left {
+  color: #fff;
+}
+.pager .pagination-container .logo_head {
+  display: block;
+}
+
+.pagination-container .paginator .inline-formula > .x {
+  display: none;
+}
+
+/*.pager .pagination-container .logo {
+  padding: 11.5mm 15mm 6mm 15mm;
+}*/
+/*.pager .pagination-container .logo .prog {
+  width: 50%;
+}*/
+
+/*.pager .pagination-container .logo hr.logo-top-ruler {
+  margin: 0mm;
+  height: 0.35mm !important;
+  border: 0px !important;
+  border-top: 0px !important;
+  background-color: #000 !important;
+}*/
+
+/*.pager .pagination-container .logo .logo_inner {
+  padding: 0mm 0mm 3.5mm 0mm;
+  display: table;
+  width: 100%;
+}*/
+
+.pager .pagination-container .logo .logo_inner .logo-header {
+  display: table-row;
+}
+.pager .pagination-container .logo .logo_inner .customer-logo-container {
+  display: table-cell;
+  width: 63px;
+  vertical-align: middle;
+}
+.pager .pagination-container .logo .logo_inner .customer-logo-container .customer-logo {
+  /*height: 70px;
+  width: 63px;*/
+  width: 14.8mm;
+  margin-left: 2mm;
+  margin-top: -0.5mm;
+}
+.pager .pagination-container .logo .logo_inner .journal-logo-container {
+  display: table-cell;
+  /*width: 63px;*/
+}
+/*.pager .pagination-container .logo .logo_inner .proof-header .journal-logo {
+  width: 192%;
+  padding-top: 21px;
+  margin-left: -4px;
+}
+*/
+.pager .pagination-container .logo .logo_inner .journal-logo-container .journal-logo {
+  width: 48.5mm;
+  /*padding-top: 21px;*/
+  margin-left: -9px;
+}
+
+.pager .pagination-container .logo hr.logo-bottom-ruler {
+  margin: 0;
+  height: 1.5pt !important;
+  border: 0px !important;
+  border-top: 0px !important;
+  background-color: #000 !important;
+}
+.pager .pagination-container .get-height-container {
+  height: 262mm;
+  border: 1px solid #000;
+  width: 100%;
+}
+.pager .pagination-container .paginator {
+  font-family: "Web-STIX", "Times New Roman", serif;
+}
+.pager .pagination-container .paginator > .article {
+  /*padding-left: 42.01mm;*/
+  /*padding-left: 0mm; /*nk*/
+  margin-left: 35mm;
+}
+
+.pager .pagination-container .paginator > .document-header {
+  margin-left: 0;
+}
+
+.pager .pagination-container .paginator > .history-wrapper {
+  margin-left: 0;
+}
+
+/* article title */
+.pager .pagination-container .paginator .ce_title {
+  font-weight: bold;
+  font-size: 25pt; /*nk*/
+  line-height: 28pt; /*nk*/
+  padding-bottom: 3.5mm;
+  border-bottom: 1.5pt solid;
+  margin: 0;
+}
+
+.pager .supplementary_files {
+  display: none !important;
+}
+
+.pager .pagination-container .paginator div.ce_author {
+  font-weight: bold;
+  display: inline;
+  font-size: 9pt; /*nk*/
+  line-height: 15pt; /*nk*/
+}
+.pager .pagination-container .paginator div.ce_author > .ce_surname {
+  background-color: transparent;
+}
+.pager .pagination-container .paginator .ce_affiliation {
+  font-style: italic;
+  font-size: 7pt; /*nk*/
+  line-height: 13pt;
+  margin: 0;
+}
+
+.pager .pagination-container .paginator .ce_affiliation .ce_label {
+  line-height: 0;
+  font-weight: normal;
+}
+
+.pager .pagination-container .paginator .ce_list {
+  margin: 2.64mm 0 5px 0;
+}
+
+.pager .pagination-container .paginator .ce_list .ce_list {
+  margin: 0 0 0 0;
+}
+
+.pager .pagination-container .paginator table td .ce_list {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.pager .pagination-container .paginator .ce_list-item {
+  text-indent: 0;
+  clear: both;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.pager .pagination-container .paginator .ce_list-item > .ce_label,
+.pager .pagination-container .paginator .ce_list-item > .cpeins > .ce_label {
+  display: inline-block;
+  padding-right: 6pt;
+  font-weight: normal;
+  text-align: right;
+}
+
+.pager .pagination-container .paginator .ce_list-item .ce_para {
+  padding-left: 0;
+  text-indent: 0;
+  display: block;
+}
+
+.pager .pagination-container .paginator .ce_list-item .ce_para .figure {
+  margin-left: -5.29mm;
+}
+
+.pager .pagination-container .paginator .ce_list-item .ce_para:first-child .figure {
+  margin-left: -6.35mm;
+}
+
+.pager .pagination-container .paginator .ce_list-item .ce_para:first-child .table {
+  margin-left: -41.35mm;
+}
+
+.pagination-container .paginator .ce_textbox .ce_list .ce_section-title {
+  margin-left: 0px;
+  text-indent: 0px;
+}
+
+.pager .pagination-container .paginator .sa_affiliation {
+  display: none;
+}
+
+.pager .pagination-container .paginator .ce_author-group {
+  margin: 6mm 0 0 0;
+}
+
+.pager .pagination-container .paginator .ce_author-group .author-group_body {
+  text-align: left;
+}
+
+.pager .pagination-container .paginator .before-abstract-wrapper {
+  margin-top: 3.586mm;
+}
+
+.pager .pagination-container .paginator .ce_author-group .ce_author > * {
+  white-space: nowrap;
+}
+
+.pager .pagination-container .paginator .ce_author-group .ce_author .ce_roles,
+.pager .pagination-container .paginator .ce_author-group .ce_author .author-end {
+  white-space: normal;
+}
+
+.pager .pagination-container .paginator .ce_author-group .ce_affiliation {
+  margin-top: .7mm;
+}
+
+.pager .pagination-container .paginator .ce_author-group .ce_affiliation + .ce_affiliation {
+  margin-top: 0;
+}
+
+.pager .pagination-container .paginator .ce_section .cpeins + .sectionline_opt {
+  display: inline;
+}
+
+.pager .pagination-container .paginator .ce_section .cpeins + .sectionline_opt:before {
+  content: ' ';
+}
+
+/* abstract part margin */
+.pager .pagination-container .paginator .ce_abstract {
+  /*padding: 10.4mm 0mm 6mm 0mm;*/
+  margin: 9mm 0 2.29mm 0;
+}
+/* abstract heading */
+.pager .pagination-container .paginator .ce_abstract .ce_section-title {
+  font-weight: bold;
+  font-size: 12pt; /*nk*/
+  line-height: 12pt; /*nk*/
+  margin-bottom: 2.11mm;
+  display: block; /*nk*/
+}
+/* abstract text */
+.pager .pagination-container .paginator .ce_abstract-sec {
+  font-size: 10pt; /*nk*/
+  line-height: 15pt; /*nk*/
+}
+
+.pager .pagination-container .paginator .ce_abstract-sec .ce_section-title {
+  font-size: 10pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.pager .pagination-container .paginator .ce_abstract-sec .newline_simplepara {
+  text-indent: 0px;
+}
+.pager .pagination-container .paginator .ce_abstract-sec .ce_simple-para:first-child {
+  text-indent: 0px;
+}
+
+/* keywords */
+.pager .pagination-container .paginator .ce_keywords + .ce_keywords {
+  margin-top: 2.29mm;
+}
+
+.pager .pagination-container .paginator .ce_keywords .ce_keyword:last-of-type {
+  margin-bottom: 6mm;
+}
+
+.pager .pagination-container .paginator .ce_keywords {
+  font-size: 10pt; /*nk*/
+  line-height: 15pt; /*nk*/
+}
+
+.pager .pagination-container .paginator span.ce_inf {
+  line-height: 0;
+  font-size: 70%;
+  position: relative;
+  bottom: -0.33em;
+  word-break: keep-all;
+}
+.pager .pagination-container .paginator span.ce_sup {
+  line-height: 0;
+  font-size: 70%;
+  position: relative;
+  bottom: 0.65em;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+.pager .pagination-container .paginator .optsup {
+  line-height: 0;
+  font-size: 70%;
+  position: relative;
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+  bottom: 0.65em;
+  word-break: keep-all;
+}
+.pager .pagination-container .paginator .optsub {
+  line-height: 0;
+  font-size: 70%;
+  position: relative;
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+  bottom: -0.33em;
+  word-break: keep-all;
+}
+.pager .pagination-container .paginator sup {
+  color: inherit;
+  word-break: keep-all;
+}
+.pager .pagination-container .paginator sub {
+  color: inherit;
+  word-break: keep-all;
+}
+.pager .pagination-container .paginator .optdel,
+.pager .pagination-container .paginator .comntText,
+.pager .pagination-container .paginator .hideme,
+.pager .pagination-container .paginator .pagination-results,
+.pagination-container .paginator .annotorious-popup,
+.pagination-container .paginator .annotorious-editor,
+.pagination-container .paginator .ce_alt-text  {
+  display: none !important;
+}
+.pager .pagination-container .paginator .optinsert {
+  text-decoration: none;
+  color: auto;
+  cursor: auto;
+  background-color: transparent;
+}
+.pager .pagination-container .paginator .optbold {
+  font-weight: bold;
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+}
+.pager .pagination-container .paginator .optitalic {
+  font-style: italic;
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+}
+.pager .pagination-container .paginator .optcomment {
+  background-color: transparent;
+  cursor: auto;
+  color: inherit;
+}
+.pager .pagination-container .paginator .cpeins {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto;
+  background-color: transparent;
+  display: inline;
+}
+.pager .pagination-container .paginator .cpeins div {
+  background-color: transparent;
+}
+.pager .pagination-container .paginator .cpedel {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto;
+  background-color: transparent;
+}
+.pager .pagination-container .paginator .optreject {
+  border: none;
+}
+.pager .pagination-container .paginator .optreject.cpedel {
+  background-color: transparent;
+  color: inherit;
+}
+.pager .pagination-container .paginator .ce_inter-ref,
+.pager .pagination-container .paginator .ce_doi {
+  color: inherit;
+}
+.pagination-container .paginator a[title] {
+   color: inherit;
+}
+.pager .pagination-container .paginator a:hover,
+.pager .pagination-container .paginator a:focus {
+  text-decoration: none;
+}
+.pager .pagination-container .paginator .sectionline_opt + .ce_para {
+  text-indent: 0;
+}
+.pager .pagination-container .paginator .ce_para:empty {
+  display:none;
+}
+.pager .pagination-container .paginator .ce_title,
+.pager .pagination-container .paginator .ce_section-title,
+.pager .pagination-container .paginator .sectionline_opt > .ce_label {
+  text-align: left;
+}
+
+.pager .pagination-container .paginator .footer-wrapper.bottom-footer-wrapper {
+  text-align: left;
+}
+
+.pager .pagination-container .paginator div.ce_glossary > span.ce_section-title,
+.pager .pagination-container .paginator div.ce_section > span.ce_section-title,
+.pager .pagination-container .paginator div.ce_appendices > div.ce_section > span.ce_label {
+  margin: 32pt 0 21pt 0;
+}
+
+.pagination-container .paginator .ce_textbox .ce_title,
+.pagination-container .paginator .first_level .sectionline_opt,
+.pagination-container .paginator .first_level .title_wrapper,
+.pager .pagination-container .paginator .ce_nomenclature .ce_section-title,
+.pager .pagination-container .paginator .cpeins .ce_section > .sectionline_opt  {
+  margin: 5.3mm 0 2.64mm 0;
+  font-size: 12pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  font-weight: bold;
+  text-align: left;
+}
+
+.pagination-container .paginator .ce_textbox .ce_title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pagination-container .paginator .ce_section .cpeins > .ce_label,
+.pagination-container .paginator .ce_section .cpeins + div.sectionline_opt{
+  display: inline;
+}
+
+.pagination-container .paginator .title_wrapper {
+  display: block;
+}
+
+.pagination-container .paginator .second_level .title_wrapper,
+.pagination-container .paginator .second_level .sectionline_opt {
+  margin-top: 2.6mm;
+  font-size: 12pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  font-weight: bold;
+  margin-bottom: 2.6mm;
+  text-align: left;
+}
+
+.pagination-container .paginator .third_level .title_wrapper,
+.pagination-container .paginator .third_level .sectionline_opt {
+  margin-top: 2.6mm;
+  font-size: 12pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  font-weight: bold;
+  margin-bottom: 2.6mm;
+  text-align: left;
+}
+
+.pagination-container .paginator .fourth_level .title_wrapper,
+.pagination-container .paginator .fourth_level .sectionline_opt {
+  margin-top: 2.6mm;
+  font-size: 12pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  font-weight: bold;
+  margin-bottom: 2.6mm;
+  text-align: left;
+}
+
+.pagination-container .paginator .sectionline_opt.empty-content,
+.pagination-container .paginator .title_wrapper.empty-content {
+  margin: 0;
+}
+
+.pager .pagination-container .paginator .ce_para {
+  font-size: 10pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  margin-bottom: 2.64mm;
+}
+
+.pagination-container .paginator .ce_sections > :first-child.ce_para {
+  margin-top: 2.64mm;
+}
+
+.pager .pagination-container .paginator .ce_para .ce_foonote {
+    margin-left: -35mm;
+}
+
+.pager .pagination-container .paginator .ce_para .ce_foonote,
+.pager .pagination-container .paginator .ce_para .notFirstFootnote,
+.pager .pagination-container .paginator .ce_para .ce_footnote {
+  text-indent: 0;
+}
+
+.pager .pagination-container .paginator .figure {
+  margin: 5.3mm 0mm 5.3mm 0mm;
+}
+
+.pager .pagination-container .paginator .figure .wrapper > img {
+  /* Remove this important only when Edit mode is fine tuned for
+  image annotation. As there is inline style appears we need to
+  include this important*/
+  display: block !important;
+}
+.pager .pagination-container .paginator .figcaption {
+  font-size: 8pt;
+  line-height: 12pt;
+  margin: 3.5mm 0mm 0mm 0mm;
+  text-align: justify;
+}
+.pager .figure.nested-figure .wrapper + .figcaption {
+  margin: 2.8mm 0mm 3.5mm;
+}
+.pager .figure.nested-figure > .figcaption {
+  margin-top: 0mm;
+}
+.pagination-container .paginator .figcaption div.ce_source {
+  display: inline;
+}
+.pager .pagination-container .paginator .figcaption .ce_label {
+  font-weight: bold;
+}
+.pager .pagination-container .paginator .figcaption .newline_simplepara,
+.pager .pagination-container .paginator .figcaption .newline_notepara {
+  display: inline;
+  text-indent: 0pt;
+  padding-left: 5px;
+}
+.pager .pagination-container .paginator .figcaption .inline-formula img {
+  /*zoom: 0.8;
+  transform: scale(0.8, 0.7);
+  transform-origin: 0 bottom 0;*/
+}
+
+.pager .pagination-container .paginator .ce_display table.formula {
+  border: none;
+}
+/* equation number */
+.pager .pagination-container .paginator .ce_display table.formula .ce_label {
+  font-size: 10pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  font-weight: normal;
+}
+
+.pager .pagination-container .paginator .ce_display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 7.5pt 0;
+}
+.pagination-container .paginator .figure .ce_display {
+  width: auto;
+}
+
+.pager .pagination-container .paginator .table,
+.pager .pagination-container .paginator .ce_display .displayfigtab {
+  font-size: 8pt;
+  line-height: 10pt;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 5.29mm 0 5.29mm 0mm;
+  text-align: justify;
+}
+
+.pager .pagination-container .paginator .table td.td,
+.pager .pagination-container .paginator .displayfigtab td.td {
+  border: none;
+  text-align: left;
+  padding: 0.3em 1em;
+  font-size: 8pt; /*nk*/
+  line-height: 12pt; /*nk*/
+}
+.pager .pagination-container .paginator .table .tablecaption,
+.pager .pagination-container .paginator .table .ce_source,
+.pager .pagination-container .paginator .displayfigtab .tablecaption,
+.pager .pagination-container .paginator .displayfigtab .ce_source {
+  font-size: 8.5pt; /*nk*/
+  /*margin-bottom: 0.5em;*/
+  /*line-height: 130%;*/
+  line-height: 13pt; /*nk*/
+  text-align: left;
+}
+.pager .pagination-container .paginator .table .tablecaption .ce_label,
+.pager .pagination-container .paginator .table .ce_source .ce_label,
+.pager .pagination-container .paginator .displayfigtab .tablecaption .ce_label,
+.pager .pagination-container .paginator .displayfigtab .ce_source .ce_label {
+  font-weight: bold;
+}
+.pager .pagination-container .paginator .table .ce_table-footnote,
+.pager .pagination-container .paginator .displayfigtab .ce_table-footnote {
+  line-height: 130%;
+}
+.pager .pagination-container .paginator .table .ce_table-footnote .ce_label,
+.pager .pagination-container .paginator .displayfigtab .ce_table-footnote .ce_label {
+  font-weight: bold;
+}
+.pager .pagination-container .paginator .table thead,
+.pager .pagination-container .paginator .displayfigtab thead {
+  font-weight: bold;
+}
+.pager .pagination-container .paginator .table thead tr:first-child,
+.pager .pagination-container .paginator .displayfigtab thead tr:first-child {
+  border-top: 1pt solid;
+}
+
+.pager .pagination-container .paginator .table .formula thead tr:first-child,
+.pager .pagination-container .paginator .displayfigtab .formula thead tr:first-child,
+.pager .pagination-container .paginator .table .formula tbody tr:first-child,
+.pager .pagination-container .paginator .displayfigtab .formula tbody tr:first-child {
+  border-top: none;
+}
+
+.pager .pagination-container .paginator .table thead tr,
+.pager .pagination-container .paginator .displayfigtab thead tr {
+  border-top: 1px solid;
+}
+
+.pager .pagination-container .paginator .table table ~ table thead tr:first-child,
+.pager .pagination-container .paginator .displayfigtab table ~ table thead tr:first-child {
+  border-top: none;
+}
+
+.pager .pagination-container .paginator .table thead .td,
+.pager .pagination-container .paginator .displayfigtab thead .td {
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.pager .pagination-container .paginator .table tbody,
+.pager .pagination-container .paginator .displayfigtab tbody {
+  border-top: 1pt solid;
+  border-bottom: 1pt solid;
+}
+
+.pager .pagination-container .paginator .table .formula tbody,
+.pager .pagination-container .paginator .displayfigtab .formula tbody {
+  border: none;
+}
+
+.pager .pagination-container .paginator .table td.td .ce_display,
+.pager .pagination-container .paginator .table td.td table,
+.pager .pagination-container .paginator .displayfigtab td.td .ce_display,
+.pager .pagination-container .paginator .displayfigtab td.td table {
+  margin: 0;
+}
+
+.paginator .ce_display td {
+  padding: 0;
+}
+
+/*.pager .pagination-container .paginator .table tbody tr {
+  height: 12pt !important;
+}*/
+
+.pager .pagination-container .paginator .table tbody td,
+.pager .pagination-container .paginator .displayfigtab tbody td {
+  vertical-align: top;
+}
+.pager .pagination-container .paginator .table table,
+.pager .pagination-container .paginator .displayfigtab table {
+  border: none;
+  border-collapse: collapse;
+  text-indent: 0;
+  line-height: 130%;
+  width: 100%;
+  margin-top: 0.5em;
+}
+.pager .pagination-container .paginator .table table ~ table,
+.pager .pagination-container .paginator .displayfigtab table ~ table {
+  margin-top: 0px;
+}
+
+.pager .pagination-container .paginator .table .newline_simplepara,
+.pager .pagination-container .paginator .table .newline_notepara,
+.pager .pagination-container .paginator .displayfigtab .newline_simplepara,
+.pager .pagination-container .paginator .displayfigtab .newline_notepara {
+  text-indent: 0;
+  padding-left: 0;
+}
+.pager .pagination-container .paginator .table .wrapper > img, .pager .pagination-container .paginator .displayfigtab .wrapper > img {
+  /* Remove this important only when Edit mode is fine tuned for
+  image annotation. As there is inline style appears we need to
+  include this important*/
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pager .pagination-container .paginator .table .page-number, .pager .pagination-container .paginator .displayfigtab .page-number {
+  margin: 2.64mm 0mm 0mm 0mm;
+}
+.pager .pagination-container .paginator .table .tablecaption > .wrapper > .container-image {
+  display: block;
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+/* Reference section */
+.pager .pagination-container .paginator div.ce_bibliography {
+  margin: 5.3mm 0 0 0;
+}
+/* reference title */
+.pager .pagination-container .paginator .ce_bibliography > .ce_section-title,
+.pager .pagination-container .paginator .ce_further-reading > .ce_section-title
+{
+  font-size: 12pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  margin-bottom: 2.6mm;
+  font-weight: bold;
+  display: block;
+}
+
+.pager .pagination-container .paginator .ce_bib-reference {
+  font-size: 10pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  margin-bottom: 2.6mm;
+  padding-left: 12pt;
+  text-indent: -12pt;
+}
+
+.pager .pagination-container .paginator .ce_bib-reference.unlabeled {
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.pager .pagination-container .paginator .ce_bib-reference.labeled {
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.pager .pagination-container .paginator .ce_bibliography-sec .sectionline_opt,
+.pager .pagination-container .paginator .ce_further-reading-sec .sectionline_opt {
+  font-size: 10pt; /*nk*/
+  line-height: 15pt; /*nk*/
+  margin-left: 2em;
+  text-indent: -2em;
+  font-weight: bold;
+}
+
+.pagination-container .paginator .ce_bib-reference.continued {
+  text-indent: 0em;
+}
+.pagination-container .paginator .ce_bib-reference.unlabeled .reference_label_wrapper {
+  display: none;
+}
+.pagination-container .paginator .ce_bib-reference .reference_label_wrapper {
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 2mm;
+  text-align: right;
+  max-width: 40px;
+}
+.pagination-container .paginator .ce_bib-reference #sbref-proof,
+.pagination-container .paginator .ce_bib-reference #sbref {
+  display: block;
+}
+.pager .pagination-container .paginator .ce_biography {
+  margin-top: 12pt;
+}
+.pager .pagination-container .paginator .ce_biography .newline_simplepara {
+  text-indent: 0;
+}
+.pagination-container .paginator .ce_biography .container-image {
+  text-align: center;
+}
+.pager .pagination-container .paginator .ce_footnote .ce_label,
+.pager .pagination-container .paginator .ce_foonote .ce_label,
+.pager .pagination-container .paginator .firstFootnote .ce_label,
+.pager .pagination-container .paginator .abbrevation-filled .ce_label,
+.pager .pagination-container .paginator .notFirstFootnote .ce_label,
+.pager .pagination-container .paginator .table .ce_legend .ce_label,
+.pager .pagination-container .paginator .displayfigtab .ce_legend .ce_label,
+.pager .pagination-container .paginator .author-web-generated .ce_label {
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: super;
+  font-weight: normal;
+}
+
+.pagination-container .paginator .short-ruler {
+  width: 36pt;
+  height: 1px;
+  border-top: solid 1px #000;
+  margin-bottom: 3px;
+  margin-top: 5.29mm;
+}
+
+.pager .pagination-container .paginator .footer-wrapper .top-ruler {
+  border-bottom: 1.5pt solid #999;
+  width: 152mm;
+  padding-top: 5.29mm;
+}
+
+.pager .pagination-container .paginator .page-header {
+  padding-top: 7.9mm;
+  padding-bottom: 4.3mm;
+}
+
+.pager .pagination-container .paginator .page-header .left-header {
+  float: left;
+  width: 50%;
+}
+
+.pagination-container .paginator .page-header .left-header > img {
+  width: 20.5mm;
+  max-height: 10.06mm;
+  vertical-align: bottom;
+}
+
+.pager .pagination-container .paginator .page-header .right-header {
+  float: right;
+  width: 50%;
+  text-align: right;
+  padding-top: 5mm;
+}
+
+.history-text {
+  font-style: italic;
+}
+
+span.date-span {
+  display: block;
+  /*margin-top: -5px;*/ /*nk*/
+  margin-bottom: 0.70mm;
+}
+
+.pager #paginator .left-title-logo {
+  width: 19.7941mm;
+  margin-top: -11px;
+  margin-right: 202px;
+  margin-left: -4px;
+}
+
+/*span.runon-title-page {
+    margin-left: 56px;
+}*/
+
+span.doi-container {
+  margin-left: 5.5mm;
+}
+
+span.license-text {
+  display: block;
+  margin-left: 7mm;
+}
+
+span.runon-title-page {
+  margin-left: 163px;
+}
+
+.pager .pagination-container .paginator .editor-container,
+.pager .pagination-container .paginator .journal-detail {
+  margin-top: 7pt;
+  margin-bottom: 4pt;
+}
+
+.editor-text {
+  font-style: italic;
+  /*margin-top: -2px;*/
+}
+
+.editor-name {
+  /*margin-top: -5px;*/
+}
+
+.cross-mark-container {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.pager .pagination-container .paginator .cross-mark-container > img {
+  margin-left: 25px;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 59px;
+}
+
+.cross-mark-proof {
+  margin-left: 15px;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /*background: url("../../") no-repeat;*/
+  height: 25px;
+  width: 59px;
+}
+
+.cross-mark-print {
+  display: none;
+}
+
+/*################################################*/
+
+.pager .wrapper-history, .pager .history-wrapper {
+  /*margin-top: 9%;*/
+  position: relative;
+  z-index: 0;
+}
+.pager .pagination-container .paginator .table .ce_legend {
+  font-size: 8pt;
+  line-height: 12pt;
+  padding-top: 4pt;
+}
+/* running head */
+.pager .pagination-container .page-header .right-header {
+  font-size: 6.5pt;
+  line-height: 10pt;
+  font-style: italic;
+}
+
+.pager .pagination-container .paginator .doi-container {
+  font-weight: normal;
+}
+
+/* article ftnote and text ftnote */
+.footer-div {
+  font-size: 7pt;
+  line-height: 13pt;
+}
+
+.pager .pagination-container .paginator .ce_correspondence,
+.pager .pagination-container .paginator .abbrevation-filled,
+.pager .pagination-container .paginator .author-web-generated,
+.pager .pagination-container .paginator .ce_footnote,
+.pager .pagination-container .paginator .ce_foonote,
+.pager .pagination-container .paginator .ce_miscellaneous,
+.pager .pagination-container .paginator .ce_article-footnote,
+.pager .pagination-container .paginator .firstFootnote,
+.pager .pagination-container .paginator .notFirstFootnote
+{
+  font-size: 7pt;
+  line-height: 13pt;
+}
+
+/* article history and editor name */
+.pager .wrapper-history, .pager .history-wrapper {
+  font-size: 7pt;
+  line-height: 9pt;
+}
+
+.paginator div.ce_keywords span.ce_section-title {
+  font-weight: normal;
+}
+
+/* First page header styles */
+.pager .document-header {
+  width: 152mm;
+  padding-top: 11.5mm;
+  padding-bottom: 6mm;
+  display: table;
+}
+
+.pager .document-header .top-ruler {
+  display: none;
+}
+
+.pager .document-header .logo-container {
+  padding: 0 0 3.5mm 0;
+  width: 152mm;
+  display: table;
+}
+
+.pager .document-header .left-header {
+  display: table-cell;
+}
+
+.pager .document-header .left-header > img {
+  width: 48.5mm;
+  margin-left: -9px;
+  max-height: 26.4mm;
+}
+
+.pager .document-header .middle-header {
+  display: none;
+}
+
+.pager .document-header .right-header {
+  display: table-cell;
+  width: 63px;
+  vertical-align: middle;
+}
+
+.pager .document-header .right-header > img {
+  height: 70px;
+  width: 14.8mm;
+  margin-left: 2mm;
+  margin-top: -0.5mm;
+}
+
+.pager .document-header .bottom-ruler {
+  width: 152mm;
+  border-top: 1.5pt solid #000;
+}
+
+.pager .pagination-container .paginator .history-wrapper {
+  display: table;
+  position: absolute;
+  width: 30mm;
+}
+
+.pager .pagination-container .paginator .wrapper-page .history-wrapper {
+  margin-left: -35mm;
+}
+
+.pager .pagination-container .paginator .pane-content {
+  display: table;
+  font-size: 6.5pt;
+  line-height: 10pt;
+  padding: 0 0 0 0;
+  padding: 2.64mm 0 7.8mm 0;
+}
+
+.pager .pagination-container .paginator .ce_glyph div,
+.pager .pagination-container .paginator .ce_glyph img {
+  display:inline !important;
+}
+
+.pager .pagination-container .paginator .inline-formula div,
+.pager .pagination-container .paginator .ce_inline-figure,
+.pager .pagination-container .paginator .ce_inline-figure div {
+  display: inline !important;
+}
+
+.pager .pagination-container .paginator .ce_inline-figure div.annotate-editor {
+  display: none !important;
+}
+
+.pager .pagination-container .paginator .inline-formula img,
+.pager .pagination-container .paginator .ce_inline-figure img {
+  display: inline !important;
+  vertical-align: middle;
+  margin-top: 1px;
+}
+
+.pager .pagination-container .paginator .pane-content .left-pane-content {
+  font-weight: bold;
+  display: table-cell;
+  width: 7.5mm;
+}
+
+.pager .pagination-container .paginator .pane-content .center-pane-content,
+.pager .pagination-container .paginator .pane-content .right-pane-content
+{
+  display: table-cell;
+}
+
+.proofview .mode-buttons {
+  width: 100%;
+  padding-right: 22%;
+  position: fixed;
+  z-index: 1;
+  height: 50px;
+  top: 0;
+  background-color: #808080;
+}
+
+.proofview .pager {
+  position: relative;
+  top: 50px;
+  background-color: #808080;
+}
+
+.pager .pagination-container .paginator .ce_acknowledgment {
+  font-size: 10pt;
+  line-height: 15pt;
+  margin-bottom: 2.6mm;
+}
+
+.pager .pagination-container .paginator .ce_acknowledgment .ce_section-title {
+  font-size: 12pt;
+  line-height: 15pt;
+  margin-bottom: 2.6mm;
+  font-weight: bold;
+  /* Have to check this before commit */
+  display: inherit;
+}
+
+.pager .pagination-container .paginator .ce_acknowledgment .ce_para:last-child {
+  margin-bottom: 0;
+}
+
+.pager .pagination-container .paginator .adjust-bottom-margin {
+  margin-bottom: auto;
+}
+
+.pager .pagination-container .paginator .table:empty,
+.pager .pagination-container .paginator .top-space-none.bottom-space-none {
+  display: none;
+}
+
+.pager .pagination-container .paginator .ce_nomenclature .ce_section-title,
+.pager .pagination-container .paginator .nomenclature_secttitle  {
+  display: block;
+}
+
+.pager .pagination-container .paginator .ce_def-list .ce_def-term {
+  width: 66pt;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pager .pagination-container .paginator .ce_def-list .ce_para,
+.pager .pagination-container .paginator .ce_para.no-text-indent {
+  text-indent: 0;
+}
+
+.pager .pagination-container .paginator .ce_def-list .ce_def-description {
+  padding-left: 13.5pt;
+}
+
+.pagination-container .paginator .spanTd {
+  border: 0;
+}
+
+.pager .pagination-container .paginator .suppltext,
+.pager .pagination-container .paginator .ce_e-component {
+    display: none !important;
+}
+
+.paginator span.newline_notepara.continued, .paginator span.newline_simplepara.continued {
+  text-indent: 0px;
+}
+
+.pager .pagination-container .paginator .ce_cross-ref,
+.pager .pagination-container .paginator .ce_cross-refs {
+  font-style: normal;
+  text-decoration: none;
+  color: #1A1A1A;
+}
+
+.pager .pagination-container .paginator span.deflist_secttitle {
+  display: block;
+}
+
+.pager .pagination-container .paginator .figure[data-position="bottom"] {
+  border-top: 1px solid;
+}
+
+.pager .pagination-container .paginator .table[data-continued="true"] .tablecaption .ce_caption {
+  font-style: italic;
+}
+
+.pager .pagination-container .figure .ce_keywords,
+.pager .pagination-container .displayfigtab .ce_keywords,
+.pager .pagination-container .table .ce_keywords {
+  display: none;
+}
+
+.pager .pagination-container .page .watermark {
+  bottom: 50%;
+  position: absolute;
+  display: block;
+  color: #E2E2E2;
+  font-family: sans-serif;
+  font-size: 60px;
+  margin-left: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-transform: rotate(303deg);
+  -webkit-transform: rotate(303deg);
+  transform: rotate(303deg);
+}
+
+.pager .pagination-container .landscapepage .watermark {
+  -ms-transform: rotate(324deg);
+  -webkit-transform: rotate(324deg);
+  transform: rotate(324deg);
+}
+
+@media print {
+  @page {
+    margin : 0px;
+    size: 192mm 262mm;
+  }
+
+  @page landscape {
+    size: 192mm 262mm landscape;
+  }
+
+  .page {
+    height: 262mm !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    page-break-inside: avoid;
+  }
+
+  .landscapepage {
+    height: 192mm !important;
+    page: landscape;
+  }
+
+  .pager .destination-container {
+    page-break-inside: always;
+  }
+
+  body, .pager, .proofview {
+    margin: 0;
+    background-color: #fff !important;
+  }
+
+  .proofview {
+    height: auto !important;
+  }
+
+  .pager {
+    top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .mode-buttons {
+    display: none;
+  }
+
+  .pager .pagination-container .paginator .table,
+  .pager .pagination-container .paginator .displayfigtab {
+    overflow: hidden;
+  }
+
+  .pager .pagination-container .paginator .ce_display {
+    overflow: hidden;
+  }
+
+  .page:before, .page:after {
+    overflow: visible;
+  }
+}

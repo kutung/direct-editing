@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Split Pane Demo</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <style type="text/css">
+        .split-pane {
+            height: 500px;
+        }
+        .split-pane .pane {
+            outline: 1px solid gray;
+        }
+        body {
+            margin: 20px;
+        }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '/'
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+</head>
+<body>
+    <div id="pane1"></div>
+    <script type="text/javascript">
+        window.onload = function onLoad() {
+            require([
+                'scripts/SplitPane', 'scripts/EventBus'
+            ], function onDepsLoad(SplitPane, EventBus) {
+                var splitPane = new SplitPane(
+                    document.querySelector('#pane1'), document, window, EventBus
+                );
+
+                splitPane.setType(SplitPane.VERTICAL);
+                splitPane.renderComponentStyle();
+                splitPane.render();
+            });
+        };
+    </script>
+</body>
+</html>

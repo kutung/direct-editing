@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Page Central - Editor</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <script src='http://10.0.5.39:8080/WIRISeditor-3.9.1.2439/editor?lang=en'></script>
+        <link rel="stylesheet" type="text/css" href="styles/dialog.css" />
+        <link rel="stylesheet" type="text/css" href="styles/math-editor.css" />
+        <link rel="stylesheet" type="text/css" href="styles/annotator.css" />
+        <style type="text/css">
+          .mathml, .equation_data_container{
+            display: none;
+          }
+          .matheditor-parent-container .hide {
+            display: none;
+          }
+        </style>
+
+    </head>
+    <body>
+        <div class='editor'>
+            <div class="wrapper" name="OPT_ID_313" id="OPT_ID_313"><div name="OPT_ID_313" class="eqn-container" title="Click to edit" id="OPT_ID_313"><img id="OPT_ID_313" src="https://s3.amazonaws.com/test_tmp/proofs/elsevier/JOEI/72/images/si1.gif"><span class="equation_data_container"><span class="current_version">0</span><span version="0"><span class="mathml"><math altimg="si1.gif" name="OPT_ID_313"><mrow name="OPT_ID_314"><mfrac name="OPT_ID_315"><mrow name="OPT_ID_316"><mo name="OPT_ID_317">∂</mo><mi name="OPT_ID_318">ρ</mi></mrow><mrow name="OPT_ID_319"><mo name="OPT_ID_320">∂</mo><mi name="OPT_ID_321">t</mi></mrow></mfrac><mo name="OPT_ID_322">+</mo><mfrac name="OPT_ID_323"><mo name="OPT_ID_324">∂</mo><mrow name="OPT_ID_325"><mo name="OPT_ID_326">∂</mo><msub name="OPT_ID_327"><mi name="OPT_ID_328">x</mi><mi name="OPT_ID_329">i</mi></msub></mrow></mfrac><mrow name="OPT_ID_330"><mfenced open="(" close=")"><mrow><mrow name="OPT_ID_332"><mi name="OPT_ID_333">ρ</mi><msub name="OPT_ID_334"><mi name="OPT_ID_335">u</mi><mi name="OPT_ID_336">i</mi></msub></mrow></mrow></mfenced></mrow><mo name="OPT_ID_338">=</mo><mn name="OPT_ID_339">0.</mn></mrow></math></span><span class="image">https://s3.amazonaws.com/test_tmp/proofs/elsevier/JOEI/72/images/si1.gif</span></span><span version="1"><span class="mathml"></span><span class="image">https://s3.amazonaws.com/test_tmp/proofs/elsevier/JOEI/72/images/si1.gif</span></span></span></div></div>
+        </div>
+        <div class='math-container'></div>
+        <div class='dialog-popup-container'></div>
+        <script src='scripts/libs/require-2.1.16.js'></script>
+        <script src="scripts/polyfills/classList.js"></script>
+        <script src="scripts/polyfills/dataset.js"></script>
+        <script src="scripts/polyfills.js"></script>
+        <script>
+            require.config({
+                baseUrl: ''
+            });
+        </script>
+        <script>
+        window.onload = function () {
+            require([
+                'scripts/Helper', 'scripts/Request', 'scripts/RequestBuilder',
+                'scripts/RequestQueue', 'scripts/EventBus', 'scripts/DialogPopupPanel',
+                'scripts/MathEditor', 'scripts/EquationEditor', 'scripts/MathCommand',
+                'scripts/Config', 'scripts/Annotate'
+            ],
+            function(
+                Helper, Request, RequestBuilder, RequestQueue, EventBus, DialogPopupPanel,
+                MathEditor, EquationEditor, MathCommand, Config, Annotate
+            ) {
+                var mathNodes, equationEditor, requestBuilder, mathEditor,
+                    mathCommand;
+
+                // EventBus.subscribe('Ann:onRender', function (image, annotator) {
+                //     console.log('rendered', image, annotator);
+                // });
+                // EventBus.subscribe('Ann:onAnnotate', function (
+                //     image, annotation, annotator
+                //     ) {
+                //     console.log('annotated', image, annotation, annotator);
+                // });
+                // EventBus.subscribe('Ann:onRemove', function (
+                //     image, annotation, annotator
+                //     ) {
+                //     console.log('removed', image, annotation, annotator);
+                // });
+                // EventBus.subscribe('Ann:onDestroy', function (image) {
+                //     console.log('destroyed', image);
+                // });
+                EventBus.subscribe('Math:OnSave', function(data) {
+                  console.log('Saving math ', data);
+                });
+
+                EventBus.subscribe('Math:OnComplete', function(mathReferenceName, mathFragment, imagePath) {
+                  console.log('Complete math ', mathReferenceName, mathFragment, imagePath);
+                });
+
+                equationEditor = new EquationEditor(com.wiris);
+                requestBuilder = new RequestBuilder();
+                var annotateData = {};
+                annotateData['OPT_ID_313'] = [];
+
+                data = {
+                    "annotationId":"opt741167635",
+                    "type":"math",
+                    "top":-20,
+                    "left":1,
+                    "width":40,
+                    "height":40,
+                    "text":"123"
+                };
+                annotateData['OPT_ID_313'].push(data);
+                mathEditor = new MathEditor(
+                    document.querySelector('.math-container'), EventBus,
+                    equationEditor, document, window, Annotate
+                );
+                mathNodes = document.querySelectorAll('.eqn-container');
+                dialogPopupPanel = new DialogPopupPanel(
+                    document.querySelector('.dialog-popup-container'), document, window,
+                    EventBus
+                );
+
+                var mathQueue = new RequestQueue();
+                new MathCommand(
+                    EventBus, document, window, '30dbff55f02c15b73ce515ff282dc700', Config.conversionEndPoint, Config.imageSaveEndPoint
+                );
+
+                for (i = 0; i < mathNodes.length; i++) {
+                    // var mathNodeName = mathNodes[i].getAttribute('name');
+                    mathNodes[i].addEventListener('click', function(e) {
+                        var eqnContainer = e.target.parentNode;
+                        var mathNodeName = eqnContainer.getAttribute('name');
+                        var currentVersion = eqnContainer.querySelector('span.current_version').innerHTML;
+                        var mathmlNode = eqnContainer.querySelector(
+                            'span[version="'+currentVersion+'"] .mathml'
+                        );
+                        var imageNode = eqnContainer.querySelector(
+                            'span[version="'+currentVersion+'"] .image'
+                        );
+
+                        var mathFragment = document.createDocumentFragment();
+                        mathFragment.appendChild(eqnContainer.cloneNode(true));
+                        mathEditor.setMathContext(mathNodeName, mathFragment);
+                        mathEditor.setDialogContext(dialogPopupPanel);
+                        mathEditor.setMetaData(annotateData);
+                        mathEditor.render(mathmlNode.innerHTML, imageNode.innerHTML);
+
+                        var mathGeneratedNode = document.querySelector('.math-container');
+                        dialogPopupPanel.setTitle('Math Editor');
+                        dialogPopupPanel.setContent(document.querySelector('.math-container'));
+                        dialogPopupPanel.render();
+                    }, false);
+                }
+
+
+            });
+          };
+
+        </script>
+    </body>
+</html>

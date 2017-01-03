@@ -1,0 +1,50 @@
+.pagination-container .page {
+    height: 280mm;
+    width: 210mm;
+}
+.pagination-container .landscapepage {
+    height: 210mm;
+    width: 280mm;
+}
+.pagination-container .page .page-margin {
+    height: 100%;
+    width: 184.2mm;
+    margin: 0mm 12.9mm;
+}
+.pagination-container .landscapepage .page-margin {
+    height: 100%;
+    width: 254.2mm;
+    margin: 0mm 12.9mm;
+}
+.pagination-container .page img {
+    max-height: 236.5mm;
+}
+.pagination-container .firstpage img {
+    max-height: 202.33mm;
+}
+.pagination-container .landscapepage img {
+    max-height: 189mm;
+}
+.pagination-container .firstpage .page-margin > .staticitem:first-child {
+    min-height: 56.67mm;
+}
+.pagination-container .versopage .page-margin > .staticitem:first-child,
+.pagination-container .rectopage .page-margin > .staticitem:first-child {
+    min-height: 22.5mm;
+}
+.pagination-container .page .page-margin > .staticitem:last-child {
+    min-height: 21mm;
+}
+.pagination-container .landscapepage .page-margin > .staticitem:first-child,
+.pagination-container .landscapepage .page-margin > .staticitem:last-child {
+    min-height: 10.5mm;
+}
+.pagination-container .column {
+    width: 50%;
+}
+.pagination-container .column-one > * {
+    margin-right: 3.175mm;
+}
+.pagination-container .column-two > * {
+    margin-left: 3.175mm;
+}

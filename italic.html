@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Italic Plugin</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/italic.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/dataset.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+  </head>
+  <body>
+    <div>Test Italic</div>
+    <div data-request-id="onItalic" class="onItalic">Hello <span class='optbold'>World</span>!!</div>
+    <div class="italic-button"></div><br />
+    <div>Test Undo</div>
+    <div data-request-id="onUndo" class="onUndo"><span class='optitalic'>Hello </span><span class='optbold optitalic'>World</span><span class='optitalic'>!!</span></div>
+    <div class="undo-button"></div>
+    <script>
+    window.onload = function () {
+        require([
+            'scripts/EventBus', 'scripts/ItalicMenuItem'
+        ],
+        function(EventBus, ItalicMenuItem) {
+            var win = window,
+                italicMenuItem,
+                italicMenuContainer,
+                contextualMenu;
+            EventBus.subscribe('Italic:onRequest', function (data) {
+                console.log('Italic:onRequest', data);
+            });
+            EventBus.subscribe('Italic:onComplete', function (fragment) {
+                var requestId = fragment.firstChild.dataset.requestId,
+                    elementToBeReplaced = win.document.querySelector('[data-request-id="' + requestId + '"]');
+                console.log('Italic:onComplete', fragment.cloneNode(true));
+                elementToBeReplaced.parentNode.replaceChild(fragment, elementToBeReplaced);
+            });
+            italicMenuItem = new ItalicMenuItem(EventBus, win);
+            italicMenuContainer = italicMenuItem.render();
+            win.document.querySelector('.italic-button').appendChild(italicMenuContainer);
+            domFragment = win.document.createDocumentFragment();
+            domFragment.appendChild(document.querySelector('.onItalic').cloneNode(true));
+            contextualMenu = {
+                domFragment: domFragment,
+                context: []
+            };
+            italicMenuItem.setContextualMenu(contextualMenu);
+            italicMenuItemForUndo = new ItalicMenuItem(EventBus, win);
+            italicMenuContainer = italicMenuItemForUndo.render();
+            domFragmentForUndo = win.document.createDocumentFragment();
+            domFragmentForUndo.appendChild(document.querySelector('.onUndo').cloneNode(true));
+            contextualMenu = {
+                domFragment: domFragmentForUndo,
+                context: ['onItalic']
+            };
+            win.document.querySelector('.undo-button').appendChild(italicMenuContainer);
+            italicMenuItemForUndo.setContextualMenu(contextualMenu);
+        });
+    };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Logger</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+</head>
+<body>
+    <script>
+        window.onload = function () {
+            require([
+                'scripts/Logger'
+            ],
+            function(Logger) {
+                var logger = new Logger(window, document),
+                    level = 'debug',
+                    isPersistOnServer = false,
+                    logEndPoint = 'http://api.pagecentral.com/app/web/index.php/logActivity';
+
+
+                logger.configure(level, isPersistOnServer, logEndPoint);
+
+                Logger.info('This is information log');
+
+                Logger.info({a: 'test'});
+
+                Logger.warn('This is warning log');
+
+                Logger.debug('This is debug log');
+
+                Logger.pause();
+
+                Logger.info('This is a disabled log');
+
+                Logger.resume();
+
+                Logger.info('I\'m enabled again!');
+
+                Logger.info('I\'m logging to server.', true);
+
+            });
+        };
+    </script>
+</body>
+</html>

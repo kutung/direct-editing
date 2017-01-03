@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Table Char Align</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/selectbox.css" />
+    <style>
+    body {
+        margin: 20px;
+    }
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+</head>
+<body>
+    <table width="700" border="1">
+        <colgroup>
+            <col width="28%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+            <col width="12%">
+            <col width="10%">
+            <col width="10%">
+            <col width="12%">
+        </colgroup>
+        <thead>
+            <tr>
+                <td valign="top" name="OPT_ID_171"><span class="ce_italic">t</span></td>
+                <td valign="top" name="OPT_ID_173">1.0</td>
+                <td valign="top" name="OPT_ID_174">2.0</td>
+                <td valign="top" name="OPT_ID_175">3.0</td>
+                <td valign="top" name="OPT_ID_176">4.0</td>
+                <td valign="top" name="OPT_ID_177">5.0</td>
+                <td valign="top" name="OPT_ID_178">6.0</td>
+                <td valign="top" name="OPT_ID_179">7.0</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td valign="top"><span class="ce_italic">R</span> (analytical result)</td>
+                <td align="char" valign="top" char=".">0.9999</td>
+                <td align="char" valign="top" char=".">0.9976</td>
+                <td align="char" valign="top" char=".">0.9743</td>
+                <td align="char" valign="top" char="."><b>10.9125</b></td>
+                <td align="char" valign="top" char=".">0.8192</td>
+                <td align="char" valign="top" char=".">20.7118</td>
+                <td align="char" valign="top" char=".">0.6043</td>
+            </tr>
+            <tr>
+                <td align="" valign="top"><span class="ce_italic">R</span> (digital simulation)</td>
+                <td align="char" valign="top" char=".">0.9993</td>
+                <td align="char" valign="top" char=".">0.9929</td>
+                <td align="char" valign="top" char=".">550.9572</td>
+                <td align="char" valign="top" char="."><i>0.8867</i></td>
+                <td align="char" valign="top" char=".">0.8093</td>
+                <td align="char" valign="top" char=".">50.7006</td>
+                <td align="char" valign="top" char=".">0.6020</td>
+            </tr>
+            <tr>
+                <td align="" valign="top">Relative error</td>
+                <td align="char" valign="top" char=".">0.06%</td>
+                <td align="char" valign="top" char=".">0.47%</td>
+                <td align="char" valign="top" char=".">1.79%</td>
+                <td align="char" valign="top" char=".">2.91%</td>
+                <td align="char" valign="top" char=".">1.22%</td>
+                <td align="char" valign="top" char=".">1.60%</td>
+                <td align="char" valign="top" char=".">0.38%</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1" width="700">
+        <colgroup>
+            <col width="18%">
+            <col width="13%">
+            <col width="18%">
+            <col width="18%">
+            <col width="18%">
+            <col width="12%">
+        </colgroup>
+        <thead>
+            <tr>
+                <td colspan="2" align="" valign="top">Equipment</td>
+                <td align="" valign="top">Mg content (<span class="ce_italic">M</span><span class="ce_inf">Mg</span> %)</td>
+                <td align="" valign="top">Na/K content (<span class="ce_italic" name="OPT_ID_137">M</span><span class="ce_inf" name="OPT_ID_138">A</span>%)</td>
+                <td align="" valign="top">Average particle size</td>
+                <td align="" valign="top">Burning probability</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2" align="" valign="top">Traditional condenser</td>
+                <td align="char" valign="top" char=".">33%</td>
+                <td align="char" valign="top" char=".">0.58%</td>
+                <td align="" valign="top">&lt;50<span class="unicode-char">&nbsp;</span><span class="unicode-char">μ</span>m</td>
+                <td align="char" valign="top" char=".">100%</td>
+            </tr>
+            <tr>
+                <td rowspan="2" align="" valign="top">Multistage condenser</td>
+                <td align="" valign="top">Third Level</td>
+                <td align="char" valign="top" char=".">92%</td>
+                <td align="char" valign="top" char=".">10.033%</td>
+                <td align="" valign="top">&gt;500<span class="unicode-char">&nbsp;</span><span class="unicode-char">μ</span>m</td>
+                <td align="char" valign="top" char=".">0%</td>
+            </tr>
+            <tr>
+                <td align="" valign="top">Fourth Level</td>
+                <td align="char" valign="top" char=".">3%</td>
+                <td align="char" valign="top" char=".">0.47%</td>
+                <td align="" valign="top">&lt;50<span class="unicode-char">&nbsp;</span><span class="unicode-char">μ</span>m</td>
+                <td align="char" valign="top" char=".">10%</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1" width="700">
+        <colgroup>
+            <col width="18%">
+            <col width="13%">
+            <col width="18%">
+            <col width="18%">
+            <col width="18%">
+            <col width="12%">
+        </colgroup>
+        <thead>
+            <tr>
+                <td colspan="2" align="" valign="top">Equipment</td>
+                <td align="" valign="top">Mg content (<span class="ce_italic">M</span><span class="ce_inf">Mg</span> %)</td>
+                <td align="" valign="top">Na/K content (<span class="ce_italic" name="OPT_ID_137">M</span><span class="ce_inf" name="OPT_ID_138">A</span>%)</td>
+                <td align="" valign="top">Average particle size</td>
+                <td align="" valign="top">Burning probability</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2" align="" valign="top">Traditional condenser</td>
+                <td align="char" valign="top" char=".">33%</td>
+                <td align="char" valign="top" char=".">0.58%</td>
+                <td align="" valign="top">&lt;50<span class="unicode-char">&nbsp;</span><span class="unicode-char">μ</span>m</td>
+                <td align="char" valign="top" char=".">100%</td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2"align="" valign="top">Multistage condenser</td>
+                <td align="char" valign="top" char=".">92%</td>
+                <td align="char" valign="top" char=".">10.033%</td>
+                <td align="" valign="top">&gt;500<span class="unicode-char">&nbsp;</span><span class="unicode-char">μ</span>m</td>
+                <td align="char" valign="top" char=".">0%</td>
+            </tr>
+            <tr>
+                <td align="char" valign="top" char=".">3%</td>
+                <td align="char" valign="top" char=".">0.47%</td>
+                <td align="" valign="top">&lt;50<span class="unicode-char">&nbsp;</span><span class="unicode-char">μ</span>m</td>
+                <td align="char" valign="top" char=".">10%</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+    window.onload = function () {
+        require(['scripts/TableCharAlign'], function(TableCharAlign) {
+            var tAlign = new TableCharAlign(window, document), i = 0, len;
+            tables = document.querySelectorAll('table');
+            len = tables.length;
+
+            for (; i < len; i += 1) {
+                tAlign.align(tables[i]);
+            }
+        });
+    };
+    </script>
+</body>
+</html>

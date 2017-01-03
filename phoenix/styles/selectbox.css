@@ -1,0 +1,90 @@
+.select-box[role="combobox"] {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+}
+.select-box[role="combobox"][aria-disabled="true"] {
+    opacity: 0.5;
+}
+.select-box[role="combobox"] .wrapper {
+    border: 1px solid #aaa;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    width: 100%;
+}
+.select-box[role="combobox"] .wrapper .selection {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: .5em;
+    padding-right: 1em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
+    box-sizing: border-box;
+}
+.select-box[role="combobox"] .wrapper .text {
+    display: inline-block;
+    box-sizing: border-box;
+}
+.select-box[role="combobox"] [role="listbox"] {
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-top: none;
+    background-color: #fff;
+    z-index: 1000;
+    max-height: 10.6em;
+    overflow: auto;
+}
+.select-box[role="combobox"] [role="listbox"] [role="option"] {
+    display: block;
+    padding: .5em;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+}
+.select-box[role="combobox"] [role="listbox"] [role="option"]:last-child: {
+    border-bottom: none;
+}
+.select-box[role="combobox"] [role="listbox"] [role="option"].highlight,
+.select-box[role="combobox"] [role="listbox"] [role="option"]:hover {
+    background-color: #5897fb;
+    color: #fff;
+}
+.select-box[role="combobox"] [role="listbox"] [role="option"][aria-selected="true"] {
+    background-color: #aaa;
+    color: #fff;
+}
+.select-box[role="combobox"]:focus .wrapper {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+.select-box[role="combobox"] .wrapper [role="button"] {
+    display: block;
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 1.3em;
+    height: 100%;
+    background-color: #aaa;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.select-box[role="combobox"] .wrapper [role="button"] .icon {
+    border-color: #000 transparent transparent transparent;
+    border-style: solid;
+    border-width: .35em .25em 0 .25em;
+    left: calc(50% - .25em);
+    position: absolute;
+    top: 50%;
+}

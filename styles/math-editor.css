@@ -1,0 +1,183 @@
+.matheditor textarea.latex-editor {
+    width: 490px;
+    height: 220px;
+}
+
+.matheditor .info a {
+    text-decoration: underline;
+}
+
+.matheditor .matheditor-options {
+    padding: 0 0 3px;
+}
+.matheditor .math-conversion {
+    vertical-align: text-top;
+}
+.matheditor .latex-conversion {
+    margin: 0 0px 0 5px;
+    vertical-align: text-top;
+}
+
+
+.matheditor .math-btn a.math-button-undo,
+.matheditor .math-btn a.math-button-redo {
+    color: #484848;
+    border: 1px solid #a3a3a3;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 7px 10px 6px 22px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.matheditor .math-btn a.math-button-redo {
+    background: url("/images/math/redo.png") no-repeat 5px center #bfbfbf;
+}
+
+.matheditor .math-btn a.math-button-undo {
+    background: url("/images/math/undo.png") no-repeat 5px center #bfbfbf;
+}
+
+.matheditor .math-btn a.math-button-redo:hover,
+.matheditor .math-btn a.math-button-undo:hover {
+    background-color: #d6d6d6;
+}
+
+.matheditor .math-btn a.disabled {
+    opacity: 0.5;
+    background-color: #d6d6d6;
+}
+
+.matheditor .math-btn-group {
+    float: right;
+}
+
+.matheditor .math-btn .save, .annotationeditor .math-btn .save-annotate {
+    margin: 0;
+    border: 1px solid #0E5979;
+    background: #0F9ADB;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: -1px;
+    padding: 4px 16px 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.annotationeditor .math-btn {
+    padding-top: 100px;
+}
+
+.matheditor .submit:hover {
+    background: #3276B1;
+    border: 1px solid #285E8E;
+}
+
+.matheditor .equation {
+    width: 830px;
+    min-height: 225px;
+    resize: none;
+    margin: 25px 0 0;
+}
+
+/* WIRIS Override */
+.wrs_formulaDisplay {
+    height: 110px !important;
+}
+
+.wrs_editor .wrs_panelContainer {
+    background: #e2e2e2 url('/images/math/body_background.png') bottom left no-repeat !important;
+    border: 1px solid #9C9C9C !important;
+}
+
+.wrs_editor .wrs_toolbar .wrs_header > button,
+.wrs_editor .wrs_toolbar .wrs_header > div {
+    background: #5b5b5b url('/images/math/tab_background.png') top left no-repeat !important;
+    border: 1px solid #9C9C9C !important;
+    border-bottom: none !important;
+}
+
+.wrs_editor .wrs_toolbar .wrs_header > button:hover,
+.wrs_editor .wrs_toolbar .wrs_header > div:hover {
+    background: #b0b0b0 url('/images/math/selected_tab_background.png') top left no-repeat !important;
+}
+
+.wrs_editor .wrs_toolbar .wrs_header > button.wrs_selected,
+.wrs_editor .wrs_toolbar .wrs_header > div.wrs_selected {
+    background: #dedede url('/images/math/selected_tab_background.png') top left no-repeat !important;
+}
+
+.wrs_editor .wrs_toolbar .wrs_header > button.wrs_disabled,
+.wrs_editor .wrs_toolbar .wrs_header > div.wrs_disabled {
+    background: #e1e1e1 url('/images/math/tab_background_hover.png') top left no-repeat !important;
+}
+
+/** **/
+
+.proof-equ-dialog .wrs_editor .wrs_panelContainer {
+	background:#FFFFFF !important;
+}
+.wrs_editor .wrs_toolbar .wrs_header > button.wrs_selected, .wrs_editor .wrs_toolbar .wrs_header > div.wrs_selected {
+	background:#FFFFFF !important;
+	border-top:3px solid #e47d22 !important;
+}
+.wrs_editor .wrs_toolbar .wrs_header > button, .wrs_editor .wrs_toolbar .wrs_header > div {
+	background:#cdcdcd !important;
+	border:none !important;
+	border-radius: 0 !important;
+    margin: 0 !important;
+	height:40px !important;
+    border-top: 3px solid #ccc !important;
+}
+.wrs_editor .wrs_toolbar .wrs_header > button:hover, .wrs_editor .wrs_toolbar .wrs_header > div:hover {
+    background: #fff !important;
+}
+.wrs_editor .wrs_panelContainer {
+	border:1px solid #cdcdcd !important;
+	border-radius:0 !important;
+}
+.wrs_editor .wrs_toolbar .wrs_header {
+	background:#cdcdcd !important;
+	border-left:1px solid #cdcdcd
+}
+.wrs_editor .wrs_formulaDisplay {
+	border: 1px solid #cdcdcd !important;
+    border-top: 0 !important;
+}
+.proof-equ-dialog .matheditor .math-btn a.math-button-undo, .matheditor .math-btn a.math-button-redo {
+	background-image:url("/images/math/undo-1.png");
+	text-indent:-999999px;
+	border: none;
+    background-color: transparent;
+}
+.matheditor .math-btn a.math-button-redo {
+	background-image:url("/images/math/redo-1.png");
+	margin-left:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+.notifier {
+  position: fixed;
+  width: 0;
+  overflow: visible;
+  z-index: 9999;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.notifier .notifier-message {
+  position: relative;
+  display: flex;
+  width: 16em;
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+}
+.notifier .notifier-message.notifier-visible {
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 1;
+  max-height: 100%;
+  padding: 0.1em 0 0.3em 0.6em;
+  margin-top: 0.6em;
+}
+.notifier .notifier-message.notifier-visible > span {
+  order: 1;
+}
+.notifier .notifier-message.notifier-success {
+  background: #dff0d8;
+  border-color: #62b163;
+  color: #3c763d;
+  box-shadow: 0 0 0.1em #62b163;
+}
+.notifier .notifier-message.notifier-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #cc5451;
+  box-shadow: 0 0 0.1em #cc5451;
+}
+.notifier .notifier-message.notifier-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #c19a56;
+  box-shadow: 0 0 0.1em #c19a56;
+
+}
+.notifier .notifier-message.notifier-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #4290b7;
+  box-shadow: 0 0 0.1em #4290b7;
+}
+.notifier.notifier-top {
+  top: 0.7em;
+}
+.notifier.notifier-bottom {
+  bottom: 2em;
+}
+.notifier.notifier-right {
+  right: 1em;
+}
+.notifier.notifier-right .notifier-message {
+  right: -20em;
+}
+.notifier.notifier-right .notifier-message.notifier-visible {
+  right: 18em;
+}
+.notifier.notifier-left {
+  left: 1em;
+}
+.notifier.notifier-left .notifier-message {
+  left: -19em;
+}
+.notifier.notifier-left .notifier-message.notifier-visible {
+  left: 0;
+}
+.notifier.notifier-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.notifier .notifier-message .close {
+    order: 2;
+    align-self: baseline;
+    cursor: pointer;
+    border: 0;
+    background: inherit;
+    margin-left: auto;
+}

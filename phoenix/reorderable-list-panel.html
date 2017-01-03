@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Reorderable List Panel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills/polyfills.js"></script>
+    <style type="text/css">
+        .reorderable-panel-container {
+            margin: 0 auto;
+            width: 75%;
+            border: 1px solid #2d2d2d;
+        }
+        .reference-list {
+            list-style: none;
+            margin: 10px 0 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        .reference-item {
+            font-size: 13px;
+            font-size: 0.8125rem;
+            margin-bottom: 24px;
+        }
+        .reference-item a {
+            text-decoration: none;
+        }
+        .reference-item-title {
+            display: block;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+        .reference-item-container {
+            line-height: 20px;
+            line-height: 1.25rem;
+            display: block;
+            margin-left: 36px;
+            word-wrap: break-word;
+        }
+        .reference-item-container p {
+            line-height: 20px;
+            line-height: 1.25rem;
+            margin: 0;
+        }
+        .toolbar {
+            width: 75%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar"><button>Get List Order</button></div>
+    <div class="reorderable-panel-container"></div>
+    <script>
+    window.onload = function onLoad() {
+        require([
+            'scripts/ReorderableListPanel', 'scripts/EventBus'
+        ],
+        function onDepsLoad(Panel, EventBus) {
+            var panel = new Panel(
+                    document.querySelector('.reorderable-panel-container'),
+                    document, window, EventBus
+                ),
+                tmpNode = document.createElement('div'),
+                list = [
+                    ['bib0005', '<div class="reference reference-item " data-id="bib0005"><p class="reference-item-title"><span>[1]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">B. Fang,Y.Y. Tang, “Elasticregistrationforretinal images based on reconstructedvascular trees”, IEEE Trans. on BiomedicalEngineering,vol. 53, no. 6, pp. 1183-1187, June 2006.</p></div></div>'],
+                    ['bib0010', '<div class="reference reference-item " data-id="bib0010"><p class="reference-item-title"><span>[2]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">R. Szewczyk, K. Grabowski,M. Napieralska, W. Sankowski, M. Zubert, A. Napieralski, “A reliable iris recognition algorithm based on reverse biorthogonal wavelet transform”, Pattern RecognitionLetters, Volume 33, Issue 8, Pages 1019-1026,2012.</p></div></div>'],
+                    ['bib0015', '<div class="reference reference-item " data-id="bib0015"><p class="reference-item-title"><span>[3]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">Shu-Ren Zhou, Jian-Ping Yin, Jian-Ming Zhang,“Local binary pattern (LBP) and local phase quantization (LBQ) based on Gabor filter for face representation”. Neurocomputing, Vol.116 ,pp. 260-264, 2013.</p></div></div>'],
+                    ['bib0020', '<div class="reference reference-item " data-id="bib0020"><p class="reference-item-title"><span>[4]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">J.G. Daugman, “High Confidence Visual Recognition of Persons by a Test of Statistical Independence”, IEEE Trans. on Pattern Analysis and Machine Intelligence, vol. 15, no. 11, pp.1148-1161,1993.</p></div></div>'],
+                    ['bib0025', '<div class="reference reference-item " data-id="bib0025"><p class="reference-item-title"><span>[5]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">J. Daugman,C. Downing, “Epigenetic randomness, complexity, and singularity of human iris patterns”, Proceedings of the Royal Society (London) Series B: Biological Sciences,vol. 268, pp.1737-1740. 2001.</p></div></div>'],
+                    ['bib0030', '<div class="reference reference-item " data-id="bib0030"><p class="reference-item-title"><span>[6]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">Abidin, Z.Z.; Manaf, M.; Shibghatullah, A.S.; Anawar, S.; Ahmad, R., “Feature extraction from epigenetic traits using edge detection in iris recognition system,” IEEE International Conference on Signal and Image Processing Applications (ICSIPA), pp.145-149, 2013.</p></div></div>'],
+                    ['bib0035', '<div class="reference reference-item " data-id="bib0035"><p class="reference-item-title"><span>[7]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">J. Daugman, “How iris recognition works”, IEEE Trans. on Circuits and Systems for Video Technology, vol. 14, no.1, pp. 21-30,2004.</p></div></div>'],
+                    ['bib0040', '<div class="reference reference-item " data-id="bib0040"><p class="reference-item-title"><span>[8]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">J. Daugman, “New methods in iris recognition”, IEEE Trans. on System, Man, and Cybernetics, vol. 37, no. 5, pp. 1167-1175, 2007.</p></div></div>'],
+                    ['bib0045', '<div class="reference reference-item " data-id="bib0045"><p class="reference-item-title"><span>[9]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">J. Daugman “The importance of being random: statistical principles of iris recognition”, Pattern recognition, vol. 36, no.2, pp. 279-291.2003.</p></div></div>'],
+                    ['bib0050', '<div class="reference reference-item " data-id="bib0050"><p class="reference-item-title"><span>[10]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">CASIA iris image database (v1.0), The National Laboratory of Pattern Recognition (NLPR), Institute of Automation, Chinese Academy of Sciences (CAS), 2006.</p></div></div>'],
+                    ['bib0055', '<div class="reference reference-item " data-id="bib0055"><p class="reference-item-title"><span>[11]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">Hamouchene I. Aouat S, Lacheheb H. “New segmentation architecture for texture matching using the LBP method”. IEEE Technically Co-Sponsored SAI Conference, London UK, 2013.</p></div></div>'],
+                    ['bib0060', '<div class="reference reference-item " data-id="bib0060"><p class="reference-item-title"><span>[12]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">L. Flom and A. Safir, “Iris Recognition System”, U.S. Patent 4,641,349, 1987.</p></div></div>'],
+                    ['bib0065', '<div class="reference reference-item " data-id="bib0065"><p class="reference-item-title"><span>[13]&nbsp;</span></p><div class="reference-item-container"><p class="reference-source">Kevin W. Bowyer, Karen P. Hollingsworth, Patrick J. Flynn, “A Survey of Iris Biometrics Research: 2008-2010”, Handbook of Iris Recognition, pp. 15-54, 2013.</p></div></div>']
+                ];
+
+            panel.render();
+            panel.setTitle('Reorder References');
+            list.forEach(function eachItem(item) {
+                tmpNode.innerHTML = item[1];
+                panel.add(item[0], tmpNode.firstChild);
+            });
+
+            document.querySelector('button').addEventListener('click', function onClick() {
+                console.log(panel.getListOrder());
+            }, false);
+        });
+    };
+    </script>
+</body>
+</html>

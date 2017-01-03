@@ -1,0 +1,261 @@
+/* Style sheet for Elsevier Tags */
+
+
+.paginator, #paginate-cnt { color:#222;}
+.paginator span.kw_label {border:2px solid #a1a1a1;padding:2px 5px;background:#ddd;width:300px;margin-right:10px;-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;user-select:none;}
+.paginator div , .paginator span {}
+
+.paginator span.content_modified {display: none;}
+.paginator div.ce_collaboration div.ce_author-group {border:1px dashed #909090;background:#F0F0F0;}
+.paginator div.ce_source {font-style:italic;}
+.paginator div.ce_displayed-quote div.ce_source {text-align:right;}
+.paginator thead td span.ce_inf , .paginator span.ce_sup , .paginator span.unicode-char {}
+.paginator #FileContainer div {}
+.paginator #FileContainer img {vertical-align:middle;}
+.paginator span.ce_italic , .paginator div.ce_salutation {font-style:italic;}
+.paginator span.ce_bold {font-weight: bold;}
+.paginator span.ce_underline {text-decoration:underline;}
+.paginator div.ce_textbox {background-color:#E8E8E8;border:solid;padding:8px;text-align:justify;margin-bottom:10px;}
+.paginator span.vol {font-weight:700;font-style:normal;}
+.paginator span.sitl , .paginator span.sbtl , .paginator span.sebtl , .paginator span.ebtl {font-style:italic;}
+.paginator span.ce_small-caps {font-variant:small-caps;}
+/* Sections */
+.paginator div.ce_list > span.ce_section-title {margin-left:-100px;font-style:normal;}
+/* for avoiding margin-left: -100px; alignment in table. */
+.paginator td .ce_list span.ce_section-title {margin-left:0;}
+.paginator div.ce_glossary > span.ce_section-title , .paginator div.ce_section > span.ce_section-title , .paginator div.ce_further-reading > span.ce_section-title , .paginator div.ce_appendices > div.ce_section > span.ce_label , .paginator span#fnhead {font-weight:700;font-size:140%;margin-top:10px;}
+.paginator .ce_glossary-sec {margin-top:10px;}
+.paginator div.ce_displayed-quote {margin-top:10px;margin-bottom:10px;padding-left:50px;padding-right:50px;text-align:justify;text-indent:0;}
+.paginator div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt , .paginator div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt
+.paginator div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt {font-style:italic!important;font-size:100%;margin-top:10px;}
+.paginator div.ce_keywords span.ce_section-title , .paginator div.ce_nomenclature > span.ce_section-title {font-weight:700;}
+.paginator div.ce_title {font-size:200%;margin-top:8pt;margin-right:0;margin-bottom:8pt;margin-left:0;line-height: 110%;}
+.paginator div.ce_affiliation {margin-top:4pt;margin-right:0;margin-bottom:4pt;margin-left:0;font-size:90%;}
+.paginator div.ce_author span.ce_e-address {display:none;}
+.paginator div.ce_keywords span.ce_section-title {font-weight:700;}
+.paginator div.ce_affiliation span.ce_label , .paginator .ce_correspondence span.ce_label , .paginator .ce_article-footnote span.ce_label {font-size:70%;vertical-align:super;}
+.paginator div.ce_table-footnote span.ce_label , .paginator div.ce_legend span.ce_label {font-size:70%;vertical-align:super;padding-right:3px;}
+.paginator p .ce_label {font-weight:700;}
+.paginator .ce_e-component .ce_label {font-weight:700;}
+.paginator div#qarea > div.ce_para , .paginator td#qareamin > div.ce_para {text-indent:0;margin-top:0;margin-bottom:0;}
+.paginator .ce_def-term {text-indent:0;}
+.paginator .ce_def-description > .ce_para {text-indent:0;}
+.paginator .ce_display {position:relative;margin-top:5px;margin-right:0;margin-bottom:5px;margin-left:0;text-indent:0;overflow:auto;}
+.paginator .ce_display_formula {position:relative;margin-top:10px;margin-right:0;margin-bottom:5px;margin-left:0;text-indent:0;overflow:auto;display:inline-block;width:100%;}
+.paginator div.ce_list {margin-left:50pt;margin-top:15px;margin-bottom:15px;}
+.paginator div.ce_list-item {text-indent:-15px;margin-top:5px;margin-bottom:5px;}
+.paginator div.ce_list-item div.ce_para {padding-left:6px;display:inline;}
+.paginator div.ce_list-item > div.ce_para > .ce_list > div.ce_list-item {margin-left:-34pt;text-indent:-27px;}
+.paginator div.ce_display table {border-collapse:collapse;margin-top:2px;margin-bottom:2px;text-indent:0;width:100%;}
+.paginator .item-info {display:none;}
+.paginator a[title] {color:blue;}
+.paginator div.ce_keywords > span.ce_section-title , .paginator span.ce_label {font-weight:700;}
+.paginator .inline-math-img * {display:inline;}
+.paginator div.INS , .paginator div.DEL {display:inline;}
+.paginator div.ce_author > span.ce_surname {background-color:#FCF;}
+.paginator div.ce_enunciation {margin:10px;}
+.paginator div.ce_enunciation span.ce_label {font-weight:700;}
+.paginator div.article td.td {text-align:left;padding:.5em;border:1px solid #D9D9D9;}
+.paginator div.article td.td[align=right] {text-align:right;}
+.paginator div.article td.td[align=center] {text-align:center;}
+.paginator div.article thead td.td {text-align:center;}
+.paginator div.ce_title > span.x {font-weight:400;vertical-align:super;font-size:12px;line-height: 0;}
+.paginator div.ce_def-description , .paginator .ce_glossary-def {/*margin-left:18px;*/text-indent:18px;}
+.paginator span#sbref {display:block;margin-left:22px;}
+.paginator .ce_abstract-sec .ce_simple-para {text-indent:35px;display:block;}
+.paginator span.nomenclature_secttitle {font-style:italic;font-weight:700;margin-bottom:6pt;}
+.paginator span.deflist_secttitle {font-style:italic;font-size:120%;font-weight:700;margin-bottom:6pt;}
+.paginator div#authorgp {text-align:right;}
+.paginator div.ce_bib-reference span.ce_label1 {display:none;height:0;font-size:0;clear:both;visibility:hidden;}
+.paginator div.ce_section > div.ce_section > span.ce_section-title {font-size:120%;font-weight:700;margin-top:10px;}
+.paginator div.ce_section > div.ce_section > div.ce_section > div.section-title {font-weight:700;font-size:100%;margin-top:10px;}
+.paginator div#graph_abstsec1 .ce_section-title , .paginator div#graph_abstsec .ce_section-title , .paginator div#highlite > .ce_section-title , .paginator #graph_sectitle , .paginator div#highlite2 > span.ce_section-title , .paginator #graph_sectitle2 {font-weight:700;}
+.paginator div#etab1 , .paginator div#etab2 {background-color:#D3D3D3;font-size:100%;margin-bottom:6pt;font-weight:700;height:24px;width:100%;font-size:100%;border-radius:3px;text-decoration:none;}
+.paginator div#etab1 span , .paginator div#etab2 span {margin-left:10px;}
+.paginator .img1 , .paginator .img2 {padding-left:5px;}
+.paginator .unselectable , .paginator .mmclink {-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;user-select:none;}
+.paginator .ce_e-component {text-align:justify;}
+.paginator span.ce_sans-serif {font-size:inherit; font-family: sans-serif;}
+/* This class is introduced for SPI journals. There is some author given names are coming on below class.*/
+
+.paginator .ce_indexed-name {display:none;}
+.paginator span.ce_cross-out {text-decoration:line-through;}
+.paginator div#graph_abstsec1 , .paginator div#highlite {border-bottom:thin solid #F20C36;margin-top:15pt;margin-right:.2in;margin-bottom:15pt;margin-left:.2in;padding:0 0 6pt;}
+.paginator div#graph_abstsec {margin-top:15pt;margin-right:.2in;margin-bottom:15pt;margin-left:.2in;padding:0 0 6pt;}
+.paginator .x {-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+.paginator .cke_iframe_shim {display:none;}
+.paginator div.item-info > div.ce_title , div.augroup > div.ce_author {display:inline;font-size:16px;font-weight:100;background-color:none;}
+.paginator div.augroup > div.ce_author > span.ce_surname , .paginator div.augroup > div.ce_author > span.ce_givenname {background-color:transparent;display:inline;font-size:16px;font-weight:100;}
+.paginator div.augroup > div.ce_author > a.ce_cross-ref , .paginator div.augroup > div.ce_author > span.ce_roles , .paginator div.augroup > div.ce_author > span.ce_degrees , .paginator div.augroup > div.ce_author div.ce_e-address , .paginator div.augroup > div.ce_author > span.x {display:none;}
+.paginator span#note {font-weight:700;font-size:140%;margin-top:10px;margin-bottom:20px;}
+.paginator div.jid {margin-top:15px;}
+.paginator .ce_inter-refs-text {display:none;}
+.paginator span.caption_simple_para {display:block;}
+
+
+
+
+
+
+
+
+/********** From main.css  ************/
+
+.paginator .insertNewText{ color:#009900; text-decoration:underline;}
+.paginator .deleteText{ color:#ff0000; text-decoration:line-through;}
+
+.paginator .insertNewTextPrev{ background:#d7d7d7; color:#009900; text-decoration:underline;}
+.paginator .deleteTextPrev{ background:#d7d7d7; color:#ff0000; text-decoration:line-through;}
+.paginator.ArticleTitle {
+    font-family: 'linux_biolinum_obold' !important; text-align:left !important; padding:0 0 20px;   font-size:31px; color:#222; }
+.paginator .Authors{ font-family: 'linux_biolinum_oregular' !important; color:#222; font-size:18px;   padding:0 0 20px; margin:0;}
+.paginator .Affiliation {  font-family: 'linux_biolinum_oregular' !important; margin:0; color:#222;  font-size:14px;  padding:0 0 10px; }
+.paginator.Correspondence{ font-family: 'linux_biolinum_oregular' !important; margin:0; border-bottom:1px solid #898989; color:#222; font-size:14px; padding:0 0 20px;}
+
+.paginator .AbstractTitle, .paginator .SectionA {
+    font-family: 'linux_biolinum_obold' !important;  font-size: 22px;   margin-top: 12pt; margin-bottom: 15px; }
+
+.paginator .SectionB  { color:#222 !important; font-size: 17px; font-weight:bold; margin-bottom: 15px; }
+.paginator .SectionC  { font-size: 17px;   margin-bottom: 15px;}
+.paginator .Abstract{border-bottom:1px solid #898989;}
+.paginator.Abstract .para{    font-family: 'linux_biolinum_oregular' !important; font-size:19px !important;}
+.paginator .para {
+    font-family: 'linux_libertine_oregular'; padding:0 0 20px;
+           -webkit-hyphens: manual;
+           -moz-hyphens: manual;
+           -ms-hyphens: manual;
+            hyphens: manual;
+            font-size:17px;
+            color:#222;
+}
+.paginator .BibItem {
+            padding-left: 12pt;
+            text-indent:-12pt;
+            font-size: 10pt;
+            text-align: justify;
+           -webkit-hyphens: manual;
+           -moz-hyphens: manual;
+           -ms-hyphens: manual;
+            hyphens: manual;
+            margin-bottom:10px;
+}
+.paginator .FigCaption { font-size: 90%; }
+
+.paginator .caption,.paginator .table {
+     text-indent: 0pt;
+}
+
+.paginator .graphic img {
+     max-width: 400pt;
+}
+
+.paginator div.graphic {
+   text-align: center;
+}
+
+.paginator .buttons {
+       position: absolute;
+       top: 0;
+       left: 550pt;
+}
+.paginator .caption {
+          font-size: 80%;
+          margin-top: 6pt;
+          margin-bottom: 12pt;
+          text-indent: 0;
+          text-align: justify;
+          -webkit-hyphens: manual;
+          -moz-hyphens: manual;
+          -ms-hyphens: manual;
+          hyphens: manual;
+        }
+.paginator .graphic {
+          font-size: 75%;
+          margin-top: 12pt;
+          margin-bottom: 6pt;
+        }
+
+
+.paginator .table {
+          font-size: 1em;
+          margin-top: 12pt;
+          margin-bottom: 6pt;
+}
+
+.paginator .table p {
+          margin-top: 0pt;
+          margin-bottom: 0pt;
+}
+
+.paginator img {
+        /* don't break page inside */
+        overflow: hidden; /* fix for Firefox */
+        break-inside: avoid-column;
+        -webkit-column-break-inside: avoid;
+       }
+
+.paginator td {
+      vertical-align: bottom;
+      padding: 0.5em;
+}
+
+.paginator th {
+      font-weight: normal;
+      font-style: normal;
+      text-align: center;
+      vertical-align: top;
+}
+
+.paginator table {
+     border-top: solid thin black;
+     border-bottom: solid thin black;
+}
+
+.paginator thead tr>th, .paginator th[colspan] { border-bottom: solid thin black; }
+
+
+.paginator .displaymath {
+      margin-top: 12pt;
+      margin-bottom: 12pt;
+}
+
+.paginator .label {
+       float: right;
+       padding-top: 1.5em;
+}
+
+.paginator .pbrstub {
+           color: white;
+           -webkit-user-select: none;
+           -moz-user-select: none;
+           -ms-user-select: none;
+           user-select: none;
+}
+
+.paginator .tiny {
+        font-size: 1%;
+}
+
+
+
+
+.paginator u.instruct-text {background: none repeat scroll 0 0 #FFFF00 !important;}
+.paginator u {background-color: #FFFF00; text-decoration: none !important;}
+
+.paginator span.ce_initials {
+  display:none;
+}
+
+.paginator span.newline_notepara, .paginator span.newline_simplepara {
+  display: block;
+  text-indent: 35px;
+}
+
+.paginator .annotate-editor {
+    display: none;
+}
+
+/*this style only for heliyon and double column layout and for single cloumn layout it included in proof-nmode.css*/
+.paginator .div-toggle-images {
+  display: none;
+}

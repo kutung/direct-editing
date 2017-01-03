@@ -1,0 +1,135 @@
+@keyframes highlight {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@-webkit-keyframes highlight {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.supplementary {
+    position: relative;
+    margin: auto;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    line-height: 180% !important;
+    font-size: 16px;
+    padding: 52px 54px !important;
+}
+
+.supplementary .art-toc-entry:before {
+  padding: 40px;
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+  text-indent:50px;
+  content: " ART-TOC-ENTRY " ;
+}
+
+.supplementary .art-toc-entry{
+  padding:10px;
+  border:5px solid gray;
+  margin-top:15pt;
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+}
+
+.supplementary .inline-formula,
+.supplementary .inline-formula div {
+    display: inline;
+}
+
+.supplementary div.div-toggle-images {
+   font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+   margin-top: 10px;
+}
+
+.supplementary button.web-btn, button.print-btn {
+    font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+    background-color: #FDFDF0;
+    border: 2px outset #8B8378;
+    color: black;
+    line-height: 25px;
+    padding: 2px 10px 2px 5px;
+    width: 115px;
+    margin-right: 5px;
+}
+
+.supplementary button span.rbweb, button span.rbprint {
+    border: 1px solid black;
+    margin: 0 3px;
+    padding: 0 5px;
+}
+
+.supplementary button span.selected {
+    background-color: black;
+    border: 1px solid;
+}
+
+.supplementary .toggleoverlay {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background: url("/images/loading.gif") no-repeat center center #ffffff;
+    opacity: 0.6;
+}
+
+.supplementary .ce_inline-figure {
+    display: inline-block;
+}
+
+.author_orcres_ids:not(:empty) {
+  font-family: Times New Roman, Times;
+  border-top: thin solid #F20C36;
+  border-bottom: thin solid #F20C36;
+  padding: 1pc 1pc 6pt 1pc;
+  margin-top:15pt;
+  margin-right:.2in;
+  margin-bottom:15pt;
+  margin-left:.2in;
+}
+
+.researchinfo{
+  font-size:18pt !important;
+  font-weight: bold !important;
+}
+
+.ce_inter-ref-title {
+  color: blue !important;
+  cursor: pointer;
+}
+
+.supplementary .x, .researchinfo .x {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+/*  font-weight: normal;
+  font-style: initial;
+  vertical-align: initial;
+  font-size: 14px;
+  background-color: inherit;
+  cursor: auto;
+  color: black;
+*/}
+
+.supplementary .suppltext-funding-info {
+  display: block;
+}
+
+.supplementary .authgrp .aff {
+  display: none;
+}
+
+.authorinfo .x, .fundinginfo .x, .fundinghd {
+  font-weight: bold;
+}
+
+.supplementary .authgrp .author .footnote {
+   display: none;
+}

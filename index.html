@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="google" content="notranslate" />
+        <link rel="stylesheet" href="styles/normalize.3.0.2.css"/>
+        <link rel="stylesheet" href="phoenix/styles/dialog-polyfill.css"/>
+        <link rel="stylesheet" href="styles/dialog.css"/>
+        <link rel="stylesheet" href="styles/redirect-system.css"/>
+        <link rel="stylesheet" href="styles/tooltip.css"/>
+        <link rel="stylesheet" href="styles/popover.css"/>
+        <link rel="stylesheet" href="styles/carousel.css"/>
+        <link rel="stylesheet" href="styles/common.css"/>
+        <link rel="stylesheet" href="styles/elsevier/article.css"/>
+        <link rel="stylesheet" href="styles/elsevier/about.css"/>
+        <link rel="stylesheet" href="styles/elsevier/supplementary.css"/>
+        <link rel="stylesheet" href="styles/elsevier/customer.css"/>
+        <link rel="stylesheet" href="styles/queryeditorpanel.css"/>
+        <link rel="stylesheet" href="styles/querypanel.css"/>
+        <link rel="stylesheet" href="styles/attachmentpanel.css"/>
+        <link rel="stylesheet" href="styles/editsummary.css"/>
+        <link rel="stylesheet" href="styles/contextualmenu.css"/>
+        <link rel="stylesheet" href="styles/editor.css"/>
+        <link rel="stylesheet" href="styles/math-editor.css"/>
+        <link rel="stylesheet" href="styles/ckeditor.css"/>
+	    <link rel="stylesheet" href="styles/xml-editor.css"/>
+        <link rel="stylesheet" href="styles/quicklink.css"/>
+         <link rel="stylesheet" href="styles/contact.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/tooltipster.bundle.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"> 
+         MathJax.Hub.Config({ 
+           extensions: ["mml2jax.js"], 
+           jax: ["input/MathML", "output/HTML-CSS"] 
+         }); 
+        </script> 
+        <!-- wirisScriptUrl": "http://wiris1.elsevierproofcentral.com/editor -->
+    </head>
+    <body>
+
+    <div class="popup-wrapper popupWrapper message-sucess-alert" style="display: none">
+    	<div class="popup-table">
+    		<div class="popup-table-cell">
+    			<div class="table-inner" id="PopUpContent">
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="popup-wrapper work-flow-wrapper workFlowPopup" style="display: none">
+    	<div class="popup-table">
+    		<div class="popup-table-cell">
+    			<div class="table-inner">
+    				<h1 class="popup-title">Submit Article</h1>
+    				<div class="work-flow-left">
+    					<p>Please answer the below queries before submit</p>
+    					<div class="flow-leftquery-list">
+    						<span>Q1</span>
+    						<span>Q2</span>
+    						<span>Q3</span>
+    						<span>Q4</span>
+    					</div>
+    				</div>
+    				<div class="work-flow-right">
+    					<h5>Check to initiate</h5>
+						<div class="dont-show">
+							<p><input type="checkbox" id="flow1">
+								<label for="flow1">Graphic work flow</label>
+							</p>
+   						</div>
+						<div class="dont-show">
+							<p><input type="checkbox" id="flow2">
+								<label for="flow2">Layout work flow</label>
+							</p>
+   						</div>
+   						<div class="flow-btns">
+   							<span class="workFlowPOPupconfirm">Confirm</span>
+   							<span class="workFlowPOPupconfirm">Cancel</span>
+   						</div>    						    					
+    				</div>    				
+    			</div>
+    		</div>
+    	</div>
+    </div>    
+    <div class="popup-wrapper adding-reference-back" style="display: none">
+    	<div class="popup-table">
+    		<div class="popup-table-cell">
+    			<div class="table-inner" id="PopUpContent">		
+    			</div>
+    		</div>
+    	</div>
+    </div>    
+    <div class="popup-wrapper updating-reference-main undoReference" style="display: none">
+    	<div class="popup-table">
+    		<div class="popup-table-cell">
+    			<div class="table-inner">
+    				<div class="updating-reference-wrapper">
+    					<h1 class="popup-title">Updating Reference</h1>
+    					<div class="reference-back-paper">
+    						<span>Adding references back to papers</span>
+    						<i class="powered-by">Powered by</i>
+    						<img src="images/edifix-logo.png" class=""/>
+    					</div>
+    					<div class="dont-show">
+							<form action="#">
+							  <p>
+								<input type="checkbox" id="test1" />
+								<label for="test1">Dont show this again</label>
+							  </p>
+							</form>    						
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="popup-wrapper delete-reference-instruction" style="display: none">
+    	<div class="popup-table">
+    		<div class="popup-table-cell">
+    			<div class="table-inner">
+    				<div class="updating-reference-wrapper">
+    					<h1 class="popup-title">Confirm your delete</h1>
+    					<div class="reference-back-paper">
+    						Are you sure you want to delete this instruction?
+    					</div>
+    					<div class="instruction-delete-btns">
+    						<span class="no-delete">No, Dont delete</span>
+    						<span class="instruct-delete-yes">Yes</span>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>    
+    <div class="popup-wrapper updating-reference-main" style="display: none">
+    	<div class="popup-table">
+    		<div class="popup-table-cell">
+    			<div class="table-inner">
+    				<div class="updating-reference-wrapper">
+    					<h1 class="popup-title">Updating Reference</h1>
+    					<div class="reference-back-paper">
+    						<p class="citation-counts">Changing<span>0</span>Citations </p>
+    					</div>
+    					<div class="dont-show">
+							<form action="#">
+							  <p>
+								<input type="checkbox" id="test1" />
+								<label for="test1">Dont show this again</label>
+							  </p>
+							</form>    						
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>             
+
+    	<div class="image-annotation-wrapper table-edit-popup" style="display: none">
+       		<span class="image-annotation-kill"></span>
+				<div class="image-annotation-table">
+					<div class="image-annotation-table-cell">
+						<div class="annotation-top">
+							<ul>
+								<li class="">
+									<a class="insertrow-icon icon-list">
+									</a>
+									<div class="table-drop-down">
+										<a class="showtable" target="above">Insert row above</a>
+										<a class="showtable" target="below">Insert row below</a>
+										<a class="showtable" target="remove">Remove row </a>
+										<a class="showtable" target="colleft">Insert column left</a>
+										<a class="showtable" target="colright">Insert column right</a>
+										<a class="showtable" target="removecol">Remove Column</a>
+									</div>
+								</li>
+								<li><a class="leftalign-icon icon-list showtable" target="textleft"></a></li>
+								<li><a class="centeralign-icon icon-list showtable" target="textmid"></a></li>
+								<li><a class="rightalign-icon icon-list showtable" target="textright"></a></li>
+								<li><a class="merge-icon icon-list showtable" target="merge"></a></li>		
+							</ul>
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tablefull" style="display: block">
+							<table>
+							  <thead>
+								<tr>
+								  <th>Reference</th>
+								  <th>Hybrid process</th>
+								  <th>Description</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>						  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>						
+						<div class="popup-table-wrapper table-comman" id="tableabove" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>head1</th>
+								  <th>head2</th>
+								  <th>head3</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  	
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>	
+								</tr>							  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tablebelow" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>head1</th>
+								  <th>head2</th>
+								  <th>head3</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>							  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color"></td>	
+								</tr>																
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tableremove" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>head1</th>
+								  <th>head2</th>
+								  <th>head3</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>							  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>								
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tablecolremove" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>head1</th>
+								  <th>head2</th>
+								  <th>head3</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>							  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td class="row-border-color"></td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>								
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tablecolleft" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>head1</th>
+								  <th>head2</th>
+								  <th>head3</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>							  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td class="row-border-color"></td>
+								  <td class="row-border-color">tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>								
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tablecolright" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>head1</th>
+								  <th>head2</th>
+								  <th>head3</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>							  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td class="row-border-color">tabel data5</td>
+								  <td class="row-border-color"></td>								  
+								  <td>tabel data6</td>	
+								</tr>								
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tableremovecol" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>Reference</th>
+								  <th>Hybrid process</th>
+								  <th>Description</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>						  
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tabletextleft" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>Reference</th>
+								  <th>Hybrid process</th>
+								  <th>Description</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>						  
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-left row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tabletextright" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>Reference</th>
+								  <th>Hybrid process</th>
+								  <th>Description</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>						  
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-right row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tabletextmid" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>Reference</th>
+								  <th>Hybrid process</th>
+								  <th>Description</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>						  
+								<tr>
+								  <td class="text-center row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-center row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-center row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-cente row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-center row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-center row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-center row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td class="text-center row-border-color">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>
+						<div class="popup-table-wrapper table-comman" id="tablemerge" style="display: none">
+							<table>
+							  <thead>
+								<tr>
+								  <th>Reference</th>
+								  <th>Hybrid process</th>
+								  <th>Description</th>
+								  <th>Activation energy[kJ/mol]</th>
+								  <th>Heat of fusion[J/g]</th>
+								  <th>Melting temperature[°C]</th>								  								  
+								</tr>
+							  </thead>
+							  <tbody>						  
+								<tr>
+								  <td  class="row-border-color" rowspan="2">tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data6</td>	
+								</tr>
+								<tr>
+								  <td>tabel data1</td>
+								  <td>tabel data2</td>
+								  <td>tabel data3</td>
+								  <td>tabel data4</td>
+								  <td>tabel data5</td>
+								  <td>tabel data5</td>
+								</tr>																																																
+							  </tbody>
+							</table>													
+						</div>																				
+					</div>
+				</div>
+				<div class="table-popup-btnwrapper">
+					<span class="respond-btn">Done</span><span class="reset-btn">Cancel</span
+				</div> 				
+		</div>    
+    <div class="progress-overlay">
+        <div class="progress-container">
+            <label>Proof Central is Loading...</label>
+            <progress value="0" max="100"></progress>
+        </div>
+    </div>
+    <div class="overlay"></div>
+	<div class="xml-conversion-progress hide">
+            <progress max="100" value="0" class="progress"></progress>
+            <span class="info"></span>
+        </div>
+        <div class='flash-message-container hide'>
+            <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="content">
+                <!-- flash message content -->
+            </div>
+        </div>
+        <div class="proof-dialog-popup-container"></div>
+        <section class="container jana">
+        	<div class="main-header"
+            
+            	<!--<a href="" class="proofcentral-logo">PrC</a>-->
+                <a href="redirect-other-system.html" target='_blank'>
+                    <span class="redirect-icon genToolTip" title="Redirect"></span> 
+                </a>
+				<span class="pdf-download-icon genToolTip" title="Download Pdf"></span>
+                <div class="mode-buttons">
+                 <span class="label mode-lbl"></span>
+                    <!--
+                        These buttons must not have space between them.
+                        It will show up as a single space in UI .
+                   -->
+
+                    <!--<input type="button" value="Paper" class="paper-btn active" role="tab" tabindex="0" aria-selected="true" aria-controls="Hvkl5H12q5-tabpanel-1" id="Hvkl5H12q5-tab-1" data-id="1"/>-->
+                    <div class="proof-btn-wrapper genToolTip disabled">
+                    	<input type="button" value="Proof" title="Proof" class="proofBtn"/>
+					</div>
+                   <div class="editor-btn-wrapper genToolTip active" title="Edit">
+                    	<input type="button" value="Edit" class="editorBtn" />
+                    </div>                  
+                   <div class="xml-btn-wrapper genToolTip" style="display: none">
+                    	<input type="button" value="Xml Editor" title="Xml Editor"  class="xmlEditorBtn"/>
+					</div>
+                </div>
+                
+                <div class="header-right">
+
+                <div class="invite-co-author" style="display: none">
+                 
+                    <div class="invite-author-form">
+                        <div class="contact-header invite-co-author-wrapper">
+                            <div class="btn-wrapper">
+                                <span class="getin-touch">Invite Co-Author</span>
+                                <span class="editor-btn active">Revoke</span>
+                            </div>
+
+                            <div class="form supportForm active" style="height: 838px;">
+                                <ul>
+                                    <li>
+                                        <label class="left-label">Name &amp; Email ID</label>
+                                        <div class="invite-input">
+                                            <input class="author-name" value="" type="email" placeholder="Enter here" style="width: 200px; float: left;"
+                                            <input class="author-name" value="" type="email" placeholder="Enter Email ID" style="width: 240px; float: left;">
+                                            <span class="invite-email-plus"></span>
+                                        </div>
+                                    </li>
+                                    <li class="calander-input">
+                                        <label class="left-label">Editing Duration</label>
+                                        <input class="author-name" value="" type="email" placeholder="Choose date">
+                                        <span class="calander-icon"></span>
+                                    </li>                                                                              
+                                </ul>
+                                <div class="buttons-container query-btn-container">
+                                    <span class="respond-btn invite-author-btn AddInvite">Invite to Article</span>
+                                    <span class="reset-btn InviteCoAuthorCancel">Cancel</span>
+                                </div>
+                                <div class="invite-mail-list">
+                                    <table>
+                                        <tr>
+                                            <th>Invitees</th>
+                                            <th>Expiring on</th>
+                                            <th></th><th></th>
+                                        </tr>
+                                        <tr class="addInviteRow" style="display: none">
+                                            <td class="user-name-captial" style="background:#2942c1;">A</td>
+                                            <td class="collaborator-user-name ca1-added">Ramkumar</td>
+                                            <td class="expire-on">30 Dec</td>
+                                            <td class="clock-icon"></td>
+                                            <td class="close-icon"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="user-name-captial" style="background:#2942c1;">A</td>
+                                            <td class="collaborator-user-name ca1-added">Ajay</td>
+                                            <td class="expire-on">29 Dec</td>
+                                            <td class="clock-icon"></td>
+                                            <td class="close-icon"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="user-name-captial" style="background:#b04fe8;">W</td>
+                                            <td class="collaborator-user-name ca2-added">Wilson</td>
+                                            <td class="expire-on">01 Jan</td>
+                                            <td class="clock-icon"></td>
+                                            <td class="close-icon"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="user-name-captial" style="background:#d03e7f;">D</td>
+                                            <td class="collaborator-user-name ca3-added">Daniel Sampson</td>
+                                            <td class="expire-on">30 Dec</td>
+                                            <td class="clock-icon"></td>
+                                            <td class="close-icon"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <div class="invite-footer-btn">
+                                	<button class="InviteCoAuthorCancel">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                    <div class="contact-form contactForm">
+                    	<span class="contact-icon genToolTip" title="Contact"></span>
+                        <div class="contact-form-content contactFormContent">
+                        	<div class="contact-header" >
+                                <div class="btn-wrapper">
+                                    <span class="getin-touch" title="This is my span's tooltip message!">Get in touch with</span
+                                    <span class="editor-btn contactEditorBtn">Editor</span>
+                                    <span class="support-btn supportBtn">Support</span>
+                                </div>
+                            </div>
+
+                            <div class="form supportForm" >
+                            	<ul>
+                                	<li>
+                                    	<label class="left-label">From</label>
+                                        <input class="author-name" value="" type="email" placeholder="">
+                                    </li>
+                                	<li>
+                                       	<label class="left-label">CC</label>
+                                        <input class="author-name" value="" type="email" placeholder="Enter Email">
+                                    </li>
+                                	<li>
+                                      	<label class="left-label">Subject</label>
+                                        <input class="author-name" value="" type="text" placeholder="Enter Subject">
+                                    </li>
+                                	<li>
+                                      	<label class="left-label">Message</label>
+                                        <textarea class="author-name text-area" value="" placeholder="Enter Message"></textarea>
+                                    </li>
+                                	<li
+                                       <!--<label class="left-label">Attachment</label>-->
+                                        <div class="uploda-wrapper">
+                                            <input id="supportFormFileID" class="author-name supportFileUpload" value="gij, png, jpg, docx, xls, ect" type="file">
+                                            <div class="duplicate-choose">Attach file<span>(Upto 5Mb)</span></div>
+                                        </div>
+                                        <div class="uploaded-file-wrapper" id="showSupportFileName"></div>
+                                    </li>                                                                   
+                                </ul>
+                            </div>
+
+
+                            <div class="form editorForm" style="display: none">
+                                <ul>
+                                    <li>
+                                        <label class="left-label">From </label>
+                                        <input class="author-name" value="" type="email" placeholder="">
+                                    </li>
+                                    <li>
+                                        <label class="left-label">CC</label>
+                                        <input class="author-name" value="" type="email" placeholder="Enter Email">
+                                    </li>
+                                    <li>
+                                        <label class="left-label">Subject</label>
+                                        <input class="author-name" value="" type="text" placeholder="Enter Subject">
+                                    </li>
+                                    <li>
+                                        <label class="left-label">Message</label>
+                                        <textarea class="author-name text-area" value="" placeholder="Enter Message"></textarea>
+                                    </li>
+                                    <li>
+                                        <!--<label class="left-label">Attachment</label>-->
+                                        <div class="uploda-wrapper">
+                                            <input id="editorFormfile" class="author-name fileUploadEditor" value="gij, png, jpg, docx, xls, ect" type="file">
+                                            <div class="duplicate-choose">Attach file<span>(Upto 5Mb)</span></div>
+                                        </div>
+                                        <div class="uploaded-file-wrapper" id="showEditorFileName"></div>
+                                    </li>
+                                </ul>
+                        </div>
+                        
+                        <div class="send-message">
+                            <span class="cancel-btn">Cancel</span><span class="send-btn sendBtn">Send</span>
+                        </div>                        
+                    </div>
+                </div>  
+
+                <!--Edit Metadata  all-->
+                <div class="meta-editing-form articleMetaData"></div>
+
+                <!--URL-->
+                <div class="LinksDetails"></div>
+                <!-- reference Form -->
+                <div class="contact-form reference-form referenceForm" style="display: none">
+
+                    <div class="contact-form referenceFormContent">
+                        <div class="contact-form-content">
+                            <div class="btn-wrapper">
+                                <span class="ref-add-title">Add Reference as</span>
+                                <button class="freeTextTab">Free Text</button>
+                                <button class="detailedTab">Detailed</button>
+                                <button class="pubMedTab">PubMed</button>
+                            </div>
+
+                            <div class="form active freeTextForm" style="display:none">
+                                <ul>
+                                    <li>
+                                        <label class="left-label referenceLabel1" style="display: none">Reference</label>
+                                        <input class="author-name referenceName" value="" type="text" placeholder="Enter here" style="display: none">
+                                        <div class="authorDescriptionRTE"></div>
+                                    </li>
+                                    <li class="ref-add-button">
+                                        <button class="addReferenceBtn">Add</button>
+                                        <button class="cancelReferenceBtn">Cancel</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+							<div class="pubmid-wrapper pubmIdForm" style="display: none">
+							    <ul>
+                                    <li>
+
+                                        <label class="">Enter your PubMed ID</label>
+                                        <input class="pubMIDText" value="" type="text" placeholder="Enter PubMed ID">
+
+                                        <span class="pubmid-lock pubMIDLock">Look</span>
+                                        <div class="pubmit-information">
+                                            <p class="pubValShow" style="display: none">Investigador Emérito, Instituto Nacional de Salud, Bogotá, D.C., Colombia. biomedica@ins.gov.co.</p>
+                                            <span class="pubmit-add pubmedDetailedSend">Add</span>
+                                            <span class="pubmit-cancel pubmedCancelBtn">Cancel</span>
+                                        </div>
+							        </li>								
+                          	    </ul>
+                            </div>
+
+                            <div class="form active detailedForm" style="display: none">
+                                <ul class="ref-label">
+                                    <li>
+                                        <div class="reference-type-title">Reference Type</div>
+                                        <div class="radio-wrapper">
+                                          <input type="radio" id="radio01" name="referenceType" value="Book" checked />
+                                          <label for="radio01"><span></span>Book</label>
+                                        </div>
+                                        <div class="radio-wrapper">
+                                          <input type="radio" id="radio02" name="referenceType" value="Journal" />
+                                          <label for="radio02"><span></span>Journal</label>
+                                        </div>
+                                        <div class="radio-wrapper">
+                                          <input type="radio" id="radio03" name="referenceType" value="Edited Book" />
+                                          <label for="radio03"><span></span>Edited Book</label>
+                                        </div>
+                                    </li>
+                                    <li style="display: none">
+                                        <label class="left-label">Reference label</label>
+                                        <input class="author-name referenceLabel" value="" type="text" placeholder="Enter here">
+                                    </li>
+                                    <li>
+                                        <label class="left-label">Author Name*</label>
+                                        <input class="author-name authorName" type="text" placeholder="Enter here">
+                                        <a href="javascript:;" class="add-authorname addMoreAuthorName"></a>
+                                    </li>
+                                    <span id="addtionalAuthorName"></span>
+                                    <li>
+                                        <label class="left-label">Author Title</label>
+                                        <div class="authorTitleRTE"></div>
+                                    </li>
+                                    <li>
+                                        <label class="left-label">Journal Title</label>
+
+                                        <div class="journalTitleRTE"></div>
+                                    </li>
+                                    <li class="min-from-list">
+                                        <label class="left-label">Year</label>
+                                        <input class="author-name authorYear" value="" type="text" placeholder="YYYY">
+                                    </li>
+                                    <li class="min-from-list">
+                                        <label class="left-label">Volume</label>
+                                        <input class="author-name authorVolume" value="" type="text" placeholder="">
+                                    </li>
+                                    <li class="min-from-list">
+                                        <label class="left-label">Issue</label>
+                                        <input class="author-name authorIssue" value="" type="text" placeholder="">
+                                    </li>
+                                    <li class="min-from-list">
+                                        <label class="left-label">Page Range</label>
+                                        <input class="author-name authorPageRange" value="" type="text" placeholder="YYYY">
+                                    </li>
+                                    <li class="min-from-list">
+                                        <label class="left-label">DOI</label>
+                                        <input class="author-name authorDOI" value="" type="text" placeholder="Paste url">
+                                    </li>
+                                    <li>
+                                        <label class="left-label">PubMed ID</label>
+                                        <input class="author-name authorPubMedId" value="" type="text" placeholder="Enter here">
+                                    </li>
+                                    <li>
+                                        <label class="left-label">Publisher Status</label>
+                                        <input class="author-name publisherStatus" value="" type="text" placeholder="Enter here">
+                                    </li>
+                                    <li class="ref-detailed-btn">                                        
+                                        <button class="ref-add-pub referenceDetailedSend">Add</button>
+                                        <button class="ref-cancel detailedCancelBtn">Cancel</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>   
+                    </div>
+                </div> 
+            </div> 
+        </div>
+
+	        <div class="xml-editor-container hide"></div>
+            <div class="xml-editor-action-buttons hide">
+                <div class="left">
+                    <input type="button" title="Toggle Full Screen" class="fullscreenBtn" data-fullscreen="off"/>
+                </div>
+                <div class="right">
+                    <input type="button" value="Run Vtool" class="vtoolBtn"/>
+                    <input type="button" value="Save" class="saveBtn"/>
+                    <input type="button" value="Submit" class="submitBtn"/>
+                </div>
+            </div>
+            <aside class="xml-editor-accordian-container hide">
+                <div class="edit-summary-container"></div>
+                <div class="vtool-error-container"></div>
+                <div class="asset-upload-container"></div>
+                <div class="asset-list-container"></div>
+                <div class="xml-editor-readonly-message-container">
+                    Corrections were submitted via Proof Central (Online method) for this article. No further modification can be made via this interface.
+                </div>
+            </aside>
+            <article class="editor-container">
+				<div class="article-tool-barwrapper">
+					<div class="article-tool-split">
+						<button class="equation-edit-btn article-tool-btns genToolTip" title="Equation"></button>
+					</div
+					<div class="article-tool-split footNotesIcon">
+						<button class="foot-notes-btn article-tool-btns genToolTip" title="Footnotes"></button>
+					</div>										
+					<div class="article-tool-split">
+						<button class="instruct-btn article-tool-btns instructBtn genToolTip" title="Instruct"></button>
+					</div>
+					<div class="article-tool-split">
+                        <a class="" href="javascript:void('Insert Special Character')" title="Insert Special Character" hidefocus="true" role="button" aria-haspopup="false" onclick="CKEDITOR.tools.callFunction(658,this);return false;">
+						<button class="special-char-btns article-tool-btns genToolTip" title="Special Character"></button>
+                        </a>
+					</div>
+					<div class="article-tool-split">
+						<button class="redo-btn article-tool-btns genToolTip" title="Redo"></button>
+					</div>
+					<div class="article-tool-split">
+						<button class="undo-btn article-tool-btns genToolTip" title="Undo"></button>
+					</div>															
+				</div>
+                <div class="editor-parent-container"></div>
+                <div class="editor"></div>
+                <div class="supplementary"></div>
+                <div class="about"></div>
+                <div class="math-container"></div>
+                <div class="dialog-popup-container"></div>
+                <div class="bootstrap-dialog-container"></div>
+            </article>
+            <aside class="right-panels">
+            	<div class="editFootNotesWrapper" style="display: none;"></div>
+				 <div class="citation-edit-wrapper" style="display: none;">
+					 <div class="btn-wrapper">
+					 	<span class="ref-add-title">Add Reference as</span>
+					 </div>
+					 <div class="form active freeTextForm" style="display: block;">
+					  <ul>
+						   <li>
+						   <label class="left-label">Reference label</label>
+						   <input class="author-name authorPubMedId" value="" type="text" placeholder="Enter here">
+						   </li>
+						   <li class="ref-add-button">
+						   <button class="addReferenceBtn">Add</button>
+						   <button class="cancelReferenceBtn">Cancel</button>
+						   </li>
+					  </ul
+					 </div>                
+               </div>             
+             
+              <div class="instruct-panel instructPanel"></div>               
+               <div class="instruct-panel">
+			   		<div class="instruct-header">
+						<p>Instruct</p>
+			   		</div>
+             	<div class="instruct-panel-inner">
+              		<div class="tool-bar-wrapper">
+              		</div>
+              		<div class="instruct-textbox">
+              			<textarea placeholder="Comment">Comment Instruct location and leave instructions here for us to act on. To provide your instruction as an attachment click ‘Attach’ below. Note : Please use this window only when you are unable to make a particular edit the way you would like to
+              			</textarea>
+              		</div>
+				</div>
+				<div class="uploda-wrapper">
+				  <div class="info">Limit upto <span class="file-upload-limit">20 MB</span>/file</div>
+				  <form class="query-file-form"><input id="supportFormFile" class="author-name fileUploadSupport" value="gij, png, jpg, docx, xls, ect" type="file"></form>
+				  <div class="duplicate-choose">Attach file<span></span><p class="limited-access-text">(Limit upto 20 mb)</p></div>
+              	</div>
+				<ul class="query-file-list">
+              		<li>
+              			<a href="#" target="_blank" title="blue_strip_devide_issue.png" class="filename">blue_strip_devide_issue.png</a>
+              			<span class="size"> [98.29 KB]</span>
+              			<a class="delete" data-id="1">x</a>
+              		</li>
+              	</ul>
+             	  
+             	<div class="instruction-add-btnwrapper">
+					<span class="respond-btn">Add instruction</span>
+            		<span class="reset-btn">Cancel</span>             		
+             	</div>
+               </div>
+
+                <div class="action-buttons">
+                    <div class="left">
+                       	<span title="Session report" class="sessionBtn hide"></span>
+                        <span class="invite-author-icon"></span>
+                        <span class="pageProofBtn hide genToolTip" title="View Page Proof"></span>
+                        <span title="Get report" class="htmlReportBtn hide"></span>
+                    </div>
+                    <div class="right">
+                        <a class="help-link genToolTip" title="Help" target="_blank" title="Help"></a>
+                        <input type="button" value="Save" class="saveBtn"/>
+                        <input type="button" value="Submit" class="submitBtn"/>
+                    </div>
+                </div>
+                <div class="edit-citation-wrapper editCitationFigure" style="display: none;">
+                 <div class="btn-wrapper">
+                  <span class="ref-add-title">Edit Citation (<span class="partCite">Figure</span>)</span>
+                  </div>
+                 <div class="form active editCitation">
+                  <ul>
+                   <li>
+                   <label class="left-label">Citation label</label>
+                   <input class="author-name citationText" value="" type="text" placeholder="Enter here">
+                   </li>
+                   <li class="ref-add-button">
+                   <button class="updateCitation">update</button
+                   <button class="cancelCitation">Cancel</button>                   
+                   </li>
+                  </ul>
+                  </div>                
+               </div>
+               <div class="edit-citation-wrapper editCitationTable" style="display: none;">
+                 <div class="btn-wrapper">
+                  <span class="ref-add-title">Edit Citation (<span class="partCite">Table</span>)</span>
+                  </div>
+                 <div class="form active editCitation">
+                  <ul>
+                   <li>
+                   <label class="left-label">Citation label</label>
+                   <input class="author-name citationText" value="" type="text" placeholder="Enter here">
+                   </li>
+                   <li class="ref-add-button">
+                   <button class="cancelCitation">Cancel</button>
+                   <button class="updateCitation">update</button>
+                   </li>
+                  </ul>
+                  </div>                
+               </div>
+               <div class="edit-citation-wrapper editCitationEquation" style="display: none;">
+                 <div class="btn-wrapper">
+                  <span class="ref-add-title">Edit Citation (<span class="partCite">Equation</span>)</span>
+                  </div>
+                 <div class="form active editCitation">
+                  <ul>
+                   <li>
+                   <label class="left-label">Citation label</label>
+                   <input class="author-name citationText" value="" type="text" placeholder="Enter here">
+                   </li>
+                   <li class="ref-add-button">
+                   <button class="cancelCitation">Cancel</button>
+                   <button class="updateCitation">update</button>
+                   </li>
+                  </ul>
+                  </div>                
+               </div>
+                <div class="quicklinks-tab bot-space"></div>
+                <div class="quicklinks"></div>
+                <div class="quicklinks-figure-and-table"></div>
+                <div class="quicklinks-equation"></div>
+                <div class="references-container bot-space"></div>
+
+                <div class="links-tab bot-space"></div>
+
+                <div class="link-inner-url-container"></div>
+                <div class="link-inner-doi-container"></div>
+                <div class="link-inner-db-container"></div>
+                <div class="link-inner-related-article-container"></div>
+
+                <div class="edit-citation-tab bot-space"></div>
+                <div class="edit-citation-refernce"></div>
+                <div class="edit-citation-figure"></div>
+                <div class="edit-citation-table"></div>
+                <div class="edit-citation-equation"></div>
+                <div class="edit-citation-footnotes"></div>
+                <div class="edit-summary-tab bot-space"></div>
+                <div class="query-container bot-space"></div>
+                
+                <div class="track-changes-tab bot-space"></div>
+                <div class="article-info-tab bot-space"></div>
+
+                <div class="insert-container bot-space"></div>
+                <div class="instruction-container bot-space"></div>
+                <div class="attachment-container bot-space"></div>
+                <div class="replaceImage-container bot-space" style="display: none"></div
+                
+                <div class="edit-summary-author">
+                    <div class="edit-history-wrapper">
+                        <ul>
+                            <li class="color1LI">
+                                <span class="instruct-varient-lbl color1">C</span>
+                                <p><span class="editlog-differ-spn">Added</span><span class="added-instruct">"chemistry"</span></p>
+                                <i class="date-info">16 dec</i>
+                            </li>                            
+                            <li class="color2LI">
+                                <span class="instruct-varient-lbl color2">M</span>
+                                <p><span class="editlog-differ-spn">Deleted</span><span class="overrite-instruct">"mercury"</span></p>
+                                <i class="date-info">16 dec</i>
+                            </li>       
+                        </ul>
+                        <div class="filterby-wrapper">
+                            <span class="filter-by-text">Filter edits by:</span>
+                            <div class="allauthors-wrapper">
+                                <span class="allauthors-text allAuthor">All Author</span
+                                
+                                <div class="allauthors-dropdown authorDropdown" style="display: none">
+                                    <div class="edit-history-wrapper">
+                                        <ul>
+                                            <li class="cpEdit">
+                                                <span class="instruct-varient-lbl color1">C</span>
+                                                <p><span>Copy Editor</span></p>
+                                            </li>
+                                            <li class="mike">
+                                                <span class="instruct-varient-lbl color2">M</span>
+                                                <p><span>Mike</span></p>
+                                            </li>       
+                                        </ul>
+                                    </div>              
+                                </div>
+
+                            </div>
+                            <div class="allauthors-wrapper">
+                                <span class="allauthors-text Instances-span allInstance">All Instances</span
+                                
+                                <div class="allauthors-dropdown InstanceDropdown" style="display: none">
+                                    <div class="edit-history-wrapper">
+                                        <ul>
+                                            <li class="cpEditIN">
+                                                <span class="instruct-varient-lbl color1">C</span>
+                                                <p><span>Copy Editor</span></p>
+                                            </li>
+                                            <li class="mikeIN">
+                                                <span class="instruct-varient-lbl color2">M</span>
+                                                <p><span>Mike</span></p>
+                                            </li>       
+                                        </ul>
+                                    </div>              
+                                </div>
+
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+                <div class="references-inner-container"></div>
+                <div class="edit-summary-copy-editor"></div>
+
+                <div class="edit-summary-instruct"></div>
+                <div class="article-inner-container"></div>
+                <div class="article-inner-container-funding"></div>
+                <div class="readonly-message-container">
+                    Corrections were submitted via Proof Central (Online method) for this article. No further modification can be made via this interface.
+                </div>
+                <div class="authorgroup-wrapper authorGroupWrap" style="display:none;"></div>
+                <div class="author-edit-wrapper authorEditWrap" style="display: none"></div>
+                <div class="affiliation-edit-wrapper affiliationEditWrap" style="display: none"></div>
+                <div class="affiliation-edit-wrapper footNoteEditWrap" style="display: none"></div>
+                <input type="file" class="replaced-file" style="display: none">
+            </aside>
+        </section>
+        <section class="proofview clearfix">
+        <div class="main-header">
+            <div class="mode-buttons">
+                <!--
+                    These buttons must not have space between them.
+                    It will show up as a single space in UI .
+                -->
+               <div class="xml-btn-wrapper">
+                <input type="button" value="Xml Editor" class="xmlEditorBtn"/>
+				</div>
+               <div class="proof-btn-wrapper genToolTip" title="Proof">
+                	<input type="button" value="Proof" class="proofBtn" disabled/>
+				</div>
+                <div class="switch-mode">
+                	<span class="label modeBtn">Mode</span>
+                </div>
+                <div class="editor-btn-wrapper" style="display: none">
+                	<input type="button" value="Edit" class="editorBtn"/>
+				</div>              
+
+               <div class="download-btn-wrapper">
+                	<input type="button" title="Download PDF" class="downloadBtn"/>
+                </div>
+                <div class="pdf-progress-wrapper">
+                	<input type="button" title="PDF generation is in progress" class="pdfProgressBtn hide"/>
+                </div>
+           </div>
+           <div class="pager"></div></div>
+        </section>
+
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
+        <script src="jquery-min.js"></script>
+        <script src="scripts/libs/tooltipster.bundle.min.js"></script>
+        <script src="phoenix/scripts/libs/require-2.1.16.js"></script>
+        <script src="scripts/config/Configuration.js"></script>
+        <script src="scripts/libs/jquery/hyphenation-plugin.js"></script>
+        <script>
+            CKEDITOR_BASEPATH = 'scripts/libs/ckeditor-4.5.9/';
+            require.config({
+                'baseUrl': '/',
+                'urlArgs': 'bust=5'
+                'paths': {
+                    'customer': 'scripts/customer/elsevier',
+                    'templates': 'scripts/templates/elsevier',
+                    'codemirror-module': 'xml-editor/scripts/libs/codemirror-5.1.0',
+                    'xmleditor-addon': 'xml-editor/scripts/xmleditor-addon'
+                },
+                'map': {
+                    '*': {
+                        'css': 'scripts/libs/css.js',
+                        'ckeditor': 'scripts/libs/ckeditor-4.5.9/ckeditor',
+                        'he': 'phoenix/scripts/libs/he-0.5.0',
+                        'sax': 'phoenix/scripts/libs/sax-0.6.1',
+                        'rangy': 'scripts/libs/rangy-core',
+                        'rangyselection': 'scripts/libs/rangy-selectionsaverestore',
+                        'uri': 'scripts/libs/uri/uri-1.17.0',
+                        'jquery': 'scripts/libs/jquery/jquery-1.10.1.min',
+                        'jquery-en-us': 'scripts/libs/jquery/en-us'
+                        'scripts/polyfills/classList': 'phoenix/scripts/polyfills/classList',
+                        'scripts/polyfills/dataset': 'phoenix/scripts/polyfills/dataset',
+                        'scripts/polyfills/polyfills': 'phoenix/scripts/polyfills/polyfills',
+                        'scripts/polyfills/assign': 'phoenix/scripts/polyfills/assign',
+                        'scripts/polyfills/beacon': 'phoenix/scripts/polyfills/beacon',
+                        'scripts/polyfills/dialog': 'phoenix/scripts/polyfills/dialog'
+                        'scripts/radio': 'phoenix/scripts/radio',
+                        'scripts/Helper': 'phoenix/scripts/Helper',
+                        'scripts/Request': 'phoenix/scripts/Request',
+                        'scripts/RequestBuilder': 'phoenix/scripts/RequestBuilder',
+                        'scripts/Panel': 'phoenix/scripts/Panel',
+                        'scripts/TabPanel': 'phoenix/scripts/TabPanel',
+                        'scripts/TableCharAlign': 'phoenix/scripts/TableCharAlign',
+                        'scripts/Logger': 'phoenix/scripts/Logger',
+                        'scripts/ServerLogger': 'phoenix/scripts/ServerLogger',
+                        'scripts/AbstractMenuItem': 'phoenix/scripts/AbstractMenuItem',
+                        'scripts/Annotate': 'phoenix/scripts/Annotate'
+                        'scripts/EventBus': 'phoenix/scripts/EventBus',
+                        'scripts/ContextualMenu': 'phoenix/scripts/ContextualMenu',
+                        'scripts/SelectBox': 'phoenix/scripts/SelectBox',
+                        'scripts/Dialog': 'phoenix/scripts/Dialog',
+                        'scripts/DialogPopupPanel': 'scripts/ModalDialog',
+                        'scripts/ConfigReader': 'phoenix/scripts/ConfigReader',
+                        'scripts/TreeModel': 'phoenix/scripts/TreeModel',
+                        'scripts/TreePanel': 'phoenix/scripts/TreePanel'
+                        'scripts/ListPanel': 'phoenix/scripts/ListPanel'
+                    }
+                }
+            });
+			
+
+            
+			$(document).ready(function( ) {
+                
+                $(".workFlowPOPupconfirm").click(function(){
+                    $('.workFlowPopup').hide();
+                }); 
+
+                $('.invite-author-icon').click(function(){
+                    $('.invite-author-icon').addClass('active');
+                    $('.invite-co-author').show();
+                });
+
+                $('.InviteCoAuthorCancel').click(function(){
+                    $('.invite-author-icon').removeClass('active');
+                    $('.invite-co-author').hide();
+                    $('.addInviteRow').hide();
+                });
+
+                $('.AddInvite').click(function(){
+                    $('.addInviteRow').show();
+                });
+
+                $('.allAuthor').click(function(){
+                    $('.authorDropdown').toggle();
+                    $('.InstanceDropdown').hide()
+                    $('.color1LI, .color2LI').show();
+                });
+
+                $('.allInstance').click(function(){
+                    $('.InstanceDropdown').toggle();
+                    $('.authorDropdown').hide()
+                    $('.color1LI, .color2LI').show();
+                });
+
+                $('.cpEdit').click(function(){
+                    $('.color1LI').show();
+                    $('.color2LI').hide();
+                });
+
+                $('.mike').click(function(){
+                    $('.color2LI').show();
+                    $('.color1LI').hide();
+                });
+
+                $('.cpEditIN').click(function(){
+                    $('.color1LI').show();
+                    $('.color2LI').hide();
+                });
+
+                $('.mikeIN').click(function(){
+                    $('.color2LI').show();
+                    $('.color1LI').hide();
+                });
+
+                var htmlContent = ['<div class="article-footnote-wrapper" style="display:none">',
+                                '<h1 class="foot-note-title">Footnotes</h1>',
+                                '<div class="article-footnote-list titleFNEditor" style="display:none">',
+                                    '<h3 class="foot-note-subtitle">Article title footnote</h3>',
+                                '</div>',
+                                '<div class="article-footnote-list" style="display:none">',
+                                    '<h3 class="foot-note-subtitle">Author footnote</h3>',
+                                '</div>',
+                                '<div class="article-footnote-list textFNEditor" style="display:none">',
+                                    '<h3 class="foot-note-subtitle">Text footnote</h3>',
+                                '</div>',
+                                '<div class="article-footnote-list tableFNEditor" style="display:none">',
+                                    '<h3 class="foot-note-subtitle">Table footnote</h3>',
+                                '</div>',
+                            '</div>'];
+                $('.genToolTip').tooltipster({
+                        theme: ['tooltipster-noir', 'tooltipster-noir-customized']
+                    });
+				var wh = $(window).height();
+				$('.contact-form-content').css("height", wh);
+				$( window ).resize(function() {
+				  var wh = $(window).height();
+				  $('.contact-form-content').css("height", wh);
+				});
+                setTimeout(function(){
+                    var anotateImage = '<span class="paper-annotations-counts"><i class="annotation-number-count">10</i></span>';
+                    $('.figure .container-image').each(function(index, singleElement){
+                        $(singleElement).html(anotateImage + $(singleElement).html())
+                    });
+                    $('<div>'+htmlContent.join('')+'</div>').insertAfter('.ce_glossary');
+					$('.table').append($('<span class="equation-edit-icon tableEdit"></span>'))
+					$('.formula').append($('<span class="equation-edit-icon"></span>'));
+					
+					
+					
+					$('.tableEdit').on('click',function(){
+						$('.table-edit-popup').css("display","block");
+					});						
+                    /*var equ=$("#equId_1").find(".mathml").html();
+                    element= document.getElementById('equId_1');
+                    element.innerHTML=equ;
+                    alert(element.innerHTML);
+                    MathJax.Hub.Queue(["Typeset",MathJax.Hub,element]);*/
+                    //element= document.getElementById('thisLoaddivchild');
+                    //MathJax.Hub.Queue(["Typeset",MathJax.Hub,element])
+
+
+                    var trackChangesInnerContainer = [
+
+                            '<div class="edit-history-wrapper track-change">',
+                                '<ul>',
+                                    '<li class="color1Track">',
+                                        '<span class="instruct-varient-lbl color1">C</span>',
+                                        '<p><span class="editlog-differ-spn">Added</span><span class="added-instruct">"chemistry"</span></p>',
+                                        '<span class="double-tick addAccepted"></span>',
+                                        '<span class="undo-edit addUndo"></span>',
+                                    '</li>',
+                                    '<li class="color2Track">',
+                                        '<span class="instruct-varient-lbl color2">M</span>',
+                                        '<p><span class="editlog-differ-spn">Deleted</span><span class="overrite-instruct">"mercury"</span></p>',
+                                        '<span class="double-tick delAccepted"></span>',
+                                        '<span class="undo-edit delUndo"></span>',       
+                                    '</li>',      
+                                '</ul>',
+                                '<div class="filterby-wrapper">',
+                                    '<span class="filter-by-text">Filter edits by:</span>',
+                                    '<div class="allauthors-wrapper">',
+                                        '<span class="allauthors-text allAuthorTrack">All Author</span>',
+                                        '<div class="allauthors-dropdown trackDropDown" style="display: none">',
+                                            '<div class="edit-history-wrapper">',
+                                                '<ul>',
+                                                    '<li class="cpEditTrack">',
+                                                        '<span class="instruct-varient-lbl color1">C</span>',
+                                                        '<p><span>Copy Editor</span></p>',
+                                                    '</li>',
+                                                    '<li class="mikeTrack">',
+                                                        '<span class="instruct-varient-lbl color2">M</span>',
+                                                        '<p><span>Mike</span></p>',
+                                                    '</li>',     
+                                                '</ul>',
+                                            '</div>',            
+                                        '</div>',
+                                    '</div>',
+                                    '<div class="allauthors-wrapper">',
+                                        '<span class="allauthors-text Instances-span allInstanceTrack">All Instances</span>',
+                                        '<div class="allauthors-dropdown trackInstanceDropdown" style="display: none">',
+                                            '<div class="edit-history-wrapper">',
+                                                '<ul>',
+                                                    '<li class="cpEditINTrack">',
+                                                        '<span class="instruct-varient-lbl color1">C</span>',
+                                                        '<p><span>Copy Editor</span></p>',
+                                                    '</li>',
+                                                    '<li class="mikeINTrack">',
+                                                        '<span class="instruct-varient-lbl color2">M</span>',
+                                                        '<p><span>Mike</span></p>',
+                                                    '</li>',      
+                                                '</ul>',
+                                            '</div>',              
+                                        '</div>',
+                                    '</div>',     
+                                '</div>',
+                            '</div>'
+                        ];
+
+                    var tempNode1 = document.createElement('div');
+                    tempNode1.innerHTML = trackChangesInnerContainer.join('');
+                    tempNode1 = tempNode1.firstChild;
+                    $(".track-changes-tab .tabEmptyContent").first()[0].appendChild(tempNode1);
+                }, 2000);
+
+                $(document).off('click','.allAuthorTrack').on('click','.allAuthorTrack', function(e){
+                    $('.trackDropDown').toggle();
+                    $('.trackInstanceDropdown').hide();
+                    $('.color1Track, .color2Track').show();
+                });
+
+                $(document).off('click','.allInstanceTrack').on('click','.allInstanceTrack', function(e){
+                    $('.trackInstanceDropdown').toggle();
+                    $('.trackDropDown').hide();
+                    $('.color1Track, .color2Track').show();
+                });
+
+                $(document).off('click', '.cpEditTrack').on('click', '.cpEditTrack', function(e){
+                    $('.color1Track').show();
+                    $('.color2Track').hide();
+                });
+
+                $(document).off('click', '.mikeTrack').on('click', '.mikeTrack', function(e){
+                    $('.color2Track').show();
+                    $('.color1Track').hide();
+                });
+
+                $(document).off('click', '.cpEditINTrack').on('click', '.cpEditINTrack', function(e){
+                    $('.color1Track').show();
+                    $('.color2Track').hide();
+                });
+
+                $(document).off('click', '.mikeINTrack').on('click', '.mikeINTrack', function(e){
+                    $('.color2Track').show();
+                    $('.color1Track').hide();
+                });
+
+                $(document).on('click', '.addAccepted', function(e){
+                    $('[name="cpe_id_51"]').find('.cpeins').removeClass('cpeins');
+                    $('.addAccepted, .addUndo').hide();
+                });
+
+                $(document).on('click', '.addUndo', function(e){
+                    $('[name="cpe_id_51"]').find('.cpeins')[0].innerHTML="";
+                    $('[name="cpe_id_51"]').find('.cpedel').removeClass('cpedel');
+                    $('.addAccepted, .addUndo').hide();
+                });
+
+                $(document).on('click', '.delUndo', function(e){
+                    $('[name="cpe_id_51"]').find('.cpeins')[0].innerHTML="";
+                    $('[name="cpe_id_51"]').find('.cpedel').removeClass('cpedel');
+                    $('.delAccepted, .delUndo').hide();
+                });
+                $(document).on('click', '.delAccepted', function(e){
+                    $('[name="cpe_id_51"]').find('.cpedel')[0].innerHTML="";
+                    $('[name="cpe_id_51"]').find('.cpeins').removeClass('cpeins');
+                    $('.delAccepted, .delUndo').hide();
+                });
+
+
+                document.body.addEventListener('click', function(e){
+                    var classListVlaues = e.target.classList;
+                    var classparentListVlaues = [];
+                    if(e.target.parentNode){
+                        classparentListVlaues = e.target.parentNode.classList;
+                    }
+
+                    if(classparentListVlaues.length){
+                        if(classparentListVlaues.contains('editor-btn-wrapper') |
+                            classparentListVlaues.contains('proof-btn-wrapper') || 
+                            classparentListVlaues.contains('xml-btn-wrapper') ||
+                            classListVlaues.contains('modeBtn') ||
+                            classparentListVlaues.contains('download-btn-wrapper')){
+                            document.querySelector('.editor-btn-wrapper').classList.remove('active');
+                            document.querySelector('.proof-btn-wrapper').classList.remove('active');
+                            document.querySelector('.xml-btn-wrapper').classList.remove('active');
+                            document.querySelector('.modeBtn').classList.remove('active');
+                            document.querySelector('.download-btn-wrapper').classList.remove('active');
+                            if(classparentListVlaues.contains('editor-btn-wrapper')){
+                                e.target.parentNode.className = e.target.parentNode.className + ' active';
+                            } else if(classparentListVlaues.contains('proof-btn-wrapper')){
+                                 e.target.parentNode.className = e.target.parentNode.className + ' active';
+                            } else if(classparentListVlaues.contains('xml-btn-wrapper')){
+                                 e.target.parentNode.className = e.target.parentNode.className + ' active';
+                            } else if(classListVlaues.contains('modeBtn')){
+                                 e.target.className = e.target.className + ' active';
+                            } else if(classparentListVlaues.contains('download-btn-wrapper')){
+                                 e.target.parentNode.className = e.target.parentNode.className + ' active'
+                            } 
+                        }
+                    }
+                    /*if(classListVlaues.contains('contact-icon')){
+                         e.target.className = e.target.className + ' active';
+                    }*/
+                    if(classListVlaues.contains('help-link')){
+                         e.target.className = e.target.className + ' active';
+                         setTimeout(function(){
+                            document.querySelector('.help-link').classList.remove('active');
+                        }, 2000)
+                    } 
+                    $('.detailedForm').height($('.detailedForm').parent('.contact-form-content').height() - 200);
+                    $('.supportForm').height($('.supportForm').parent('.contact-form-content').height() - 200);
+                    $('.editorForm').height($('.editorForm').parent('.contact-form-content').height() - 200);
+                    var wh = $(window).height();
+                    $('.contact-form-content').css("height", wh);
+                    
+                    
+                });
+
+                $(window).resize(function(){
+                    $('.detailedForm').height($('.detailedForm').parent('.contact-form-content').height() - 200);
+                    $('.supportForm').height($('.supportForm').parent('.contact-form-content').height() - 200);
+                    $('.editorForm').height($('.editorForm').parent('.contact-form-content').height() - 200);
+                });
+			});
+
+
+            var source, source1;
+
+            function isbefore(a, b) {
+                if (a.parentNode == b.parentNode) {
+                    for (var cur = a; cur; cur = cur.previousSibling) {
+                        if (cur === b) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            function dragenter(e) {
+                var targetelem = e.target;
+                if (targetelem.nodeName == "P" || targetelem.nodeName == "SPAN" || targetelem.nodeName == "H5") {
+                   targetelem = targetelem.parentNode;
+                }
+
+                if (isbefore(source, targetelem)) {
+                    targetelem.parentNode.insertBefore(source, targetelem);
+                } else {
+                    targetelem.parentNode.insertBefore(source, targetelem.nextSibling);
+                }
+            }
+
+            function dragstart(e) {
+                source = e.target
+                $(source).addClass("draging");
+                e.dataTransfer.effectAllowed = 'move';
+            }
+
+            function dragenterfn(e) {
+                var targetelem = e.target;
+                if (!targetelem.classList.contains('references-list-detail')) {
+                   targetelem = $(targetelem).parents('.references-list-detail')[0];
+                }
+
+                if (isbefore(source1, targetelem)) {
+                    if(targetelem.parentNode.className == source1.parentNode.className)
+                        targetelem.parentNode.insertBefore(source1, targetelem);
+                } else {
+                    if(targetelem.parentNode.className == source1.parentNode.className)
+                        targetelem.parentNode.insertBefore(source1, targetelem.nextSibling);
+                }
+            }
+
+            function dragstartfn(e){
+                source1 = e.target;
+                if (!source1.classList.contains('references-list-detail')) {
+                   source1 = $(source1).parents('.references-list-detail')[0];
+                }
+
+                e.dataTransfer.effectAllowed = 'move';
+            }
+            
+            $(document).on('click', '.cke_dark_background', function(e){
+                e.preventDefault();
+                var symbol = e.target.innerHTML;
+                var symItem = document.createElement('span');
+                    symItem.innerHTML = symbol;
+                    document.getElementsByClassName('cursor')[0].before(symItem.firstChild);
+            })
+
+        </script>
+        <style type="text/css">
+            .tooltipster-sidetip.tooltipster-noir.tooltipster-noir-customized .tooltipster-box {
+                background: #474747;
+                border-radius: 3px;
+            }
+
+            .tooltipster-sidetip.tooltipster-noir.tooltipster-noir-customized .tooltipster-content {
+                color: #fff;
+				padding: 0px 10px;
+                height: 20px;
+				line-height: 20px;
+				font-size: 10px;
+            }
+        </style>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/edit-table.js"></script>
+         
+
+    </body>
+</html>
+

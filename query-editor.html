@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>QueryEditorPanel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.3.0.2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/panel.css" />
+    <link rel="stylesheet" type="text/css" href="styles/tabpanel.css" />
+    <link rel="stylesheet" type="text/css" href="styles/selectbox.css" />
+    <link rel="stylesheet" type="text/css" href="styles/queryeditorpanel.css" />
+    <style>
+    .query-editor {
+        width: 300px;
+    }
+
+    </style>
+    <script src="scripts/libs/require-2.1.16.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/"
+        });
+    </script>
+    <script src="/scripts/polyfills/classList.js"></script>
+    <script src="/scripts/polyfills.js"></script>
+</head>
+<body>
+    <div class="query-editor"></div>
+    <script>
+
+    window.onload = function () {
+        require([
+            'scripts/QueryEditorPanel', 'scripts/EventBus', 'scripts/TabPanel',
+            'scripts/RequestQueue'
+        ],
+        function(QueryEditorPanel, EventBus, TabPanel, RequestQueue) {
+            var tabPanel1 = new TabPanel(
+                document.querySelector('.query-editor'),
+                document, window, EventBus
+            ),
+            queue = new RequestQueue(), queryEditorPanel1, tabId, tabEl,
+            problemTypes = [
+                {
+                    "problemTypeId": "F05",
+                    "id": 1,
+                    "text": "Query for LSM",
+                    "queries": [
+                        {
+                            "id": 4,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F10",
+                    "id": 2,
+                    "text": "Miscellaneous",
+                    "queries": [
+                        {
+                            "id": 2,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F13",
+                    "id": 3,
+                    "text": "Corrections against standardization/style",
+                    "queries": [
+                        {
+                            "id": 3,
+                            "text": "As per style, genus name should be expanded in the first occurrence, both in abstract and text, and abbreviated in subsequent occurrences. Hence we are ignoring the corrections related to this in lines XXX. Please check and approve."
+                        },
+                        {
+                            "id": 4,
+                            "text": "As per style, professional titles or qualifications are not allowed in the affiliation. Hence we are ignoring the author corrections in line XXX. Please check and approve."
+                        },
+                        {
+                            "id": 5,
+                            "text": "As per style, Research highlights should be of 3 to 5 bullet points, with maximum of XXX characters per bullet point, not exceeding XXX characters. Please check and provide Research highlights as per the requirement."
+                        },
+                        {
+                            "id": 6,
+                            "text": "Please note that as per APA style, for references with less than 6 authors, all the author names need to be listed in the first citation in the text and the subsequent citations will be with first author et al. Hence we are ignoring the corrections regard"
+                        },
+                        {
+                            "id": 7,
+                            "text": "As per style, thousand separators can be used only for values with more than 4 digits. Hence we are ignoring the corrections in lines XXX. Please check and approve"
+                        },
+                        {
+                            "id": 8,
+                            "text": "Please see author corrections in Table XXX. As per style, rules are not allowed in the table. Hence we are ignoring these corrections. Please check and approve."
+                        },
+                        {
+                            "id": 9,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F15",
+                    "id": 4,
+                    "text": "Uncited reference",
+                    "queries": [
+                        {
+                            "id": 10,
+                            "text": "Please note that the reference XXX, XXX in line no. XXX remains uncited in the text after incorporating the author corrections. Please check and provide the citation or delete the reference from the reference list."
+                        },
+                        {
+                            "id": 11,
+                            "text": "Please note that we have not received any response for QXXX regarding uncited reference. Please check and provide the citation or alternatively delete the reference from the reference list."
+                        },
+                        {
+                            "id": 12,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F17",
+                    "id": 5,
+                    "text": "Unclear/missing instructions",
+                    "queries": [
+                        {
+                            "id": 13,
+                            "text": "Please see QXXX. Please check and provide conflict of interest, as it is a mandatory requirement."
+                        },
+                        {
+                            "id": 14,
+                            "text": "Please see highlighted text in lines XXX. Please check and provide corrections, if any."
+                        },
+                        {
+                            "id": 15,
+                            "text": "Please see empty insertions in lines XXX. Please check and provide corrections, if any."
+                        },
+                        {
+                            "id": 16,
+                            "text": "Please see empty comments in lines XXX. Please check and provide corrections, if any."
+                        },
+                        {
+                            "id": 17,
+                            "text": "Please note that as per style, minimum of XXX and maximum of XXX keywords are allowed. Hence provide the required number of keywords."
+                        },
+                        {
+                            "id": 18,
+                            "text": "Please note that as per style, professional qualification is mandatory for all the authors. Please check and provide this information for all authors."
+                        },
+                        {
+                            "id": 19,
+                            "text": "As per the journal style, if there are more than 6 authors/editors, theAs per the journal style, if there are more than 6 authors/editors, the first 6 author names are listed followed by et al. If the author group consists of 6 authors or fewer, all autho"
+                        },
+                        {
+                            "id": 20,
+                            "text": "Please see author correction in line no. XXX. We are not clear with the correction requested. Please check and advise what needs to be done."
+                        },
+                        {
+                            "id": 21,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F18",
+                    "id": 6,
+                    "text": "Missing material",
+                    "queries": [
+                        {
+                            "id": 22,
+                            "text": "Please note the author comment in the txt file. We have not received any new figure. Please check and provide."
+                        },
+                        {
+                            "id": 23,
+                            "text": "Please note the author comment in the txt file. We have not received any new MMC. Please check and provide."
+                        },
+                        {
+                            "id": 24,
+                            "text": "Please note that we have not received any editor corrections. Please check and provide."
+                        },
+                        {
+                            "id": 25,
+                            "text": "Please note that we have not received the mol file as mentioned in the txt file. Please check and provide."
+                        },
+                        {
+                            "id": 26,
+                            "text": "Please note author comment in the txt file. We have not received any new table. Please check and provide."
+                        },
+                        {
+                            "id": 27,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F36",
+                    "id": 7,
+                    "text": "Mastercopying queries unanswered",
+                    "queries": [
+                        {
+                            "id": 28,
+                            "text": "We have not received any response for the queries. Please check and provide."
+                        },
+                        {
+                            "id": 29,
+                            "text": "Please note that QXXX remains unanswered. Please check and provide the response, as it is mandatory."
+                        },
+                        {
+                            "id": 30,
+                            "text": "Please see our previous query and its response. We have not received any response for QXXX. Please check and advise."
+                        },
+                        {
+                            "id": 31,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F38",
+                    "id": 8,
+                    "text": "Clarification required/unclear correction",
+                    "queries": [
+                        {
+                            "id": 32,
+                            "text": "Please see author comment ...I would like to see the proofs again once... in the txt file. Please advise whether we can we send the proof for author approval."
+                        },
+                        {
+                            "id": 33,
+                            "text": "Please note that there are heavy edits in this article. Please advise whether we can send revised proof for author approval to check the article layout."
+                        },
+                        {
+                            "id": 34,
+                            "text": "Please note that the copyright status was updated as XXX. The copyright text provided in the remarks of the XML order does not match with the copyright status. Please check both the elements and update the XML order accordingly."
+                        },
+                        {
+                            "id": 35,
+                            "text": "As per style, if the corresponding author has two affiliations, one affiliation needs to be retained in the correspondence field. Please advise whether we can insert affiliation XXX in the corresponding author field in line number XXX. Please check and ap"
+                        },
+                        {
+                            "id": 36,
+                            "text": "Please note that there are discrepancies between the author response and editor response for all the queries. Please check and advise which has to be followed."
+                        },
+                        {
+                            "id": 37,
+                            "text": "Please note that the author has provided a revised figure in color. Please check and advise whether the figure should be in color for both print and web versions. If so, please update the XML order."
+                        },
+                        {
+                            "id": 38,
+                            "text": "Please note that we have received fresh manuscript doc file, author group and figures. Please open an S100 resupply task to process the full manuscript and hold the S200 task until we receive corrections for S100 resupply proof."
+                        },
+                        {
+                            "id": 39,
+                            "text": "Please note that we are not able to generate Inchikey from the revised mol file. Please check and advise."
+                        },
+                        {
+                            "id": 40,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F39",
+                    "id": 9,
+                    "text": "Mastercopy PDF for approval",
+                    "queries": [
+                        {
+                            "id": 41,
+                            "text": "Problem task has been raised as per JM instruction."
+                        },
+                        {
+                            "id": 42,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F52",
+                    "id": 10,
+                    "text": "Stylesheet query",
+                    "queries": [
+                        {
+                            "id": 43,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F55",
+                    "id": 11,
+                    "text": "Mastercopy - update PTS",
+                    "queries": [
+                        {
+                            "id": 44,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F56",
+                    "id": 12,
+                    "text": "Missing material/instruction",
+                    "queries": [
+                        {
+                            "id": 45,
+                            "text": "We have not received revised Figure or Table XXX as per the request. Please check and provide."
+                        },
+                        {
+                            "id": 46,
+                            "text": "Please note that we have received only the XXX correction. Please check and provide the XXX correction as it is mandatory as per the stylesheet."
+                        },
+                        {
+                            "id": 47,
+                            "text": "Others"
+                        }
+                    ]
+                },
+                {
+                    "problemTypeId": "F57",
+                    "id": 48,
+                    "text": "Mastercopy - update PTS",
+                    "queries": [
+                        {
+                            "id": 48,
+                            "text": "Others"
+                        }
+                    ]
+                }
+            ];
+
+            tabPanel1.render();
+            tabPanel1.setTitle('Query Editor');
+            tabId = tabPanel1.add('M1');
+            tabEl = tabPanel1.getTabContentElement(tabId);
+            queryEditorPanel1 = new QueryEditorPanel(
+                tabEl, document, window, EventBus, {
+                    saveQuery: 'http://localhost/pg-api/app/web/index.php/saveQuery',
+                    uri: 'http://localhost/pg-api/app/web/index.php/queryUpload',
+                    deleteQuery: 'http://localhost/pg-api/app/web/index.php/removeQueryAttachment'
+                },
+                '3b39f75475934434cd00FF2700SFftest'
+            );
+            queryEditorPanel1.setProblemTypes(problemTypes);
+            queryEditorPanel1.render();
+            queryEditorPanel1.setQueryId('Q1');
+            queryEditorPanel1.setQuery('Q1');
+
+            tabId = tabPanel1.add('M2');
+            tabEl = tabPanel1.getTabContentElement(tabId);
+            queryEditorPanel1 = new QueryEditorPanel(
+                tabEl, document, window, EventBus, {
+                    saveQuery: 'http://localhost/pg-api/app/web/index.php/saveQuery',
+                    uri: 'http://localhost/pg-api/app/web/index.php/queryUpload',
+                    deleteQuery: 'http://localhost/pg-api/app/web/index.php/removeQueryAttachment'
+                },
+                '3b39f75475934434cd00FF2700SFftest'
+            );
+            queryEditorPanel1.setProblemTypes(problemTypes);
+            queryEditorPanel1.render();
+            queryEditorPanel1.setQueryId('Q2'); //id
+            window.queryEditorPanel1 = queryEditorPanel1;
+
+        });
+    };
+    </script>
+</body>
+</html>

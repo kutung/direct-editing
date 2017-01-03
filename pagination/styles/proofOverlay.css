@@ -1,0 +1,78 @@
+/********** style Sheet for Overlay ************/
+.page-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #808080;
+  z-index: 9999;
+  position: fixed;
+  top: 0px;
+}
+
+.proof-overlay {
+  position: fixed;
+  margin: 0 0 0 -109mm;
+  width: 218mm;
+  height: 100%;
+  z-index: 99999;
+  background-color: #FFFFFF;
+  top: 0px;
+  left: 50%;
+  text-align: center;
+}
+
+.proof-overlay .loader {
+  background: url("../images/proof-loader.gif") no-repeat center center;
+  min-height: 170px;
+}
+
+.proof-overlay .header {
+  background: url("../images/pgc.jpg") no-repeat center center;
+  min-height: 130px;
+}
+
+.proof-overlay .message {
+  background: url("../images/wait.jpg") no-repeat center center;
+  min-height: 130px;
+}
+
+.proof-overlay .footer {
+  background: url("../images/pwdby.jpg") no-repeat center center;
+  min-height: 130px;
+}
+
+.noscroll {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.proof-overlay .header,
+.proof-overlay .message,
+.proof-overlay .footer,
+.proof-overlay .loader {
+  height: 20%;
+}
+
+.progress-bar .first-level,
+.progress-bar .second-level,
+.progress-bar .third-level,
+.progress-bar .fourth-level,
+.progress-bar .end-level {
+  background-color: #989696;
+  padding: 0px 10px;
+  margin: 0px 3px;
+}
+
+.proof-overlay .proof-pages {
+  background-color: inherit;
+  font-weight: bold;
+}
+
+.proof-overlay .progress-bar {
+  height: 17%;
+  margin-top: 0.9%;
+  text-align: center;
+}
+
+.progress-bar-color {
+  background-color: #000000 ! important;
+}

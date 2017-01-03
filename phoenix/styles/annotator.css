@@ -1,0 +1,80 @@
+.annotator-container {}
+
+.annotate-editor {
+  border: 1px solid #000;
+  box-shadow: 0 5px 53px rgba(0,0,0,0.7),inset 0 1px 1px rgba(255,255,255,0.25);
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  text-indent: 0;
+}
+
+.annotate-editor form {
+  display: inline-block;
+  background-color: #DDD;
+  vertical-align: middle;
+}
+
+.annotate-editor .comment {
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  font-size: 12px;
+  min-height: 70px;
+  min-width: 230px;
+  padding: 5px;
+}
+
+.annotate-editor .button-container {
+  display: flex;
+  padding: 5px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.annotate-editor .button-container .left,
+.annotate-editor .button-container .right {
+  flex: 1;
+}
+.annotate-editor .button-container .right {
+  text-align: right;
+}
+
+.annotate-editor .button-container .button.delete {
+  background-color: #CA5142;
+  border: 1px solid #CA5142;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.annotate-editor .button-container .button.cancel {
+  background-color: #888;
+  border: 1px solid #888;
+  font-weight: bold;
+  color: #FFF;
+  margin-right: 5px;
+}
+
+.annotate-editor .button-container .button.save {
+  background-color: #47a447;
+  border: 1px solid #47a447;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.annotate-editor .button-container .button.cancel[disabled],
+.annotate-editor .button-container .button.delete[disabled],
+.annotate-editor .button-container .button.save[disabled] {
+    background-color: #EEE;
+    color: #ccc;
+    border: 1px solid #EEE;
+}
+
+.annotate-editor .button-container .button {
+  font-size: 12px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: inline;
+}

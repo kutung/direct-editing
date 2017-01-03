@@ -1,0 +1,871 @@
+/* Style sheet for Elsevier Tags */
+@font-face {
+  font-family: 'STIXGeneral';
+    src: url('/fonts/STIXGeneral.eot'); /* EOT file for IE */
+    src: url('/fonts/STIXGeneral.eot?iefix') format('embedded-opentype'), url('/fonts/STIXGeneral.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.editor, #paginate-cnt {
+  color: #222;
+  font-family: Times New Roman, Times;
+}
+
+.editor .kw_label {
+  border: 2px solid #a1a1a1;
+  padding: 2px 5px;
+  background: #ddd;
+  width: 300px;
+  margin-right: 10px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.editor div , .editor span {
+  font-family: Times New Roman, Times;
+}
+
+.editor.proofCorrector .sa_affiliation,
+.editor.proofCorrector .ce_initials,
+.editor.proofEditor .sa_affiliation,
+.editor.proofEditor .ce_initials {
+  display: none;
+}
+
+.editor .content_modified {
+  background: url('/images/ArrowRight.png') no-repeat;
+  padding: 2px;
+  width: 25px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 4px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.queryReplier .content_modified {
+  display: none;
+}
+
+.editor .ce_collaboration .ce_author-group {
+  border: 1px dashed #909090;
+  background: #F0F0F0;
+}
+
+.editor .ce_source {
+  font-style: italic;
+}
+
+.editor .ce_displayed-quote .ce_source {
+  text-align: right;
+}
+
+.editor .ce_inf , .editor .ce_sup {
+  font-size: 12px;
+}
+
+.unicode-char {
+  font-family: STIXGeneral !important;
+}
+
+thead td  .unicode-char {
+  font-family: STIXGeneral !important;
+  line-height: 0;
+}
+
+.editor .ce_inf , .editor .ce_sup , .editor .unicode-char {
+  line-height: 0;
+}
+
+.editor .ce_inf {
+  vertical-align: sub;
+}
+
+.editor .ce_sup , .editor .ce_foonote .ce_label {
+  vertical-align: super;
+}
+
+.editor .ce_italic , .editor .ce_salutation {
+  font-style: italic;
+}
+
+.editor .ce_bold {
+  font-weight: 700;
+}
+
+.editor .ce_underline {
+  text-decoration: underline;
+}
+
+.editor .ce_textbox, .editor .ce_dtextbox {
+  background-color: #E8E8E8;
+  border: solid;
+  padding: 8px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.editor .vol {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.editor .sitl , .editor .sbtl , .editor .sebtl , .editor .ebtl {
+  font-style: italic;
+}
+
+.editor .ce_small-caps {
+  font-variant: small-caps;
+}
+
+/* Sections */
+
+.editor .ce_list > .ce_section-title {
+  margin-left: -100px;
+  font-style: normal;
+}
+
+/* for avoiding margin-left: -100px; alignment in table. */
+
+.editor td .ce_list .ce_section-title {
+  margin-left: 0;
+}
+
+.editor .ce_section > .sectionline_opt ,
+.editor .ce_glossary > .ce_section-title ,
+.editor .ce_section > .ce_section-title ,
+.editor .ce_acknowledgment > .ce_section-title ,
+.editor .ce_bibliography > .ce_section-title ,
+.editor .ce_further-reading > .ce_section-title ,
+.editor .ce_appendices > .ce_section > .ce_label ,
+.editor span#fnhead {
+  font-weight: 700;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+.editor .ce_glossary-sec {
+  margin-top: 10px;
+}
+
+.editor .ce_section > .ce_section > .sectionline_opt {
+  font-weight: 700;
+  font-size: 120%;
+  margin-top: 10px;
+}
+
+.editor .ce_displayed-quote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: justify;
+  text-indent: 0;
+}
+
+.editor .ce_section > .ce_section > .ce_section > .sectionline_opt {
+  font-weight: 700;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+.editor .ce_section > .ce_section > .ce_section > .ce_section > .sectionline_opt , .editor .ce_section > .ce_section > .ce_section > .ce_section > .ce_section > .sectionline_opt
+.editor .ce_section > .ce_section > .ce_section > .ce_section > .ce_section > .ce_section > .sectionline_opt {
+  font-style: italic!important;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+.editor .ce_section>.ce_section>.ce_section>.sectionline_opt {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.editor .ce_bib-reference {
+  margin-left: 40px;
+  margin-right: 0;
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  text-indent: -40px;
+  text-align: left;
+}
+
+.editor .ce_bib-reference a[title] {
+  word-break:break-all;
+}
+
+.editor .ce_keywords .ce_section-title , .editor .ce_nomenclature > .ce_section-title {
+  font-weight: 700;
+}
+
+.editor .ce_title {
+  font-size: 16pt;
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-weight: 700;
+}
+
+.editor .ce_author {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+}
+
+.editor .ce_affiliation {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+}
+
+.editor .ce_keywords {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+}
+
+.editor .ce_correspondence {
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  font-size: 100%;
+}
+
+.editor .ce_abstract {
+  border-top: thin solid #F20C36;
+  border-bottom: thin solid #F20C36;
+  padding: 1pc 1pc 6pt;
+  margin-top: 15pt;
+  margin-right: .2in;
+  margin-bottom: 15pt;
+  margin-left: .2in;
+}
+
+.editor .ce_abstract-sec {
+  text-align: justify;
+  font-size: 100%;
+  display: block;
+}
+
+.editor .newline_notepara, .editor .newline_simplepara {
+  display: block;
+  text-indent: 35px;
+}
+
+.editor .ce_abstract .ce_abstract-sec .ce_section-title {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.editor .ce_abstract .ce_section-title {
+  font-weight: 700;
+}
+
+.editor .ce_keywords .ce_section-title {
+  font-weight: 700;
+}
+
+.editor .ce_affiliation .ce_label , .editor .ce_footnote .ce_label , .editor .ce_correspondence .ce_label , .editor .ce_article-footnote .ce_label {
+  font-size: 70%;
+  vertical-align: super;
+}
+
+.editor .ce_table-footnote .ce_label , .editor .ce_legend .ce_label {
+  font-size: 70%;
+  vertical-align: super;
+  padding-right: 3px;
+}
+
+.editor p .ce_label {
+  font-weight: 700;
+}
+
+.editor .tablecaption .ce_label , .editor .ce_e-component .ce_label {
+  font-weight: 700;
+}
+
+.editor .figure {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.editor .ce_para , .editor .ce_simple-para {
+  margin-bottom: 6pt;
+}
+
+.editor .ce_para {
+  text-indent: 50px;
+  margin-top: 6pt;
+  margin-right: 0;
+  margin-left: 0;
+  text-align: justify;
+}
+
+.editor div#qarea > .ce_para , .editor td#qareamin > .ce_para {
+  text-indent: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.editor .ce_def-term {
+  text-indent: 0;
+}
+
+.editor .ce_def-description > .ce_para {
+  text-indent: 0;
+}
+
+.editor .ce_display {
+  position: relative;
+  margin-top: 5px;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  text-indent: 0;
+}
+
+.editor .ce_display_formula {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  text-indent: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.editor .ce_list {
+  margin-left: 50pt;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.editor .ce_list-item {
+  text-indent: -15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.editor .ce_list-item .ce_para {
+  padding-left: 6px;
+  display: inline;
+}
+
+.editor .ce_list-item > .ce_para > .ce_list > .ce_list-item {
+  margin-left: -34pt;
+  text-indent: -27px;
+}
+
+.editor .table {
+  background-color: #F9F9F9;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.editor .table table , .editor .ce_display table {
+  border: 1px;
+  border-collapse: collapse;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  text-indent: 0;
+  width: 100%;
+}
+
+.editor thead tr {
+  background-color: #E1E1E1;
+}
+
+.editor .item-info {
+  display: none;
+}
+
+.editor a[title] {
+  color: blue;
+}
+
+.editor .ce_keywords > .ce_section-title , .editor .ce_label {
+  font-weight: 700;
+}
+
+.editor .inline-math-img * {
+  display: inline;
+}
+
+.editor .INS , .editor .DEL {
+  display: inline;
+}
+
+.editor .ce_author > .ce_surname {
+  background-color: #00B3B3;
+}
+
+.editor .ce_author > .ce_initials {
+  background-color: #00B3B3;
+}
+
+.editor .ce_enunciation {
+  margin: 10px;
+}
+
+.editor .ce_enunciation .ce_label {
+  font-weight: 700;
+}
+
+.editor .article td.td {
+  text-align: left;
+  padding: .5em;
+  border: 1px solid #D9D9D9;
+}
+
+.editor .article td.td[align=right] {
+  text-align: right;
+}
+
+.editor .article td.td[align=center] {
+  text-align: center;
+}
+
+.editor .article thead td.td {
+  text-align: center;
+}
+
+.editor .ce_title > .x {
+  font-weight: 400;
+  vertical-align: super;
+  font-size: 12px;
+}
+
+.editor .ce_def-description , .editor .ce_glossary-def {
+/*margin-left:18px;*/
+  text-indent: 18px;
+}
+
+.editor span#sbref {
+  display: block;
+  margin-left: 22px;
+}
+
+.editor .ce_abstract-sec .ce_simple-para {
+  text-indent: 35px;
+  display: block;
+}
+
+.editor .nomenclature_secttitle {
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 6pt;
+}
+
+.editor .deflist_secttitle {
+  font-style: italic;
+  font-size: 120%;
+  font-weight: 700;
+  margin-bottom: 6pt;
+}
+
+.editor div#authorgp {
+  text-align: right;
+}
+
+.editor .ce_bib-reference .ce_label1 {
+  display: none;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.editor .ce_section > .ce_section > .ce_section-title {
+  font-size: 100%;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.editor .ce_section > .ce_section > .ce_section > .section-title {
+  font-weight: 700;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+.editor div#graph_abstsec1 .ce_section-title , .editor div#graph_abstsec .ce_section-title , .editor div#highlite > .ce_section-title , .editor #graph_sectitle , .editor div#highlite2 > .ce_section-title , .editor #graph_sectitle2 {
+  font-weight: 700;
+}
+
+.editor div#etab1 , .editor div#etab2 {
+  background-color: #D3D3D3;
+  font-size: 100%;
+  margin-bottom: 6pt;
+  font-weight: 700;
+  height: 24px;
+  width: 100%;
+  font-size: 100%;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.editor div#etab1 span , .editor div#etab2 span {
+  margin-left: 10px;
+}
+
+.editor .img1 , .editor .img2 {
+  padding-left: 5px;
+}
+
+.editor .unselectable , .editor .mmclink {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.editor .ce_e-component {
+  text-align: justify;
+}
+
+.editor .ce_sans-serif {
+  font-size: inherit;
+}
+
+/* This class is introduced for SPI journals. There is some author given names are coming on below class.*/
+
+.editor .ce_indexed-name {
+  display: none;
+}
+
+.editor .ce_cross-out {
+  text-decoration: line-through;
+}
+
+.editor div#graph_abstsec1 , .editor div#highlite {
+  border-bottom: thin solid #F20C36;
+  margin-top: 15pt;
+  margin-right: .2in;
+  margin-bottom: 15pt;
+  margin-left: .2in;
+  padding: 0 0 6pt;
+}
+
+.editor div#graph_abstsec {
+  margin-top: 15pt;
+  margin-right: .2in;
+  margin-bottom: 15pt;
+  margin-left: .2in;
+  padding: 0 0 6pt;
+}
+
+.editor .x,
+.editor .ce_alt-text {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: normal;
+  font-style: initial;
+  vertical-align: initial;
+  font-size: 14px;
+  background-color: inherit;
+  cursor: auto;
+  color: black;
+}
+
+.editor .cke_iframe_shim {
+  display: none;
+}
+
+.editor .item-info > .ce_title , .augroup > .ce_author {
+  display: inline;
+  font-size: 16px;
+  font-weight: 100;
+  background-color: none;
+}
+
+.editor .augroup > .ce_author > .ce_surname , .editor .augroup > .ce_author > .ce_givenname {
+  background-color: transparent;
+  display: inline;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.editor .augroup > .ce_author > a.ce_cross-ref , .editor .augroup > .ce_author > .ce_roles , .editor .augroup > .ce_author > .ce_degrees , .editor .augroup > .ce_author .ce_e-address , .editor .augroup > .ce_author > .x {
+  display: none;
+}
+
+.editor #note {
+  font-weight: 700;
+  font-size: 140%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.editor .jid {
+  margin-top: 15px;
+}
+
+.editor .ce_inter-refs-text {
+  display: none;
+}
+
+.proofValidator .ce_inter-refs-text {
+  display: inline-block;
+  text-indent: 0;
+  margin-right: 4px;
+}
+
+.editor .caption_simple_para {
+  display: block;
+}
+
+.editor .ce_section-title {
+  font-weight: 700;
+  font-size: 100%;
+}
+
+.editor div.ce_section > div.ce_section > div.ce_section > div.ce_section div.sectionline_opt+div.ce_para {
+  display: inline;
+}
+
+.editor span.ce_sans-serif {
+  font-family: sans-serif;
+  font-size: inherit;
+}
+.editor .figcaption {
+    margin-top: 10.5pt;
+}
+.editor .ce_section > .sectionline_opt,
+.editor .ce_glossary > .ce_section-title,
+.editor .ce_section > .ce_section-title,
+.editor .ce_acknowledgment > .ce_section-title,
+.editor .ce_bibliography > .ce_section-title,
+.editor .ce_further-reading > .ce_section-title,
+.editor .ce_appendices > .ce_section > .ce_label{
+    margin-top: 32pt;
+    margin-bottom: 21pt;
+}
+.editor .ce_section > .ce_section > .sectionline_opt {
+    margin-top: 21pt;
+    margin-bottom: 21pt;
+}
+.editor .ce_section > .ce_section > .ce_section > .sectionline_opt, .supplementary .ce_section > .ce_section > .ce_section > .sectionline_opt {
+    margin-top: 21pt;
+    margin-bottom: 0pt;
+}
+.editor .ce_display {
+    margin-top: 15.75pt;
+    margin-bottom: 15.75pt;
+}
+.editor .ce_acknowledgment {
+    margin-bottom: 21pt;
+}
+.editor .ce_bibliography {
+    margin-bottom: 18pt;
+}
+.editor .figcaption {
+    margin-top: 10.5pt;
+    font-size: 12px;
+}
+
+.editor .wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.editor .figure .wrapper {
+    position: relative;
+    display: block;
+}
+
+.editor .table {
+    line-height: normal;
+    font-size: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.editor .eqn-container {
+    display: inline-block;
+    max-width: 590px;
+    /*overflow: auto;*/
+}
+
+/*.editor .eqn-container,*/
+.editor .ce_inter-ref-title,
+.editor .ce_inter-ref {
+    cursor: pointer;
+}
+
+.editor .ce_inline-figure,
+.editor .inline-formula div,
+.editor .figure .inline-formula div,
+.editor .ce_inline-figure div,
+.editor .ce_inline-figure .wrapper {
+    display: inline;
+}
+
+.editor span.ce_alt-text {
+    border: 2px solid #a1a1a1;
+    padding: 2px 5px;
+    background: #ddd;
+    margin: 1px;
+    display: inline;
+}
+
+.editor .ce_alt-text span.ce_alt-text {
+    border: 2px solid #a1a1a1;
+    padding: 2px 5px;
+    background: #ddd;
+    margin: 1px;
+    display: inline-block;
+}
+
+.editor .sb_ellipsis .x{
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: inherit;
+  background-color: inherit;
+  font-style: inherit;
+}
+
+.editor div.ce_section > div.sectionline_opt,
+.editor div.ce_glossary > span.ce_section-title,
+.editor div.ce_section > span.ce_section-title,
+.editor div.ce_acknowledgment > span.ce_section-title,
+.editor div.ce_bibliography > span.ce_section-title,
+.editor div.ce_further-reading > span.ce_section-title,
+.editor div.ce_appendices > div.ce_section > span.ce_label,
+.editor span#fnhead {
+    font-weight: bold;
+    font-size: 18pt;
+    margin-top: 10px;
+}
+
+.editor div.ce_section > div.ce_section > div.sectionline_opt,
+.editor div.ce_bibliography-sec > div.sectionline_opt,
+.editor div.ce_further-reading-sec > div.sectionline_opt {
+    font-weight: bold;
+    font-size: 16pt;
+    margin-top: 10px;
+}
+
+.editor div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt,
+.editor div.ce_bibliography-sec > div.ce_bibliography-sec > div.sectionline_opt,
+.editor div.ce_further-reading-sec > div.ce_further-reading-sec > div.sectionline_opt
+{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14pt;
+    margin-top: 10px;
+}
+
+.editor div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt,
+.editor div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt
+.editor  div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.ce_section > div.sectionline_opt
+{
+    font-style: italic;
+    font-size: 12pt;
+    margin-top: 10px;
+}
+
+.editor div.ce_correspondence,
+.editor div.ce_footnote,
+.editor div.ce_miscellaneous {
+    margin-top:6.0pt;
+    margin-right:0in;
+    margin-bottom:6.0pt;
+    margin-left:0in;
+    font-size:100%;
+
+}
+
+.editor .ce_glyph .wrapper,
+.editor .ce_glyph .eqn-container {
+    display:inline
+}
+
+.editor .displayfigtab .ce_table-footnote,
+.editor .displayfigtab .tablecaption,
+.editor .displayfigtab .ce_legend {
+  text-align:left !important
+}
+
+.editor .ce_inline-figure .annotator-container {
+  display: inline-block;
+  text-indent: 0px;
+  line-height: 0;
+}
+
+.editor .ce_collaboration .ce_author-group {
+    display:none;
+}
+
+.editor .ce_author-group.open {
+    display: block;
+}
+
+.session-invalid-content p {
+  padding: 0 0 4px;
+}
+
+.session-invalid-content a.session-LandingPageLink {
+  background: none;
+  border: 0;
+  line-height: 100%;
+  padding: 0;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.editor div.div-toggle-images {
+   font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+   margin-top: 10px;
+}
+
+.editor button.web-btn, button.print-btn {
+    font: 14px/2.5 "Roboto Regular", Arial, sans-serif;
+    background-color: #FDFDF0;
+    border: 2px outset #8B8378;
+    color: black;
+    line-height: 25px;
+    padding: 2px 10px 2px 5px;
+    width: 115px;
+}
+
+.editor button span.rbweb, button span.rbprint {
+    border: 1px solid black;
+    margin: 0 3px;
+    padding: 0 5px;
+}
+
+.editor button span.selected {
+    background-color: black;
+    border: 1px solid;
+}
+
+.editor .toggleoverlay {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background: url("/images/ajax-loader.gif") no-repeat center center #aaaaaa;
+    opacity: 0.6;
+}
+

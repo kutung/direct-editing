@@ -1,0 +1,174 @@
+.attachment-container .panel-header .text {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.attachment-container .panel .panel-content {
+    padding: 0;
+}
+
+.attachment-container .panel .panel-header .icon {
+    background-image: url("/images/hand.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.attachment-container .panel.open .panel-header .icon {
+    background-image: url("/images/hand-open.svg");
+}
+
+.pc-attachment {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.pc-attachment h3 {
+    font-size: 14px;
+    height: 30px;
+    background-color: #888;
+    color: #fff;
+    padding: 10px 0 0 10px;
+    display: none;
+}
+
+.pc-attachment .info {
+    margin: 0 0 10px 0;
+    font-family: 'Lucida Grande', calibri;
+    font-size: 12px;
+    color: #DA9257;
+}
+.pc-attachment .attachment {
+    margin: 0 0 10px 0;
+}
+
+.pc-attachment .file-upload-container h5,
+.pc-attachment ul.attachment-file-list li.no-files {
+    font-size: 12px;
+    font-weight: bold;
+    color: #2883D6;
+    margin: 0;
+}
+
+.pc-attachment .file-upload-container .optional {
+    font-size: 12px;
+    color: #2883D6;
+    margin: 4px;
+}
+
+.pc-attachment .file-upload-container .optional.hide {
+    display: none;
+}
+
+.pc-attachment .file-upload-container h5 {
+    display: inline;
+}
+
+.pc-attachment .file-upload-container .info {
+    float: right;
+}
+.pc-attachment .attachment-file-form.disable {
+    opacity: 0.5;
+}
+
+.pc-attachment .attachment-file-form {
+    opacity: 1;
+    font-size: 12px;
+    padding: 10px 0 0 0;
+}
+
+.pc-attachment .attachment-file {
+    margin-bottom: 10px;
+    border: 1px solid #bfbcbf;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.pc-attachment .attachment-file-remark {
+    margin-bottom: 10px;
+    border: 1px solid #bfbcbf;
+    width: 100%;
+    resize: none;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+.pc-attachment ul.attachment-file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pc-attachment ul.attachment-file-list li {
+    position: relative;
+}
+
+.pc-attachment ul.attachment-file-list li .size{
+        vertical-align: top;
+}
+
+.pc-attachment ul.attachment-file-list li .filename {
+    display: inline-block;
+    width: 11em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pc-attachment ul.attachment-file-list .delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    opacity: 1;
+    color: red;
+}
+
+.pc-attachment ul.attachment-file-list .delete.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pc-attachment .buttons-container {
+    text-align: right;
+    padding: 0;
+    font-weight: bold;
+}
+
+.pc-attachment .proceed {
+    background-color: #2F2F2F;
+    border: 1px solid #2F2F2F;
+    color: #FFF;
+}
+
+.pc-attachment .clear {
+    background-color: #D55555;
+    border: 1px solid #D55555;
+    margin-right: 5px;
+    color: #FFF;
+}
+
+.pc-attachment .proceed[disabled] {
+    background-color: #EEE;
+    color: #ccc;
+    border: 1px solid #EEE;
+}
+
+.pc-attachment .clear[disabled] {
+    background-color: #EEE;
+    color: #ccc;
+    border: 1px solid #EEE;
+    margin-right: 5px;
+}
+
+.attachment-container{
+    display : none;
+}
+
+.instruct .attachment-container{
+    display : none;
+}
+
+.attachment .attachment-container{
+    display: block;
+}

@@ -1,0 +1,70 @@
+span[data-format-insert="true"] {
+    text-decoration: underline;
+    color: #008000;
+    background-color: rgba(255, 255, 46, 0.5);
+}
+
+span[data-format-insert="true"] a {
+    color: blue;
+}
+
+span[data-format-bold="true"] {
+    font-weight: bold;
+    background-color: rgba(255, 255, 46, 0.5);
+}
+
+span[data-format-italic="true"] {
+    font-style: italic;
+    background-color: rgba(255, 255, 46, 0.5);
+    color: #000;
+}
+
+span[data-format-sup="true"] {
+    vertical-align: super;
+    font-size: 10px;
+    background-color: rgba(255, 255, 46, 0.5);
+    color: black;
+    line-height: 0;
+}
+
+span[data-format-sub="true"] {
+    vertical-align: sub;
+    font-size: 10px;
+    background-color: rgba(255, 255, 46, 0.5);
+    color: black;
+    line-height: 0;
+}
+
+span[data-format-instruct="true"] {
+    background-color: rgba(255, 255, 46, 0.5);
+    color: #000;
+}
+
+span[data-format-delete="true"] {
+    background: rgba(255, 255, 46, 0.5);
+    text-decoration: line-through;
+    color: #f00;
+}
+
+span[data-format-delete="true"] * {
+    background: none;
+    color: #f00;
+}
+
+span[data-format-insert="true"] * {
+    background: none    ;
+    color: #008000;
+}
+
+span[data-format-cpedel="true"],
+span[data-format-cpeins="true"] {
+    text-decoration: line-through;
+    color: #f00;
+    cursor: pointer;
+    background-color: #D3D3D3;
+}
+
+span[data-format-cpeins="true"] {
+    text-decoration: underline;
+    color: #008000;
+}
